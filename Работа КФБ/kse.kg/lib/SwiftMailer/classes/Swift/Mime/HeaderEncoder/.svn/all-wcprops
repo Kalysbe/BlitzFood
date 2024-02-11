@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/guest/buse/!svn/ver/208/trunk/lib/SwiftMailer/classes/Swift/Mime/HeaderEncoder
+END
+QpHeaderEncoder.php
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/guest/buse/!svn/ver/208/trunk/lib/SwiftMailer/classes/Swift/Mime/HeaderEncoder/QpHeaderEncoder.php
+END
+Base64HeaderEncoder.php
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/guest/buse/!svn/ver/208/trunk/lib/SwiftMailer/classes/Swift/Mime/HeaderEncoder/Base64HeaderEncoder.php
+END

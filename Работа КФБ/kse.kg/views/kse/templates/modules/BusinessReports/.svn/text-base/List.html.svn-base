@@ -1,0 +1,41 @@
+<div align="center">
+{% for page in pages_list %}
+    <a href="{{ root }}/{{ lang_code}}/{{ Page.Uname }}/Page:{{ page }}" style="text-decoration: none;">[ {{ page }} ] </a>
+{% endfor %}
+</div>
+
+<table width="100%" class="class1">
+    <tr>
+        <th>Наименование</th>
+    </tr>
+    {% for Company in CompaniesList %}
+    <tr>
+        <td><a href="{{ root }}/{{ lang_code }}/{{ this_page }}/{{ Company['name'] }}">{{ Company['title'] }}</a></td>
+    </tr>
+    {% endfor %}
+</table>
+
+<div align="center">
+{% for page in pages_list %}
+    <a href="{{ root }}/{{ lang_code}}/{{ Page.Uname }}/Page:{{ page }}" style="text-decoration: none;">[ {{ page }} ] </a>
+{% endfor %}
+</div>
+
+{% if Logged %}
+<form action="" method="POST">
+<div style="clear: both; width: 100%; padding: 15px; border: 1px solid #CCCCCC" class="ui-corner-all">
+    <h2>Добавить компанию</h2>
+    <table width="45%" class="class1">
+        <tr>
+            <td>Имя на латинице (без пробелов, например my_company)</td>
+            <td><input type="text" name="name" value="" /></td>
+        </tr>
+        <tr>
+            <td>Наименование компании</td>
+            <td><input type="text" name="title" value="" /></td>
+        </tr>
+    </table>
+    <input type="submit" name="doAddCompany" value="Добавить" />
+</div>
+</form>
+{% endif %}

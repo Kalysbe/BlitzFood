@@ -1,0 +1,213 @@
+<h2>{{ lang['Last Trade Results'] }}</h2>
+<br /><br />
+<div id="tradestat_last" class="tradestat_table">
+    <h3>{{ lang['Trades for'] }} {{ Date }}</h3>
+    <table class="class1" width="100%">
+        <tr>
+            <th width="*"></th>
+            <th width="23%">{{ lang['{MlnSom}'] }}</th>
+            <th width="23%">%</th>
+            <th width="5%"></th>
+        </tr>
+        <tr>
+            <td>Объем торгов</td>
+            <td class="center">{{ Last['TotalVolume'] }}</td>
+            <td class="center">{{ Last['TotalVolumePercent'] }}</td>
+            <td class="center">{{ Last['TotalVolumeImage'] }}</td>
+        </tr>
+        <tr>
+            <td>Первичный</td>
+            <td class="center">{{ Last['Primary'] }}</td>
+            <td class="center">{{ Last['PrimaryPercent'] }}</td>
+            <td class="center">{{ Last['PrimaryImage'] }}</td>
+        </tr>
+        <tr>
+            <td>Вторичный</td>
+            <td class="center">{{ Last['Secondary'] }}</td>
+            <td class="center">{{ Last['SecondaryPercent'] }}</td>
+            <td class="center">{{ Last['SecondaryImage'] }}</td>
+        </tr>
+        <tr>
+            <td>Листинг</td>
+            <td class="center">{{ Last['Listing'] }}</td>
+            <td class="center">{{ Last['ListingPercent'] }}</td>
+            <td class="center">{{ Last['ListingImage'] }}</td>
+        </tr>
+        <tr>
+            <td>Нелистинг</td>
+            <td class="center">{{ Last['NonListing'] }}</td>
+            <td class="center">{{ Last['NonListingPercent'] }}</td>
+            <td class="center">{{ Last['NonListingImage'] }}</td>
+        </tr>
+    </table>
+</div>
+
+<div id="tradestat_week" class="tradestat_table" style="display: none;">
+    <h3>За неделю ({{ week_interval }})</h3>
+    <table class="class1" width="100%">
+        <tr>
+            <th width="*"></th>
+            <th width="23%">{{ lang['{MlnSom}'] }}</th>
+            <th width="23%">%</th>
+            <th width="5%"></th>
+        </tr>
+        <tr>
+            <td>Объем торгов</td>
+            <td class="center">{{ Week['TotalVolume'] }}</td>
+            <td class="center">{{ Week['TotalVolumePercent'] }}</td>
+            <td class="center">{{ Last['TotalVolumeImage'] }}</td>
+        </tr>
+        <tr>
+            <td>Первичный</td>
+            <td class="center">{{ Week['Primary'] }}</td>
+            <td class="center">{{ Week['PrimaryPercent'] }}</td>
+            <td class="center">{{ Last['PrimaryImage'] }}</td>
+        </tr>
+        <tr>
+            <td>Вторичный</td>
+            <td class="center">{{ Week['Secondary'] }}</td>
+            <td class="center">{{ Week['SecondaryPercent'] }}</td>
+            <td class="center">{{ Last['SecondaryImage'] }}</td>
+        </tr>
+        <tr>
+            <td>Листинг</td>
+            <td class="center">{{ Week['Listing'] }}</td>
+            <td class="center">{{ Week['ListingPercent'] }}</td>
+            <td class="center">{{ Last['ListingImage'] }}</td>
+        </tr>
+        <tr>
+            <td>Нелистинг</td>
+            <td class="center">{{ Week['NonListing'] }}</td>
+            <td class="center">{{ Week['NonListingPercent'] }}</td>
+            <td class="center">{{ Last['NonListingImage'] }}</td>
+        </tr>
+    </table>
+    <br />
+    {{ WeekChart }}
+</div>
+
+<div id="tradestat_month" class="tradestat_table" style="display: none;">
+    <h3>За {{ month_name }} месяц</h3>
+    <table class="class1" width="100%">
+        <tr>
+            <th width="*"></th>
+            <th width="23%">{{ lang['{MlnSom}'] }}</th>
+            <th width="23%">%</th>
+            <th width="5%"></th>
+        </tr>
+        <tr>
+            <td>Объем торгов</td>
+            <td class="center">{{ Month['TotalVolume'] }}</td>
+            <td class="center">{{ Month['TotalVolumePercent'] }}</td>
+            <td class="center">{{ Last['TotalVolumeImage'] }}</td>
+        </tr>
+        <tr>
+            <td>Первичный</td>
+            <td class="center">{{ Month['Primary'] }}</td>
+            <td class="center">{{ Month['PrimaryPercent'] }}</td>
+            <td class="center">{{ Last['PrimaryImage'] }}</td>
+        </tr>
+        <tr>
+            <td>Вторичный</td>
+            <td class="center">{{ Month['Secondary'] }}</td>
+            <td class="center">{{ Month['SecondaryPercent'] }}</td>
+            <td class="center">{{ Last['SecondaryImage'] }}</td>
+        </tr>
+        <tr>
+            <td>Листинг</td>
+            <td class="center">{{ Month['Listing'] }}</td>
+            <td class="center">{{ Month['ListingPercent'] }}</td>
+            <td class="center">{{ Last['ListingImage'] }}</td>
+        </tr>
+        <tr>
+            <td>Нелистинг</td>
+            <td class="center">{{ Month['NonListing'] }}</td>
+            <td class="center">{{ Month['NonListingPercent'] }}</td>
+            <td class="center">{{ Last['NonListingImage'] }}</td>
+        </tr>
+    </table>
+    {{ MonthChart }}
+</div>
+
+<div id="tradestat_year" class="tradestat_table" style="display: none;">
+    <h3>За {{ YearName }} год</h3>
+    <table class="class1" width="100%">
+        <tr>
+            <th width="*"></th>
+            <th width="23%">{{ lang['{MlnSom}'] }}</th>
+            <th width="23%">%</th>
+            <th width="5%"></th>
+        </tr>
+        <tr>
+            <td>Объем торгов</td>
+            <td class="center">{{ Year['TotalVolume'] }}</td>
+            <td class="center">{{ Year['TotalVolumePercent'] }}</td>
+            <td class="center">{{ Last['TotalVolumeImage'] }}</td>
+        </tr>
+        <tr>
+            <td>Первичный</td>
+            <td class="center">{{ Year['Primary'] }}</td>
+            <td class="center">{{ Year['PrimaryPercent'] }}</td>
+            <td class="center">{{ Last['PrimaryImage'] }}</td>
+        </tr>
+        <tr>
+            <td>Вторичный</td>
+            <td class="center">{{ Year['Secondary'] }}</td>
+            <td class="center">{{ Year['SecondaryPercent'] }}</td>
+            <td class="center">{{ Last['SecondaryImage'] }}</td>
+        </tr>
+        <tr>
+            <td>Листинг</td>
+            <td class="center">{{ Year['Listing'] }}</td>
+            <td class="center">{{ Year['ListingPercent'] }}</td>
+            <td class="center">{{ Last['ListingImage'] }}</td>
+        </tr>
+        <tr>
+            <td>Нелистинг</td>
+            <td class="center">{{ Year['NonListing'] }}</td>
+            <td class="center">{{ Year['NonListingPercent'] }}</td>
+            <td class="center">{{ Last['NonListingImage'] }}</td>
+        </tr>
+    </table>
+    {{ YearChart }}
+</div>
+
+
+<div class="results_view f_r">
+    Период:
+    <a href="#" id="tradestat_last_link" class="tradestat_links current">Последние торги</a> /
+    <a href="#" id="tradestat_week_link" class="tradestat_links">За неделю</a> /
+    <a href="#" id="tradestat_month_link" class="tradestat_links">За месяц</a> /
+    <a href="#" id="tradestat_year_link" class="tradestat_links">За год</a>
+</div>
+
+<script type="text/javascript">
+
+    $("#tradestat_last_link").bind("click", function(){
+        $(".tradestat_table").css("display", "none");
+        $("#tradestat_last").css("display", "block");
+        $(".tradestat_links").removeClass("current");
+        $("#tradestat_last_link").addClass("current");
+    });
+
+    $("#tradestat_week_link").bind("click", function(){
+        $(".tradestat_table").css("display", "none");
+        $("#tradestat_week").css("display", "block");
+        $(".tradestat_links").removeClass("current");
+        $("#tradestat_week_link").addClass("current");
+    });
+
+    $("#tradestat_month_link").bind("click", function(){
+        $(".tradestat_table").css("display", "none");
+        $("#tradestat_month").css("display", "block");
+        $(".tradestat_links").removeClass("current");
+        $("#tradestat_month_link").addClass("current");
+    });
+
+    $("#tradestat_year_link").bind("click", function(){
+        $(".tradestat_table").css("display", "none");
+        $("#tradestat_year").css("display", "block");
+        $(".tradestat_links").removeClass("current");
+        $("#tradestat_year_link").addClass("current");
+    });
+</script>

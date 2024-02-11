@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<style>
+   .auction-controls-wrapper .switch-box {
+        background: #F5F7F7;
+        width: 400px;
+        border-radius: 12px;
+        padding: 5px 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .auction-controls-wrapper .switch-box button {
+        background: none;
+        border-radius: 12px;
+        width: 100%;
+        height: 30px;
+        font-size: 16px;
+        transition: .3s;
+        font-weight: 400;
+    }
+
+    .auction-controls-wrapper .switch-box button.active {
+        background: #fff;
+        color:#57b6c0;
+        font-weight: 500;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+
+    .auction-controls-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .auction-controls-wrapper form {
+        display: flex;
+        justify-content: space-between;
+        width: 55%;
+    }
+
+    .auction-controls-wrapper input {
+        border-radius: 10px;
+        padding: 5px 15px;
+    }
+    .auction-controls-wrapper input#search {
+        width: 250px;
+        font-size: 16px;
+    }
+    .auction-controls-wrapper button.search-btn {
+        height: 40px;
+        width: 100px;
+        border-radius: 12px;
+        background: #57b6c0;
+        color:#fff;
+    }
+    .auction-controls-wrapper  input {
+        height: 40px;
+    }
+
+    .table-wrapper.hide {
+        display: none;
+    }
+    .class1.auction_result-table {
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h3>Результаты аукциона ГЦБ</h3>
+        <div class="auction-controls-wrapper">
+            <div>
+                <label for="start">Тип аукциона:</label>
+                <div class="switch-box">
+                    <button class="active" value="GD">ГКВ</button>
+                    <button value="GBA">ГКО</button>
+                </div>
+            </div>
+        </div>
+        <div>
+    
+            <table class="class1 auction_result-table" width="100%">
+          <tbody><tr>
+              <th>Дата</th>
+              <th>Регистрационный
+                номер ГЦБ
+              </th><th>Объем предложения
+                (тыс.сом)</th>
+                  <th>Спрос
+                (тыс.сом)</th>
+                  <th>Продажа
+                (тыс.сом)</th>
+              <th>Минимальная доходность по удовлетворенным заявкам (%)</th>
+              <th>Максимальная доходность по удовлетворенным заявкам (%)
+              </th><th>Средневзвешенная доходность по удовлетворенным заявкам (%)</th>
+                  <th style="text-align: right;">Купонная ставка</th>
+          </tr>
+              
+              <tr class="parse">
+                  <td>13/05/2023</td>
+                  <td>GBA02230426</td>
+                  <td>250000</td>
+                  <td>44969.00</td>
+                  <td>25000.00</td>
+                  <td>7.50</td>
+                  <td>7.80</td>
+                  <td>7.55</td>
+                  <td>5</td>
+              </tr>
+              
+              <tr class="parse">
+                  <td>10/05/2023</td>
+                  <td>GD052200518</td>
+                  <td>150000</td>
+                  <td>11071.62</td>
+                  <td>1000.00</td>
+                  <td>4.55</td>
+                  <td>4.60</td>
+                  <td>4.60</td>
+                  <td>0</td>
+              </tr>
+              
+              <tr class="parse">
+                  <td>03/05/2023</td>
+                  <td>GD052220510</td>
+                  <td>60000</td>
+                  <td>107.80</td>
+                  <td>127.80</td>
+                  <td>5.92</td>
+                  <td>5.95</td>
+                  <td>5.92</td>
+                  <td>0</td>
+              </tr>
+              
+              <tr class="parse">
+                  <td>24/04/2023</td>
+                  <td>GBA02241212</td>
+                  <td>600000</td>
+                  <td>161203.40</td>
+                  <td>60000.00</td>
+                  <td>14.98</td>
+                  <td>15.00</td>
+                  <td>14.99</td>
+                  <td>5</td>
+              </tr>
+              
+              <tr class="parse">
+                  <td>18/04/2023</td>
+                  <td>GBA07261216</td>
+                  <td>614000</td>
+                  <td>106400.00</td>
+                  <td>61400.00</td>
+                  <td>11.75</td>
+                  <td>11.78</td>
+                  <td>11.77</td>
+                  <td>7</td>
+              </tr>
+              
+              <tr class="parse">
+                  <td>17/04/2023</td>
+                  <td>GBA05261018</td>
+                  <td>260000</td>
+                  <td>13500.00</td>
+                  <td>13500.00</td>
+                  <td>12.50</td>
+                  <td>12.50</td>
+                  <td>12.50</td>
+                  <td>6</td>
+              </tr>
+              
+              <tr class="parse">
+                  <td>28/03/2023</td>
+                  <td>GD052181015 </td>
+                  <td>150000</td>
+                  <td>16896.85</td>
+                  <td>15000.00</td>
+                  <td>4.50</td>
+                  <td>5.00</td>
+                  <td>4.79</td>
+                  <td>0</td>
+              </tr>
+              
+              <tr class="parse">
+                  <td>27/03/2023</td>
+                  <td>GD052190128 </td>
+                  <td>150000</td>
+                  <td>16896.85</td>
+                  <td>15000.00</td>
+                  <td>4.50</td>
+                  <td>5.00</td>
+                  <td>4.70</td>
+                  <td>0</td>
+              </tr>
+              
+              <tr class="parse">
+                  <td>22/03/2023</td>
+                  <td>GD052240311</td>
+                  <td>15000</td>
+                  <td>2300.00</td>
+                  <td>1300.00</td>
+                  <td>7.44</td>
+                  <td>14.78</td>
+                  <td>10.31</td>
+                  <td>0</td>
+              </tr>
+              
+              <tr class="parse">
+                  <td>17/03/2023</td>
+                  <td>GBA02250227</td>
+                  <td>300000</td>
+                  <td>40000.00</td>
+                  <td>37500.00</td>
+                  <td>15.00</td>
+                  <td>15.50</td>
+                  <td>15.10</td>
+                  <td>5</td>
+              </tr>
+              
+              <tr class="parse">
+                  <td>13/03/2023</td>
+                  <td>GBA03260313</td>
+                  <td>500000</td>
+                  <td>140.00</td>
+                  <td>120.00</td>
+                  <td>15.80</td>
+                  <td>16.00</td>
+                  <td>15.94</td>
+                  <td>5</td>
+              </tr>
+              
+              <tr class="parse">
+                  <td>03/03/2023</td>
+                  <td>GD013180312 </td>
+                  <td>320000</td>
+                  <td>331.00</td>
+                  <td>331.00</td>
+                  <td>15.30</td>
+                  <td>15.60</td>
+                  <td>15.44</td>
+                  <td>0</td>
+              </tr>
+              
+              <tr class="parse">
+                  <td>17/02/2023</td>
+                  <td>GBA05280220</td>
+                  <td>350000</td>
+                  <td>46.00</td>
+                  <td>46.00</td>
+                  <td>16.00</td>
+                  <td>16.00</td>
+                  <td>16.00</td>
+                  <td>6</td>
+              </tr>
+              
+              <tr class="parse">
+                  <td>15/02/2023</td>
+                  <td>GBA02190925&nbsp;</td>
+                  <td>300000</td>
+                  <td>416.00</td>
+                  <td>416.00</td>
+                  <td>15.00</td>
+                  <td>25.00</td>
+                  <td>20.56</td>
+                  <td>8</td>
+              </tr>
+              
+              <tr class="parse">
+                  <td>13/01/2023</td>
+                  <td>GBA03260116</td>
+                  <td>350000</td>
+                  <td>97.00</td>
+                  <td>97.00</td>
+                  <td>16.00</td>
+                  <td>16.00</td>
+                  <td>16.00</td>
+                  <td>5</td>
+              </tr>
+              
+              <tr class="parse">
+                  <td>11/11/2022</td>
+                  <td>GBA03251114</td>
+                  <td>1000000</td>
+                  <td>73.70</td>
+                  <td>73.70</td>
+                  <td>16.00</td>
+                  <td>16.00</td>
+                  <td>16.00</td>
+                  <td>5</td>
+              </tr>
+              
+              <tr class="parse">
+                  <td>15/07/2022</td>
+                  <td>GBA02240718</td>
+                  <td>200000</td>
+                  <td>176.80</td>
+                  <td>176.80</td>
+                  <td>14.00</td>
+                  <td>14.00</td>
+                  <td>14.00</td>
+                  <td>5</td>
+              </tr>
+              
+              <tr class="parse">
+                  <td>09/06/2022</td>
+                  <td>GD052230612</td>
+                  <td>50000</td>
+                  <td>180.60</td>
+                  <td>180.60</td>
+                  <td>7.00</td>
+                  <td>8.00</td>
+                  <td>7.85</td>
+                  <td>0</td>
+              </tr>
+              
+              <tr class="parse">
+                  <td>11/03/2022</td>
+                  <td>GBA02240314</td>
+                  <td>250000</td>
+                  <td>537.50</td>
+                  <td>537.50</td>
+                  <td>8.89</td>
+                  <td>8.89</td>
+                  <td>8.89</td>
+                  <td>5</td>
+              </tr>
+              
+              <tr class="parse">
+                  <td>11/02/2022</td>
+                  <td>GBA03250214</td>
+                  <td>300000</td>
+                  <td>100.10</td>
+                  <td>100.10</td>
+                  <td>11.50</td>
+                  <td>11.50</td>
+                  <td>11.50</td>
+                  <td>5</td>
+              </tr>
+              
+              <tr class="parse">
+                  <td>03/12/2021</td>
+                  <td>GBA03241206 </td>
+                  <td>320000</td>
+                  <td>291.00</td>
+                  <td>291.00</td>
+                  <td>11.50</td>
+                  <td>11.50</td>
+                  <td>11.50</td>
+                  <td>5</td>
+              </tr>
+              
+              <tr class="parse">
+                  <td>26/11/2021</td>
+                  <td>GBA03241129</td>
+                  <td>500000</td>
+                  <td>122.30</td>
+                  <td>122.30</td>
+                  <td>12.50</td>
+                  <td>12.50</td>
+                  <td>12.50</td>
+                  <td>5</td>
+              </tr>
+              
+              <tr class="parse">
+                  <td>25/11/2021</td>
+                  <td>GD052221128</td>
+                  <td>70000</td>
+                  <td>208.00</td>
+                  <td>208.00</td>
+                  <td>8.00</td>
+                  <td>8.00</td>
+                  <td>8.00</td>
+                  <td>0</td>
+              </tr>
+              
+              <tr class="parse">
+                  <td>19/11/2021</td>
+                  <td>GBA07281122</td>
+                  <td>750000</td>
+                  <td>260.10</td>
+                  <td>260.10</td>
+                  <td>12.50</td>
+                  <td>12.50</td>
+                  <td>12.50</td>
+                  <td>7</td>
+              </tr>
+              
+              <tr class="parse">
+                  <td>22/10/2021</td>
+                  <td>GBA02231025</td>
+                  <td>200000</td>
+                  <td>161.20</td>
+                  <td>161.20</td>
+                  <td>8.89</td>
+                  <td>8.89</td>
+                  <td>8.89</td>
+                  <td>5</td>
+              </tr>
+              
+              <tr class="parse">
+                  <td>08/10/2021</td>
+                  <td>GBA03241011</td>
+                  <td>250000</td>
+                  <td>208.30</td>
+                  <td>208.30</td>
+                  <td>11.00</td>
+                  <td>11.50</td>
+                  <td>11.22</td>
+                  <td>5</td>
+              </tr>
+              
+              <tr class="parse">
+                  <td>23/07/2021</td>
+                  <td>GBA10310726</td>
+                  <td>250000</td>
+                  <td>128.10</td>
+                  <td>128.10</td>
+                  <td>11.80</td>
+                  <td>11.80</td>
+                  <td>11.80</td>
+                  <td>8</td>
+              </tr>
+              
+              <tr class="parse">
+                  <td>21/05/2021</td>
+                  <td>GBA02230524</td>
+                  <td>250000</td>
+                  <td>13.40</td>
+                  <td>13.40</td>
+                  <td>7.60</td>
+                  <td>7.60</td>
+                  <td>7.60</td>
+                  <td>5</td>
+              </tr>
+              
+              <tr class="parse">
+                  <td>14/05/2021</td>
+                  <td>GBA07280517</td>
+                  <td>400000</td>
+                  <td>74.10</td>
+                  <td>74.10</td>
+                  <td>11.30</td>
+                  <td>11.30</td>
+                  <td>11.30</td>
+                  <td>7</td>
+              </tr>
+              
+              <tr class="parse">
+                  <td>08/04/2021</td>
+                  <td>GD052220411</td>
+                  <td>60000</td>
+                  <td>29.20</td>
+                  <td>29.20</td>
+                  <td>5.95</td>
+                  <td>5.95</td>
+                  <td>5.95</td>
+                  <td>0</td>
+              </tr>
+              
+              <tr class="parse">
+                  <td>11/02/2021</td>
+                  <td>GD052220214</td>
+                  <td>110000</td>
+                  <td>78.70</td>
+                  <td>78.70</td>
+                  <td>5.95</td>
+                  <td>5.95</td>
+                  <td>5.95</td>
+                  <td>0</td>
+              </tr>
+              
+              <tr class="parse">
+                  <td>21/01/2021</td>
+                  <td>GD052220124</td>
+                  <td>100000</td>
+                  <td>481.00</td>
+                  <td>481.00</td>
+                  <td>5.92</td>
+                  <td>5.92</td>
+                  <td>5.92</td>
+                  <td>0</td>
+              </tr>
+              
+              <tr class="parse">
+                  <td>14/01/2021</td>
+                  <td>GD052220117</td>
+                  <td>100000</td>
+                  <td>476.40</td>
+                  <td>476.40</td>
+                  <td>5.95</td>
+                  <td>5.95</td>
+                  <td>5.95</td>
+                  <td>0</td>
+              </tr>
+              
+              <tr class="parse">
+                  <td>15/10/2020</td>
+                  <td>GD052211018</td>
+                  <td>100000</td>
+                  <td>74.20</td>
+                  <td>74.20</td>
+                  <td>5.95</td>
+                  <td>5.95</td>
+                  <td>5.95</td>
+                  <td>0</td>
+              </tr>
+              
+              <tr class="parse">
+                  <td>21/08/2020</td>
+                  <td>GBA05250824</td>
+                  <td>450000</td>
+                  <td>482.00</td>
+                  <td>482.00</td>
+                  <td>10.50</td>
+                  <td>10.50</td>
+                  <td>10.50</td>
+                  <td>6</td>
+              </tr>
+              
+              <tr class="parse">
+                  <td>26/06/2020</td>
+                  <td>GBA02220629</td>
+                  <td>200000</td>
+                  <td>5.00</td>
+                  <td>5.00</td>
+                  <td>7.40</td>
+                  <td>7.40</td>
+                  <td>7.40</td>
+                  <td>5</td>
+              </tr>
+              
+              <tr class="parse">
+                  <td>23/01/2020</td>
+                  <td>GD052210125</td>
+                  <td>150000</td>
+                  <td>33.40</td>
+                  <td>33.40</td>
+                  <td>5.66</td>
+                  <td>5.66</td>
+                  <td>5.66</td>
+                  <td>0</td>
+              </tr>
+              
+              <tr class="parse">
+                  <td>06/12/2019</td>
+                  <td>GBA07261209</td>
+                  <td>200000</td>
+                  <td>128.30</td>
+                  <td>128.30</td>
+                  <td>11.70</td>
+                  <td>11.70</td>
+                  <td>11.70</td>
+                  <td>7</td>
+              </tr>
+              
+              <tr class="parse">
+                  <td>22/11/2019</td>
+                  <td>GBA07261125</td>
+                  <td>200000</td>
+                  <td>9.30</td>
+                  <td>9.30</td>
+                  <td>11.50</td>
+                  <td>11.50</td>
+                  <td>11.50</td>
+                  <td>7</td>
+              </tr>
+              
+              <tr class="parse">
+                  <td>21/11/2019</td>
+                  <td>GD026200525</td>
+                  <td>100000</td>
+                  <td>104.00</td>
+                  <td>104.00</td>
+                  <td>6.09</td>
+                  <td>6.11</td>
+                  <td>6.09</td>
+                  <td>0</td>
+              </tr>
+              
+              <tr class="parse">
+                  <td>12/09/2019</td>
+                  <td>GD052200914 </td>
+                  <td>50000</td>
+                  <td>102.47</td>
+                  <td>72.10</td>
+                  <td>5.30</td>
+                  <td>5.30</td>
+                  <td>5.30</td>
+                  <td>0</td>
+              </tr>
+              
+              <tr class="parse">
+                  <td>22/07/2019</td>
+                  <td>GBA03220715</td>
+                  <td>300000</td>
+                  <td>275.50</td>
+                  <td>275.50</td>
+                  <td>8.00</td>
+                  <td>8.89</td>
+                  <td>8.00</td>
+                  <td>5</td>
+              </tr>
+              
+              <tr class="parse">
+                  <td>26/04/2019</td>
+                  <td>GBA02210429</td>
+                  <td>300000</td>
+                  <td>57.10</td>
+                  <td>57.10</td>
+                  <td>6.00</td>
+                  <td>6.00</td>
+                  <td>6.00</td>
+                  <td>5</td>
+              </tr>
+              
+              <tr class="parse">
+                  <td>25/05/2018</td>
+                  <td>GBA02200528</td>
+                  <td>400000</td>
+                  <td>104.70</td>
+                  <td>104.70</td>
+                  <td>8.50</td>
+                  <td>8.50</td>
+                  <td>8.50</td>
+                  <td>6</td>
+              </tr>
+              
+              <tr class="parse">
+                  <td>22/09/2017</td>
+                  <td>GBA02190925&nbsp;</td>
+                  <td>200000</td>
+                  <td>206.38</td>
+                  <td>102.90</td>
+                  <td>9.60</td>
+                  <td>9.60</td>
+                  <td>9.60</td>
+                  <td>8</td>
+              </tr>
+              
+              <tr class="parse">
+                  <td>14/09/2017</td>
+                  <td>GD052180917</td>
+                  <td>150000</td>
+                  <td>131.00</td>
+                  <td>25.00</td>
+                  <td>5.66</td>
+                  <td>5.66</td>
+                  <td>6.50</td>
+                  <td>0</td>
+              </tr>
+              
+              <tr class="parse">
+                  <td>12/08/2016</td>
+                  <td>GBA05210815</td>
+                  <td>310000</td>
+                  <td>114.70</td>
+                  <td>114.70</td>
+                  <td>18.00</td>
+                  <td>18.00</td>
+                  <td>18.00</td>
+                  <td>14</td>
+              </tr>
+              
+              <tr class="parse">
+                  <td>19/02/2016</td>
+                  <td>GBA05210222</td>
+                  <td>300000</td>
+                  <td>936.00</td>
+                  <td>860.00</td>
+                  <td>20.00</td>
+                  <td>20.00</td>
+                  <td>20.00</td>
+                  <td>14</td>
+              </tr>
+              
+              <tr class="parse">
+                  <td>27/11/2015</td>
+                  <td>GBA05201130</td>
+                  <td>150000</td>
+                  <td>1786.60</td>
+                  <td>1736.60</td>
+                  <td>17.60</td>
+                  <td>18.50</td>
+                  <td>17.79</td>
+                  <td>14</td>
+              </tr>
+              
+          </tbody></table>
+          </div>
+    </div>
+    <script>
+        //switch
+        let switchButtons = document.querySelectorAll('.switch-box button')
+        switchButtons.forEach((btn) => {
+            btn.addEventListener('click', (e) => {
+                SelectType(e.target.value)
+                switchButtons.forEach((item) => {
+                    item.classList.remove('active')
+                })
+                btn.classList.add('active')
+            })
+        })
+        let dType = 'GD'
+         SelectType(dType)
+        function SelectType(type) {
+            let ths = document.querySelectorAll('.auction_result-table tr th')
+          
+            let names = document.querySelectorAll('.auction_result-table tr.parse')
+             names.forEach((item) => {
+            let td = item.querySelectorAll('td')
+            if(td[1] && !td[1].innerText.includes(type)) {
+                item.style.display = 'none'
+            } else {
+                item.style.display = 'table-row'
+            }
+            if(td[1] && type == 'GD') {
+                ths[8].style.display = 'none'
+                td[8].style.display = 'none'
+            } else {
+                ths[8].style.display = 'table-cell'
+                td[8].style.display = 'table-cell'
+            }
+        })
+        }
+       
+
+
+    </script>
+</body>
+
+</html>

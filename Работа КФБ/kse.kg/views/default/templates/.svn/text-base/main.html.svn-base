@@ -1,0 +1,196 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>BUsiness Site Engine</title>
+    <link rel="stylesheet" href="{{ root }}/views/default/styles/general.css" type="text/css" />
+    <link rel="shortcut icon" href="{{ root }}/views/default/images/favicon.png" type="image/png" />
+    <link type="text/css" href="{{ root }}/scripts/jquery-ui/css/buse/jquery-ui.css" rel="Stylesheet" />
+    <script type="text/javascript" src="{{ root }}/scripts/jquery-ui/js/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="{{ root }}/scripts/jquery-ui/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="{{ root }}/scripts/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" src="{{ root }}/scripts/ckeditor/adapters/jquery.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $("#topmenu>ul>li").bind('mouseover', function() {
+                $(this).addClass('overmenuitem ui-corner-all');
+                $(this).children().css('color', '#FFFFFF');
+            });
+
+            $("#topmenu>ul>li").bind('mouseleave', function() {
+                $(this).removeClass('overmenuitem ui-corner-all');
+                $(this).children().css('color', '#000000');
+            });
+
+            $("#header").addClass('ui-corner-top');
+            $("#footer").addClass('ui-corner-bottom');
+            $("input:submit").button();
+
+            var tips = $(".validateTips");
+            function updateTips(t) {
+                tips
+                    .text(t)
+                    .addClass('ui-state-highlight');
+                setTimeout(function() {
+                    tips.removeClass('ui-state-highlight', 1500);
+                }, 500);
+            }
+
+            function doLogIn() {
+                $.post("{{ root }}/handlers/login.php", {
+                    doLogin: 1,
+                    mLogin: $("#mLogin").val(),
+                    mPass: $("#mPass").val()
+                }, function(result) {
+                    if (result == 0) {
+                        updateTips("{{ Lang['{BadLoginOrPassword}'] }}");
+                    } else if (result == 1) {
+                        window.location.replace("{{ root }}/{{ lang_code }}/{{ main_page }}");
+                    }
+                });
+            }
+
+            $("#login-dialog").dialog({
+                autoOpen: false,
+                height: 250,
+                width: 400,
+                modal: true,
+                title: "{{ Lang['{LogInButton}'] }}",
+                buttons: {
+                    "{{ Lang['{doLogIn}'] }}": function() {
+                        doLogIn();
+                    },
+                    "{{ Lang['{doCancel}'] }}": function() {
+                            $(this).dialog('close');
+                    }
+                },
+                close: function() {
+                        allFields.val('').removeClass('ui-state-error');
+                }
+            });
+
+            $('#loginButton')
+            .click(function() {
+                    $('#login-dialog').dialog('open');
+            });
+
+        });
+
+        // sticky footer
+       $(document).ready(function() {
+          positionFooter();
+
+          $(window)
+            .scroll(positionFooter)
+            .resize(positionFooter);
+
+          function positionFooter() {
+            var docHeight = $(document.body).height() - $("#sticky-footer-push").height();
+            if(docHeight < $(window).height()){
+              var diff = $(window).height() - docHeight;
+              if (!$("#sticky-footer-push").length > 0) {
+                $("#footer").before('<div id="sticky-footer-push"></div>');
+              }
+              $("#sticky-footer-push").height(diff - 10);
+            }
+          }
+        });
+    </script>
+  </head>
+  <body>
+      <div id="page">
+          <div id="header">
+              <div class="logo">
+                <a href="{{ root }}">
+                    <img src="{{ root }}/views/default/images/buse_logo.png" />
+                </a>
+              </div>
+              
+              <div id="loginside">
+                  {% if Logged %}
+                  <p>
+                      <strong>
+                          {{ LoggedUser.getUsername }}
+                      </strong>
+                      | <a href="{{ root }}/handlers/logout.php">Выход</a>
+                  </p>
+                  {% else %}
+                  <p><a href="#" id="loginButton">Вход</a> | <a href="{{ root }}/{{ lang_code }}/Register">Регистрация</a></p>
+                  {% endif %}
+              </div>
+              <div id="clean"></div>
+              
+          </div>
+          <div id="body">
+            <div id="topmenu">
+                <ul>
+                    <li><a href="{{ root }}">Домой</a></li>
+                    <li><a href="#">Страницы</a></li>
+                    <li><a href="#">Проекты</a></li>
+                    <li><a href="#">О нас</a></li>
+                </ul>
+                <div id="clean"></div>
+                {% for error in errors %}
+                <div class="error ui-corner-all">
+                    {{ error }}
+                </div>
+                {% endfor %}
+                {% for message in messages %}
+                <div class="message ui-corner-all">
+                    {{ message }}
+                </div>
+                {% endfor %}
+            </div>
+              <div id="content">
+                  <div id="left_side">
+                      <div class="page_title">{{ Page.Title }}</div>
+                      {% if Page.Status == 4 %}
+                      {% include Page.Text %}
+                      {% elseif Page.Status == 8 %}
+                      {% include ControllerInclusion %}
+                      {% else %}
+                      <div class="page_text">{{ Page.Text }}</div>
+                      {% if Logged and Page.Status == 1 %}
+                      <div class="page_meta">
+                          <ul>
+                              <li class="ui-corner-all"><a href="{{ root }}/{{ lang_code }}/EditPage/{{ Page.Uname }}">Редактировать</a></li>
+                              <li class="ui-corner-all"><a href="{{ root }}/{{ lang_code }}/RenamePage/{{ Page.Uname }}">Переименовать</a></li>
+                              <li class="ui-corner-all"><a href="{{ root }}/{{ lang_code }}/HidePage/{{ Page.Uname }}">Скрыть</a></li>
+                          </ul>
+                      </div>
+                      {% endif %}
+                      {% endif %}
+                  </div>
+                  <div id="right_side">
+                      <div id="sideblock" class="ui-corner-all">
+                          <div id="sb_title">{{ TestSidebar.getTitle }}</div>
+                          <div id="sb_content">{{ TestSidebar.getText }}</div>
+                      </div>
+
+                      <div id="sideblock" class="ui-corner-all">
+                          <div id="sb_title">Блок</div>
+                          <div id="sb_content">Содержимое блока</div>
+                      </div>
+                  </div>
+                  <div id="clean"></div>
+              </div>
+          </div>
+          <div id="footer">
+            BUsiness Site Engine is published under GNU GPL license &copy; 2009-2010 <br />
+            Visit <a href="http://buse.os.linux.kg">Website</a> |
+            <a href="http://os.linux.kg/Project/buse">Project page</a> on <a href="http://os.linux.kg">Code Jeek</a><br />
+            This project developed by Epos Software Foundation development team.
+          </div>
+      </div>
+
+        <div id="login-dialog">
+            <p class="validateTips"></p>
+            <div id="two_columns">
+                <label>Логин:</label>
+                <input type="text" name="mLogin" value="" id="mLogin" class="text ui-widget-content ui-corner-all" />
+                <label>Пароль:</label>
+                <input type="password" name="mPass" value="" id="mPass" class="text ui-widget-content ui-corner-all" />
+            </div>
+        </div>
+  </body>
+</html>

@@ -1,0 +1,109 @@
+<?php
+$Module = "Blog";
+
+require_once("BlogClass.php");
+
+function Blog_loadController() {
+    $Controller = new ControllerClass();
+    $link = MainClass::getSingleton()->getDbConnection();
+    $Uri = MainClass::getSingleton()->getFullUriPath();
+
+    $Controller->appendVariable("BlogName", $Uri[2]);
+    if (count($Uri) >= 4) {
+        if ($Uri[3] == "ControlPanel") {
+            
+            $Controller->appendVariable("ControllerInclusion", "modules/Blog/ControlPanel.html");
+            $sql = "SELECT * FROM `Blogs` WHERE (`blog_name`='" . $Uri[2] . "')";
+            $result = mysqli_query($link, $sql);
+            $rows = mysqli_num_rows($result);
+            if ($rows == 1) {
+                $obj = mysqli_fetch_object($result);
+                $Controller->appendVariable("BlogId", $obj->blog_id);
+                $Blog = new BlogClass($obj->blog_id);
+            }
+
+            require_once("ControlPanel.php");
+        } elseif ((trim($Uri[3]) == "")||(substr($Uri[3],0,5) == "Page:")) {
+
+            
+
+            $Blog = new BlogClass(0, $Uri[2]);
+
+            $Page = 0;
+            if (substr($Uri[3],0,5) == "Page:") {
+                $Page = explode(":", $Uri[3]);
+                $Page = $Page[1] * 10;
+            }
+
+            
+
+            if (isset($_POST["doByDate"])) {
+                if (($_POST["EntriesDateFrom"] != "")&&($_POST["EntriesDateTo"] != "")) {
+                    $by_date = true;
+                }
+            }
+
+            if (!isset($by_date)) {
+                $sql = "SELECT `blogentry_id` FROM `Blog_Entries` WHERE (`blog_id`='" . $Blog->get_blog_id() . "')";
+                $result = mysqli_query($link, $sql);
+                $PagesNum = mysqli_num_rows($result);
+                $sql = "SELECT * FROM `Blog_Entries`
+                WHERE (`blog_id`='" . $Blog->get_blog_id() . "')
+                ORDER BY `cr_date` DESC LIMIT " . $Page . ",10";
+            } else {
+                $sql = "SELECT `blogentry_id` FROM `Blog_Entries` 
+                    WHERE (`blog_id`='" . $Blog->get_blog_id() . "' AND `cr_date`>='" . $_POST["EntriesDateFrom"] . "'
+                        AND `cr_date`<='" . $_POST["EntriesDateTo"] . "')";
+                $result = mysqli_query($link, $sql);
+                $PagesNum = mysqli_num_rows($result);
+                $sql = "
+                    SELECT * FROM `Blog_Entries`
+                    WHERE (`blog_id`='" . $Blog->get_blog_id() . "' AND `cr_date`>='" . $_POST["EntriesDateFrom"] . "'
+                        AND `cr_date`<='" . $_POST["EntriesDateTo"] . "'
+                        )
+                    ORDER BY `cr_date` DESC LIMIT " . $Page . ",10
+                ";
+            }
+            $result = mysqli_query($link, $sql);
+            echo mysqli_error($link);
+            $rows = mysqli_num_rows($result);
+
+            $Controller->appendVariable("PagesNum", round($PagesNum / 10));
+            $Controller->appendVariable("CurrentPage", $Page / 10);
+            $array = array();
+            $a = 0;
+            for ($i = 1; $i <= round($PagesNum / 10); $i++) {
+                $a++;
+                $array[$a] = $a;
+            }
+            $Controller->appendVariable("Pages", $array);
+
+            $Entries = array();
+            for ($i = 0; $i < $rows; $i++) {
+                mysqli_data_seek($result, $i);
+                $obj = mysqli_fetch_object($result);
+                $Entries[$i]['Date'] = date("d.m.Y", strtotime($obj->cr_date));
+                $Entries[$i]['Title'] = $obj->title;
+                $Entries[$i]['Id'] = $obj->blogentry_id;
+                $Entries[$i]['Name'] = $obj->name;
+                $Entries[$i]['Intro'] = strip_tags(substr($obj->text, 0, 500)) . "...";
+            }
+
+            $Controller->appendVariable("Entries", $Entries);
+            $Controller->appendVariable("ControllerInclusion", "modules/Blog/List.html");
+        } elseif (is_numeric(intval($Uri[3]))) {
+            $sql = "SELECT * FROM `Blog_Entries` WHERE (`blogentry_id`='" . intval($Uri[3]) . "')";
+            $result = mysqli_query($link, $sql);
+            $rows = mysqli_num_rows($result);
+            $obj = mysqli_fetch_object($result);
+            $Controller->appendVariable("ControllerInclusion", "modules/Blog/Entry.html");
+            $Controller->appendVariable("EntryTitle", $obj->title);
+            $Controller->appendVariable("EntryText", $obj->text);
+            $Controller->appendVariable("blog_id", intval($Uri[3]));
+        }
+    }
+
+
+    return $Controller;
+}
+

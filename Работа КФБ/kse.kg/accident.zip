@@ -1,0 +1,2815 @@
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:fb="http://www.facebook.com/2008/fbml"
+      xmlns:og="http://opengraphprotocol.org/schema/">
+        
+<head>
+  
+
+<meta name="verify-v1" content="PsAOZ5U2zmEBFLiZ8WTYXxkg0lqwRa+FmqKtZwvlmOM=" />
+
+<meta name="Author" content="Kroogi" />
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+
+<meta property="fb:app_id" content="126090704110671" />
+
+  
+  
+  <link rel="image_src" href="http://d1ob8phwwne29y.cloudfront.net/content/thumbs/990318/ForeverLive_990317_cover_thumb.png"/>
+
+
+  
+
+<script src="http://assets1.kroogi.com/javascripts/prototype.js?1290105589" type="text/javascript"></script>
+<script src="http://assets3.kroogi.com/javascripts/effects.js?1290105589" type="text/javascript"></script>
+<script src="http://assets3.kroogi.com/javascripts/dragdrop.js?1290105589" type="text/javascript"></script>
+<script src="http://assets0.kroogi.com/javascripts/controls.js?1290105589" type="text/javascript"></script>
+<script src="http://assets1.kroogi.com/javascripts/classes.js?1290105589" type="text/javascript"></script>
+<script src="http://assets2.kroogi.com/javascripts/application.js?1290105589" type="text/javascript"></script> <!-- , :cache => 'cache/all' -->
+  
+  
+  
+  
+  
+  <script src="http://assets0.kroogi.com/javascripts/calendar_date_select/calendar_date_select.js?1290105589" type="text/javascript"></script>
+<script src="http://assets3.kroogi.com/javascripts/calendar_date_select/locale/ru.js?1290105589" type="text/javascript"></script>
+<script src="http://assets3.kroogi.com/javascripts/calendar_date_select/format_db.js?1290105589" type="text/javascript"></script>
+<link href="http://assets1.kroogi.com/stylesheets/calendar_date_select/silver.css?1290105589" media="screen" rel="stylesheet" type="text/css" />
+
+
+  
+  
+
+  
+      
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript"></script>
+      <script type="text/javascript"> jQuery.noConflict(); </script>
+    
+      <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.0/themes/ui-lightness/jquery-ui.css" />
+      <link href="http://assets2.kroogi.com/stylesheets/jquery_dialog_overrides.css?1290105589" media="screen" rel="stylesheet" type="text/css" />
+      <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js" type="text/javascript"></script>
+    
+
+  
+
+  
+  
+  
+
+  
+  
+
+  
+
+  
+
+    
+      <script src="http://assets2.kroogi.com/javascripts/swfobject.js?1290105589" type="text/javascript"></script>
+    
+  
+    <script type="text/javascript">
+      function update_contents() {
+        jQuery('#content_items_990317 .update_progress').show();
+
+        jQuery.get('/content/fresh_contents/990317', function(data) {
+          jQuery('#content_items_990317').html(data);
+        });
+      }
+    </script>
+  
+  
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+  <link href="http://assets0.kroogi.com/stylesheets/style-old.css?1290105589" media="screen" rel="stylesheet" type="text/css" />
+  <link href="http://assets2.kroogi.com/stylesheets/application.css?1290105589" media="screen" rel="stylesheet" type="text/css" />
+  <!--[if IE]><link href="http://assets3.kroogi.com/stylesheets/style-ie.css?1290105589" media="all" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if lte IE 6]><link href="http://assets2.kroogi.com/stylesheets/style-ie6.css?1290105589" media="all" rel="stylesheet" type="text/css" /><![endif]-->
+  
+  <link href="http://assets2.kroogi.com/stylesheets/contest.css?1290105589" media="screen" rel="stylesheet" type="text/css" />
+
+  <style type="text/css">
+    .calendar_date_select {
+      z-index: 9999 !important;
+    }
+  </style>
+
+  <style type="text/css">
+    .calendar_date_select {
+      z-index: 9999 !important;
+    }
+  </style>
+
+  <style type="text/css">
+    .calendar_date_select {
+      z-index: 9999 !important;
+    }
+  </style>
+
+  <title>Скачать 'Accident' пользователя ForeverLive :: Круги</title>
+  <meta name="keywords" content="ForeverLive, Accident, download music, donate, art, kroogi, kroogi.com" />
+  <meta name="description" content="Скачать 'Accident' пользователя ForeverLive и поддержать творчество материально на Kroogi.com" />
+</head>
+<body >
+   <div id="main_content_bg">
+	<div id="main">
+        
+<div id="fb-root"></div>
+<script type="text/javascript" src="http://connect.facebook.net/ru_RU/all.js"></script>
+<script type="text/javascript">
+  FB.init({
+    appId: '126090704110671',
+    status: true,
+    cookie: true,
+    xfbml: true
+  });
+</script>
+        
+  
+  <div id="top_header">
+  
+<div id="flashbox">
+  
+  
+    
+      <p class="flashmsg admin">
+        <span class="message"><b><a href="http://aquarium.kroogi.ru/content/show/866369"> Новый альбом "Аквариума" поможет жертвам пожаров.</a></b></span>
+      </p>
+    
+  
+</div>
+
+
+  <div id="top_nav">
+  <div id="top_nav_left">
+    <a href="http://kroogi.ru/explore">
+      <img src="/images/logo_top_nav.gif" alt="Kroogi" class="tp"/>
+    </a>
+  </div>
+  <div id="top_nav_right">
+    
+    <form action="/admin/home/change_language" id="langauge_changer_en" method="post">
+      <input type="hidden" name="locale" value="en"/>
+      <input type="hidden" name="target" value="/content/show/990317"/>
+      <a href="javascript:void(0)" onclick="$('langauge_changer_en').submit();" class="eng">
+        <img src="/images/spacer.gif"/>
+      </a>
+    </form>
+    <form action="/admin/home/change_language" id="langauge_changer_ru" method="post">
+      <input type="hidden" name="locale" value="ru"/>
+      <input type="hidden" name="target" value="/content/show/990317"/>
+      <a href="javascript:void(0)" onclick="$('langauge_changer_ru').submit();" class="rus_selected">
+        <img src="/images/spacer.gif"/>
+      </a>
+    </form>
+  </div>
+
+  <div id="top_nav_middle">
+    
+        <form action="http://kroogi.ru/login" id="signin_form" method="post"><div style="margin:0;padding:0"><input name="authenticity_token" type="hidden" value="63470281cb02063c4ea03b9d41f4e57dd3e786ab" /></div>          <input class="topbar" id="login" name="user[login]" size="15" title="Введите Ваше имя на &quot;Кругах&quot;" type="text" value="" />
+          <input class="topbar" id="top_password" name="password" size="15" title="Введите Ваш пароль" type="password" />
+          
+          <button class="button_gr" type="submit" name="commit">
+            <span>&nbsp;&nbsp;&nbsp;Войти&nbsp;&nbsp;&nbsp;</span>
+          </button>
+            <span>
+              <input id="remember_me" name="remember_me" style="margin:0;" type="checkbox" value="1" />
+            </span>
+          <label for="remember_me">&nbsp;Запомнить</label>
+          
+          <span class="seperator">|</span>
+            <span style="font-weight: bold;">
+              <a href="/signup">Присоединяйтесь!</a>
+            </span>
+        </form>      
+  </div>
+  <div class="clear"></div>
+</div>
+
+
+  <div id="top_nav_content">
+	<div id="top_nav_search">
+<form action="/search" method="post" style="margin:0;padding:0;position:relative;"><div style="margin:0;padding:0"><input name="authenticity_token" type="hidden" value="63470281cb02063c4ea03b9d41f4e57dd3e786ab" /></div><!-- input size more than 26 cause layout shift in linux FF //Dimytch -->
+<input autocomplete="off" class="topbar" id="q" name="q" onFocus="if(this.value == 'Поиск ...') this.value='';" size="25" type="text" value="Поиск ..." />
+  
+    <button class="button_gr" type="submit" onClick="if(document.getElementById('q').value==''){return false}">
+	  	<span>&nbsp;Искать&nbsp;</span>
+    </button>
+
+</form>
+</div>
+  	<div class="top_corner"><img src="/images/top_menu_left.gif" /></div>
+	<div id="directories_menu">
+		<div class="directories_menu"><a href="http://music-directory.kroogi.ru/">Музыка</a><span class="separator">&nbsp;</span><a href="http://artdesign-directory.kroogi.ru/">Арт</a><span class="separator">&nbsp;</span><a href="http://photo-directory.kroogi.ru/">Фото</a><span class="separator">&nbsp;</span><a href="http://video-directory.kroogi.ru/">Видео</a><span class="separator">&nbsp;</span><a href="http://literature-directory.kroogi.ru/">Тексты</a><span class="separator">&nbsp;</span><a href="http://other-directory.kroogi.ru/">Разное</a></div>
+	</div>
+	<div class="top_corner"><img src="/images/top_menu_right.gif" /> </div>
+</div>
+
+
+</div>
+
+  
+    <div id="header_bar">
+      <div><img src="/images/960_o_top.gif"/></div>
+        
+          
+  <script type="text/javascript" src="/javascripts/dropdowntabs.js"></script>
+
+  <div class="main_content profile_n">
+  <div id="project_wrapper">
+  <div class="account_avatar"> <div class="founder_avatar_sm"><a href="http://ForeverLive.kroogi.ru/"><img alt="ForeverLive" avatar_size="tiny" border="0" height="50" outer_class="founder_avatar_sm" src="http://d1ob8phwwne29y.cloudfront.net/content/thumbs/305423/podava_tiny.png" /></a></div> </div>
+  <div class="account_right">
+    <div class="halfmoon" id="moonmenu">
+      
+        
+        
+        
+        
+         
+      
+
+
+       
+        <div class="account_text_and_button">
+          
+          <div class="account_button" id="relationship_button">
+              
+    
+    
+      <a class="button" href="#" onclick="new Ajax.Request('/invite/join/26411?circle=5', {asynchronous:true, evalScripts:true, onLoading:function(request){$('ajax_spinner').show();}, parameters:'authenticity_token=' + encodeURIComponent('63470281cb02063c4ea03b9d41f4e57dd3e786ab')}); return false;"><span>Присоединиться</span></a>
+    <div id="ajax_spinner" class="ajax_spinner" style="display:none;float:right;padding:2px;"><img src="/images/ajax-loader.gif" /></div>
+    
+  
+
+
+          </div>
+          <div class="account_text">
+             
+              
+                
+                  Вас нет в кругах у <a href="http://foreverlive.kroogi.ru/"><span class="user_name"><img alt="Kruser" class="userlink_icon" src="http://assets3.kroogi.com/images/kruser.gif?1290105589" />&nbsp;ForeverLive</span></a>
+                
+                
+              
+              
+          </div>
+        </div>
+        
+    </div>
+
+    <div class="pvt_msg">
+      
+    </div>
+  </div>
+
+
+  <div class="account_middle">
+    <div class="default_text">
+      <a href="http://foreverlive.kroogi.ru/" class="account_name"><span class="user_name"><img alt="Kruser_large" class="userlink_icon" src="http://assets0.kroogi.com/images/kruser_large.gif?1290105589" />&nbsp;<span title="ForeverLive">ForeverLive</span></span></a>
+      <br/>
+      
+        <i> &quot;<span title="Импровизации на фортепиано">Импровизации на фортепиано</span>&quot; </i>
+      &nbsp;
+    </div>
+
+    <div class="bluetabs">
+
+      <a href="http://foreverlive.kroogi.ru/">Дом</a>
+      
+      
+      
+        <span class="separator">|</span><a href="http://foreverlive.kroogi.ru/gallery">Материалы</a>
+        
+      
+      
+      
+      <span class="separator">|</span><a href="http://foreverlive.kroogi.ru/kroogi">Аудитория (307)</a>
+
+    </div>
+  </div>
+  <div class="clear"></div>
+  </div>
+  </div>
+
+
+        
+      
+      <div class="shadow"><img src="/images/960_o_btm.gif"/></div>
+    </div>
+  
+
+  
+  
+
+
+
+
+<!-- Right Column -->
+<div id="right_column">
+  
+
+
+
+  
+
+	<!-- Goodies -->
+	
+    
+    
+
+	<!-- Upload -->
+    
+    <!-- Edit Content -->
+    
+
+    <!-- Add Track to contest -->
+    
+
+    <!-- Download Originals -->
+    
+
+    <!-- Edit Music Album -->
+    
+
+    <!-- Submit to other users inbox -->
+    
+
+    <!-- Stats -->
+    
+
+    <!-- Report & Block -->
+    
+
+
+
+   
+
+    <!-- related content -->
+    
+<style type="text/css">
+  .related_contents .related_contents_item .gallery_entry_s2 {float: none; margin-left: auto; margin-right: auto }
+  .related_contents .related_contents_title {margin: 10px 0; font-weight: bold; font-size: 1.75em; line-height: 1em }
+  .related_contents .related_contents_item .gallery_r_border3 {border-color: #ccc;}
+  .related_contents .related_contents_item .gallery_r_border2 {border-color: #bbb;}
+  .related_contents .related_contents_item .gallery_r_border1 {border-color: #aaa;}
+</style>
+
+<div><img alt="222_o_top" src="http://assets1.kroogi.com/images/222_o_top.gif?1290105589" /></div>
+<div class="column_side_sdw">
+  <div class="column_header_body">
+    <div class="column_header">Другие</div>
+  </div>
+  <div class="column_body" style="padding:10px 0 0 50px;">
+      <div class="related_contents">
+      
+        <div class="related_contents_item">
+          
+
+
+
+
+
+
+
+
+<div class="music_album gallery_entry_s2" style="">
+
+  
+
+    <div class="gallery_text2 gallery_item" style="">
+      
+
+<div class="gallery_r_border3">
+  <div class="gallery_r_border2">
+    <div class="gallery_r_border1" style="position: relative;">
+      <div class="gallery_album2">
+
+        <div style="padding-top: 8px;">
+          
+          <a href="http://aquarium.kroogi.ru/content/show/944585?from_related=1"><img alt="Aquarium_944585_cover_thumb" src="http://d1ob8phwwne29y.cloudfront.net/content/thumbs/944586/aquarium_944585_cover_thumb.jpg" style="width: 80px; height: 72px;" /></a>
+        </div>
+
+        <div style="position:absolute; bottom: 0px; left:0px; width: 117px;">
+          <div class="g_title2" style="margin-bottom: 1px;">
+            <div class="bold">
+              <a href="http://aquarium.kroogi.ru/content/show/944585?from_related=1" title="Тайный Узбек (сингл, осенняя акустическая версия)">Тайный Узбек ...</a>
+            </div>
+          </div>
+
+          <div class="gallery_album_icons">
+            <a href="http://aquarium.kroogi.ru/content/show/944585"><span class="iconized i_music_album" style="padding-left: 14px !important;">&nbsp;</span> <span style="color:white;">Скачать</span></a>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+      
+    </div>
+    
+    
+
+    
+      <div class="gallery_comment2" style="">
+      <a href="http://aquarium.kroogi.ru/"><span class="user_name"><img alt="Project" class="userlink_icon" src="http://assets1.kroogi.com/images/project.gif?1290105589" />&nbsp;<span title="Аквариум">Аквариум</span></span></a>
+        
+          
+        
+      </div>
+    
+
+
+  
+</div>
+
+
+        </div>
+      
+        <div class="related_contents_item">
+          
+
+
+
+
+
+
+
+
+<div class="music_album gallery_entry_s2" style="">
+
+  
+
+    <div class="gallery_text2 gallery_item" style="">
+      
+
+<div class="gallery_r_border3">
+  <div class="gallery_r_border2">
+    <div class="gallery_r_border1" style="position: relative;">
+      <div class="gallery_album2">
+
+        <div style="padding-top: 7px;">
+          
+          <a href="http://arefieva.kroogi.ru/content/show/927611?from_related=1"><img alt="Arefieva_927611_cover_thumb" src="http://d1ob8phwwne29y.cloudfront.net/content/thumbs/929303/arefieva_927611_cover_thumb.jpg" style="width: 80px; height: 73px;" /></a>
+        </div>
+
+        <div style="position:absolute; bottom: 0px; left:0px; width: 117px;">
+          <div class="g_title2" style="margin-bottom: 1px;">
+            <div class="bold">
+              <a href="http://arefieva.kroogi.ru/content/show/927611?from_related=1" title="АВИАТОР">АВИАТОР</a>
+            </div>
+          </div>
+
+          <div class="gallery_album_icons">
+            <a href="http://arefieva.kroogi.ru/content/show/927611"><span class="iconized i_music_album" style="padding-left: 14px !important;">&nbsp;</span> <span style="color:white;">Скачать</span></a>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+      
+    </div>
+    
+    
+
+    
+      <div class="gallery_comment2" style="">
+      <a href="http://arefieva.kroogi.ru/"><span class="user_name"><img alt="Project" class="userlink_icon" src="http://assets1.kroogi.com/images/project.gif?1290105589" />&nbsp;<span title="Ольга Арефьева и Ковчег">Ольга Арефьева...</span></span></a>
+        
+          
+        
+      </div>
+    
+
+
+  
+</div>
+
+
+        </div>
+      
+        <div class="related_contents_item">
+          
+
+
+
+
+
+
+
+
+<div class="music_album gallery_entry_s2" style="">
+
+  
+
+    <div class="gallery_text2 gallery_item" style="">
+      
+
+<div class="gallery_r_border3">
+  <div class="gallery_r_border2">
+    <div class="gallery_r_border1" style="position: relative;">
+      <div class="gallery_album2">
+
+        <div style="padding-top: 8px;">
+          
+          <a href="http://Verba-i-Olya-Pulatova.kroogi.ru/content/show/916245?from_related=1"><img alt="Verba-i-olya-pulatova_916245_cover_thumb" src="http://d1ob8phwwne29y.cloudfront.net/content/thumbs/916246/Verba-i-Olya-Pulatova_916245_cover_thumb.jpg" style="width: 80px; height: 71px;" /></a>
+        </div>
+
+        <div style="position:absolute; bottom: 0px; left:0px; width: 117px;">
+          <div class="g_title2" style="margin-bottom: 1px;">
+            <div class="bold">
+              <a href="http://Verba-i-Olya-Pulatova.kroogi.ru/content/show/916245?from_related=1" title="Внутренний Космос">Внутренний Ко...</a>
+            </div>
+          </div>
+
+          <div class="gallery_album_icons">
+            <a href="http://Verba-i-Olya-Pulatova.kroogi.ru/content/show/916245"><span class="iconized i_music_album" style="padding-left: 14px !important;">&nbsp;</span> <span style="color:white;">Скачать</span></a>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+      
+    </div>
+    
+    
+
+    
+      <div class="gallery_comment2" style="">
+      <a href="http://verba-i-olya-pulatova.kroogi.ru/"><span class="user_name"><img alt="Project" class="userlink_icon" src="http://assets1.kroogi.com/images/project.gif?1290105589" />&nbsp;<span title="Verba &amp; Оля Пулатова">Verba &amp; Оля Пу...</span></span></a>
+        
+          
+        
+      </div>
+    
+
+
+  
+</div>
+
+
+        </div>
+      
+        <div class="related_contents_item">
+          
+
+
+
+
+
+
+
+
+<div class="music_album gallery_entry_s2" style="">
+
+  
+
+    <div class="gallery_text2 gallery_item" style="">
+      
+
+<div class="gallery_r_border3">
+  <div class="gallery_r_border2">
+    <div class="gallery_r_border1" style="position: relative;">
+      <div class="gallery_album2">
+
+        <div style="padding-top: 4px;">
+          
+          <a href="http://luk.kroogi.ru/content/show/914820?from_related=1"><img alt="Luk_914820_cover_thumb" src="http://d1ob8phwwne29y.cloudfront.net/content/thumbs/914821/luk_914820_cover_thumb.jpg" style="width: 80px; height: 80px;" /></a>
+        </div>
+
+        <div style="position:absolute; bottom: 0px; left:0px; width: 117px;">
+          <div class="g_title2" style="margin-bottom: 1px;">
+            <div class="bold">
+              <a href="http://luk.kroogi.ru/content/show/914820?from_related=1" title="Lemon">Lemon</a>
+            </div>
+          </div>
+
+          <div class="gallery_album_icons">
+            <a href="http://luk.kroogi.ru/content/show/914820"><span class="iconized i_music_album" style="padding-left: 14px !important;">&nbsp;</span> <span style="color:white;">Скачать</span></a>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+      
+    </div>
+    
+    
+
+    
+      <div class="gallery_comment2" style="">
+      <a href="http://luk.kroogi.ru/"><span class="user_name"><img alt="Kruser" class="userlink_icon" src="http://assets3.kroogi.com/images/kruser.gif?1290105589" />&nbsp;<span title="Lюk">Lюk</span></span></a>
+        
+          
+        
+      </div>
+    
+
+
+  
+</div>
+
+
+        </div>
+      
+        <div class="related_contents_item">
+          
+
+
+
+
+
+
+
+
+<div class="music_album gallery_entry_s2" style="">
+
+  
+
+    <div class="gallery_text2 gallery_item" style="">
+      
+
+<div class="gallery_r_border3">
+  <div class="gallery_r_border2">
+    <div class="gallery_r_border1" style="position: relative;">
+      <div class="gallery_album2">
+
+        <div style="padding-top: 8px;">
+          
+          <a href="http://aquarium.kroogi.ru/content/show/866369?from_related=1"><img alt="Aquarium_866369_cover_thumb" src="http://d1ob8phwwne29y.cloudfront.net/content/thumbs/866370/aquarium_866369_cover_thumb.jpg" style="width: 80px; height: 72px;" /></a>
+        </div>
+
+        <div style="position:absolute; bottom: 0px; left:0px; width: 117px;">
+          <div class="g_title2" style="margin-bottom: 1px;">
+            <div class="bold">
+              <a href="http://aquarium.kroogi.ru/content/show/866369?from_related=1" title="Наша жизнь с точки зрения деревьев">Наша жизнь с ...</a>
+            </div>
+          </div>
+
+          <div class="gallery_album_icons">
+            <a href="http://aquarium.kroogi.ru/content/show/866369"><span class="iconized i_music_album" style="padding-left: 14px !important;">&nbsp;</span> <span style="color:white;">Скачать</span></a>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+      
+    </div>
+    
+    
+
+    
+      <div class="gallery_comment2" style="">
+      <a href="http://aquarium.kroogi.ru/"><span class="user_name"><img alt="Project" class="userlink_icon" src="http://assets1.kroogi.com/images/project.gif?1290105589" />&nbsp;<span title="Аквариум">Аквариум</span></span></a>
+        
+          
+        
+      </div>
+    
+
+
+  
+</div>
+
+
+        </div>
+      
+      </div>
+    </div>
+
+</div>
+<div class="shadow"><img alt="222_w_btm" src="http://assets2.kroogi.com/images/222_w_btm.gif?1290105589" /></div>
+
+
+  
+
+
+
+</div>
+<!-- Main Body -->
+<div id="main_content_left">
+  <div><img alt="732_o_top" src="http://assets3.kroogi.com/images/732_o_top.gif?1290105589" /></div>
+  <div class="main_side_sdw">
+    <div class="main_header">
+      <div class="main_header_links">
+        <span style="color: #999;">
+          
+            <span class="main_header_links_r">
+
+
+
+
+  
+
+  1 из 4&nbsp;&nbsp;
+
+  
+    <a href="http://ForeverLive.kroogi.ru/content/show/629505" class="album_nav_links">Следующая</a>
+    <a href="http://ForeverLive.kroogi.ru/content/show/629505" class="album_nav_links"> <b>&gt;</b></a>
+
+    <a href="http://ForeverLive.kroogi.ru/content/show/406230" class="album_nav_links">В конец</a>
+    <a href="http://ForeverLive.kroogi.ru/content/show/406230" class="album_nav_links"><b>&gt;&gt;</b></a>
+  
+
+  
+
+</span>
+          
+          Материалы ForeverLive
+        </span>
+      </div>
+    </div>
+    <div class="main_left">
+      <!-- grey column of the body-->
+      <div class="main_left_block">
+        
+
+<div id="voting_block_1" class="project_vote">
+  
+      
+      <span id="kroogi_like_container">
+      <div class="sign_in">
+        <a href="http://kroogi.ru/login" id="sign_in_to_vote_link_990317">Войдите и оцените</a>
+        
+        
+    
+
+
+<div style="display: none;" id="ask_for_login_or_signon_vote_990317" title="Войдите в систему, чтобы голосовать">
+  <p class="info">
+    <strong>
+      
+      Сначала необходимо войти в систему или зарегистрироваться
+    </strong>
+  </p>
+  
+    <input id="project_to_follow" name="project_to_follow" type="hidden" value="26411" />
+    <input checked="checked" id="start_following_vote_990317" name="start_following" onclick="jQuery('#ask_for_login_or_signon_vote_990317 .start_following').val(this.checked);" type="checkbox" value="true" />
+    <label for="start_following_vote_990317">
+      <strong>И присоединиться к <span title="ForeverLive">ForeverLive</span></strong>
+    </label>
+  
+  <div class="accordion">
+    
+<h3>
+  <a href="#">Войдите в систему, чтобы голосовать</a>
+</h3>
+<div>
+  <form action="/login" class="login" method="post"><div style="margin:0;padding:0"><input name="authenticity_token" type="hidden" value="63470281cb02063c4ea03b9d41f4e57dd3e786ab" /></div>     <div><img alt="Form_top" src="http://assets0.kroogi.com/images/form_top.gif?1290105589" /></div>
+       <div class="form_side_sdw">
+         <div class="form_content">
+			<div id="login_form_errors" class="error"></div>
+    		<input class="project_to_follow" id="user_to_login_project_to_follow" name="user_to_login[project_to_follow]" type="hidden" value="26411" />
+    		<input class="start_following" id="user_to_login_start_following" name="user_to_login[start_following]" type="hidden" value="true" />
+                <input id="user_to_login_content_to_like" name="user_to_login[content_to_like]" type="hidden" value="990317" />
+
+     		<div style="padding-left: 90px;">
+				<label for="user_to_login_login">Имя в системе</label>
+        		<input id="user_to_login_login" name="user_to_login[login]" size="30" type="text" />
+      			<label for="password">Пароль</label>
+        		<input id="password" name="password" type="password" />
+    		</div>
+ 		</div>
+	  </div>
+	  <div><img alt="Form_btm" src="http://assets1.kroogi.com/images/form_btm.gif?1290105589" /></div>
+    	<input id="signin_on_zero" name="signin_on_zero" type="hidden" value="vote_990317" />
+    	
+
+
+
+
+<script type="text/javascript" charset="utf-8">
+    
+  function button_submit1(submitted_button, wait_caption){
+    if (typeof wait_caption == "undefined") {
+        wait_caption = "Подождите...";
+    }
+    submitted_button = $(submitted_button);
+    form = submitted_button.up('form');
+    if (form) {
+      container = form
+    } else {
+      container = submitted_button.up('div')
+    }
+
+    if (true) {
+      buttons = container.select('.button_lg');
+      
+        buttons.each(function(button){
+          button.className = 'button_lg_gr';
+        });
+      
+      was = submitted_button.innerHTML;
+      submitted_button.innerHTML = "<span>&nbsp;" + wait_caption + "&nbsp;</span>";
+      submitted_button.disabled = true;
+      submitted_button.next('.wait_up_homie').show();
+      
+        if (form) {
+          form.submit();
+        }
+      
+    }
+
+    return false;
+  }
+
+</script>
+
+
+<div class="button_wrapper">
+    
+    <button class="button_lg" type="submit" name="commit" onClick="return button_submit1(this);" style="">
+      			
+        <span>&nbsp;Войдите&nbsp;</span>
+      
+    </button>
+    <span class="wait_up_homie" style="display:none; vertical-align: middle;"><img src="/images/ajax-loader.gif" /></span>
+    
+    
+</div>
+
+
+  </form>
+</div>
+
+    
+
+
+
+
+
+<script type="text/javascript" language="javascript">
+  function toggle_project_field(display) {
+    document.getElementById('project_field_vote_990317').style.display=display;
+  }
+
+  function checkSignupCheckBoxes_vote_990317() {
+     
+    if ($('tos_vote_990317').checked == false)
+    {
+      alert ('Чтобы зарегистрироваться, Вы должны ознакомиться и согласиться с Пользовательским Соглашением');
+      return false;
+    }
+    else if (jQuery('#signupForm #birthdate_vote_990317').val() == '') {
+      alert ('Вы забыли указать дату Вашего рождения.');
+      return false;
+    }
+    else
+    {
+      var birthdate = jQuery('#signupForm #birthdate_vote_990317').val().split("-");
+      var age = 13;
+      var mydate = new Date();
+      mydate.setFullYear(parseInt(birthdate[0]), parseInt(birthdate[1]) -1, parseInt(birthdate[2]));
+      
+      var currdate = new Date();
+      currdate.setFullYear(currdate.getFullYear() - age);
+      if ((currdate - mydate) < 0){
+        alert('Please note that this Site is not aimed at users under thirteen (13) years of age. Users thirteen (13) years or younger are required to have a parent or guardian review and complete any registration process, which may include age verification steps in addition to the standard process.');
+        return false;
+      } else {
+        return true;
+      }
+    }
+  }
+</script>
+
+<h3>
+  <a href="#">Зарегистрируйтесь в Кругах, чтобы голосовать</a>
+</h3>
+<div>
+  <form action="/signup?ajax_mode=true" class="signup" id="signupForm" method="post" name="signupForm" onsubmit="if (!checkSignupCheckBoxes_vote_990317()) {return false};; new Ajax.Request('/signup?ajax_mode=true', {asynchronous:false, evalScripts:true, parameters:Form.serialize(this)}); return false;"><div style="margin:0;padding:0"><input name="authenticity_token" type="hidden" value="63470281cb02063c4ea03b9d41f4e57dd3e786ab" /></div>    <div><img alt="Form_top" src="http://assets0.kroogi.com/images/form_top.gif?1290105589" /></div>
+    <div class="form_side_sdw">
+      <div class="form_content">
+        <div id="signup_form_errors_vote_990317" class="error"></div>
+        <input class="project_to_follow" id="user_to_create_project_to_follow" name="user_to_create[project_to_follow]" type="hidden" value="26411" />
+        <input class="start_following" id="user_to_create_start_following" name="user_to_create[start_following]" type="hidden" value="true" />
+        <div style="padding-left: 90px;">
+          <label for="user_to_create_email">Е-mail</label>
+          <input class="email" id="user_to_create_email" name="user_to_create[email]" size="30" style="width:250px;" type="text" />
+          <div class="default_text">
+
+Мы никогда не передадим Ваш e-mail адрес третьей стороне. Мы сохраним его под грифом <a href="javascript:void(0)" onclick="$(this).next('.more_email_privacy_details_block').toggle()">"Секретно"</a>.
+<div class="more_email_privacy_details_block" style="display:none" >
+	<br />
+	Подробности в <a  href="http://kroogi.ru/home/policy" target="_blank">Правилах хранения личной информации</a>.
+	<br /> 
+	
+    	<input checked="checked" id="preference_email_searchable" name="preference[email_searchable]" type="checkbox" value="1" /><input name="preference[email_searchable]" type="hidden" value="0" />
+  	
+	Друзья смогут находить Вас в Кругах по e-mail адресу.
+</div>
+</div>
+
+          <label for="user_to_create_login_vote_990317">Имя в системе</label>
+          
+          
+
+<input id="user_to_create_login_vote_990317" name="user_to_create[login]" size="30" type="text" />
+<script type="text/javascript">
+//<![CDATA[
+new Form.Element.EventObserver('user_to_create_login_vote_990317', function(element, value) {maybe_check_vote_990317(element, value); validate_user_vote_990317();}, 'focus')
+//]]>
+</script>
+
+<span class="observable_field">
+  <span id="spinner_vote_990317"         class="observable_field spinner"><img src="/images/ajax-loader.gif" /></span>
+  <span id="ok_label_vote_990317"        style="display:none">ок</span>
+  <span id="not_ok_label_vote_990317"    style="display:none">к сожалению, уже кем-то занято</span>
+  <span id="too_short_label_vote_990317" style="display:none">слишком коротко</span>
+  <span id="too_long_label_vote_990317"  style="display:none">слишкол длинно</span>
+</span>
+<div class="default_text" id="allowed_values_vote_990317">Можно использовать буквы, цифры и дефис (-).</div>
+<div class="default_text" id="more_error_vote_990317" style="display: none;"></div>
+
+<script type="text/javascript">
+  function maybe_check_vote_990317(element, value) {
+    reset_labels();
+    if(value.length > 1 && value.length < 30 && validate_user_vote_990317()) {
+      jQuery('#spinner_vote_990317').show();
+      jQuery.get('/home/check_field_availability', { model : 'user', field : 'login', value : value} , function(data) {
+        jQuery('#spinner_vote_990317').hide();
+        if(data == 'true') {
+          jQuery('#ok_label_vote_990317').show();
+        } else if (data == 'false'){
+          jQuery('#not_ok_label_vote_990317').show();
+        } else if (data == 'error') { }
+      });
+      return true;
+    }
+    else if (value.length <= 1) {
+      jQuery('#too_short_label_vote_990317').show();
+      return false;
+    }
+    else if (value.length > 30){
+      jQuery('#too_long_label_vote_990317').show();
+      return false;
+    }
+  }
+  function lenght_ok(value) { if (value.length > 1 && value.length < 30) return true;}
+  function reset_labels() { jQuery('.observable_field span:gt(0)').hide(); jQuery('#more_error_vote_990317').hide();}
+  function validate_user_vote_990317() {
+    regexp = /^[A-Za-z0-9]{1}[A-Za-z0-9-]*[A-Za-z0-9]{1}$/i;
+    value  = $('user_to_create_login_vote_990317').value
+    if (!lenght_ok(value)) {return true;}
+    else {
+      if (value.match(/^\d+$/)) {
+        jQuery('#more_error_vote_990317').text('должен содержать хотя бы одну букву ').css("color","red").show();
+        return false;
+      }
+      if (!regexp.test(value)) {
+        jQuery('#more_error_vote_990317').text('должен состоять из букв A-Z, a-z, цифр 0-9 (Внимание: пробелы не допускаются!). Не может начинаться или заканчиваться символом "-", и не должен состоять только из цифр.').css("color","red").show();
+        return false;
+      }
+      else {
+        return true;
+      }
+
+    }
+  }
+</script>
+
+<style type="text/css">
+  .observable_field .spinner {
+    display:none;vertical-align: middle;padding-left:3px;padding-top:5px;
+  }
+</style>
+
+          <label for="user_to_create_password">Пароль</label>
+          <input id="user_to_create_password" name="user_to_create[password]" size="30" style="width:150px;" type="password" />
+          <div class="default_text">Хороший пароль не бывает короче четырёх символов.</div>
+          <label for="user_to_create_password_confirmation">Подтвердить</label>
+          <input id="user_to_create_password_confirmation" name="user_to_create[password_confirmation]" size="30" style="width:150px;" type="password" />
+          <label for="user_to_create_gender" class="cell">Пол</label>
+          <input checked="checked" id="user_to_create_gender_m" name="user_to_create[gender]" type="radio" value="M" />
+          Мужской
+          <input id="user_to_create_gender_f" name="user_to_create[gender]" type="radio" value="F" />
+          Женский
+          <label for="user_to_create_birthdate">Дата рождения</label>
+          <input id="birthdate_vote_990317" name="user_to_create[birthdate]" type="text" value="" /> <img alt="Calendar" class="calendar_date_select_popup_icon" onclick="new CalendarDateSelect( $(this).previous(), {time:false, year_range:[1900, 1997]} );" src="http://assets0.kroogi.com/images/calendar_date_select/calendar.gif?1290105589" style="border:0px; cursor:pointer;" />
+          <label for="user_to_create_language">Язык</label>
+          <input id="user_to_create_language_en" name="user_to_create[language]" type="radio" value="en" />
+          Английский
+          <input checked="checked" id="user_to_create_language_ru" name="user_to_create[language]" type="radio" value="ru" />
+          Русский
+          <br />
+          <input id="tos_vote_990317" name="tos" type="checkbox" value="" />
+          <label for="tos_vote_990317" style="display: inline; font-weight: normal;">Я прочел и принял условия <a  href="http://kroogi.ru/home/policy" target="_blank">Пользовательского соглашения</a></label>
+        </div>
+      </div>
+    </div>
+    <div><img alt="Form_btm" src="http://assets1.kroogi.com/images/form_btm.gif?1290105589" /></div>
+    <input id="dialog_id_suffix" name="dialog_id_suffix" type="hidden" value="vote_990317" />
+
+    
+
+
+
+
+<script type="text/javascript" charset="utf-8">
+    
+  function button_submit2(submitted_button, wait_caption){
+    if (typeof wait_caption == "undefined") {
+        wait_caption = "Подождите...";
+    }
+    submitted_button = $(submitted_button);
+    form = submitted_button.up('form');
+    if (form) {
+      container = form
+    } else {
+      container = submitted_button.up('div')
+    }
+
+    if (checkSignupCheckBoxes_vote_990317()) {
+      buttons = container.select('.button_lg');
+      
+        buttons.each(function(button){
+          button.className = 'button_lg_gr';
+        });
+      
+      was = submitted_button.innerHTML;
+      submitted_button.innerHTML = "<span>&nbsp;" + wait_caption + "&nbsp;</span>";
+      submitted_button.disabled = true;
+      submitted_button.next('.wait_up_homie').show();
+      
+        
+          
+        
+        jQuery(form).trigger("onsubmit");
+        var cleanup_after = true;
+        if (cleanup_after || !jQuery('div.error', form).is(':empty')) {
+          jQuery(submitted_button).next('.wait_up_homie').hide();
+          submitted_button.disabled = false;
+          submitted_button.innerHTML = was;
+          buttons.each(function(button){
+            button.className = 'button_lg';
+          });
+        }
+      
+    }
+
+    return false;
+  }
+
+</script>
+
+
+<div class="button_wrapper">
+    
+    <button class="button_lg" type="submit" name="commit" onClick="return button_submit2(this);" style="">
+      			
+        <span>&nbsp;Присоединиться&nbsp;</span>
+      
+    </button>
+    <span class="wait_up_homie" style="display:none; vertical-align: middle;"><img src="/images/ajax-loader.gif" /></span>
+    
+    
+</div>
+
+
+  </form>
+</div>
+
+    
+
+
+
+<script type="text/javascript">
+  
+  function checkSignupCheckBoxes_fb_vote_990317() {
+    if ($('tos_fb_vote_990317').checked == false)
+    {
+      alert ('Чтобы зарегистрироваться, Вы должны ознакомиться и согласиться с Пользовательским Соглашением');
+      return false;
+    }
+    else if (jQuery('#signupForm_fb_vote_990317 #birthdate_fb_vote_990317').val() == '') {
+      alert ('Вы забыли указать дату Вашего рождения.');
+      return false;
+    }
+    else
+    {
+      var birthdate = jQuery('#signupForm_fb_vote_990317 #birthdate_fb_vote_990317').val().split("-");
+      var age = 13;
+      var mydate = new Date();
+      mydate.setFullYear(parseInt(birthdate[0]), parseInt(birthdate[1]) -1, parseInt(birthdate[2]));
+
+      var currdate = new Date();
+      currdate.setFullYear(currdate.getFullYear() - age);
+      if ((currdate - mydate) < 0){
+        alert('Please note that this Site is not aimed at users under thirteen (13) years of age. Users thirteen (13) years or younger are required to have a parent or guardian review and complete any registration process, which may include age verification steps in addition to the standard process.');
+        return false;
+      } else {
+        return true;
+      }
+    }
+  }
+</script>
+
+<h3>
+  <a href="#"><img alt="Connect_logo_small_f" src="http://assets2.kroogi.com/images/connect_logo_small_F.png?1290105589" />&nbsp;Оценить через Facebook</a>
+</h3>
+<div>
+    <div id="fb_connect_content_fb_vote_990317">
+      
+
+
+<!-- Already linked FB user -->
+
+
+
+  <!-- NOT logged in to FB -->
+  
+    
+<div id="fb_connect_content_fb_vote_990317">
+    <div><img alt="Form_top" src="http://assets0.kroogi.com/images/form_top.gif?1290105589" /></div>
+    <div class="form_side_sdw">
+      <div class="form_content">
+         Для авторизации через Facebook, пожалуйста войдите в систему FB, используя свой логин
+      </div>
+    </div>
+    <div><img alt="Form_btm" src="http://assets1.kroogi.com/images/form_btm.gif?1290105589" /></div>
+    <div class="button_wrapper">
+    
+
+
+
+
+  <span id="login_button_block">
+    <a href="#"></a>
+      <fb:login-button onclick="return true;"
+                       autologoutlink="false" max-rows="1"
+                       show-faces="false"
+                       perms="email,user_birthday,user_interests,user_likes,read_friendlists"
+                       width="140px">
+        Connect      </fb:login-button>
+      <span class="update_progress" style="display:none;vertical-align: middle;padding-left:3px;padding-top:5px;"><img src="/images/ajax-loader.gif" /></span>
+  </span>
+
+
+
+    </div>
+</div>
+  
+
+<div id="signup_form_errors_fb_vote_990317" class="error"></div>
+
+<!-- NEW USER LOGGED in to FB -->
+
+
+    </div>
+</div>
+
+
+<script type="text/javascript">
+  FB.getLoginStatus(function(response) {
+    if (response.session) {
+      // logged in and connected user, someone we know
+      jQuery.get('/facebook/connect/fetch_user_info', { dialog_id_suffix: "fb_vote_990317",project_to_follow : "26411",start_following : "true", content_to_like : "990317", partial : "/shared/facebook/connect/widget_form"} , function(data) {
+        jQuery('#fb_connect_content_fb_vote_990317').replaceWith(data);
+        FB.XFBML.parse();
+      });
+    } else {
+      // no user session available, someone we dont know
+      jQuery('#fb_connect_content_fb_vote_990317').replaceWith('\n<div id=\"fb_connect_content_fb_vote_990317\">\n    <div><img alt=\"Form_top\" src=\"http://assets0.kroogi.com/images/form_top.gif?1290105589\" /><\/div>\n    <div class=\"form_side_sdw\">\n      <div class=\"form_content\">\n         Для авторизации через Facebook, пожалуйста войдите в систему FB, используя свой логин\n      <\/div>\n    <\/div>\n    <div><img alt=\"Form_btm\" src=\"http://assets1.kroogi.com/images/form_btm.gif?1290105589\" /><\/div>\n    <div class=\"button_wrapper\">\n    \n\n\n\n\n  <span id=\"login_button_block\">\n    <a href=\"#\"><\/a>\n      <fb:login-button onclick=\"return true;\"\n                       autologoutlink=\"false\" max-rows=\"1\"\n                       show-faces=\"false\"\n                       perms=\"email,user_birthday,user_interests,user_likes,read_friendlists\"\n                       width=\"140px\">\n        Connect      <\/fb:login-button>\n      <span class=\"update_progress\" style=\"display:none;vertical-align: middle;padding-left:3px;padding-top:5px;\"><img src=\"/images/ajax-loader.gif\" /><\/span>\n  <\/span>\n\n\n\n    <\/div>\n<\/div>');
+      jQuery('#fb_mock_login_button').replaceWith('');
+      clean_form('form.signup');
+      FB.XFBML.parse();
+    }
+  });
+
+  FB.Event.subscribe('auth.login', function(response) {
+  jQuery.ajax({
+          url: '/facebook/connect/fetch_user_info',
+          data: "dialog_id_suffix=fb_vote_990317&project_to_follow=26411&start_following=true&content_to_like=990317&partial=/shared/facebook/connect/widget_form",
+          cache: false,
+          success: function(data) {
+            jQuery('#fb_connect_content_fb_vote_990317').replaceWith(data);
+            FB.XFBML.parse();
+          }
+        });
+  });
+
+  FB.Event.subscribe('auth.logout', function(response) {
+    jQuery.get('/facebook/connect/reset_user_info', { dialog_id_suffix: "fb_vote_990317"} , function(data) {
+      jQuery('#fb_connect_content_fb_vote_990317').replaceWith(data);
+      clean_form('form.signup');
+      FB.XFBML.parse();
+      jQuery("#ask_for_login_or_signon_fb_vote_990317").parent().dialog('destroy');
+      document.location.reload(false);
+    });
+  });
+</script>
+  </div>
+</div>
+
+<div style="display: none;" id="thanks_for_joining_vote_990317" title="Подтверждение отправлено на ваш e-mail адрес">
+  <div class="info">
+    <h3>Добро пожаловать в Круги!</h3>
+    Ваша регистрационная запись еще не активирована.
+    Загляните в свою электропочту, там Вы найдете инструкции по активации.
+    Вы сможете проголосовать, когда активируете свою регистрационную запись.
+  </div>
+  <div class="button_wrapper">
+    <button class="button_lg" type="button" onclick="jQuery('#thanks_for_joining_vote_990317').dialog('destroy');">
+      <span>Закрыть</span>
+    </button>
+  </div>
+</div>
+
+<script type="text/javascript">
+  var ask_for_login_or_signon_dialog_opts_vote_990317 = {
+    modal: true,
+    height: 'auto',
+    position: 'middle',
+    dialogClass: 'login_widget',
+    close: function() {
+      jQuery("#ask_for_login_or_signon_vote_990317").dialog('destroy');
+    }
+  };
+
+  var thanks_for_joining_dialog_opts_vote_990317 = {
+    modal: true,
+    height: 'auto',
+    position: 'middle',
+    width: 300,
+    minWidth: 300,
+    close: function() {
+      jQuery("#thanks_for_joining_vote_990317").dialog('destroy');
+    }
+  };
+
+  function after_user_created_vote_990317() {
+    
+      //clean the form - user can invoke it again
+      clean_form('form.signup');
+      jQuery("#ask_for_login_or_signon_vote_990317").dialog('destroy');
+      jQuery("#thanks_for_joining_vote_990317").dialog(thanks_for_joining_dialog_opts_vote_990317);
+    
+  }
+
+  function after_fb_user_created_vote_990317() {
+      //clean the form - user can invoke it again
+      clean_form('form.signup');
+      jQuery("#ask_for_login_or_signon_vote_990317").dialog('destroy');
+      document.location.reload(false);
+  }
+
+
+</script>
+
+        <script type="text/javascript">
+          jQuery("#sign_in_to_vote_link_990317").bind('click', function() {
+            jQuery('#ask_for_login_or_signon_vote_990317').dialog(ask_for_login_or_signon_dialog_opts_vote_990317);
+            jQuery('#ask_for_login_or_signon_vote_990317 .accordion').accordion({clearStyle: true, autoHeight: false});
+            return false;
+          });
+        </script>
+      </div>
+
+       
+        <div class="vote_star">
+          <img alt="Hand_lead" src="http://assets1.kroogi.com/images/hand_lead.png?1290105589" />
+        </div>
+      
+
+      <div class="vote_number">
+        (4)
+      </div>
+      </span>
+  
+</div>
+
+
+      </div>
+      <div class="clear"></div>
+      <div class="album_img">
+        <img alt="ForeverLive_990317_cover_thumb.png" border="0" src="http://d1ob8phwwne29y.cloudfront.net/content/thumbs/990318/ForeverLive_990317_cover_thumb.png" />
+      </div>
+      <div class="donation_button">
+        
+
+
+
+<div class="donate_widget">
+
+
+  <div class="special_notice">
+    У вас есть возможность оплатить труд авторов!
+  </div>
+
+
+
+
+
+  
+
+  <div id='download_wrapper_1' class="download_wrapper" style="display:none">
+    
+  
+  <div><strong>Материалы для скачивания:</strong></div>
+  
+    
+    
+    
+    
+      <div class="filename link">
+        
+
+
+
+
+
+  <a href="javascript:void(0)">ForeverLive_album_990317.zip 96 MB</a>
+
+
+
+      </div>
+      
+    
+    
+  
+
+
+
+  </div>
+
+
+
+
+  <div id='donation_wrapper_1'>
+	
+    <div id='donation_button_wrapper_1' style="margin: 3px auto;width:160px">
+      <a href="#" class="button" id="donation_button_1" onclick="script:do_contribution_1(); return false" style="width: 156px; float:none;"><span>Скачать</span></a>
+    </div>
+  </div>
+
+  
+    
+    
+
+
+<div style="display: none;" id="ask_for_login_or_signon_1" title="Скачать бесплатно">
+  <p class="info">
+    <strong>
+      
+      Сначала необходимо войти в систему или зарегистрироваться
+    </strong>
+  </p>
+  
+  <div class="accordion">
+    
+<h3>
+  <a href="#">Войти на Круги, чтобы скачать бесплатно</a>
+</h3>
+<div>
+  <form action="/login" class="login" method="post"><div style="margin:0;padding:0"><input name="authenticity_token" type="hidden" value="63470281cb02063c4ea03b9d41f4e57dd3e786ab" /></div>     <div><img alt="Form_top" src="http://assets0.kroogi.com/images/form_top.gif?1290105589" /></div>
+       <div class="form_side_sdw">
+         <div class="form_content">
+			<div id="login_form_errors" class="error"></div>
+    		<input class="project_to_follow" id="user_to_login_project_to_follow" name="user_to_login[project_to_follow]" type="hidden" />
+    		<input class="start_following" id="user_to_login_start_following" name="user_to_login[start_following]" type="hidden" value="true" />
+                <input id="user_to_login_content_to_like" name="user_to_login[content_to_like]" type="hidden" />
+
+     		<div style="padding-left: 90px;">
+				<label for="user_to_login_login">Имя в системе</label>
+        		<input id="user_to_login_login" name="user_to_login[login]" size="30" type="text" />
+      			<label for="password">Пароль</label>
+        		<input id="password" name="password" type="password" />
+    		</div>
+ 		</div>
+	  </div>
+	  <div><img alt="Form_btm" src="http://assets1.kroogi.com/images/form_btm.gif?1290105589" /></div>
+    	<input id="signin_on_zero" name="signin_on_zero" type="hidden" value="1" />
+    	
+
+
+
+
+<script type="text/javascript" charset="utf-8">
+    
+  function button_submit3(submitted_button, wait_caption){
+    if (typeof wait_caption == "undefined") {
+        wait_caption = "Подождите...";
+    }
+    submitted_button = $(submitted_button);
+    form = submitted_button.up('form');
+    if (form) {
+      container = form
+    } else {
+      container = submitted_button.up('div')
+    }
+
+    if (true) {
+      buttons = container.select('.button_lg');
+      
+        buttons.each(function(button){
+          button.className = 'button_lg_gr';
+        });
+      
+      was = submitted_button.innerHTML;
+      submitted_button.innerHTML = "<span>&nbsp;" + wait_caption + "&nbsp;</span>";
+      submitted_button.disabled = true;
+      submitted_button.next('.wait_up_homie').show();
+      
+        if (form) {
+          form.submit();
+        }
+      
+    }
+
+    return false;
+  }
+
+</script>
+
+
+<div class="button_wrapper">
+    
+    <button class="button_lg" type="submit" name="commit" onClick="return button_submit3(this);" style="">
+      			
+        <span>&nbsp;Войдите&nbsp;</span>
+      
+    </button>
+    <span class="wait_up_homie" style="display:none; vertical-align: middle;"><img src="/images/ajax-loader.gif" /></span>
+    
+    
+</div>
+
+
+  </form>
+</div>
+
+    
+
+
+
+
+
+<script type="text/javascript" language="javascript">
+  function toggle_project_field(display) {
+    document.getElementById('project_field_1').style.display=display;
+  }
+
+  function checkSignupCheckBoxes_1() {
+     
+    if ($('tos_1').checked == false)
+    {
+      alert ('Чтобы зарегистрироваться, Вы должны ознакомиться и согласиться с Пользовательским Соглашением');
+      return false;
+    }
+    else if (jQuery('#signupForm #birthdate_1').val() == '') {
+      alert ('Вы забыли указать дату Вашего рождения.');
+      return false;
+    }
+    else
+    {
+      var birthdate = jQuery('#signupForm #birthdate_1').val().split("-");
+      var age = 13;
+      var mydate = new Date();
+      mydate.setFullYear(parseInt(birthdate[0]), parseInt(birthdate[1]) -1, parseInt(birthdate[2]));
+      
+      var currdate = new Date();
+      currdate.setFullYear(currdate.getFullYear() - age);
+      if ((currdate - mydate) < 0){
+        alert('Please note that this Site is not aimed at users under thirteen (13) years of age. Users thirteen (13) years or younger are required to have a parent or guardian review and complete any registration process, which may include age verification steps in addition to the standard process.');
+        return false;
+      } else {
+        return true;
+      }
+    }
+  }
+</script>
+
+<h3>
+  <a href="#">Создать аккаунт на Кругах, чтобы скачать бесплатно</a>
+</h3>
+<div>
+  <form action="/signup?ajax_mode=true" class="signup" id="signupForm" method="post" name="signupForm" onsubmit="if (!checkSignupCheckBoxes_1()) {return false};; new Ajax.Request('/signup?ajax_mode=true', {asynchronous:false, evalScripts:true, parameters:Form.serialize(this)}); return false;"><div style="margin:0;padding:0"><input name="authenticity_token" type="hidden" value="63470281cb02063c4ea03b9d41f4e57dd3e786ab" /></div>    <div><img alt="Form_top" src="http://assets0.kroogi.com/images/form_top.gif?1290105589" /></div>
+    <div class="form_side_sdw">
+      <div class="form_content">
+        <div id="signup_form_errors_1" class="error"></div>
+        <input class="project_to_follow" id="user_to_create_project_to_follow" name="user_to_create[project_to_follow]" type="hidden" />
+        <input class="start_following" id="user_to_create_start_following" name="user_to_create[start_following]" type="hidden" value="true" />
+        <div style="padding-left: 90px;">
+          <label for="user_to_create_email">Е-mail</label>
+          <input class="email" id="user_to_create_email" name="user_to_create[email]" size="30" style="width:250px;" type="text" />
+          <div class="default_text">
+
+Мы никогда не передадим Ваш e-mail адрес третьей стороне. Мы сохраним его под грифом <a href="javascript:void(0)" onclick="$(this).next('.more_email_privacy_details_block').toggle()">"Секретно"</a>.
+<div class="more_email_privacy_details_block" style="display:none" >
+	<br />
+	Подробности в <a  href="http://kroogi.ru/home/policy" target="_blank">Правилах хранения личной информации</a>.
+	<br /> 
+	
+    	<input checked="checked" id="preference_email_searchable" name="preference[email_searchable]" type="checkbox" value="1" /><input name="preference[email_searchable]" type="hidden" value="0" />
+  	
+	Друзья смогут находить Вас в Кругах по e-mail адресу.
+</div>
+</div>
+
+          <label for="user_to_create_login_1">Имя в системе</label>
+          
+          
+
+<input id="user_to_create_login_1" name="user_to_create[login]" size="30" type="text" />
+<script type="text/javascript">
+//<![CDATA[
+new Form.Element.EventObserver('user_to_create_login_1', function(element, value) {maybe_check_1(element, value); validate_user_1();}, 'focus')
+//]]>
+</script>
+
+<span class="observable_field">
+  <span id="spinner_1"         class="observable_field spinner"><img src="/images/ajax-loader.gif" /></span>
+  <span id="ok_label_1"        style="display:none">ок</span>
+  <span id="not_ok_label_1"    style="display:none">к сожалению, уже кем-то занято</span>
+  <span id="too_short_label_1" style="display:none">слишком коротко</span>
+  <span id="too_long_label_1"  style="display:none">слишкол длинно</span>
+</span>
+<div class="default_text" id="allowed_values_1">Можно использовать буквы, цифры и дефис (-).</div>
+<div class="default_text" id="more_error_1" style="display: none;"></div>
+
+<script type="text/javascript">
+  function maybe_check_1(element, value) {
+    reset_labels();
+    if(value.length > 1 && value.length < 30 && validate_user_1()) {
+      jQuery('#spinner_1').show();
+      jQuery.get('/home/check_field_availability', { model : 'user', field : 'login', value : value} , function(data) {
+        jQuery('#spinner_1').hide();
+        if(data == 'true') {
+          jQuery('#ok_label_1').show();
+        } else if (data == 'false'){
+          jQuery('#not_ok_label_1').show();
+        } else if (data == 'error') { }
+      });
+      return true;
+    }
+    else if (value.length <= 1) {
+      jQuery('#too_short_label_1').show();
+      return false;
+    }
+    else if (value.length > 30){
+      jQuery('#too_long_label_1').show();
+      return false;
+    }
+  }
+  function lenght_ok(value) { if (value.length > 1 && value.length < 30) return true;}
+  function reset_labels() { jQuery('.observable_field span:gt(0)').hide(); jQuery('#more_error_1').hide();}
+  function validate_user_1() {
+    regexp = /^[A-Za-z0-9]{1}[A-Za-z0-9-]*[A-Za-z0-9]{1}$/i;
+    value  = $('user_to_create_login_1').value
+    if (!lenght_ok(value)) {return true;}
+    else {
+      if (value.match(/^\d+$/)) {
+        jQuery('#more_error_1').text('должен содержать хотя бы одну букву ').css("color","red").show();
+        return false;
+      }
+      if (!regexp.test(value)) {
+        jQuery('#more_error_1').text('должен состоять из букв A-Z, a-z, цифр 0-9 (Внимание: пробелы не допускаются!). Не может начинаться или заканчиваться символом "-", и не должен состоять только из цифр.').css("color","red").show();
+        return false;
+      }
+      else {
+        return true;
+      }
+
+    }
+  }
+</script>
+
+<style type="text/css">
+  .observable_field .spinner {
+    display:none;vertical-align: middle;padding-left:3px;padding-top:5px;
+  }
+</style>
+
+          <label for="user_to_create_password">Пароль</label>
+          <input id="user_to_create_password" name="user_to_create[password]" size="30" style="width:150px;" type="password" />
+          <div class="default_text">Хороший пароль не бывает короче четырёх символов.</div>
+          <label for="user_to_create_password_confirmation">Подтвердить</label>
+          <input id="user_to_create_password_confirmation" name="user_to_create[password_confirmation]" size="30" style="width:150px;" type="password" />
+          <label for="user_to_create_gender" class="cell">Пол</label>
+          <input checked="checked" id="user_to_create_gender_m" name="user_to_create[gender]" type="radio" value="M" />
+          Мужской
+          <input id="user_to_create_gender_f" name="user_to_create[gender]" type="radio" value="F" />
+          Женский
+          <label for="user_to_create_birthdate">Дата рождения</label>
+          <input id="birthdate_1" name="user_to_create[birthdate]" type="text" value="" /> <img alt="Calendar" class="calendar_date_select_popup_icon" onclick="new CalendarDateSelect( $(this).previous(), {time:false, year_range:[1900, 1997]} );" src="http://assets0.kroogi.com/images/calendar_date_select/calendar.gif?1290105589" style="border:0px; cursor:pointer;" />
+          <label for="user_to_create_language">Язык</label>
+          <input id="user_to_create_language_en" name="user_to_create[language]" type="radio" value="en" />
+          Английский
+          <input checked="checked" id="user_to_create_language_ru" name="user_to_create[language]" type="radio" value="ru" />
+          Русский
+          <br />
+          <input id="tos_1" name="tos" type="checkbox" value="" />
+          <label for="tos_1" style="display: inline; font-weight: normal;">Я прочел и принял условия <a  href="http://kroogi.ru/home/policy" target="_blank">Пользовательского соглашения</a></label>
+        </div>
+      </div>
+    </div>
+    <div><img alt="Form_btm" src="http://assets1.kroogi.com/images/form_btm.gif?1290105589" /></div>
+    <input id="dialog_id_suffix" name="dialog_id_suffix" type="hidden" value="1" />
+
+    
+
+
+
+
+<script type="text/javascript" charset="utf-8">
+    
+  function button_submit4(submitted_button, wait_caption){
+    if (typeof wait_caption == "undefined") {
+        wait_caption = "Подождите...";
+    }
+    submitted_button = $(submitted_button);
+    form = submitted_button.up('form');
+    if (form) {
+      container = form
+    } else {
+      container = submitted_button.up('div')
+    }
+
+    if (checkSignupCheckBoxes_1()) {
+      buttons = container.select('.button_lg');
+      
+        buttons.each(function(button){
+          button.className = 'button_lg_gr';
+        });
+      
+      was = submitted_button.innerHTML;
+      submitted_button.innerHTML = "<span>&nbsp;" + wait_caption + "&nbsp;</span>";
+      submitted_button.disabled = true;
+      submitted_button.next('.wait_up_homie').show();
+      
+        
+          
+        
+        jQuery(form).trigger("onsubmit");
+        var cleanup_after = false;
+        if (cleanup_after || !jQuery('div.error', form).is(':empty')) {
+          jQuery(submitted_button).next('.wait_up_homie').hide();
+          submitted_button.disabled = false;
+          submitted_button.innerHTML = was;
+          buttons.each(function(button){
+            button.className = 'button_lg';
+          });
+        }
+      
+    }
+
+    return false;
+  }
+
+</script>
+
+
+<div class="button_wrapper">
+    
+    <button class="button_lg" type="submit" name="commit" onClick="return button_submit4(this);" style="">
+      			
+        <span>&nbsp;Присоединиться&nbsp;</span>
+      
+    </button>
+    <span class="wait_up_homie" style="display:none; vertical-align: middle;"><img src="/images/ajax-loader.gif" /></span>
+    
+    
+</div>
+
+
+  </form>
+</div>
+
+    
+
+
+
+<script type="text/javascript">
+  
+  function checkSignupCheckBoxes_fb_1() {
+    if ($('tos_fb_1').checked == false)
+    {
+      alert ('Чтобы зарегистрироваться, Вы должны ознакомиться и согласиться с Пользовательским Соглашением');
+      return false;
+    }
+    else if (jQuery('#signupForm_fb_1 #birthdate_fb_1').val() == '') {
+      alert ('Вы забыли указать дату Вашего рождения.');
+      return false;
+    }
+    else
+    {
+      var birthdate = jQuery('#signupForm_fb_1 #birthdate_fb_1').val().split("-");
+      var age = 13;
+      var mydate = new Date();
+      mydate.setFullYear(parseInt(birthdate[0]), parseInt(birthdate[1]) -1, parseInt(birthdate[2]));
+
+      var currdate = new Date();
+      currdate.setFullYear(currdate.getFullYear() - age);
+      if ((currdate - mydate) < 0){
+        alert('Please note that this Site is not aimed at users under thirteen (13) years of age. Users thirteen (13) years or younger are required to have a parent or guardian review and complete any registration process, which may include age verification steps in addition to the standard process.');
+        return false;
+      } else {
+        return true;
+      }
+    }
+  }
+</script>
+
+<h3>
+  <a href="#"><img alt="Connect_logo_small_f" src="http://assets2.kroogi.com/images/connect_logo_small_F.png?1290105589" />&nbsp;Скачать бесплатно через Facebook</a>
+</h3>
+<div>
+    <div id="fb_connect_content_fb_1">
+      
+
+
+<!-- Already linked FB user -->
+
+
+
+  <!-- NOT logged in to FB -->
+  
+    
+<div id="fb_connect_content_fb_1">
+    <div><img alt="Form_top" src="http://assets0.kroogi.com/images/form_top.gif?1290105589" /></div>
+    <div class="form_side_sdw">
+      <div class="form_content">
+         Для авторизации через Facebook, пожалуйста войдите в систему FB, используя свой логин
+      </div>
+    </div>
+    <div><img alt="Form_btm" src="http://assets1.kroogi.com/images/form_btm.gif?1290105589" /></div>
+    <div class="button_wrapper">
+    
+
+
+
+
+  <span id="login_button_block">
+    <a href="#"></a>
+      <fb:login-button onclick="return true;"
+                       autologoutlink="false" max-rows="1"
+                       show-faces="false"
+                       perms="email,user_birthday,user_interests,user_likes,read_friendlists"
+                       width="140px">
+        Connect      </fb:login-button>
+      <span class="update_progress" style="display:none;vertical-align: middle;padding-left:3px;padding-top:5px;"><img src="/images/ajax-loader.gif" /></span>
+  </span>
+
+
+
+    </div>
+</div>
+  
+
+<div id="signup_form_errors_fb_1" class="error"></div>
+
+<!-- NEW USER LOGGED in to FB -->
+
+
+    </div>
+</div>
+
+
+<script type="text/javascript">
+  FB.getLoginStatus(function(response) {
+    if (response.session) {
+      // logged in and connected user, someone we know
+      jQuery.get('/facebook/connect/fetch_user_info', { dialog_id_suffix: "fb_1",project_to_follow : "",start_following : "true", content_to_like : "", partial : "/shared/facebook/connect/widget_form"} , function(data) {
+        jQuery('#fb_connect_content_fb_1').replaceWith(data);
+        FB.XFBML.parse();
+      });
+    } else {
+      // no user session available, someone we dont know
+      jQuery('#fb_connect_content_fb_1').replaceWith('\n<div id=\"fb_connect_content_fb_1\">\n    <div><img alt=\"Form_top\" src=\"http://assets0.kroogi.com/images/form_top.gif?1290105589\" /><\/div>\n    <div class=\"form_side_sdw\">\n      <div class=\"form_content\">\n         Для авторизации через Facebook, пожалуйста войдите в систему FB, используя свой логин\n      <\/div>\n    <\/div>\n    <div><img alt=\"Form_btm\" src=\"http://assets1.kroogi.com/images/form_btm.gif?1290105589\" /><\/div>\n    <div class=\"button_wrapper\">\n    \n\n\n\n\n  <span id=\"login_button_block\">\n    <a href=\"#\"><\/a>\n      <fb:login-button onclick=\"return true;\"\n                       autologoutlink=\"false\" max-rows=\"1\"\n                       show-faces=\"false\"\n                       perms=\"email,user_birthday,user_interests,user_likes,read_friendlists\"\n                       width=\"140px\">\n        Connect      <\/fb:login-button>\n      <span class=\"update_progress\" style=\"display:none;vertical-align: middle;padding-left:3px;padding-top:5px;\"><img src=\"/images/ajax-loader.gif\" /><\/span>\n  <\/span>\n\n\n\n    <\/div>\n<\/div>');
+      jQuery('#fb_mock_login_button').replaceWith('');
+      clean_form('form.signup');
+      FB.XFBML.parse();
+    }
+  });
+
+  FB.Event.subscribe('auth.login', function(response) {
+  jQuery.ajax({
+          url: '/facebook/connect/fetch_user_info',
+          data: "dialog_id_suffix=fb_1&project_to_follow=&start_following=true&content_to_like=&partial=/shared/facebook/connect/widget_form",
+          cache: false,
+          success: function(data) {
+            jQuery('#fb_connect_content_fb_1').replaceWith(data);
+            FB.XFBML.parse();
+          }
+        });
+  });
+
+  FB.Event.subscribe('auth.logout', function(response) {
+    jQuery.get('/facebook/connect/reset_user_info', { dialog_id_suffix: "fb_1"} , function(data) {
+      jQuery('#fb_connect_content_fb_1').replaceWith(data);
+      clean_form('form.signup');
+      FB.XFBML.parse();
+      jQuery("#ask_for_login_or_signon_fb_1").parent().dialog('destroy');
+      document.location.reload(false);
+    });
+  });
+</script>
+  </div>
+</div>
+
+<div style="display: none;" id="thanks_for_joining_1" title="Добро пожаловать в наши круги!">
+  <div class="info">
+    <h3>Приятного скачивания!</h3>
+    Ваша регистрационная запись еще не активирована.
+    Загляните в свою электропочту, там Вы найдете инструкции по активации.
+    Вы можете начать скачивание.
+  </div>
+  <div class="button_wrapper">
+    <button class="button_lg" type="button" onclick="jQuery('#thanks_for_joining_1').dialog('destroy');">
+      <span>Закрыть</span>
+    </button>
+  </div>
+</div>
+
+<script type="text/javascript">
+  var ask_for_login_or_signon_dialog_opts_1 = {
+    modal: true,
+    height: 'auto',
+    position: 'middle',
+    dialogClass: 'login_widget',
+    close: function() {
+      jQuery("#ask_for_login_or_signon_1").dialog('destroy');
+    }
+  };
+
+  var thanks_for_joining_dialog_opts_1 = {
+    modal: true,
+    height: 'auto',
+    position: 'middle',
+    width: 300,
+    minWidth: 300,
+    close: function() {
+      jQuery("#thanks_for_joining_1").dialog('destroy');
+    }
+  };
+
+  function after_user_created_1() {
+    
+      jQuery("form.signup .wait_up_homie").show();
+      document.location.reload(false);
+    
+  }
+
+  function after_fb_user_created_1() {
+      //clean the form - user can invoke it again
+      clean_form('form.signup');
+      jQuery("#ask_for_login_or_signon_1").dialog('destroy');
+      document.location.reload(false);
+  }
+
+
+</script>
+
+   
+
+    
+
+<div style="display: none;" id="donation_dialog_1"></div>
+
+<!-- Javascript includes to drive this functionality -->
+
+    
+
+<script type="text/javascript">
+  var donation_dialog_opts_1 = {
+    title: "Заплатите ForeverLive за Accident",
+    modal: true,
+    height: 'auto',
+    position: 'top',
+    width: 400,
+    open:  function() {
+      jQuery("#donation_dialog_1").load(
+        '/donate/choose?recipient_id=26411&content_id=990317&content_type=MusicAlbum' +
+        '' +
+        '&dialog_id_suffix=1');
+    },
+    close: function() {
+      jQuery("#donation_dialog_1").html('');
+      jQuery("#donation_dialog_1").dialog('destroy');
+    }
+  };
+  function do_contribution_1() {
+    jQuery('#donation_dialog_1').dialog(donation_dialog_opts_1);
+  }
+</script>
+
+
+
+
+
+
+
+</div>
+
+      </div>
+
+      <!-- Saring Tools -->
+      
+        <div class="main_left_block">
+
+  
+  <div style="margin-bottom: 5px;">
+
+    
+
+    <div style="display: none;" id="embed_player_dialog" title="Встроить Accident исполнителя ForeverLive"></div>
+    <script type="text/javascript">
+      var embed_player_opts = {
+        title: "Встроить Accident исполнителя ForeverLive",
+        modal: true,
+        height: 'auto',
+        position: 'top',
+        width: 700,
+        open:  function() {
+          jQuery("#embed_player_dialog").load(
+          '/player/embed_player_dialog?album_id=990317');
+        },
+        close: function() {
+          jQuery("#embed_player_dialog").dialog('destroy');
+        }
+      };
+      function show_embed_player_dialog() {
+        jQuery('#embed_player_dialog').dialog(embed_player_opts);
+      }
+    </script>
+    <a href="#" onclick='show_embed_player_dialog(); return false;'>
+        <div style="margin:0px 10px 10px 0px;">
+          <span style="padding-right:11px;"><img alt="Icon_embed" src="http://assets1.kroogi.com/images/icon_embed.gif?1290105589" /></span> Копировать код
+        </div>
+        <div class="grey_line3" style="padding-bottom:5px;"></div>
+      </a>
+    </div>
+
+
+
+  
+    
+      <a href="#comments"><img alt="Comments" class="comment_icon_share" src="http://assets1.kroogi.com/images/comments.gif?1290105589" />Комментировать</a>
+    
+    <div class="clear"></div>
+    <div class="grey_line3"></div>
+  
+  
+    
+  
+  <a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fkroogi.ru%2Fshare%2F990317&t=Check+out%3A+Accident" target="_blank">
+    <div class="sharing_icon"><img alt="Icon_facebook" src="http://assets0.kroogi.com/images/icon_facebook.gif?1290105589" /></div>
+    <div class="sharing_label">Разместить на Facebook</div>
+  </a>
+
+  <div class="clear"></div>
+  <div class="grey_line3"></div>
+
+  <script type="text/javascript" charset="utf-8" src="http://bit.ly/javascript-api.js?version=latest&login=kroogi&apiKey=R_2e15b95cd2f880f7e46452e596df398a"></script>
+  <script type="text/javascript" charset="utf-8" src="http://s.bit.ly/TweetAndTrack.js?v=1.01"></script>
+  <a href="#" onclick='return TweetAndTrack.open(this, "http://kroogi.ru/share/990317");'>
+    <span style="display:none;">Check it out!: Accident</span>
+
+    <div class="sharing_icon"><img alt="Icon_twitt" src="http://assets3.kroogi.com/images/icon_twitt.gif?1290105589" /></div>
+    <div class="sharing_label">Разместить на Твиттере</div>
+  </a>
+
+  <div class="clear"></div>
+  <div class="grey_line3"></div>
+
+  <a href="http://digg.com/submit?url=http%3A%2F%2Fkroogi.ru%2Fshare%2F990317&title=Check+out%3A+Accident&bodytext=Check+out%3A+Accident&topic=music" target="_blank">
+    <div class="sharing_icon"><img alt="Icon_digg" src="http://assets1.kroogi.com/images/icon_digg.gif?1290105589" /></div>
+    <div class="sharing_label">Разместить на Digg</div>
+  </a>
+  <div class="clear"></div>
+  <div class="grey_line3"></div>
+  
+</div>
+
+      
+    </div>
+    <div class="main_body">
+
+      
+
+      
+      
+      
+        
+          <div class="title_icon">
+            <img alt="Music_album_th" src="http://assets3.kroogi.com/images/music_album_th.gif?1290105589" />
+          </div>
+        
+        <h2 style="line-height:24px;" id="990317">Accident</h2>
+      
+      
+	
+      <!-- Image -->
+      
+        
+        <div class="folder_with_downloadables">
+  <div class="default_text">
+    
+
+      <div style="font-weight: bold;">
+    ForeverLive / 2010
+  </div>
+  <div>
+    Ambient
+  </div>
+  <div style="margin-bottom: 8px;">
+    13 треков
+  </div>
+
+
+
+    
+      
+        <table style="padding-bottom:0.5em;">
+          <tr>
+            <td style="padding:1px 5px 0 0;">
+              <img alt="Kd_icon" src="http://assets1.kroogi.com/images/icons/kd_icon.png?1290105589" />
+            </td>
+            <td style="font-size:11px;">
+              <strong><a href="http://apps.facebook.com/kroogidownloads/content/show/990317" target="_blank">
+                  Этот альбом на Facebook
+                </a></strong>
+            </td>
+          </tr>
+        </table>
+      
+    
+
+    
+      <div style="color: #666; padding-bottom: 6px;">
+        <br />Дизайн обложки сделан в Студии Евгения Муравьёва, дизайнер Василий Кузьминов
+      </div>
+    
+  </div>
+
+  
+
+<div class="typographical" id="content_items_990317">
+  
+    <div style="width:505px;">
+      
+        
+
+  
+  
+  <script type="text/javascript">
+    var params = {
+      flashvars: "playlist_xml=%3Cplay_list+language%3D%22ru%22+play_button+%3D+%22%D0%9F%D1%80%D0%BE%D0%B8%D0%B3%D1%80%D0%B0%D1%82%D1%8C%22+pause_button+%3D+%22%D0%9F%D0%B0%D1%83%D0%B7%D0%B0%22+total_time_label+%3D+%22%D0%92%D1%81%D0%B5%D0%B3%D0%BE%22+time_played_label+%3D+%22%D0%9F%D1%80%D0%BE%D1%88%D0%BB%D0%BE%22+time_left_label+%3D+%22%D0%9E%D1%81%D1%82%D0%B0%D0%BB%D0%BE%D1%81%D1%8C%22+%3E+%3Csong%3E+%3Ctrackid%3E990371%3C%2Ftrackid%3E+%3Csongartist%3EForeverLive%3C%2Fsongartist%3E+%3Csongtitle%3E%EF%BB%BF%D0%A2%D1%83%D1%87%D0%BD%D0%BE%D0%B5+%D0%BD%D0%B5%D0%B1%D0%BE%3C%2Fsongtitle%3E+%3Csongurl%3Ehttp%253A%252F%252Fd1ob8phwwne29y.cloudfront.net%252Fcontent%252Faudio%252F990371%252FTuchnoe_nebo.mp3%3C%2Fsongurl%3E+%3Cinfourl%3Ehttp%3A%2F%2FForeverLive.kroogi.ru%2Fcontent%2Fshow%2F990371%3C%2Finfourl%3E+%3Csongduration%3E5%3A37%3C%2Fsongduration%3E+%3C%2Fsong%3E+%3Csong%3E+%3Ctrackid%3E990372%3C%2Ftrackid%3E+%3Csongartist%3EForeverLive%3C%2Fsongartist%3E+%3Csongtitle%3E%EF%BB%BF%D0%92%D0%BE%D0%BB%D0%BD%D1%8B%3C%2Fsongtitle%3E+%3Csongurl%3Ehttp%253A%252F%252Fd1ob8phwwne29y.cloudfront.net%252Fcontent%252Faudio%252F990372%252FVolny.mp3%3C%2Fsongurl%3E+%3Cinfourl%3Ehttp%3A%2F%2FForeverLive.kroogi.ru%2Fcontent%2Fshow%2F990372%3C%2Finfourl%3E+%3Csongduration%3E3%3A47%3C%2Fsongduration%3E+%3C%2Fsong%3E+%3Csong%3E+%3Ctrackid%3E990373%3C%2Ftrackid%3E+%3Csongartist%3EForeverLive%3C%2Fsongartist%3E+%3Csongtitle%3E%EF%BB%BF%D0%97%D0%B0%D0%BC%D0%B5%D1%87%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%3C%2Fsongtitle%3E+%3Csongurl%3Ehttp%253A%252F%252Fd1ob8phwwne29y.cloudfront.net%252Fcontent%252Faudio%252F990373%252FZamechatelno.mp3%3C%2Fsongurl%3E+%3Cinfourl%3Ehttp%3A%2F%2FForeverLive.kroogi.ru%2Fcontent%2Fshow%2F990373%3C%2Finfourl%3E+%3Csongduration%3E2%3A43%3C%2Fsongduration%3E+%3C%2Fsong%3E+%3Csong%3E+%3Ctrackid%3E990374%3C%2Ftrackid%3E+%3Csongartist%3EForeverLive%3C%2Fsongartist%3E+%3Csongtitle%3E%EF%BB%BF%D0%9D%D0%B0%D0%B2%D0%B5%D1%80%D0%BD%D0%BE%D0%B5+%D0%BF%D0%BE%D0%B7%D0%B4%D0%BD%D0%BE%3C%2Fsongtitle%3E+%3Csongurl%3Ehttp%253A%252F%252Fd1ob8phwwne29y.cloudfront.net%252Fcontent%252Faudio%252F990374%252FNavernoe_pozdno.mp3%3C%2Fsongurl%3E+%3Cinfourl%3Ehttp%3A%2F%2FForeverLive.kroogi.ru%2Fcontent%2Fshow%2F990374%3C%2Finfourl%3E+%3Csongduration%3E3%3A34%3C%2Fsongduration%3E+%3C%2Fsong%3E+%3Csong%3E+%3Ctrackid%3E990375%3C%2Ftrackid%3E+%3Csongartist%3EForeverLive%3C%2Fsongartist%3E+%3Csongtitle%3E%EF%BB%BF%D0%A1%D0%BE%D0%B2%D1%81%D0%B5%D0%BC+%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%BD%D0%BE%3C%2Fsongtitle%3E+%3Csongurl%3Ehttp%253A%252F%252Fd1ob8phwwne29y.cloudfront.net%252Fcontent%252Faudio%252F990375%252FSovsem_stranno.mp3%3C%2Fsongurl%3E+%3Cinfourl%3Ehttp%3A%2F%2FForeverLive.kroogi.ru%2Fcontent%2Fshow%2F990375%3C%2Finfourl%3E+%3Csongduration%3E0%3A40%3C%2Fsongduration%3E+%3C%2Fsong%3E+%3Csong%3E+%3Ctrackid%3E990431%3C%2Ftrackid%3E+%3Csongartist%3EForeverLive%3C%2Fsongartist%3E+%3Csongtitle%3E%EF%BB%BF%D0%92%D0%BD%D0%B5%D0%B7%D0%B0%D0%BF%D0%BD%D0%B0%D1%8F+%D1%81%D0%BB%D1%83%D1%87%D0%B0%D0%B9%D0%BD%D0%BE%D1%81%D1%82%D1%8C%3C%2Fsongtitle%3E+%3Csongurl%3Ehttp%253A%252F%252Fd1ob8phwwne29y.cloudfront.net%252Fcontent%252Faudio%252F990431%252FVnezapnaya_sluchainost.mp3%3C%2Fsongurl%3E+%3Cinfourl%3Ehttp%3A%2F%2FForeverLive.kroogi.ru%2Fcontent%2Fshow%2F990431%3C%2Finfourl%3E+%3Csongduration%3E3%3A44%3C%2Fsongduration%3E+%3C%2Fsong%3E+%3Csong%3E+%3Ctrackid%3E990432%3C%2Ftrackid%3E+%3Csongartist%3EForeverLive%3C%2Fsongartist%3E+%3Csongtitle%3E%EF%BB%BF%D0%A3%D1%80%D0%BE%D0%B4%3C%2Fsongtitle%3E+%3Csongurl%3Ehttp%253A%252F%252Fd1ob8phwwne29y.cloudfront.net%252Fcontent%252Faudio%252F990432%252FUrod.mp3%3C%2Fsongurl%3E+%3Cinfourl%3Ehttp%3A%2F%2FForeverLive.kroogi.ru%2Fcontent%2Fshow%2F990432%3C%2Finfourl%3E+%3Csongduration%3E4%3A50%3C%2Fsongduration%3E+%3C%2Fsong%3E+%3Csong%3E+%3Ctrackid%3E990433%3C%2Ftrackid%3E+%3Csongartist%3EForeverLive%3C%2Fsongartist%3E+%3Csongtitle%3E%EF%BB%BF%D0%9B%D0%B5%D0%B3%D1%87%D0%B5%3C%2Fsongtitle%3E+%3Csongurl%3Ehttp%253A%252F%252Fd1ob8phwwne29y.cloudfront.net%252Fcontent%252Faudio%252F990433%252FLegche.mp3%3C%2Fsongurl%3E+%3Cinfourl%3Ehttp%3A%2F%2FForeverLive.kroogi.ru%2Fcontent%2Fshow%2F990433%3C%2Finfourl%3E+%3Csongduration%3E3%3A00%3C%2Fsongduration%3E+%3C%2Fsong%3E+%3Csong%3E+%3Ctrackid%3E990434%3C%2Ftrackid%3E+%3Csongartist%3EForeverLive%3C%2Fsongartist%3E+%3Csongtitle%3E%EF%BB%BF%D0%9D%D0%B5+%D1%81%D0%BF%D1%80%D0%B0%D1%88%D0%B8%D0%B2%D0%B0%D0%B9%3C%2Fsongtitle%3E+%3Csongurl%3Ehttp%253A%252F%252Fd1ob8phwwne29y.cloudfront.net%252Fcontent%252Faudio%252F990434%252FNe_sprashivay.mp3%3C%2Fsongurl%3E+%3Cinfourl%3Ehttp%3A%2F%2FForeverLive.kroogi.ru%2Fcontent%2Fshow%2F990434%3C%2Finfourl%3E+%3Csongduration%3E2%3A44%3C%2Fsongduration%3E+%3C%2Fsong%3E+%3Csong%3E+%3Ctrackid%3E990435%3C%2Ftrackid%3E+%3Csongartist%3EForeverLive%3C%2Fsongartist%3E+%3Csongtitle%3E%EF%BB%BF%D0%9D%D0%BE%D1%87%D1%8C%D1%8E%3C%2Fsongtitle%3E+%3Csongurl%3Ehttp%253A%252F%252Fd1ob8phwwne29y.cloudfront.net%252Fcontent%252Faudio%252F990435%252FNochiu.mp3%3C%2Fsongurl%3E+%3Cinfourl%3Ehttp%3A%2F%2FForeverLive.kroogi.ru%2Fcontent%2Fshow%2F990435%3C%2Finfourl%3E+%3Csongduration%3E2%3A33%3C%2Fsongduration%3E+%3C%2Fsong%3E+%3Csong%3E+%3Ctrackid%3E990438%3C%2Ftrackid%3E+%3Csongartist%3EForeverLive%3C%2Fsongartist%3E+%3Csongtitle%3E%EF%BB%BF3+%D1%87%D0%B0%D1%81%D0%B0%3C%2Fsongtitle%3E+%3Csongurl%3Ehttp%253A%252F%252Fd1ob8phwwne29y.cloudfront.net%252Fcontent%252Faudio%252F990438%252F3_chasa.mp3%3C%2Fsongurl%3E+%3Cinfourl%3Ehttp%3A%2F%2FForeverLive.kroogi.ru%2Fcontent%2Fshow%2F990438%3C%2Finfourl%3E+%3Csongduration%3E3%3A51%3C%2Fsongduration%3E+%3C%2Fsong%3E+%3Csong%3E+%3Ctrackid%3E990439%3C%2Ftrackid%3E+%3Csongartist%3EForeverLive%3C%2Fsongartist%3E+%3Csongtitle%3E%EF%BB%BF%D0%9A%D1%82%D0%BE-%D1%82%D0%BE+%D1%81%D0%B2%D0%B8%D1%81%D1%82%D0%B8%D1%82%3C%2Fsongtitle%3E+%3Csongurl%3Ehttp%253A%252F%252Fd1ob8phwwne29y.cloudfront.net%252Fcontent%252Faudio%252F990439%252FKto-to_svistit.mp3%3C%2Fsongurl%3E+%3Cinfourl%3Ehttp%3A%2F%2FForeverLive.kroogi.ru%2Fcontent%2Fshow%2F990439%3C%2Finfourl%3E+%3Csongduration%3E1%3A03%3C%2Fsongduration%3E+%3C%2Fsong%3E+%3Csong%3E+%3Ctrackid%3E990440%3C%2Ftrackid%3E+%3Csongartist%3EForeverLive%3C%2Fsongartist%3E+%3Csongtitle%3E%EF%BB%BF%D0%92+%D0%BA%D0%BE%D0%BD%D1%86%D0%B5%3C%2Fsongtitle%3E+%3Csongurl%3Ehttp%253A%252F%252Fd1ob8phwwne29y.cloudfront.net%252Fcontent%252Faudio%252F990440%252FV_kontce.mp3%3C%2Fsongurl%3E+%3Cinfourl%3Ehttp%3A%2F%2FForeverLive.kroogi.ru%2Fcontent%2Fshow%2F990440%3C%2Finfourl%3E+%3Csongduration%3E2%3A38%3C%2Fsongduration%3E+%3C%2Fsong%3E+%3C%2Fplay_list%3E&player_mode=kroogi&expires=20101120090510sig=9c12508166cfc81b66a97b8d98976301771f78ff",
+      align: "middle",
+      wmode: "transparent",
+      allowScriptAccess: "always"
+    };
+
+    swfobject.embedSWF("http://assets3.kroogi.com/flash/Kroogi_MP3_Player.swf?1263588723",
+            "album_player_990317",
+            "100%", "412",
+            "9.0.0","/flash/expressInstall.swf", false, params);
+  </script>  
+  <div class="">
+    
+    <div id = "album_player_990317">
+      На этом месте должен быть наш медиа плеер. Либо у Вас не работает Flash, либо была остановлена загрузка страницы.
+    </div>
+    
+  </div>
+
+
+
+      
+      
+      
+      
+      
+
+    </div>
+    
+  <div class="update_progress" style="display:none;vertical-align: middle;"><img src="/images/ajax-loader.gif" />
+    Обновление страницы...
+  </div>
+</div>
+
+
+  
+    <div style="padding-bottom: 6px; font-size:11px;">
+      <a href="http://foreverlive.kroogi.ru/"><span class="user_name"><img alt="Kruser" class="userlink_icon" src="http://assets3.kroogi.com/images/kruser.gif?1290105589" />&nbsp;ForeverLive</span></a> подтверждает, что человек или организация, представленные в его лице, обладает полными правами на сетевое распространение материалов этого альбома.
+    </div>
+  
+</div>
+
+
+
+        <!-- Album -->
+      
+
+
+      <div class="orng_line"></div>
+
+  <div class="default_text grey_out">Опубликовано <a href="http://foreverlive.kroogi.ru/">ForeverLive</a> 19 ноября 2010</div>
+
+
+
+
+
+
+
+
+
+
+<div style="clear:left;"></div>
+
+    </div>
+  </div>
+  <div class="shadow"><img alt="732_gw_btm" src="http://assets1.kroogi.com/images/732_gw_btm.gif?1290105589" /></div>
+</div>
+<!-- End of Main Body -->
+
+<!-- end entry, begin comments -->
+
+  
+  <div id="main_content_left">
+    <div><img alt="732_w_top" src="http://assets3.kroogi.com/images/732_w_top.gif?1290105589" /></div>
+    <div class="white_side_sdw">
+      <div class="white_body" style="padding:10px 20px">
+        
+          <div class="login_to_comment">
+            
+
+Вы должны быть зарегистрированы, чтобы оставить комментарий.
+
+  <br/>
+  <a href="http://kroogi.ru/login" id="login_to_comment_link">Войдите</a>
+  или
+  <a href="/signup" id="signup_to_comment_link">Зарегистрируйтесь</a>
+
+
+    
+
+
+<div style="display: none;" id="ask_for_login_or_signon_comment" title="Войдите, чтобы оставить комментарий">
+  <p class="info">
+    <strong>
+      
+      Сначала необходимо войти в систему или зарегистрироваться
+    </strong>
+  </p>
+  
+    <input id="project_to_follow" name="project_to_follow" type="hidden" value="26411" />
+    <input checked="checked" id="start_following_comment" name="start_following" onclick="jQuery('#ask_for_login_or_signon_comment .start_following').val(this.checked);" type="checkbox" value="true" />
+    <label for="start_following_comment">
+      <strong>И присоединиться к <span title="ForeverLive">ForeverLive</span></strong>
+    </label>
+  
+  <div class="accordion">
+    
+<h3>
+  <a href="#">Войдите, чтобы оставить комментарий</a>
+</h3>
+<div>
+  <form action="/login" class="login" method="post"><div style="margin:0;padding:0"><input name="authenticity_token" type="hidden" value="63470281cb02063c4ea03b9d41f4e57dd3e786ab" /></div>     <div><img alt="Form_top" src="http://assets0.kroogi.com/images/form_top.gif?1290105589" /></div>
+       <div class="form_side_sdw">
+         <div class="form_content">
+			<div id="login_form_errors" class="error"></div>
+    		<input class="project_to_follow" id="user_to_login_project_to_follow" name="user_to_login[project_to_follow]" type="hidden" value="26411" />
+    		<input class="start_following" id="user_to_login_start_following" name="user_to_login[start_following]" type="hidden" value="true" />
+                <input id="user_to_login_content_to_like" name="user_to_login[content_to_like]" type="hidden" />
+
+     		<div style="padding-left: 90px;">
+				<label for="user_to_login_login">Имя в системе</label>
+        		<input id="user_to_login_login" name="user_to_login[login]" size="30" type="text" />
+      			<label for="password">Пароль</label>
+        		<input id="password" name="password" type="password" />
+    		</div>
+ 		</div>
+	  </div>
+	  <div><img alt="Form_btm" src="http://assets1.kroogi.com/images/form_btm.gif?1290105589" /></div>
+    	<input id="signin_on_zero" name="signin_on_zero" type="hidden" value="comment" />
+    	
+
+
+
+
+<script type="text/javascript" charset="utf-8">
+    
+  function button_submit5(submitted_button, wait_caption){
+    if (typeof wait_caption == "undefined") {
+        wait_caption = "Подождите...";
+    }
+    submitted_button = $(submitted_button);
+    form = submitted_button.up('form');
+    if (form) {
+      container = form
+    } else {
+      container = submitted_button.up('div')
+    }
+
+    if (true) {
+      buttons = container.select('.button_lg');
+      
+        buttons.each(function(button){
+          button.className = 'button_lg_gr';
+        });
+      
+      was = submitted_button.innerHTML;
+      submitted_button.innerHTML = "<span>&nbsp;" + wait_caption + "&nbsp;</span>";
+      submitted_button.disabled = true;
+      submitted_button.next('.wait_up_homie').show();
+      
+        if (form) {
+          form.submit();
+        }
+      
+    }
+
+    return false;
+  }
+
+</script>
+
+
+<div class="button_wrapper">
+    
+    <button class="button_lg" type="submit" name="commit" onClick="return button_submit5(this);" style="">
+      			
+        <span>&nbsp;Войдите&nbsp;</span>
+      
+    </button>
+    <span class="wait_up_homie" style="display:none; vertical-align: middle;"><img src="/images/ajax-loader.gif" /></span>
+    
+    
+</div>
+
+
+  </form>
+</div>
+
+    
+
+
+
+
+
+<script type="text/javascript" language="javascript">
+  function toggle_project_field(display) {
+    document.getElementById('project_field_comment').style.display=display;
+  }
+
+  function checkSignupCheckBoxes_comment() {
+     
+    if ($('tos_comment').checked == false)
+    {
+      alert ('Чтобы зарегистрироваться, Вы должны ознакомиться и согласиться с Пользовательским Соглашением');
+      return false;
+    }
+    else if (jQuery('#signupForm #birthdate_comment').val() == '') {
+      alert ('Вы забыли указать дату Вашего рождения.');
+      return false;
+    }
+    else
+    {
+      var birthdate = jQuery('#signupForm #birthdate_comment').val().split("-");
+      var age = 13;
+      var mydate = new Date();
+      mydate.setFullYear(parseInt(birthdate[0]), parseInt(birthdate[1]) -1, parseInt(birthdate[2]));
+      
+      var currdate = new Date();
+      currdate.setFullYear(currdate.getFullYear() - age);
+      if ((currdate - mydate) < 0){
+        alert('Please note that this Site is not aimed at users under thirteen (13) years of age. Users thirteen (13) years or younger are required to have a parent or guardian review and complete any registration process, which may include age verification steps in addition to the standard process.');
+        return false;
+      } else {
+        return true;
+      }
+    }
+  }
+</script>
+
+<h3>
+  <a href="#">Зарегистрируйтесь, чтобы оставлять комментарии</a>
+</h3>
+<div>
+  <form action="/signup?ajax_mode=true" class="signup" id="signupForm" method="post" name="signupForm" onsubmit="if (!checkSignupCheckBoxes_comment()) {return false};; new Ajax.Request('/signup?ajax_mode=true', {asynchronous:false, evalScripts:true, parameters:Form.serialize(this)}); return false;"><div style="margin:0;padding:0"><input name="authenticity_token" type="hidden" value="63470281cb02063c4ea03b9d41f4e57dd3e786ab" /></div>    <div><img alt="Form_top" src="http://assets0.kroogi.com/images/form_top.gif?1290105589" /></div>
+    <div class="form_side_sdw">
+      <div class="form_content">
+        <div id="signup_form_errors_comment" class="error"></div>
+        <input class="project_to_follow" id="user_to_create_project_to_follow" name="user_to_create[project_to_follow]" type="hidden" value="26411" />
+        <input class="start_following" id="user_to_create_start_following" name="user_to_create[start_following]" type="hidden" value="true" />
+        <div style="padding-left: 90px;">
+          <label for="user_to_create_email">Е-mail</label>
+          <input class="email" id="user_to_create_email" name="user_to_create[email]" size="30" style="width:250px;" type="text" />
+          <div class="default_text">
+
+Мы никогда не передадим Ваш e-mail адрес третьей стороне. Мы сохраним его под грифом <a href="javascript:void(0)" onclick="$(this).next('.more_email_privacy_details_block').toggle()">"Секретно"</a>.
+<div class="more_email_privacy_details_block" style="display:none" >
+	<br />
+	Подробности в <a  href="http://kroogi.ru/home/policy" target="_blank">Правилах хранения личной информации</a>.
+	<br /> 
+	
+    	<input checked="checked" id="preference_email_searchable" name="preference[email_searchable]" type="checkbox" value="1" /><input name="preference[email_searchable]" type="hidden" value="0" />
+  	
+	Друзья смогут находить Вас в Кругах по e-mail адресу.
+</div>
+</div>
+
+          <label for="user_to_create_login_comment">Имя в системе</label>
+          
+          
+
+<input id="user_to_create_login_comment" name="user_to_create[login]" size="30" type="text" />
+<script type="text/javascript">
+//<![CDATA[
+new Form.Element.EventObserver('user_to_create_login_comment', function(element, value) {maybe_check_comment(element, value); validate_user_comment();}, 'focus')
+//]]>
+</script>
+
+<span class="observable_field">
+  <span id="spinner_comment"         class="observable_field spinner"><img src="/images/ajax-loader.gif" /></span>
+  <span id="ok_label_comment"        style="display:none">ок</span>
+  <span id="not_ok_label_comment"    style="display:none">к сожалению, уже кем-то занято</span>
+  <span id="too_short_label_comment" style="display:none">слишком коротко</span>
+  <span id="too_long_label_comment"  style="display:none">слишкол длинно</span>
+</span>
+<div class="default_text" id="allowed_values_comment">Можно использовать буквы, цифры и дефис (-).</div>
+<div class="default_text" id="more_error_comment" style="display: none;"></div>
+
+<script type="text/javascript">
+  function maybe_check_comment(element, value) {
+    reset_labels();
+    if(value.length > 1 && value.length < 30 && validate_user_comment()) {
+      jQuery('#spinner_comment').show();
+      jQuery.get('/home/check_field_availability', { model : 'user', field : 'login', value : value} , function(data) {
+        jQuery('#spinner_comment').hide();
+        if(data == 'true') {
+          jQuery('#ok_label_comment').show();
+        } else if (data == 'false'){
+          jQuery('#not_ok_label_comment').show();
+        } else if (data == 'error') { }
+      });
+      return true;
+    }
+    else if (value.length <= 1) {
+      jQuery('#too_short_label_comment').show();
+      return false;
+    }
+    else if (value.length > 30){
+      jQuery('#too_long_label_comment').show();
+      return false;
+    }
+  }
+  function lenght_ok(value) { if (value.length > 1 && value.length < 30) return true;}
+  function reset_labels() { jQuery('.observable_field span:gt(0)').hide(); jQuery('#more_error_comment').hide();}
+  function validate_user_comment() {
+    regexp = /^[A-Za-z0-9]{1}[A-Za-z0-9-]*[A-Za-z0-9]{1}$/i;
+    value  = $('user_to_create_login_comment').value
+    if (!lenght_ok(value)) {return true;}
+    else {
+      if (value.match(/^\d+$/)) {
+        jQuery('#more_error_comment').text('должен содержать хотя бы одну букву ').css("color","red").show();
+        return false;
+      }
+      if (!regexp.test(value)) {
+        jQuery('#more_error_comment').text('должен состоять из букв A-Z, a-z, цифр 0-9 (Внимание: пробелы не допускаются!). Не может начинаться или заканчиваться символом "-", и не должен состоять только из цифр.').css("color","red").show();
+        return false;
+      }
+      else {
+        return true;
+      }
+
+    }
+  }
+</script>
+
+<style type="text/css">
+  .observable_field .spinner {
+    display:none;vertical-align: middle;padding-left:3px;padding-top:5px;
+  }
+</style>
+
+          <label for="user_to_create_password">Пароль</label>
+          <input id="user_to_create_password" name="user_to_create[password]" size="30" style="width:150px;" type="password" />
+          <div class="default_text">Хороший пароль не бывает короче четырёх символов.</div>
+          <label for="user_to_create_password_confirmation">Подтвердить</label>
+          <input id="user_to_create_password_confirmation" name="user_to_create[password_confirmation]" size="30" style="width:150px;" type="password" />
+          <label for="user_to_create_gender" class="cell">Пол</label>
+          <input checked="checked" id="user_to_create_gender_m" name="user_to_create[gender]" type="radio" value="M" />
+          Мужской
+          <input id="user_to_create_gender_f" name="user_to_create[gender]" type="radio" value="F" />
+          Женский
+          <label for="user_to_create_birthdate">Дата рождения</label>
+          <input id="birthdate_comment" name="user_to_create[birthdate]" type="text" value="" /> <img alt="Calendar" class="calendar_date_select_popup_icon" onclick="new CalendarDateSelect( $(this).previous(), {time:false, year_range:[1900, 1997]} );" src="http://assets0.kroogi.com/images/calendar_date_select/calendar.gif?1290105589" style="border:0px; cursor:pointer;" />
+          <label for="user_to_create_language">Язык</label>
+          <input id="user_to_create_language_en" name="user_to_create[language]" type="radio" value="en" />
+          Английский
+          <input checked="checked" id="user_to_create_language_ru" name="user_to_create[language]" type="radio" value="ru" />
+          Русский
+          <br />
+          <input id="tos_comment" name="tos" type="checkbox" value="" />
+          <label for="tos_comment" style="display: inline; font-weight: normal;">Я прочел и принял условия <a  href="http://kroogi.ru/home/policy" target="_blank">Пользовательского соглашения</a></label>
+        </div>
+      </div>
+    </div>
+    <div><img alt="Form_btm" src="http://assets1.kroogi.com/images/form_btm.gif?1290105589" /></div>
+    <input id="dialog_id_suffix" name="dialog_id_suffix" type="hidden" value="comment" />
+
+    
+
+
+
+
+<script type="text/javascript" charset="utf-8">
+    
+  function button_submit6(submitted_button, wait_caption){
+    if (typeof wait_caption == "undefined") {
+        wait_caption = "Подождите...";
+    }
+    submitted_button = $(submitted_button);
+    form = submitted_button.up('form');
+    if (form) {
+      container = form
+    } else {
+      container = submitted_button.up('div')
+    }
+
+    if (checkSignupCheckBoxes_comment()) {
+      buttons = container.select('.button_lg');
+      
+        buttons.each(function(button){
+          button.className = 'button_lg_gr';
+        });
+      
+      was = submitted_button.innerHTML;
+      submitted_button.innerHTML = "<span>&nbsp;" + wait_caption + "&nbsp;</span>";
+      submitted_button.disabled = true;
+      submitted_button.next('.wait_up_homie').show();
+      
+        
+          
+        
+        jQuery(form).trigger("onsubmit");
+        var cleanup_after = true;
+        if (cleanup_after || !jQuery('div.error', form).is(':empty')) {
+          jQuery(submitted_button).next('.wait_up_homie').hide();
+          submitted_button.disabled = false;
+          submitted_button.innerHTML = was;
+          buttons.each(function(button){
+            button.className = 'button_lg';
+          });
+        }
+      
+    }
+
+    return false;
+  }
+
+</script>
+
+
+<div class="button_wrapper">
+    
+    <button class="button_lg" type="submit" name="commit" onClick="return button_submit6(this);" style="">
+      			
+        <span>&nbsp;Присоединиться&nbsp;</span>
+      
+    </button>
+    <span class="wait_up_homie" style="display:none; vertical-align: middle;"><img src="/images/ajax-loader.gif" /></span>
+    
+    
+</div>
+
+
+  </form>
+</div>
+
+    
+
+
+
+<script type="text/javascript">
+  
+  function checkSignupCheckBoxes_fb_comment() {
+    if ($('tos_fb_comment').checked == false)
+    {
+      alert ('Чтобы зарегистрироваться, Вы должны ознакомиться и согласиться с Пользовательским Соглашением');
+      return false;
+    }
+    else if (jQuery('#signupForm_fb_comment #birthdate_fb_comment').val() == '') {
+      alert ('Вы забыли указать дату Вашего рождения.');
+      return false;
+    }
+    else
+    {
+      var birthdate = jQuery('#signupForm_fb_comment #birthdate_fb_comment').val().split("-");
+      var age = 13;
+      var mydate = new Date();
+      mydate.setFullYear(parseInt(birthdate[0]), parseInt(birthdate[1]) -1, parseInt(birthdate[2]));
+
+      var currdate = new Date();
+      currdate.setFullYear(currdate.getFullYear() - age);
+      if ((currdate - mydate) < 0){
+        alert('Please note that this Site is not aimed at users under thirteen (13) years of age. Users thirteen (13) years or younger are required to have a parent or guardian review and complete any registration process, which may include age verification steps in addition to the standard process.');
+        return false;
+      } else {
+        return true;
+      }
+    }
+  }
+</script>
+
+<h3>
+  <a href="#"><img alt="Connect_logo_small_f" src="http://assets2.kroogi.com/images/connect_logo_small_F.png?1290105589" />&nbsp;Комментировать через Facebook</a>
+</h3>
+<div>
+    <div id="fb_connect_content_fb_comment">
+      
+
+
+<!-- Already linked FB user -->
+
+
+
+  <!-- NOT logged in to FB -->
+  
+    
+<div id="fb_connect_content_fb_comment">
+    <div><img alt="Form_top" src="http://assets0.kroogi.com/images/form_top.gif?1290105589" /></div>
+    <div class="form_side_sdw">
+      <div class="form_content">
+         Для авторизации через Facebook, пожалуйста войдите в систему FB, используя свой логин
+      </div>
+    </div>
+    <div><img alt="Form_btm" src="http://assets1.kroogi.com/images/form_btm.gif?1290105589" /></div>
+    <div class="button_wrapper">
+    
+
+
+
+
+  <span id="login_button_block">
+    <a href="#"></a>
+      <fb:login-button onclick="return true;"
+                       autologoutlink="false" max-rows="1"
+                       show-faces="false"
+                       perms="email,user_birthday,user_interests,user_likes,read_friendlists"
+                       width="140px">
+        Connect      </fb:login-button>
+      <span class="update_progress" style="display:none;vertical-align: middle;padding-left:3px;padding-top:5px;"><img src="/images/ajax-loader.gif" /></span>
+  </span>
+
+
+
+    </div>
+</div>
+  
+
+<div id="signup_form_errors_fb_comment" class="error"></div>
+
+<!-- NEW USER LOGGED in to FB -->
+
+
+    </div>
+</div>
+
+
+<script type="text/javascript">
+  FB.getLoginStatus(function(response) {
+    if (response.session) {
+      // logged in and connected user, someone we know
+      jQuery.get('/facebook/connect/fetch_user_info', { dialog_id_suffix: "fb_comment",project_to_follow : "26411",start_following : "true", content_to_like : "", partial : "/shared/facebook/connect/widget_form"} , function(data) {
+        jQuery('#fb_connect_content_fb_comment').replaceWith(data);
+        FB.XFBML.parse();
+      });
+    } else {
+      // no user session available, someone we dont know
+      jQuery('#fb_connect_content_fb_comment').replaceWith('\n<div id=\"fb_connect_content_fb_comment\">\n    <div><img alt=\"Form_top\" src=\"http://assets0.kroogi.com/images/form_top.gif?1290105589\" /><\/div>\n    <div class=\"form_side_sdw\">\n      <div class=\"form_content\">\n         Для авторизации через Facebook, пожалуйста войдите в систему FB, используя свой логин\n      <\/div>\n    <\/div>\n    <div><img alt=\"Form_btm\" src=\"http://assets1.kroogi.com/images/form_btm.gif?1290105589\" /><\/div>\n    <div class=\"button_wrapper\">\n    \n\n\n\n\n  <span id=\"login_button_block\">\n    <a href=\"#\"><\/a>\n      <fb:login-button onclick=\"return true;\"\n                       autologoutlink=\"false\" max-rows=\"1\"\n                       show-faces=\"false\"\n                       perms=\"email,user_birthday,user_interests,user_likes,read_friendlists\"\n                       width=\"140px\">\n        Connect      <\/fb:login-button>\n      <span class=\"update_progress\" style=\"display:none;vertical-align: middle;padding-left:3px;padding-top:5px;\"><img src=\"/images/ajax-loader.gif\" /><\/span>\n  <\/span>\n\n\n\n    <\/div>\n<\/div>');
+      jQuery('#fb_mock_login_button').replaceWith('');
+      clean_form('form.signup');
+      FB.XFBML.parse();
+    }
+  });
+
+  FB.Event.subscribe('auth.login', function(response) {
+  jQuery.ajax({
+          url: '/facebook/connect/fetch_user_info',
+          data: "dialog_id_suffix=fb_comment&project_to_follow=26411&start_following=true&content_to_like=&partial=/shared/facebook/connect/widget_form",
+          cache: false,
+          success: function(data) {
+            jQuery('#fb_connect_content_fb_comment').replaceWith(data);
+            FB.XFBML.parse();
+          }
+        });
+  });
+
+  FB.Event.subscribe('auth.logout', function(response) {
+    jQuery.get('/facebook/connect/reset_user_info', { dialog_id_suffix: "fb_comment"} , function(data) {
+      jQuery('#fb_connect_content_fb_comment').replaceWith(data);
+      clean_form('form.signup');
+      FB.XFBML.parse();
+      jQuery("#ask_for_login_or_signon_fb_comment").parent().dialog('destroy');
+      document.location.reload(false);
+    });
+  });
+</script>
+  </div>
+</div>
+
+<div style="display: none;" id="thanks_for_joining_comment" title="Подтверждение отправлено на ваш e-mail адрес">
+  <div class="info">
+    <h3>Добро пожаловать в Круги!</h3>
+    Ваша регистрационная запись еще не активирована.
+    Загляните в свою электропочту, там Вы найдете инструкции по активации.
+    Вы не сможете оставлять комментарии, пока не активируете свою регистрационную запись.
+  </div>
+  <div class="button_wrapper">
+    <button class="button_lg" type="button" onclick="jQuery('#thanks_for_joining_comment').dialog('destroy');">
+      <span>Закрыть</span>
+    </button>
+  </div>
+</div>
+
+<script type="text/javascript">
+  var ask_for_login_or_signon_dialog_opts_comment = {
+    modal: true,
+    height: 'auto',
+    position: 'middle',
+    dialogClass: 'login_widget',
+    close: function() {
+      jQuery("#ask_for_login_or_signon_comment").dialog('destroy');
+    }
+  };
+
+  var thanks_for_joining_dialog_opts_comment = {
+    modal: true,
+    height: 'auto',
+    position: 'middle',
+    width: 300,
+    minWidth: 300,
+    close: function() {
+      jQuery("#thanks_for_joining_comment").dialog('destroy');
+    }
+  };
+
+  function after_user_created_comment() {
+    
+      //clean the form - user can invoke it again
+      clean_form('form.signup');
+      jQuery("#ask_for_login_or_signon_comment").dialog('destroy');
+      jQuery("#thanks_for_joining_comment").dialog(thanks_for_joining_dialog_opts_comment);
+    
+  }
+
+  function after_fb_user_created_comment() {
+      //clean the form - user can invoke it again
+      clean_form('form.signup');
+      jQuery("#ask_for_login_or_signon_comment").dialog('destroy');
+      document.location.reload(false);
+  }
+
+
+</script>
+
+<script type="text/javascript">
+  function show_login_signup_widget(active_section) {
+    jQuery('#ask_for_login_or_signon_comment').dialog(ask_for_login_or_signon_dialog_opts_comment);
+    jQuery('#ask_for_login_or_signon_comment .accordion').accordion({ active: active_section, clearStyle: true, autoHeight: false });
+  }
+  jQuery("#login_to_comment_link").bind('click', function() {
+    show_login_signup_widget(0);
+    return false;
+  });
+  jQuery("#signup_to_comment_link").bind('click', function() {
+    show_login_signup_widget(1);
+    return false;
+  });
+</script>
+
+
+
+          </div>
+        
+
+        <div>
+          
+
+
+
+
+
+
+
+          
+
+<br />
+<a name="comments"></a>
+
+
+
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="shadow"><img alt="732_w_btm" src="http://assets3.kroogi.com/images/732_w_btm.gif?1290105589" /></div>
+
+
+
+  
+  
+
+
+
+		   
+    
+
+
+  <div><img alt="960_o_top" src="http://assets2.kroogi.com/images/960_o_top.gif?1290105589" /></div>
+  <div class="footer_side_sdw">
+    <div class="feedback_area"><img alt="Edit" src="http://assets1.kroogi.com/images/edit.gif?1290105589" />
+      <span class="default_text">
+        &nbsp;&nbsp;<b>Хотите отправить отзыв?</b>&nbsp;<a href="mailto:info@kroogi.com"><b>info@kroogi.com</b></a>
+      </span>
+    </div>
+  </div>
+  <div class="shadow"><img alt="960_o_btm" src="http://assets3.kroogi.com/images/960_o_btm.gif?1290105589" /></div>
+
+
+
+    
+<div id="footer_content">
+  <div class="footer_nav_right">
+    <a href="/explore?locale=ru">
+      <img src="/images/logo-small.png" />
+    </a>&nbsp;&nbsp;&copy; 2010
+  </div>
+  <div class="footer_nav_left">
+    <a href="http://kroogi.kroogi.ru/">Форум Кругов</a> |
+    <a href="http://kroogi.ru/home/about">О нас</a> |
+    <a href="http://kroogi.ru/home/contact">Обратная связь</a> |
+    <a href="http://kroogi.ru/home/policy">Правила использования Kroogi</a> |
+    <a href="http://kroogi.ru/home/help">Помощь</a>
+  </div>
+</div>
+
+  </div>
+ </div>
+  
+  
+<script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script type="text/javascript">
+  
+    var pageTracker = _gat._getTracker("UA-4171818-3");
+    pageTracker._setDomainName(".kroogi.ru");
+  
+  pageTracker._initData();
+  pageTracker._trackPageview();
+</script>
+
+<script type="text/javascript" src="http://dnn506yrbagrg.cloudfront.net/pages/scripts/0011/0111.js"> </script>
+
+
+</body>
+</html>
+

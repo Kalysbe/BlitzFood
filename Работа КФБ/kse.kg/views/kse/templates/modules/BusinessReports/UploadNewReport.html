@@ -1,0 +1,51 @@
+
+<div style="float: right; width: 45%; border: 1px solid #CCCCCC; padding: 5px;" class="ui-corner-all">
+    <form action="" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="CompanyId" value="{{ company_info['id'] }}" />
+    <h3>Загрузить новый отчет</h3>
+    <label>
+        Тип отчета:
+    </label>
+    <select name="report_type">
+        <option value="quarterly">Ежеквартальный отчёт</option>
+        <option value="annual">Годовой отчёт</option>
+        <option value="news">Сообщения</option>
+        <option value="analytics">Аналитика</option>
+    </select>
+    <br />
+    <label>
+        Период отчета:
+    </label>
+    <select name="kvartal">
+        <option value="0">-</option>
+        <option value="1">1 квартал</option>
+        <option value="2">2 квартал</option>
+        <option value="3">3 квартал</option>
+        <option value="4">4 квартал</option>
+    </select>
+    <br />
+    <label>
+        Год отчета:
+    </label>
+    <select name="year">
+        <!--<option value="bulletin">Бюнь</option>-->
+        <option value="2015">2015</option>
+        <option value="2016">2016</option>
+        <option value="2017">2017</option>
+        <option value="2018">2018</option>
+        <option value="2019">2019</option>
+        <option value="2020">2020</option>
+        <option value="2021">2021</option>
+		<option value="2022">2022</option>
+    </select>
+    <br />
+    <label>Файл:</label><p><input type="file" name="report_file" /></p>
+    <label>Дата отчета:</label>
+    <p><input type="textarea" name="report_date" value="" id="report_date" style="border: 1px solid #CCCCCC;"/></p>
+    <script type="text/javascript">
+        $("#report_date").datepicker({ dateFormat: 'yy-mm-dd' });
+    </script><br />
+    <center><input type="submit" name="do_upload_report" value="Загрузить" /></center><br /><br />
+    </form>
+</div>
+<br /><br />

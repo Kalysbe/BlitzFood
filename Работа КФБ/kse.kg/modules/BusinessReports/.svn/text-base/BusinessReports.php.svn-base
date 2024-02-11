@@ -1,0 +1,218 @@
+<?php
+
+$Module = "BusinessReports";
+
+function get_pages_num() {
+    $sql = "SELECT COUNT(*) AS `num` FROM `brep_companies`";
+    $result = mysql_query($sql);
+    $obj = mysql_fetch_object($result);
+    return $obj->num / 15 + 1;
+}
+
+function build_pages_array($num_of_pages) {
+    $array = array();
+    for ($i = 1; $i <= $num_of_pages; $i++) {
+        $array[$i] = $i;
+    }
+    return $array;
+}
+
+function BusinessReports_loadController() {
+
+    if (isset($_POST["do_upload_report"])) {
+        if ($_FILES["report_file"]["error"] === UPLOAD_ERR_OK) {
+            $sql = "SELECT `brep_company_id`,`brep_company_name` FROM `brep_companies` WHERE (`brep_company_id`='" . $_POST["CompanyId"] . "')";
+            $result = mysql_query($sql);
+            $company = mysql_fetch_object($result);
+
+            if (trim($_POST["report_date"]) == "")
+                $date = date("Y-m-d");
+            else
+                $date = trim($_POST["report_date"]);
+            $report_type = $_POST["report_type"];
+
+            $filename = $company->brep_company_name . "-" . $report_type . "-" . $date . ".pdf";
+            copy($_FILES["report_file"]["tmp_name"], MainClass::getSingleton()->getSiteVar("%HOME%") . "/files/BusinessReports/" . $filename);
+
+            // Getting old reports with same type for this company
+            $sql = "UPDATE `brep_reports` SET `status`='2' WHERE (
+                `brep_company_id`='" . $company->brep_company_id . "' AND
+                `type`='" . $report_type . "'
+            )";
+            mysql_query($sql);
+
+            $sql = "INSERT INTO `brep_reports` (
+                    `type`,
+                    `filetype`,
+                    `status`,
+                    `upload_date`,
+                    `report_date`,
+                    `filepath`,
+                    `brep_company_id`
+                ) VALUES (
+                    '" . $report_type . "',
+                    '" . $_FILES["report_file"]["type"] . "',
+                    '1',
+                    '" . date("Y-m-d H:i:s") . "',
+                    '" . $date . "',
+                    '" . $filename . "',
+                    '" . $company->brep_company_id . "'
+                )";
+            mysql_query($sql);
+        }
+    }
+
+    if (isset($_POST["doUpdateCompany"])) {
+        $request = buildRequestFromPost();
+        $sql = "UPDATE `brep_companies` SET ";
+        foreach ($request as $k=>$v) {
+            if ($k != "doUpdateCompany") {
+                $sql.= "
+                    `" . $k . "`='" . $v . "',";
+            }
+        }
+        $sql = substr($sql,0, -1);
+        $sql.= " WHERE (`brep_company_id`='" . $_POST["brep_company_id"] . "')";
+        mysql_query($sql);
+
+    }
+
+    if (isset($_POST["doAddCompany"])) {
+        $sql = "INSERT INTO `brep_companies` (`brep_company_name`, `title`) VALUES (
+            '" . mysql_real_escape_string($_POST["name"]) . "',
+            '" . mysql_real_escape_string($_POST["title"]) . "'
+        )";
+        mysql_query($sql);
+    }
+
+    $controller = new ControllerClass();
+    $route = MainClass::getSingleton()->getFullUriPath();
+    $controller->appendVariable("this_page", $route[2]);
+
+    // Printing list of comapnies
+    if ((!isset($route[3])||($route[3] == ""))) {
+
+        $controller->appendVariable("ControllerInclusion", "modules/BusinessReports/List.html");
+
+        $sql = "SELECT * FROM `brep_companies` ORDER BY `title` ASC LIMIT 0,15";
+        $result = mysql_query($sql);
+        $rows = mysql_num_rows($result);
+        $companies_list = array();
+        for ($i = 0; $i < $rows; $i++) {
+            mysql_data_seek($result, $i);
+            $company = mysql_fetch_object($result);
+            $companies_list[$i]['name'] = $company->brep_company_name;
+            $companies_list[$i]['title'] = $company->title;
+        }
+        $controller->appendVariable("CompaniesList", $companies_list);
+        $controller->appendVariable("pages_list", build_pages_array(get_pages_num()));
+    } elseif ((isset($route[3]))&&(trim($route[3]) != "")) {
+        $offset = 15;
+        if (substr($route[3],0,5) == "Page:") {
+
+            $from = 0;
+            $page = explode(":", $route[3]);
+            if (($page[1] == "")||($page[1] == 0))
+                $page[1] = 0;
+            else if (is_numeric(intval($page[1]))) {
+                $page[1] = $page[1] * $offset - $offset;
+            }
+            $from = $page[1];
+
+
+            $controller->appendVariable("ControllerInclusion", "modules/BusinessReports/List.html");
+
+            $sql = "SELECT * FROM `brep_companies` ORDER BY `title` ASC LIMIT $from,15";
+            $result = mysql_query($sql);
+            $rows = mysql_num_rows($result);
+            $companies_list = array();
+            for ($i = 0; $i < $rows; $i++) {
+                mysql_data_seek($result, $i);
+                $company = mysql_fetch_object($result);
+                $companies_list[$i]['name'] = $company->brep_company_name;
+                $companies_list[$i]['title'] = $company->title;
+            }
+            $controller->appendVariable("CompaniesList", $companies_list);
+            $controller->appendVariable("pages_list", build_pages_array(get_pages_num()));
+        } else {
+            $controller->appendVariable("ControllerInclusion", "modules/BusinessReports/Details.html");
+            $sql = "SELECT * FROM `brep_companies` WHERE (`brep_company_name`='" .
+                mysql_real_escape_string(trim($route[3])) .
+                "')";
+            $result = mysql_query($sql);
+            $rows = mysql_num_rows($result);
+            if ($rows == 0) {
+
+            } else {
+                $company = mysql_fetch_object($result);
+                $company_info['id'] = $company->brep_company_id;
+                $company_info['name'] = $company->brep_company_name;
+                $company_info['title'] = $company->title;
+                $company_info['sphere'] = $company->sphere;
+                $company_info['activity'] = $company->activity;
+                $company_info['date'] = $company->cr_date;
+                $company_info['owner'] = $company->owner;
+                $company_info['owner_position'] = $company->owner_position;
+                $company_info['address'] = $company->address;
+                $company_info['phone'] = $company->phone;
+                $company_info['auditor'] = $company->auditor;
+                $company_info['registrar'] = $company->registrar;
+                $controller->appendVariable("company_info", $company_info);
+
+                $sql = "SELECT * FROM `brep_reports` WHERE (`brep_company_id`='" . $company_info['id'] . "')";
+                $result = mysql_query($sql);
+                $rows = mysql_num_rows($result);
+
+                $Reports = array();
+                $ReportsArchive = array(
+                    "bulletin" => array(),
+                    "quarterly" => array(),
+                    "annual" => array(),
+                    "news" => array(),
+                    "analytics" => array(),
+                );
+                for ($i = 0; $i < $rows; $i++) {
+                    mysql_data_seek($result, $i);
+                    $Report = mysql_fetch_object($result);
+                    $_r = array();
+                    switch ($Report->type) {
+                        case "bulletin":
+                            $_r['Name'] = 'Бюллетень эмитента';
+                            break;
+                        case "quarterly":
+                            $_r['Name'] = 'Ежеквартальный отчёт';
+                            break;
+                        case "annual":
+                            $_r['Name'] = 'Годовой отчёт';
+                            break;
+                        case "news":
+                            $_r['Name'] = 'Сообщение о существенном факте';
+                            break;
+                        case "analytics":
+                            $_r['Name'] = 'Аналитика';
+                            break;
+                        default:
+                            $_r['Name'] = 'Неизвестно';
+                            break;
+                    };
+
+                    $_r['Filepath'] = $Report->filepath;
+                    $_r['Status'] = $Report->status;
+                    $_r['Type'] = $Report->type;
+                    $_r['Date'] = $Report->report_date;
+                    if ($Report->status == 1)
+                        $Reports[] = $_r;
+                    elseif ($Report->status == 2) {
+                        $ReportsArchive[$Report->type][] = $_r;
+                    }
+                    $controller->appendVariable("Reports", $Reports);
+                    $controller->appendVariable("ReportsArchive", $ReportsArchive);
+                }
+            }
+        }
+    }
+
+    return $controller;
+}
+
+?>

@@ -1,0 +1,30 @@
+{% if AdminRights %}
+<h2>Менеджер файлов</h2>
+<br /><br />
+<ul>
+{% for file in file_list %}
+<li style="border: 1px solid #CCCCCC; display: block; margin: 10px; padding: 5px; background: none;" class="ui-corner-all">
+    <div class="filename">
+        <a href="{{ root }}{{ file['filepath'] }}{{ file['filename'] }}" target="_blank">{{ file['filename'] }}</a>
+    </div>
+    <div class="fileinfo">
+        Размер: {{ file['filesize'] }} |
+        Дата загрузки: {{ file['cr_date'] }}
+    </div>
+    <div class="filedescription">
+        <form action="" method="POST">
+            <input type="hidden" name="attachment_id" value="{{ file['attachment_id'] }}" />
+        Описание: <input type="text" name="description" value="{{ file['description'] }}" style="width: 90%;" />
+        <p align="right"><input type="submit" name="doSaveChanges" value="Сохранить" /></p>
+        </form>
+    </div>
+</li>
+{% endfor %}
+</ul>
+
+{% else %}
+<div class="error ui-corner-all">
+    Эта страница доступна только администраторам сайта.
+</div>
+
+{% endif %}

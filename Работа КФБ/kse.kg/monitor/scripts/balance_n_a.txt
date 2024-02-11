@@ -1,0 +1,27 @@
+htm=" <table cellpadding="3" cellspacing="1">
+htm="    <tr> 
+htm="      <td valign="top"> <input type="checkbox" name="BALANSE" value="BALANSE">
+htm="      </td>
+htm="      <td valign='top'>Бухгалтерский баланс, <br>
+htm="        Отчет о финансовых результатах, <br>
+htm="        Отчет о движении денежных средств </td>
+sql=date_y.sql
+htm="      <td valign="top"><input type="text" name="BALANSE_T" maxlength="4" size="10" value=[FBISAPI:DATE1]></td>
+htm="    </tr>
+htm="    <tr>
+htm="      <td valign="top"><input type="checkbox" name="NEWS" value="NEWS"></td>
+htm="      <td valign="top">Архив новостей </td>
+htm="      <td valign="top"><input type="text" name="NEWS_T" maxlength="4" size="10" value=[FBISAPI:DATE1]></td>
+htm="    </tr>
+htm="    <tr>
+htm="      <td valign="top"><input type="checkbox" name="ANALITIK" value="ANALITIK"></td>
+htm="      <td valign="top">Аналитика </td>
+htm="      <td valign="top"><input type="text" name="ANALITIK_T" maxlength="4" size="10" value=[FBISAPI:DATE1]></td>
+htm="    </tr>
+htm="    <tr>
+htm="      <td valign="top">&nbsp;</td>
+htm="      <td valign="top" align="right"><input type="submit" value="Обработать"></td>
+htm="      <td valign="top"></td>
+htm="    </tr>
+htm="  </table>
+htm="</form>

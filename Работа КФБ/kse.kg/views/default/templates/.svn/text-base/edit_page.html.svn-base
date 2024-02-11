@@ -1,0 +1,36 @@
+<div id="two_columns">
+    <form action="{{ root }}/handlers/editpage.php" method="POST">
+        <label>Системное имя страницы:</label>
+        <p>{{ SubPage.Uname }}</p>
+        <div class="clean"></div>
+        <label>Наименование страницы:</label>
+        <p><input type="text" name="mPageTitle" value="{{ SubPage.Title }}" class="ui-widget-content ui-corner-all" /></p>
+        <div class="clean"></div>
+        <label>Пространство имен:</label>
+        <p>
+        <div style="float: right;">
+            {% for Category in Categories  %}
+            <input type="radio" name="mCategory" value="{{ Category }}" /> {{Category}}<br />
+            {% endfor %}
+        </div>
+        </p>
+        <div class="clean"></div>
+        <label>Текст:</label>
+        <p style="clear: both;">
+            <textarea id="mPageText" name="mPageText">{{ SubPage.Text }}</textarea>
+        </p>
+        <div class="clean"></div>
+        <label>&nbsp;</label>
+        <p><input type="submit" name="doEditPage" value="Сохранить" /></p>
+        <div class="clean"></div>
+        <input type="hidden" name="PageId" value="{{ SubPage.Id }}" />
+    </form>
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#mPageText").ckeditor({language: 'ru'});
+    });
+</script>
+{% for Attachment in Attachments %}
+1
+{% endfor %}

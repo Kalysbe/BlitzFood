@@ -1,0 +1,130 @@
+<?php
+$_LANG["{DbConnectionError}"] = "Не удалось подключиться к базе данных";
+$_LANG["{DatabaseNotExistsError}"] = "Не удалось загрузить базу данных";
+$_LANG["{UnknownLanguage}"] = "Был запрошен неизвестный языковой пакет";
+$_LANG["{UnknownPageTitle}"] = "Страница не существует";
+$_LANG["{UnknownPageText}"] = "Страница, которую Вы запросили не существует.";
+if (isset($_SESSION["LOGGED"])) {
+    $_LANG["{UnknownPageText}"].= " Вы можете <a href=\"" .
+    MainClass::getSingleton()->getSiteVar("%ROOT%") . "/" . $_SESSION["LANGUAGE"] .
+    "/NewPage/" . MainClass::getSingleton()->getPageName()
+    . "\">создать страницу</a> с таким именем.";
+}
+
+// Errors
+$_LANG["{BadLoginOrPassword}"] = "Неверное имя пользователя или пароль";
+$_LANG["{AvailableForLoggedUser}"] = "Запрошенная операция доступна только зарегистрированным пользователям
+<a href=\"" .
+MainClass::getSingleton()->getSiteVar("%ROOT%") . "/" . $_SESSION["LANGUAGE"] .
+"/Login\">Вход</a> | <a href=\"" .
+MainClass::getSingleton()->getSiteVar("%ROOT%") . "/" . $_SESSION["LANGUAGE"] .
+"/Register\">Регистрация</a>";
+
+$_LANG["{PageMustBeUnique}"] = "Системное имя элемента должно быть уникальным";
+$_LANG["{UnknownPageHandler}"] = "Запрошен несуществующий обработчик страниц";
+$_LANG["{UnknownPageModule}"] = "Проблема при загрузке модуля: Модуль не найден";
+$_LANG["{LoginOrEmailAlreadyExists}"] = "Пользователь с таким логином или электронным адресом уже зарегистрирован.
+    Выберите другой";
+$_LANG["{LoginIsBad}"] = "Логин не соответствует требованиям длины (6-32 символов)";
+$_LANG["{EmailIsBad}"] = "Некорректный электронный адрес";
+$_LANG["{PasswordIsBad}"] = "Пароль должен быть не менее шести символов";
+$_LANG["{PasswordsMismatch}"] = "Пароли не совпадают";
+$_LANG["{BadModuleParameters}"] = "Один из модулей на этой странице не получил ожидаемых параметров.";
+
+
+// Messages
+$_LANG["{PageSuccessfullyEdited}"] = "Изменения сохранены";
+$_LANG["{PageSuccessfullyRenamed}"] = "Страница успешно переименована";
+$_LANG["{SuccessfullyRegistered}"] = "Вы были успешно заристрированы. Используйте свои логин и пароль для входа в систему";
+
+// interface
+$_LANG["{LogInButton}"] = "Вход";
+$_LANG["{doLogIn}"] = "Войти";
+$_LANG["{doCancel}"] = "Отмена";
+$_LANG["{doRegister}"] = "Зарегистрировать";
+$_LANG["{RegisterButton}"] = "Регистрация";
+
+
+// blog module
+$_LANG["{DoCreateBlog}"] = "Создать новый блог";
+$_LANG["{BlogName}"] = "Название блога";
+$_LANG["{doCreateBlog}"] = "Создать блог";
+$_LANG["{BlogAlreadyExists}"] = "Блог с таким системным именем уже существует. Системное имя должно быть уникальным";
+$_LANG["{BlogControlPanel}"] = "Панель управления";
+$_LANG["{BlogWasNotFound}"] = "Блог не найден";
+$_LANG["{BlogWasNotFoundDescription}"] = "Запрошенный блог не был найден. Возможно он еще не создан, либо уже удален.";
+
+// tradestat module
+$_LANG["{DailyTradeResults}"] = "Итоги торгов";
+$_LANG["{MlnSom}"] = "Млн. сом";
+$_LANG["{TotalVolume}"] = "Общий объем";
+$_LANG["{PrimaryMarket}"] = "Первичный рынок";
+$_LANG["{SecondaryMarket}"] = "Вторичный рынок";
+$_LANG["{ListingStocks}"] = "Листинг";
+$_LANG["{NonListingStocks}"] = "Не листинг";
+
+//Listing Module
+$_LANG["{CompanyWasNotFound}"] = "Запрошенная компания не была найдена";
+
+
+// From templates
+$_LANG["{temp_about}"] = "О Бирже";
+$_LANG["{temp_general_info}"] = "Общая информация";
+$_LANG["{temp_our_strategy}"] = "Cтратегия развития";
+$_LANG["{temp_corporate_documents}"] = "Корпоративные документы";
+$_LANG["{temp_auctioneers}"] = "Акционеры";
+$_LANG["{temp_members}"] = "Участники торгов";
+$_LANG["{temp_members_rating}"] = "Рейтинг участников";
+$_LANG["{temp_partners}"] = "Наши партнеры";
+$_LANG["{temp_standards}"] = "Нормативная база";
+$_LANG["{temp_kse_normatives}"] = "Биржевая деятельность";
+$_LANG["{temp_depo_normatives}"] = "Депозитарная деятельность";
+$_LANG["{temp_statistics}"] = "Статистика торгов";
+$_LANG["{temp_trade_results}"] = "Итоги последних торгов";
+$_LANG["{temp_archive}"] = "Архив торгов";
+$_LANG["{temp_index_and_capitalization}"] = "Индекс и Капитализация";
+$_LANG["{temp_quotes}"] = "Котировки";
+$_LANG["{temp_study_center}"] = "Учебный центр";
+$_LANG["{temp_education}"] = "Общая информация";
+$_LANG["{temp_edu_plan}"] = "План работы на год";
+
+
+
+$_LANG["{Monday}"] = "Понедельник";
+$_LANG["{Tuesday}"] = "Вторник";
+$_LANG["{Wednesday}"] = "Среда";
+$_LANG["{Thursday}"] = "Четверг";
+$_LANG["{Friday}"] = "Пятница";
+$_LANG["{Saturday}"] = "Суббота";
+$_LANG["{Sunday}"] = "Воскресенье";
+
+$_LANG["{January}"] = "Январь";
+$_LANG["{February}"] = "Февраль";
+$_LANG["{March}"] = "Март";
+$_LANG["{April}"] = "Апрель";
+$_LANG["{May}"] = "Май";
+$_LANG["{June}"] = "Июнь";
+$_LANG["{July}"] = "Июль";
+$_LANG["{August}"] = "Август";
+$_LANG["{September}"] = "Сентябрь";
+$_LANG["{October}"] = "Октябрь";
+$_LANG["{November}"] = "Ноябрь";
+$_LANG["{December}"] = "Декабрь";
+
+// Blog Module
+$_LANG["{ForPeriod}"] = " За период";
+$_LANG["{PeriodFrom}"] = "С";
+$_LANG["{PeriodTo}"] = "По";
+$_LANG["{TotalPages}"] = "Всего страниц";
+$_LANG["{DisplayNews}"] = "Показать";
+
+$_LANG["Last Trade Results"] = "Итоги последних сделок";
+$_LANG["Trades for"] = "Торги за";
+$_LANG["{Trades Volume}"] = "Объем торгов";
+$_LANG["{Primary Market}"] = "Первичный";
+$_LANG["{Secondary Market}"] = "Вторичный";
+$_LANG["{Listing}"] = "Листинг";
+$_LANG["{Non Listing}"] = "Нелистинг";
+$_LANG["{Table}"] = "Таблица";
+$_LANG["{Chart}"] = "График";
+$_LANG["{Trade results for}"] = "Итоги торгов за";

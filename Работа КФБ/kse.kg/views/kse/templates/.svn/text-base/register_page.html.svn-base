@@ -1,0 +1,14 @@
+<div id="two_columns">
+    <form action="{{ root }}/handlers/register.php" method="POST">
+        <label>Имя для входа (Логин):</label>
+        <p><input type="text" name="mLogin" value="" id="mfLogin" class="text ui-widget-content ui-corner-all" /></p>
+        <label>Пароль:</label>
+        <p><input type="password" name="mPass" value="" id="mfPass" class="text ui-widget-content ui-corner-all" /></p>
+        <label>Подтверждение пароля:</label>
+        <p><input type="password" name="mPassConfirm" value="" id="mfPass" class="text ui-widget-content ui-corner-all" /></p>
+        <label>Электронный адрес:</label>
+        <p><input type="text" name="mEmail" value="" id="mfPass" class="text ui-widget-content ui-corner-all" /></p>
+        <label>&nbsp;</label>
+        <p><input type="submit" name="doRegister" value="{{ Lang['{doRegister}'] }}" /></p>
+    </form>
+</div>

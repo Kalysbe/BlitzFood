@@ -1,0 +1,41 @@
+Сервер node js! 
+Login: useruser
+password: 12pa$$wordKSE34
+
+PgAdmin 
+password:123
+
+Сервер oi!
+password: 12kse34
+
+KSETrade сервер!
+BackOffice!
+ExtraBase!
+"Main"
+login: ts
+password: everytime
+Server alias: world
+"BackUp"
+login: ts
+password: everytime
+Server alias: worldm
+
+SQL server!
+192.168.0.16 / 
+192.168.0.66 сервера
+login: sa
+password: gancha
+
+MySQL
+Host: localhost
+user: ksedbadmin
+pass: kbyerc2010
+NAME: kse
+
+GitHub!
+login: kse.mainstance@gmail.com
+password: ksetechadmin2020
+
+gmail!
+e-mail: kse.mainstance@gmail.com
+pass :ksetechadmin2020

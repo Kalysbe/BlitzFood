@@ -1,0 +1,31 @@
+<graph bgcolor='000000' canvasBgColor='000000' baseFontColor='8B8B00' caption='' subcaption=''
+hovercapbg='F47E00' divlinecolor='696969' hovercapborder='F47E00' formatNumberScale='3' decimalPrecision='2' showvalues='0' baseFontSize='15' decimalSeparator=',' 
+numdivlines='10' numVdivlines='0' yaxisminvalue='1300' yaxismaxvalue='1700'  rotateNames='1' showLimits='1' showShadow='0' showAnchors='0'>
+<categories>
+  <category name='14-05-2012'/>
+  <category name='15-05-2012'/>
+  <category name='21-05-2012'/>
+  <category name='22-05-2012'/>
+  <category name='23-05-2012'/>
+  <category name='24-05-2012'/>
+  <category name='25-05-2012'/>
+</categories>
+<dataset seriesName='BID' color='ffff00' anchorBorderColor='ffff00' anchorBgColor='ffff00'>
+  <set value='1562.22'/>
+  <set value='1554.16'/>
+  <set value='1595.54'/>
+  <set value='1591.35'/>
+  <set value='1559.81'/>
+  <set value='1559.59'/>
+  <set value='1560.87'/>
+</dataset>
+<dataset seriesName='ASK' color='ff0000' anchorBorderColor='ffff00' anchorBgColor='ffff00'>
+  <set value='1562.52'/>
+  <set value='1554.46'/>
+  <set value='1595.84'/>
+  <set value='1591.65'/>
+  <set value='1560.11'/>
+  <set value='1559.89'/>
+  <set value='1561.17'/>
+</dataset>
+</graph>

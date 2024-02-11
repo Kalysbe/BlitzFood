@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+    <div class="row">
+        <nav class="col-12 col-md-3 border rounded-3" >
+            <form class="p-3" action="">
+                <div class="input-box form-floating">
+                    <input type="text" id="InputSearch" class="form-control border-0" placeholder="Поиск" style="background-color: #EFF5FF;">
+                    <label for="InputSearch" class="text__hints">Поиск</label>
+                    <img src="./images/icon_search.svg"></img>  
+                </div>
+            </form>
+            <div id="accordion">
+                <div class="card border-0 border-top">
+                    <div class="card-header bg-body border-0" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn" data-toggle="collapse" data-target="#collapse1" aria-expanded="false"
+                                aria-controls="collapseOne">
+                                <img class="me-2" src="./images/showmenu.png" alt="">
+                                MySQL
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="collapse1" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div class="card-body d-flex flex-column">
+                            <a class="my-2 text-decoration-none" href="">Создание дампа базы данных MYSQL</a>
+                            <a class="my-2 text-decoration-none" href="">Смена пароля пользователя MySQL при помощи
+                                SQL-команды</a>
+                            <a class="my-2 text-decoration-none" href="">Смена пароля MySQL для root пользователя</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card border-0 border-top">
+                    <div class="card-header bg-body border-0" id="headingTwo">
+                        <h5 class="mb-0">
+                            <button class="btn collapsed" data-toggle="collapse" data-target="#collapse2"
+                                aria-expanded="false" aria-controls="collapseTwo">
+                                <img class="me-2" src="./images/showmenu.png" alt="">
+                                Apache (httpd)
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapse2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                        <div class="card-body"></div>
+                    </div>
+                </div>
+                <div class="card border-0 border-top">
+                    <div class="card-header bg-body border-0" id="headingThree">
+                        <h5 class="mb-0">
+                            <button class="btn collapsed" data-toggle="collapse" data-target="#collapse3"
+                                aria-expanded="false" aria-controls="collapseThree">
+                                <img class="me-2" src="./images/showmenu.png" alt="">
+                                NGINX
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapse3" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                        <div class="card-body"></div>
+                    </div>
+                </div>
+                <div class="card border-0 border-top">
+                    <div class="card-header bg-body border-0" id="headingThree">
+                        <h5 class="mb-0">
+                            <button class="btn collapsed" data-toggle="collapse" data-target="#collapse4"
+                                aria-expanded="false" aria-controls="collapseThree">
+                                <img class="me-2" src="./images/showmenu.png" alt="">
+                                PHP
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapse4" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                        <div class="card-body"></div>
+                    </div>
+                </div>
+                <div class="card border-0 border-top">
+                    <div class="card-header bg-body border-0" id="headingThree">
+                        <h5 class="mb-0">
+                            <button class="btn collapsed" data-toggle="collapse" data-target="#collapse5"
+                                aria-expanded="false" aria-controls="collapseThree">
+                                <img class="me-2" src="./images/showmenu.png" alt="">
+                                Сервисы
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapse5" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                        <div class="card-body"></div>
+                    </div>
+                </div>
+                <div class="card border-0 border-top">
+                    <div class="card-header bg-body border-0" id="headingThree">
+                        <h5 class="mb-0">
+                            <button class="btn collapsed" data-toggle="collapse" data-target="#collapse6"
+                                aria-expanded="false" aria-controls="collapseThree">
+                                <img class="me-2" src="./images/showmenu.png" alt="">
+                                VM 1С–Битрикс
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapse6" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                        <div class="card-body"></div>
+                    </div>
+                </div>
+                <div class="card border-0 border-top">
+                    <div class="card-header bg-body border-0" id="headingThree">
+                        <h5 class="mb-0">
+                            <button class="btn collapsed" data-toggle="collapse" data-target="#collapse7"
+                                aria-expanded="false" aria-controls="collapseThree">
+                                <img class="me-2" src="./images/showmenu.png" alt="">
+                                Прочие вопросы
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapse7" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                        <div class="card-body"></div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <section class="col-12 col-md-9 ps-3 ps-md-5 ps-lg-5">
+            <h3 class="title_news">База данных «Первый VPS»</h3>
+            <p class="text__hints">
+                Здесь представлена информация о работе с продуктами «Первый VPS» 
+                и руководства для использования.
+            </p>
+            <div>
+                <button class="btn btn__primary stock border me-3 mb-3 px-5 py-3" style="width:180px">MySQL</button>
+                <button class="btn border me-3 mb-3 px-4 py-3" style="width:180px">Apache (httpd)</button>
+                <button class="btn border me-3 mb-3 px-4 py-3" style="width:180px">NGINX</button>
+                <button class="btn border me-3 me-lg-0 mb-3 px-4 py-3" style="width:180px">PHP</button>
+                <button class="btn border me-3 mb-3 px-4 py-3" style="width:180px">Сервисы</button>
+                <button class="btn border me-3 mb-3 px-4 py-3" style="width:180px">VM 1С–Битрикс</button>
+                <button class="btn border me-3 mb-3 px-4 py-3" style="width:180px">Прочие вопросы</button>
+            </div>
+            <h5 class="my-4">Популярные руководства</h5>
+            <div class="row">
+                <div class="col-6">
+                    <a class="text-decoration-none" href="">О VPS, VM 1С-Битрикс и хостинге</a>
+                    <p class="mt-2"><a class="secondary__text" href="">Общие вопросы</a> <span class="ms-4"><img class="me-3" src="./images/Combined Shape.png" alt="">132</span></p>
+                </div>
+                <div class="col-6">
+                    <a class="text-decoration-none" href="">О VPS, VM 1С-Битрикс и хостинге</a>
+                    <p class="mt-2"><a class="secondary__text" href="">Общие вопросы</a> <span class="ms-4"><img class="me-3" src="./images/Combined Shape.png" alt="">132</span></p>
+                </div>
+                <div class="col-6">
+                    <a class="text-decoration-none" href="">О VPS, VM 1С-Битрикс и хостинге</a>
+                    <p class="mt-2"><a class="secondary__text" href="">Общие вопросы</a> <span class="ms-4"><img class="me-3" src="./images/Combined Shape.png" alt="">132</span></p>
+                </div>
+                <div class="col-6">
+                    <a class="text-decoration-none" href="">О VPS, VM 1С-Битрикс и хостинге</a>
+                    <p class="mt-2"><a class="secondary__text" href="">Общие вопросы</a> <span class="ms-4"><img class="me-3" src="./images/Combined Shape.png" alt="">132</span></p>
+                </div>
+            </div>
+            <h5 class="my-4">Руководства с высокой оценкой</h5>
+            <div class="row">
+                <div class="col-6">
+                    <a class="text-decoration-none" href="">Способы подключения к 1С облако</a>
+                    <p class="mt-2"><a class="secondary__text" href="">1С Облако</a> <span class="ms-4"><img class="me-3" src="./images/arrow_up (2).svg" alt="" style="width: 12px;height: 14px;">132</span></p>
+                </div>
+                <div class="col-6">
+                    <a class="text-decoration-none" href="">Способы подключения к 1С облако</a>
+                    <p class="mt-2"><a class="secondary__text" href="">1С Облако</a> <span class="ms-4"><img class="me-3" src="./images/arrow_up (2).svg" alt="" style="width: 12px;height: 14px;">132</span></p>
+                </div>
+                <div class="col-6">
+                    <a class="text-decoration-none" href="">Способы подключения к 1С облако</a>
+                    <p class="mt-2"><a class="secondary__text" href="">1С Облако</a> <span class="ms-4"><img class="me-3" src="./images/arrow_up (2).svg" alt="" style="width: 12px;height: 14px;">132</span></p>
+                </div>
+                <div class="col-6">
+                    <a class="text-decoration-none" href="">Способы подключения к 1С облако</a>
+                    <p class="mt-2"><a class="secondary__text" href="">1С Облако</a> <span class="ms-4"><img class="me-3" src="./images/arrow_up (2).svg" alt="" style="width: 12px;height: 14px;">132</span></p>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+    <div class="w-100 mt-5" style="background: linear-gradient(45deg, #3F6DD6 0%, #2755C1 99.88%);">
+        <div class="container short">
+            <div class="d-flex justify-content-center justify-content-md-between align-items-center flex-wrap h-100" style="min-height: 238px !important">
+                <img src="./images/img.png" alt="">
+                <div>
+                    <h5 class="d-flex align-items-center text-light">
+                        <span class="btn__warning me-3">TOP</span>
+                        Виртуальный сервер VPS/VDS
+                    </h5>
+                    <span class="text-light">Бесплатный период 7 дней от 350 ₽</span>
+                </div>
+                <button class="btn btn__warning">Заказать</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

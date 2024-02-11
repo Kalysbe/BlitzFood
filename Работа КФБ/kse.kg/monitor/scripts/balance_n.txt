@@ -1,0 +1,5 @@
+sql=balance.sql
+cfg="HTMMaxCycle=1" 
+htm="<tr bgcolor=FFFFFF><td colspan=3>[FBISAPI:NAME] </td></tr>"
+cfg="HTMMaxCycle=-1" 
+htm="<TR bgcolor="#FFFFFF" valign="top"><td>[FBISAPI:ARTICLE]</td><td>[FBISAPI:VALUE1]</td><td>[FBISAPI:D]</td></tr>"

@@ -1,0 +1,122 @@
+USE postfix
+CREATE TABLE IF NOT EXISTS `admin` (
+  `username` varchar(255) NOT NULL default '',
+  `password` varchar(255) NOT NULL default '',
+  `created` datetime NOT NULL default '0000-00-00 00:00:00',
+  `modified` datetime NOT NULL default '0000-00-00 00:00:00',
+  `active` tinyint(1) NOT NULL default '1',
+  PRIMARY KEY  (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Postfix Admin - Virtual Admins';
+ 
+ 
+CREATE TABLE IF NOT EXISTS `alias` (
+  `address` varchar(255) NOT NULL default '',
+  `goto` text NOT NULL,
+  `domain` varchar(255) NOT NULL default '',
+  `created` datetime NOT NULL default '0000-00-00 00:00:00',
+  `modified` datetime NOT NULL default '0000-00-00 00:00:00',
+  `active` tinyint(1) NOT NULL default '1',
+  PRIMARY KEY  (`address`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Postfix Admin - Virtual Aliases';
+ 
+ 
+CREATE TABLE IF NOT EXISTS `config` (
+  `id` int(11) NOT NULL auto_increment,
+  `name` varchar(20) character set latin1 NOT NULL default '',
+  `value` varchar(20) character set latin1 NOT NULL default '',
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `name` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='PostfixAdmin settings';
+ 
+ 
+CREATE TABLE IF NOT EXISTS `domain` (
+  `domain` varchar(255) NOT NULL default '',
+  `description` varchar(255) character set utf8 collate utf8_unicode_ci NOT NULL,
+  `aliases` int(10) NOT NULL default '0',
+  `mailboxes` int(10) NOT NULL default '0',
+  `maxquota` bigint(20) NOT NULL default '0',
+  `quota` bigint(20) NOT NULL default '0',
+  `transport` varchar(255) default NULL,
+  `backupmx` tinyint(1) NOT NULL default '0',
+  `created` datetime NOT NULL default '0000-00-00 00:00:00',
+  `modified` datetime NOT NULL default '0000-00-00 00:00:00',
+  `active` tinyint(1) NOT NULL default '1',
+  PRIMARY KEY  (`domain`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Postfix Admin - Virtual Domains';
+ 
+ 
+CREATE TABLE IF NOT EXISTS `domain_admins` (
+  `username` varchar(255) NOT NULL default '',
+  `domain` varchar(255) NOT NULL default '',
+  `created` datetime NOT NULL default '0000-00-00 00:00:00',
+  `active` tinyint(1) NOT NULL default '1',
+  KEY `username` (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Postfix Admin - Domain Admins';
+ 
+ 
+CREATE TABLE IF NOT EXISTS `fetchmail` (
+  `id` int(11) unsigned NOT NULL auto_increment,
+  `mailbox` varchar(255) NOT NULL default '',
+  `src_server` varchar(255) NOT NULL default '',
+  `src_auth` enum('password','kerberos_v5','kerberos','kerberos_v4','gssapi','cram-md5','otp','ntlm','msn','ssh','any') default NULL,
+  `src_user` varchar(255) NOT NULL default '',
+  `src_password` varchar(255) NOT NULL default '',
+  `src_folder` varchar(255) NOT NULL default '',
+  `poll_time` int(11) unsigned NOT NULL default '10',
+  `fetchall` tinyint(1) unsigned NOT NULL default '0',
+  `keep` tinyint(1) unsigned NOT NULL default '0',
+  `protocol` enum('POP3','IMAP','POP2','ETRN','AUTO') default NULL,
+  `extra_options` text,
+  `returned_text` text,
+  `mda` varchar(255) NOT NULL default '',
+  `date` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+ 
+ 
+CREATE TABLE IF NOT EXISTS `log` (
+  `timestamp` datetime NOT NULL default '0000-00-00 00:00:00',
+  `username` varchar(255) NOT NULL default '',
+  `domain` varchar(255) NOT NULL default '',
+  `action` varchar(255) NOT NULL default '',
+  `data` varchar(255) NOT NULL default '',
+  KEY `timestamp` (`timestamp`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Postfix Admin - Log';
+ 
+ 
+CREATE TABLE IF NOT EXISTS `mailbox` (
+  `username` varchar(255) NOT NULL default '',
+  `password` varchar(255) NOT NULL default '',
+  `name` varchar(255) character set utf8 collate utf8_unicode_ci NOT NULL,
+  `maildir` varchar(255) NOT NULL default '',
+  `quota` bigint(20) NOT NULL default '0',
+  `domain` varchar(255) NOT NULL default '',
+  `created` datetime NOT NULL default '0000-00-00 00:00:00',
+  `modified` datetime NOT NULL default '0000-00-00 00:00:00',
+  `active` tinyint(1) NOT NULL default '1',
+  PRIMARY KEY  (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Postfix Admin - Virtual Mailboxes';
+ 
+ 
+CREATE TABLE IF NOT EXISTS `vacation` (
+  `email` varchar(255) NOT NULL,
+  `subject` varchar(255) character set utf8 collate utf8_unicode_ci NOT NULL,
+  `body` text character set utf8 collate utf8_unicode_ci NOT NULL,
+  `cache` text NOT NULL,
+  `domain` varchar(255) NOT NULL,
+  `created` datetime NOT NULL default '0000-00-00 00:00:00',
+  `active` tinyint(1) NOT NULL default '1',
+  PRIMARY KEY  (`email`),
+  KEY `email` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Postfix Admin - Virtual Vacation';
+ 
+ 
+CREATE TABLE IF NOT EXISTS `vacation_notification` (
+  `on_vacation` varchar(255) NOT NULL,
+  `notified` varchar(255) NOT NULL,
+  `notified_at` timestamp NOT NULL default CURRENT_TIMESTAMP,
+  PRIMARY KEY  (`on_vacation`,`notified`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Postfix Admin - Virtual Vacation Notifications';
+ 
+ALTER TABLE `vacation_notification`
+  ADD CONSTRAINT `vacation_notification_pkey` FOREIGN KEY (`on_vacation`) REFERENCES `vacation` (`email`) ON DELETE CASCADE;

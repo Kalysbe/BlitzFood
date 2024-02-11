@@ -1,0 +1,58 @@
+
+{% if Logged %}
+<script type="text/javascript">
+    function displayMarketForm() {
+        $("#NewMarketForm").css('display', 'block');
+    }
+
+    function hideMarketForm() {
+        $("#NewMarketForm").css('display', 'none');
+    }
+</script>
+
+<input type="button" value="Добавить файл" id="NewFinMarket" onClick="displayMarketForm()" /><br />
+
+<div id="NewMarketForm" style="display: none">
+    <h2>Новый файл</h2>
+    <br />
+    <form action="{{ root }}/modules/FinMarket/NewMarket.php" method="POST" enctype="multipart/form-data">
+        <label>Файл: </label><p><input type="file" name="mMarket" /></p>
+        <label>Название: </label><p><input type="text" name="mTitle" value=""  style="border: 1px solid #CCCCCC"/></p>
+        <label>Описание: </label><p><textarea name="mDescription" cols="60" rows="10" style="border: 1px solid #CCCCCC"></textarea></p>
+        <label>&nbsp;</label><p><input type="submit" name="doAddMarket" value="Загрузить" /></p>
+    </form>
+    <br />
+    <input type="button" value="Скрыть" id="NewFinMarketCancel" onClick="hideMarketForm()"/><br />
+    <br />
+</div>
+<Br /><br />
+{% endif %}
+
+<ul class="FinMarket">
+    {% for File in FinMarketFiles %}
+    <li>
+        <div class="fin_file">
+            <a href="{{ root }}/FinMarket/{{ File['Path'] }}"><img src="{{ root }}/views/kse/images/icon_pdf.jpg" /></a>
+        </div>
+        <div class="fin_description">
+            <h3>{{ File['Title'] }}</h3>
+            <p>{{ File['Description'] }}</p>
+            <p class="meta">Размер: {{ File['Size'] }} | Дата: {{  File['Date'] }} | 
+                <a href="{{ root }}/FinMarket/{{ File['Path'] }}">Скачать &gt;&gt;&gt;</a> | 
+            {% if Logged %}
+                <input type="button" name="doEditMarket" id="doEditMarket" value="Править" />
+            {% endif %}
+
+            </p>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+<br />
+<br />
+<br />
+<div style="clear: both; margin-top:40px;"></div>
+Страницы: 
+{% for Page in PagesList %}
+    <a href="{{ root }}/{{ lang_code }}/FinMarket/{{ Page }}">{{ Page }}</a> 
+{% endfor %}

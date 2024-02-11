@@ -1,0 +1,87 @@
+   <html>
+      <body>
+         <h1>ApexCharts Demo with FusionExport</h1>
+         <div id="chart"></div>
+         <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+         <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+         <script src="xmltojson.js"></script>
+
+         <script>
+
+            var options = {
+               series: [{
+                  name: 'series1',
+                  data: []
+               }],
+               noData: {
+               text: 'loading...',
+               align: 'center',
+               verticalAlign: 'middle',
+               
+               },
+               stroke: {
+                  curve: 'smooth'
+               },
+               chart: {
+                  height: 500,
+                  type: 'area'
+               },
+               dataLabels: {
+                  enabled: false
+               },
+               xaxis: {
+                  type:'datetime',
+                  categories:[]
+               },
+               tooltip: {
+                     x: {
+                        format: 'dd/MM/yyyy'
+                     },
+                  },
+
+            };
+            // var xmlData = `<graph bgcolor="000000" canvasBgColor="000000" baseFontColor="8B8B00" caption="" subcaption="" hovercapbg="F47E00" divlinecolor="696969" hovercapborder="F47E00" formatNumberScale="3" decimalPrecision="2" showvalues="0" baseFontSize="15" decimalSeparator="," numdivlines="5" numVdivlines="0" yaxisminvalue="100" yaxismaxvalue="370" rotateNames="1" showLimits="1" showShadow="0">
+            //                   <categories>
+            //                      <category name="15.06.2021"/>
+            //                      <category name="03.07.2021"/>
+            //                      <category name="12.08.2021"/>
+            //                      <category name="05.09.2021"/>
+            //                      <category name="06.10.2021"/>
+            //                   </categories>
+            //                   <dataset seriesName="" color="ffff00" anchorBorderColor="ffff00" anchorBgColor="ffff00">
+            //                      <set value="970.99"/>
+            //                      <set value="970.99"/>
+            //                      <set value="968.2202"/>
+            //                      <set value="968.2202"/>
+            //                      <set value="988.2202"/>
+            //                   </dataset>
+            //                </graph>`;
+
+            $(document).ready(function () {
+               $.ajax({
+                     type: "GET",
+                     xhrFields: {
+        withCredentials: true
+    },
+                     url: "https://www.kse.kg/monitor/data_for_chart/index_graf.xml",
+                     cache: false,
+                     dataType: "xml",
+                     success: function(xml) {
+                        myJsonObject = xml2json.parser(xml)
+                        options.xaxis.categories = myJsonObject.graph.categories.category.map(function (obj) {
+                                 return obj.name.split('.').reverse().join('-');
+                        });
+
+                        options.series[0].data = myJsonObject.graph.dataset.set.map(function (obj) {
+                                 return obj.value;
+                              });
+
+                     }
+               });
+            });
+
+            var chart = new ApexCharts(document.querySelector("#chart"), options);
+            chart.render();
+         </script>
+      </body>
+   </html>

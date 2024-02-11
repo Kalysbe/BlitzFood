@@ -1,0 +1,3 @@
+sql=news.sql
+exec="SQL?NEWSYES.TXT:NEWSNO.TXT"
+sql=

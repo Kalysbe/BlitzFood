@@ -1,0 +1,405 @@
+<?php
+
+/* main.html */
+class __TwigTemplate_5edbf43017cda0c5280502928f40cc1e extends Twig_Template
+{
+  public function display(array $context)
+  {
+    // line 1
+    echo "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">
+<html>
+  <head>
+    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">
+    <title>BUsiness Site Engine</title>
+    <link rel=\"stylesheet\" href=\"";
+    // line 6
+    echo (isset($context['root']) ? $context['root'] : null);
+    echo "/views/default/styles/general.css\" type=\"text/css\" />
+    <link rel=\"shortcut icon\" href=\"";
+    // line 7
+    echo (isset($context['root']) ? $context['root'] : null);
+    echo "/views/default/images/favicon.png\" type=\"image/png\" />
+    <link type=\"text/css\" href=\"";
+    // line 8
+    echo (isset($context['root']) ? $context['root'] : null);
+    echo "/scripts/jquery-ui/css/buse/jquery-ui.css\" rel=\"Stylesheet\" />
+    <script type=\"text/javascript\" src=\"";
+    // line 9
+    echo (isset($context['root']) ? $context['root'] : null);
+    echo "/scripts/jquery-ui/js/jquery-1.4.2.min.js\"></script>
+    <script type=\"text/javascript\" src=\"";
+    // line 10
+    echo (isset($context['root']) ? $context['root'] : null);
+    echo "/scripts/jquery-ui/js/jquery-ui.min.js\"></script>
+    <script type=\"text/javascript\" src=\"";
+    // line 11
+    echo (isset($context['root']) ? $context['root'] : null);
+    echo "/scripts/ckeditor/ckeditor.js\"></script>
+    <script type=\"text/javascript\" src=\"";
+    // line 12
+    echo (isset($context['root']) ? $context['root'] : null);
+    echo "/scripts/ckeditor/adapters/jquery.js\"></script>
+    <script type=\"text/javascript\">
+        \$(function() {
+            \$(\"#topmenu>ul>li\").bind('mouseover', function() {
+                \$(this).addClass('overmenuitem ui-corner-all');
+                \$(this).children().css('color', '#FFFFFF');
+            });
+
+            \$(\"#topmenu>ul>li\").bind('mouseleave', function() {
+                \$(this).removeClass('overmenuitem ui-corner-all');
+                \$(this).children().css('color', '#000000');
+            });
+
+            \$(\"#header\").addClass('ui-corner-top');
+            \$(\"#footer\").addClass('ui-corner-bottom');
+            \$(\"input:submit\").button();
+
+            var tips = \$(\".validateTips\");
+            function updateTips(t) {
+                tips
+                    .text(t)
+                    .addClass('ui-state-highlight');
+                setTimeout(function() {
+                    tips.removeClass('ui-state-highlight', 1500);
+                }, 500);
+            }
+
+            function doLogIn() {
+                \$.post(\"";
+    // line 40
+    echo (isset($context['root']) ? $context['root'] : null);
+    echo "/handlers/login.php\", {
+                    doLogin: 1,
+                    mLogin: \$(\"#mLogin\").val(),
+                    mPass: \$(\"#mPass\").val()
+                }, function(result) {
+                    if (result == 0) {
+                        updateTips(\"";
+    // line 46
+    echo $this->getAttribute((isset($context['Lang']) ? $context['Lang'] : null), "{BadLoginOrPassword}", array(), true);
+    echo "\");
+                    } else if (result == 1) {
+                        window.location.replace(\"";
+    // line 48
+    echo (isset($context['root']) ? $context['root'] : null);
+    echo "/";
+    echo (isset($context['lang_code']) ? $context['lang_code'] : null);
+    echo "/";
+    echo (isset($context['main_page']) ? $context['main_page'] : null);
+    echo "\");
+                    }
+                });
+            }
+
+            \$(\"#login-dialog\").dialog({
+                autoOpen: false,
+                height: 250,
+                width: 400,
+                modal: true,
+                title: \"";
+    // line 58
+    echo $this->getAttribute((isset($context['Lang']) ? $context['Lang'] : null), "{LogInButton}", array(), true);
+    echo "\",
+                buttons: {
+                    \"";
+    // line 60
+    echo $this->getAttribute((isset($context['Lang']) ? $context['Lang'] : null), "{doLogIn}", array(), true);
+    echo "\": function() {
+                        doLogIn();
+                    },
+                    \"";
+    // line 63
+    echo $this->getAttribute((isset($context['Lang']) ? $context['Lang'] : null), "{doCancel}", array(), true);
+    echo "\": function() {
+                            \$(this).dialog('close');
+                    }
+                },
+                close: function() {
+                        allFields.val('').removeClass('ui-state-error');
+                }
+            });
+
+            \$('#loginButton')
+            .click(function() {
+                    \$('#login-dialog').dialog('open');
+            });
+
+        });
+
+        // sticky footer
+       \$(document).ready(function() {
+          positionFooter();
+
+          \$(window)
+            .scroll(positionFooter)
+            .resize(positionFooter);
+
+          function positionFooter() {
+            var docHeight = \$(document.body).height() - \$(\"#sticky-footer-push\").height();
+            if(docHeight < \$(window).height()){
+              var diff = \$(window).height() - docHeight;
+              if (!\$(\"#sticky-footer-push\").length > 0) {
+                \$(\"#footer\").before('<div id=\"sticky-footer-push\"></div>');
+              }
+              \$(\"#sticky-footer-push\").height(diff - 10);
+            }
+          }
+        });
+    </script>
+  </head>
+  <body>
+      <div id=\"page\">
+          <div id=\"header\">
+              <div class=\"logo\">
+                <a href=\"";
+    // line 104
+    echo (isset($context['root']) ? $context['root'] : null);
+    echo "\">
+                    <img src=\"";
+    // line 105
+    echo (isset($context['root']) ? $context['root'] : null);
+    echo "/views/default/images/buse_logo.png\" />
+                </a>
+              </div>
+              
+              <div id=\"loginside\">
+                  ";
+    // line 110
+    if ((isset($context['Logged']) ? $context['Logged'] : null))
+    {
+      echo "
+                  <p>
+                      <strong>
+                          ";
+      // line 113
+      echo $this->getAttribute((isset($context['LoggedUser']) ? $context['LoggedUser'] : null), "getUsername", array());
+      echo "
+                      </strong>
+                      | <a href=\"";
+      // line 115
+      echo (isset($context['root']) ? $context['root'] : null);
+      echo "/handlers/logout.php\">Выход</a>
+                  </p>
+                  ";
+    }
+    else
+    {
+      // line 117
+      echo "
+                  <p><a href=\"#\" id=\"loginButton\">Вход</a> | <a href=\"";
+      // line 118
+      echo (isset($context['root']) ? $context['root'] : null);
+      echo "/";
+      echo (isset($context['lang_code']) ? $context['lang_code'] : null);
+      echo "/Register\">Регистрация</a></p>
+                  ";
+    }
+    // line 119
+    echo "
+              </div>
+              <div id=\"clean\"></div>
+              
+          </div>
+          <div id=\"body\">
+            <div id=\"topmenu\">
+                <ul>
+                    <li><a href=\"";
+    // line 127
+    echo (isset($context['root']) ? $context['root'] : null);
+    echo "\">Домой</a></li>
+                    <li><a href=\"#\">Страницы</a></li>
+                    <li><a href=\"#\">Проекты</a></li>
+                    <li><a href=\"#\">О нас</a></li>
+                </ul>
+                <div id=\"clean\"></div>
+                ";
+    // line 133
+    $context['_parent'] = (array) $context;
+    $seq236713 = twig_iterator_to_array((isset($context['errors']) ? $context['errors'] : null));
+    $context['loop']['length'] = count($seq236713);
+    $context['loop'] = array(
+      'parent'    => $context['_parent'],
+      'length'    => $context['loop']['length'],
+      'index0'    => 0,
+      'index'     => 1,
+      'revindex0' => $context['loop']['length'] - 1,
+      'revindex'  => $context['loop']['length'],
+      'first'     => true,
+      'last'      => false,
+    );
+    foreach ($seq236713 as $context["_key"] => $context["error"])
+    {
+      echo "
+                <div class=\"error ui-corner-all\">
+                    ";
+      // line 135
+      echo (isset($context['error']) ? $context['error'] : null);
+      echo "
+                </div>
+                ";
+      ++$context['loop']['index0'];
+      ++$context['loop']['index'];
+      --$context['loop']['revindex0'];
+      --$context['loop']['revindex'];
+      $context['loop']['first'] = false;
+      $context['loop']['last'] = 0 === $context['loop']['revindex0'];
+    }
+    $context = $context['_parent'];
+    // line 137
+    echo "
+                ";
+    // line 138
+    $context['_parent'] = (array) $context;
+    $seq43478 = twig_iterator_to_array((isset($context['messages']) ? $context['messages'] : null));
+    $context['loop']['length'] = count($seq43478);
+    $context['loop'] = array(
+      'parent'    => $context['_parent'],
+      'length'    => $context['loop']['length'],
+      'index0'    => 0,
+      'index'     => 1,
+      'revindex0' => $context['loop']['length'] - 1,
+      'revindex'  => $context['loop']['length'],
+      'first'     => true,
+      'last'      => false,
+    );
+    foreach ($seq43478 as $context["_key"] => $context["message"])
+    {
+      echo "
+                <div class=\"message ui-corner-all\">
+                    ";
+      // line 140
+      echo (isset($context['message']) ? $context['message'] : null);
+      echo "
+                </div>
+                ";
+      ++$context['loop']['index0'];
+      ++$context['loop']['index'];
+      --$context['loop']['revindex0'];
+      --$context['loop']['revindex'];
+      $context['loop']['first'] = false;
+      $context['loop']['last'] = 0 === $context['loop']['revindex0'];
+    }
+    $context = $context['_parent'];
+    // line 142
+    echo "
+            </div>
+              <div id=\"content\">
+                  <div id=\"left_side\">
+                      <div class=\"page_title\">";
+    // line 146
+    echo $this->getAttribute((isset($context['Page']) ? $context['Page'] : null), "Title", array());
+    echo "</div>
+                      ";
+    // line 147
+    if ($this->getAttribute((isset($context['Page']) ? $context['Page'] : null), "Status", array()) == 4)
+    {
+      echo "
+                      ";
+      // line 148
+      $this->env->loadTemplate($this->getAttribute((isset($context['Page']) ? $context['Page'] : null), "Text", array()))->display($context);
+      echo "
+                      ";
+    }
+    elseif ($this->getAttribute((isset($context['Page']) ? $context['Page'] : null), "Status", array()) == 8)
+    {
+      // line 149
+      echo "
+                      ";
+      // line 150
+      $this->env->loadTemplate((isset($context['ControllerInclusion']) ? $context['ControllerInclusion'] : null))->display($context);
+      echo "
+                      ";
+    }
+    else
+    {
+      // line 151
+      echo "
+                      <div class=\"page_text\">";
+      // line 152
+      echo $this->getAttribute((isset($context['Page']) ? $context['Page'] : null), "Text", array());
+      echo "</div>
+                      ";
+      // line 153
+      if (((isset($context['Logged']) ? $context['Logged'] : null)) && ($this->getAttribute((isset($context['Page']) ? $context['Page'] : null), "Status", array()) == 1))
+      {
+        echo "
+                      <div class=\"page_meta\">
+                          <ul>
+                              <li class=\"ui-corner-all\"><a href=\"";
+        // line 156
+        echo (isset($context['root']) ? $context['root'] : null);
+        echo "/";
+        echo (isset($context['lang_code']) ? $context['lang_code'] : null);
+        echo "/EditPage/";
+        echo $this->getAttribute((isset($context['Page']) ? $context['Page'] : null), "Uname", array());
+        echo "\">Редактировать</a></li>
+                              <li class=\"ui-corner-all\"><a href=\"";
+        // line 157
+        echo (isset($context['root']) ? $context['root'] : null);
+        echo "/";
+        echo (isset($context['lang_code']) ? $context['lang_code'] : null);
+        echo "/RenamePage/";
+        echo $this->getAttribute((isset($context['Page']) ? $context['Page'] : null), "Uname", array());
+        echo "\">Переименовать</a></li>
+                              <li class=\"ui-corner-all\"><a href=\"";
+        // line 158
+        echo (isset($context['root']) ? $context['root'] : null);
+        echo "/";
+        echo (isset($context['lang_code']) ? $context['lang_code'] : null);
+        echo "/HidePage/";
+        echo $this->getAttribute((isset($context['Page']) ? $context['Page'] : null), "Uname", array());
+        echo "\">Скрыть</a></li>
+                          </ul>
+                      </div>
+                      ";
+      }
+      // line 161
+      echo "
+                      ";
+    }
+    // line 162
+    echo "
+                  </div>
+                  <div id=\"right_side\">
+                      <div id=\"sideblock\" class=\"ui-corner-all\">
+                          <div id=\"sb_title\">";
+    // line 166
+    echo $this->getAttribute((isset($context['TestSidebar']) ? $context['TestSidebar'] : null), "getTitle", array());
+    echo "</div>
+                          <div id=\"sb_content\">";
+    // line 167
+    echo $this->getAttribute((isset($context['TestSidebar']) ? $context['TestSidebar'] : null), "getText", array());
+    echo "</div>
+                      </div>
+
+                      <div id=\"sideblock\" class=\"ui-corner-all\">
+                          <div id=\"sb_title\">Блок</div>
+                          <div id=\"sb_content\">Содержимое блока</div>
+                      </div>
+                  </div>
+                  <div id=\"clean\"></div>
+              </div>
+          </div>
+          <div id=\"footer\">
+            BUsiness Site Engine is published under GNU GPL license &copy; 2009-2010 <br />
+            Visit <a href=\"http://buse.os.linux.kg\">Website</a> |
+            <a href=\"http://os.linux.kg/Project/buse\">Project page</a> on <a href=\"http://os.linux.kg\">Code Jeek</a><br />
+            This project developed by Epos Software Foundation development team.
+          </div>
+      </div>
+
+        <div id=\"login-dialog\">
+            <p class=\"validateTips\"></p>
+            <div id=\"two_columns\">
+                <label>Логин:</label>
+                <input type=\"text\" name=\"mLogin\" value=\"\" id=\"mLogin\" class=\"text ui-widget-content ui-corner-all\" />
+                <label>Пароль:</label>
+                <input type=\"password\" name=\"mPass\" value=\"\" id=\"mPass\" class=\"text ui-widget-content ui-corner-all\" />
+            </div>
+        </div>
+  </body>
+</html>";
+  }
+
+}

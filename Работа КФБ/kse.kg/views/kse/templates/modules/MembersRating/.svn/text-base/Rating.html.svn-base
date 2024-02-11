@@ -1,0 +1,26 @@
+<h2>Рейтинг участников за {{ current_year }} год</h2>
+
+<table width="100%" class="class1">
+    <tr>
+        <th>Наименование компании</th>
+        <th>Объем млн.сом</th>
+        <th>Количество сделок</th>
+    </tr>
+{% for company in rating %}
+    <tr>
+        <td>{{ company['name'] }}</td>
+        <td>{{ company['volume'] }}</td>
+        <td>{{ company['amount'] }}</td>
+    </tr>
+{% endfor %}
+</table>
+
+<div class="results_view f_r"> Года
+{% for year in available_years %}
+
+/ <a href="{{ root }}/{{ lang_code }}/MembersRating/{{ year }}"{% if year == current_year %}
+        class="current"
+     {% endif %}>{{ year }}</a>
+
+{% endfor %}
+</div>

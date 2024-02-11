@@ -1,0 +1,35 @@
+<div id="two_columns">
+    <form action="{{ root }}/handlers/newpage.php" method="POST">
+        <label>Системное имя страницы:</label>
+        <p><input type="text" name="mPageName" value="{{ SubPageUri }}" class="ui-widget-content ui-corner-all" /></p>
+        <div class="clean"></div>
+        <label>Наименование страницы:</label>
+        <p><input type="text" name="mPageTitle" value="" class="ui-widget-content ui-corner-all" /></p>
+        <div class="clean"></div>
+        <label>Категория:</label>
+        <p><input type="text" name="mPageNamespace" value="" class="ui-widget-content ui-corner-all" /></p>
+        <div class="clean"></div>
+        <label>Все категории:</label>
+        <p>
+            {% for Category in Categories %}
+                {{ Category }}
+            {% else %}
+            <strong>Категорий нет</strong>
+            {% endfor %}
+        </p>
+        <div class="clean"></div>
+        <label>Текст:</label>
+        <p style="clear: both;">
+            <textarea id="mPageText" name="mPageText"></textarea>
+        </p>
+        <div class="clean"></div>
+        <label>&nbsp;</label>
+        <p><input type="submit" name="doAddPage" value="Сохранить" /></p>
+        <div class="clean"></div>
+    </form>
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#mPageText").ckeditor({language: 'ru'});
+    });
+</script>

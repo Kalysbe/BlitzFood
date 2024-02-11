@@ -1,0 +1,12 @@
+<script type="text/javascript">
+    function onAddAttachmentField() {
+        $("#fileForm").append('<input type="file" name="' + new Date().getTime() + '" value="" />');
+    }
+</script>
+
+<h3>Вложения</h3>
+<div id="fileForm">
+    <input type="file" name="mFile1" value="" />
+</div>
+<a href="#" onClick="onAddAttachmentField()">Добавить поле</a>
+

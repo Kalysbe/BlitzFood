@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/guest/buse/!svn/ver/208/trunk/lib/SwiftMailer/classes/Swift/Plugins/Reporters
+END
+HitReporter.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/guest/buse/!svn/ver/208/trunk/lib/SwiftMailer/classes/Swift/Plugins/Reporters/HitReporter.php
+END
+HtmlReporter.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/guest/buse/!svn/ver/208/trunk/lib/SwiftMailer/classes/Swift/Plugins/Reporters/HtmlReporter.php
+END

@@ -1,0 +1,87 @@
+<?php
+$_LANG["{DbConnectionError}"] = "Не удалось подключиться к базе данных";
+$_LANG["{DatabaseNotExistsError}"] = "Не удалось загрузить базу данных";
+$_LANG["{UnknownLanguage}"] = "Был запрошен неизвестный языковой пакет";
+$_LANG["{UnknownPageTitle}"] = "Страница не существует";
+$_LANG["{UnknownPageText}"] = "Страница, которую Вы запросили не существует.";
+if (isset($_SESSION["LOGGED"])) {
+    $_LANG["{UnknownPageText}"].= " Вы можете <a href=\"" .
+    MainClass::getSingleton()->getSiteVar("%ROOT%") . "/" . $_SESSION["LANGUAGE"] .
+    "/NewPage/" . MainClass::getSingleton()->getPageName()
+    . "\">создать страницу</a> с таким именем.";
+}
+
+// Errors
+$_LANG["{BadLoginOrPassword}"] = "Неверное имя пользователя или пароль";
+$_LANG["{AvailableForLoggedUser}"] = "Запрошенная операция доступна только зарегистрированным пользователям
+<a href=\"" .
+MainClass::getSingleton()->getSiteVar("%ROOT%") . "/" . $_SESSION["LANGUAGE"] .
+"/Login\">Вход</a> | <a href=\"" .
+MainClass::getSingleton()->getSiteVar("%ROOT%") . "/" . $_SESSION["LANGUAGE"] .
+"/Register\">Регистрация</a>";
+
+$_LANG["{PageMustBeUnique}"] = "Системное имя элемента должно быть уникальным";
+$_LANG["{UnknownPageHandler}"] = "Запрошен несуществующий обработчик страниц";
+$_LANG["{UnknownPageModule}"] = "Проблема при загрузке модуля: Модуль не найден";
+$_LANG["{LoginOrEmailAlreadyExists}"] = "Пользователь с таким логином или электронным адресом уже зарегистрирован.
+    Выберите другой";
+$_LANG["{LoginIsBad}"] = "Логин не соответствует требованиям длины (6-32 символов)";
+$_LANG["{EmailIsBad}"] = "Некорректный электронный адрес";
+$_LANG["{PasswordIsBad}"] = "Пароль должен быть не менее шести символов";
+$_LANG["{PasswordsMismatch}"] = "Пароли не совпадают";
+$_LANG["{BadModuleParameters}"] = "Один из модулей на этой странице не получил ожидаемых параметров.";
+
+
+// Messages
+$_LANG["{PageSuccessfullyEdited}"] = "Изменения сохранены";
+$_LANG["{PageSuccessfullyRenamed}"] = "Страница успешно переименована";
+$_LANG["{SuccessfullyRegistered}"] = "Вы были успешно заристрированы. Используйте свои логин и пароль для входа в систему";
+
+// interface
+$_LANG["{LogInButton}"] = "Вход";
+$_LANG["{doLogIn}"] = "Войти";
+$_LANG["{doCancel}"] = "Отмена";
+$_LANG["{doRegister}"] = "Зарегистрировать";
+$_LANG["{RegisterButton}"] = "Регистрация";
+
+
+// blog module
+$_LANG["{DoCreateBlog}"] = "Создать новый блог";
+$_LANG["{BlogName}"] = "Название блога";
+$_LANG["{doCreateBlog}"] = "Создать блог";
+$_LANG["{BlogAlreadyExists}"] = "Блог с таким системным именем уже существует. Системное имя должно быть уникальным";
+$_LANG["{BlogControlPanel}"] = "Панель управления";
+$_LANG["{BlogWasNotFound}"] = "Блог не найден";
+$_LANG["{BlogWasNotFoundDescription}"] = "Запрошенный блог не был найден. Возможно он еще не создан, либо уже удален.";
+
+// tradestat module
+$_LANG["{DailyTradeResults}"] = "Итоги торгов";
+$_LANG["{MlnSom}"] = "Млн. сом";
+$_LANG["{TotalVolume}"] = "Общий объем";
+$_LANG["{PrimaryMarket}"] = "Первичный рынок";
+$_LANG["{SecondaryMarket}"] = "Вторичный рынок";
+$_LANG["{ListingStocks}"] = "Листинг";
+$_LANG["{NonListingStocks}"] = "Не листинг";
+
+//Listing Module
+$_LANG["{CompanyWasNotFound}"] = "Запрошенная компания не была найдена";
+
+// From templates
+$_LANG["{temp_about}"] = "Биржа жөнүндө";
+$_LANG["{temp_general_info}"] = "Жалпы маалымат";
+$_LANG["{temp_our_strategy}"] = "Өнүгүү стратегиясы";
+$_LANG["{temp_corporate_documents}"] = "Корпоративдик иш-кагаздары";
+$_LANG["{temp_auctioneers}"] = "Акционерлер";
+$_LANG["{temp_members}"] = "Тооруктун катышуучулары";
+$_LANG["{temp_partners}"] = "Биздин өнөктөштөр";
+$_LANG["{temp_standards}"] = "Нормативдик база";
+$_LANG["{temp_kse_normatives}"] = "Биржалык иш-аракеттер";
+$_LANG["{temp_depo_normatives}"] = "Депозитардык иш-аракеттер";
+$_LANG["{temp_statistics}"] = "Тооруктардын статистикасы";
+$_LANG["{temp_trade_results}"] = "Акыркы тооруктардын натыйжалары";
+$_LANG["{temp_archive}"] = "Тоорук архиви";
+$_LANG["{temp_index_and_capitalization}"] = "Индекс жана Капиталдаштыруу";
+$_LANG["{temp_quotes}"] = "Котировкалар";
+$_LANG["{temp_study_center}"] = "Окуу борбору";
+$_LANG["{temp_education}"] = "Жалпы маалымат";
+$_LANG["{temp_edu_plan}"] = "Жылдык иш-чаралардын планы";

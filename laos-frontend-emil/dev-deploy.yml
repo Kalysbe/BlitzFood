@@ -1,0 +1,49 @@
+# This workflow will do a clean install of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Dev Deploy
+
+on:
+  push:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install cross-env
+        run: npm install cross-env -g
+#
+#      - name: Install sass-migrator
+#        run: npm install -g sass-migrator
+#
+#      - name: Install sass-migrator-division
+#        run: sass-migrator division **/*.scss
+
+      - name: Build app
+        run: npm run build-prod
+
+      - name: Prepare SSH Connection
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          echo "${{ secrets.SSH_CONFIG }}" > ~/.ssh/config
+          chmod 0600 ~/.ssh/id_rsa
+          ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
+      - name: Copy files
+        run: rsync -havz --exclude='/.git' dist/ iram2:/srv/iram/dev-front/  --delete
+
+      - name: Restart Container
+        run: |
+          ssh iram2 "cd /srv/iram/ \
+                && sudo docker-compose restart dev-front"

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/guest/buse/!svn/ver/182/trunk/modules/MembersRating
+END
+install.sql
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/guest/buse/!svn/ver/175/trunk/modules/MembersRating/install.sql
+END
+Rating.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/guest/buse/!svn/ver/182/trunk/modules/MembersRating/Rating.php
+END

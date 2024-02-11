@@ -1,0 +1,287 @@
+/* table {
+    text-indent: 0;
+    border-color: inherit;
+    border-collapse: collapse;
+} */
+table tr {
+    border: 1px solid #e8e5e5 !important;
+}
+table tr > td:first-child {
+    text-align: center;
+    background-color: #f5f5f5 !important;
+    border-right: 1px solid #e8e5e5 !important;
+}
+table tr td {
+    cursor: pointer;
+    background-color: #fff !important;
+    color: black !important;
+    overflow: hidden;
+    font-weight: 550;
+    font-size: 13px;
+    max-width: 150px;
+    min-width: 1px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: light;
+    white-space: nowrap;
+    /* border-bottom: 1px solid #337E86; */
+    border: none !important;
+    text-overflow: elipsis '[..]';
+}
+.properties-td-text-style {
+    font-size: 15px;
+}
+.jss43 {
+    border: 1px solid #2B4D80;
+    resize: both;
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    flex-flow: column;
+    min-width: 150px;
+    box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12);
+    min-height: 150px;
+    background-color: white;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+.main-table-label-p-style-new {
+    width: 100%;
+    cursor: move;
+    text-align-last: center;
+    margin-bottom: 0;
+    margin-top: 0;
+    background-color: #fff;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-family: "Montserrat";
+    font-weight: 700;
+    font-size: 18px;
+    height: 40px;
+}
+.dragble-div-header-table-style-new {
+    margin-bottom: 2;
+    text-align: center;
+    font-weight: 700;
+}
+.dragble-div-header-td-style-new {
+    text-align: center;
+    font-size: 15px;
+}
+.dragble-div-body-style {
+    border: 1px ridge #78909c;
+    background-color: #fcfcfc;
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+}
+.react-tabs {
+    -webkit-tap-highlight-color: transparent;
+}
+.react-tabs__tab-list {
+    border-bottom: 1px solid #aaa;
+    margin: 0 0 10px;
+    padding: 0;
+}
+.react-tabs__tab--selected {
+    background: #fff;
+    border-color: #aaa;
+    color: #000;
+    border-radius: 5px 5px 0 0;
+}
+.react-tabs__tab {
+    display: inline-block;
+    border: 1px solid transparent;
+    border-bottom: none;
+    bottom: -1px;
+    position: relative;
+    list-style: none;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+.react-tabs__tab-panel--selected {
+    display: block;
+}
+.properties-td-text-style {
+    font-size: 15px;
+}
+.react-tabs__tab-panel {
+    display: none;
+}
+.approveButton, .cancelButton {
+    border: 1px solid #337e86;
+    border-radius: 0;
+    height: 30px;
+    width: 190px;
+    font-family: Helvetica;
+    cursor: pointer;
+}
+.approveButton {
+    color: #fff;
+    background: #337e86;
+    white-space: nowrap;
+}
+.cancelButton {
+    color: #337e86;
+}
+.approveButton, .cancelButton {
+    border: 1px solid #337e86;
+    border-radius: 0;
+    height: 30px;
+    width: 190px;
+    font-family: Helvetica;
+    cursor: pointer;
+}
+.css-1hwfws3 {
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+    flex: 1 1 0%;
+    flex-wrap: wrap;
+    padding: 2px 8px;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.css-yk16xz-control {
+    -webkit-box-align: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(204, 204, 204);
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    cursor: default;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    min-height: 38px;
+    position: relative;
+    transition: all 100ms ease 0s;
+    box-sizing: border-box;
+    outline: 0px !important;
+}
+.css-7pg0cj-a11yText {
+    z-index: 9999;
+    border: 0px;
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    width: 1px;
+    position: absolute;
+    overflow: hidden;
+    padding: 0px;
+    white-space: nowrap;
+}
+.css-2b097c-container {
+    position: relative;
+    box-sizing: border-box;
+}
+.properties-td-text-style {
+    font-size: 15px;
+}
+.css-1uccc91-singleValue {
+    color: rgb(51, 51, 51);
+    margin-left: 2px;
+    margin-right: 2px;
+    max-width: calc(100% - 8px);
+    overflow: hidden;
+    position: absolute;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    top: 50%;
+    transform: translateY(-50%);
+    box-sizing: border-box;
+}
+.css-1g6gooi {
+    margin: 2px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    visibility: visible;
+    color: rgb(51, 51, 51);
+    box-sizing: border-box;
+}
+.css-1wy0on6 {
+    -webkit-box-align: center;
+    align-items: center;
+    align-self: stretch;
+    display: flex;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+.MuiFormControl-root {
+    border: 0;
+    margin: 0;
+    display: inline-flex;
+    padding: 0;
+    position: relative;
+    min-width: 0;
+    flex-direction: column;
+    vertical-align: top;
+}
+.MuiOutlinedInput-root {
+    position: relative;
+    border-radius: 4px;
+}
+.MuiInputBase-root {
+    color: rgba(0, 0, 0, 0.87);
+    cursor: text;
+    display: inline-flex;
+    position: relative;
+    font-size: 1rem;
+    box-sizing: border-box;
+    align-items: center;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.1876em;
+    letter-spacing: 0.00938em;
+}
+.MuiOutlinedInput-inputMarginDense {
+    padding-top: 10.5px;
+    padding-bottom: 10.5px;
+}
+.MuiOutlinedInput-input {
+    padding: 18.5px 14px;
+}
+.MuiInputBase-input {
+    font: inherit;
+    color: currentColor;
+    width: 100%;
+    border: 0;
+    height: 1.1876em;
+    margin: 0;
+    display: block;
+    padding: 6px 0 7px;
+    min-width: 0;
+    background: none;
+    box-sizing: content-box;
+    animation-name: mui-auto-fill-cancel;
+    letter-spacing: inherit;
+    animation-duration: 10ms;
+    -webkit-tap-highlight-color: transparent;
+}
+input:not([type="range"]):not([type="color"]) {
+    writing-mode: horizontal-tb !important;
+}
+.MuiOutlinedInput-notchedOutline {
+    border-color: rgba(0, 0, 0, 0.23);
+}
+.jss44 {
+    top: -5px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 0 8px;
+    overflow: hidden;
+    position: absolute;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: inherit;
+    pointer-events: none;
+}
+.jss45 {
+    padding: 0;
+    text-align: left;
+    transition: width 150ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+    line-height: 11px;
+}

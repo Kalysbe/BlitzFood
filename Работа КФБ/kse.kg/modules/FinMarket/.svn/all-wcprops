@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/guest/buse/!svn/ver/190/trunk/modules/FinMarket
+END
+NewMarket.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/guest/buse/!svn/ver/48/trunk/modules/FinMarket/NewMarket.php
+END
+install.sql
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/guest/buse/!svn/ver/48/trunk/modules/FinMarket/install.sql
+END
+FinMarket.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/guest/buse/!svn/ver/190/trunk/modules/FinMarket/FinMarket.php
+END

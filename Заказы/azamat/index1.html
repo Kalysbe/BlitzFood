@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+   
+    <div class="container short">
+       
+        <h3>Задайте вопрос</h3>
+        <span class="text__hints mt-1 mb-2">Столкнулись с проблемой? Наше сообщество разработчиков готово помочь
+            вам</span>
+        <div class="d-flex justify-content-between align-items-center mt-4">
+            <h6 class="primary_subtitle my-0">Заголовок вопроса</h6>
+            <span>0/140</span>
+        </div>
+
+        <div class="mb-3 mt-3 form-floating">
+            <input type="email" class="form-control" id="exampleFormControlInput1"
+                placeholder="Введите заголовок вопроса" style="background-color: #EFF5FF;">
+            <label for="exampleFormControlInput1" class="form-label text__hints">Введите заголовок вопроса</label>
+        </div>
+        <form class="row justify-content-between">
+            <div class="mb-3 col-12 col-md-7">
+                <label for="exampleFormControlSelect1" class="form-label">
+                    <h6 class="primary_subtitle">Выберите теги</h6>
+                </label>
+                    <select class="js-example-basic-multiple" style="width: 100%;padding: 6px 0;" name="states[]" multiple="multiple">
+                        <option value="AL">Alabama</option>
+                        <option value="WY">Wyoming</option>
+                      </select>
+            </div>
+            <div class="mb-3 col-12 col-md-5">
+                <label for="exampleFormControlSelect2" class="form-label">
+                    <h6 class="primary_subtitle">Продукт</h6>
+                </label>
+                <select class="form-select" aria-label="Default select example" id="exampleFormControlSelect2"
+                    style="background-color: #EFF5FF;">
+                    <option selected>Выберите продукт</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+            </div>
+        </form>
+        <h6 class="primary_subtitle">Здесь есть решение вашего вопроса?</h6>
+        <span class="text__hints">Похожие вопросы</span>
+        <div class="d-flex justify-content-md-between flex-wrap mt-3">
+            <div class="card mb-2 me-1" style="width: 256px;background: #3F6DD6;">
+                <div class="card-body">
+                    <p class="card-text text-light">Можно ли интегрировать 1С облако с интернет-магазином?</p>
+                    <a href="#" class="card-link text-light text-decoration-none" style="color:#747C8B">
+                        <img src="./images/Path.png" alt="">
+                        Ответов: 12
+                    </a>
+                    <a href="#" class="card-link float-end">
+                        <img src="./images/show.png" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="card mb-2 me-1" style="width: 256px;background: #EFF5FF;">
+                <div class="card-body">
+                    <p class="card-text">Можно ли интегрировать 1С облако с интернет-магазином?</p>
+                    <a href="#" class="card-link text-decoration-none" style="color:#747C8B">
+                        <img src="./images/Path.png" alt="">
+                        Ответов: 12
+                    </a>
+                    <a href="#" class="card-link float-end">
+                        <img src="./images/show.png" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="card mb-2 me-1" style="width: 256px;background: #EFF5FF;">
+                <div class="card-body">
+                    <p class="card-text">Можно ли интегрировать 1С облако с интернет-магазином?</p>
+                    <a href="#" class="card-link text-decoration-none" style="color:#747C8B">
+                        <img src="./images/Path.png" alt="">
+                        Ответов: 12
+                    </a>
+                    <a href="#" class="card-link float-end">
+                        <img src="./images/show.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <span class="text__hints">База знаний</span>
+        <div class="d-flex justify-content-md-between flex-wrap mt-3">
+            <div class="card mb-2 me-1" style="width: 256px;background: #EFF5FF;">
+                <div class="card-body">
+                    <p class="card-text ">Можно ли интегрировать 1С облако с интернет-магазином?</p>
+                    <a href="#" class="card-link text-decoration-none" style="color:#747C8B">
+                        <img src="./images/Combined Shape.png" alt="">
+                        Ответов: 12
+                    </a>
+                    <a href="#" class="card-link float-end">
+                        <img src="./images/show.png" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="card mb-2 me-1" style="width: 256px;background: #EFF5FF;">
+                <div class="card-body">
+                    <p class="card-text">Можно ли интегрировать 1С облако с интернет-магазином?</p>
+                    <a href="#" class="card-link text-decoration-none" style="color:#747C8B">
+                        <img src="./images/Combined Shape.png" alt="">
+                        Ответов: 12
+                    </a>
+                    <a href="#" class="card-link float-end">
+                        <img src="./images/show.png" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="card mb-2 me-1" style="width: 256px;background: #EFF5FF;">
+                <div class="card-body">
+                    <p class="card-text">Можно ли интегрировать 1С облако с интернет-магазином?</p>
+                    <a href="#" class="card-link text-decoration-none" style="color:#747C8B">
+                        <img src="./images/Combined Shape.png" alt="">
+                        Ответов: 12
+                    </a>
+                    <a href="#" class="card-link float-end">
+                        <img src="./images/show.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div style="margin-top:40px">
+            <div class="d-flex">
+                <h6 class="primary_subtitle">Суть вопроса</h6>
+                <h5 class="primary_subtitle text-danger ms-4">Напишите детали</h5>
+                <span class="ms-auto">0/240</span>
+            </div>
+            <div class="border border-danger">
+                <div class="d-flex justify-content-between align-items-center px-3 border-bottom border-danger">
+                    <img src="./images/Снимок экрана 2019-06-18 в 8.43.54.png" alt="">
+                    <img src="./images/eye.png" alt="">
+                </div>
+                <textarea class="border-0 px-3 pt-2 w-100 h-100"
+                    placeholder="Напишите детали, сообщения ошибки, технические характеристики" name="" id="" cols="30"
+                    rows="4"></textarea>
+            </div>
+            <button class="btn btn-warning mt-4 p-3 float-end">Войти и отправить</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

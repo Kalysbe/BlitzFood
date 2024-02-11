@@ -1,0 +1,57 @@
+<?php
+$Module = "FileUpload";
+
+function FileUpload_loadController() {
+    $Controller = new ControllerClass();
+
+    $Uri = MainClass::getSingleton()->getFullUriPath();
+
+    $Controller->appendVariable("ControllerInclusion", "modules/FileUpload/UploadForm.html");
+
+    // Processing file upload
+    if (isset($_POST["doUploadFile"])) {
+
+        foreach ($_FILES as $file) {
+            if ($file["error"] === UPLOAD_ERR_OK) {
+
+                $hash = md5(time() . $file["tmp_name"]);
+                $filename = $hash . "_" . $file["name"];
+                $filetype = $file["type"];
+                $filesize = $file["size"];
+
+                $sql = "INSERT INTO `attachments` (
+                    `filename`,
+                    `filepath`,
+                    `filesize`,
+                    `name`,
+                    `mime`,
+                    `hashname`,
+                    `status`,
+                    `cr_date`
+                ) VALUES (
+                    '" . $filename . "',
+                    '/files/upload/',
+                    '" . $filesize . "',
+                    '" . $file["name"] . "',
+                    '" . $filetype . "',
+                    '" . $hash . "',
+                    '1',
+                    '" . date("Y-m-d H:i:s") . "'
+                )";
+                mysql_query($sql);
+
+                copy($file["tmp_name"] , MainClass::getSingleton()->getSiteVar("%HOME%") . "/files/upload/" . $filename);
+            }
+        }
+        $Controller->appendVariable("UploadSuccess", true);
+    }
+
+    if ((MainClass::getSingleton()->checkUserLogin())&&(MainClass::getSingleton()->getUserLevel() == 99)) {
+        $Controller->appendVariable("AdminRights", true);
+
+    }
+
+    return $Controller;
+}
+
+?>

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/guest/buse/!svn/ver/208/trunk/lib/SwiftMailer/classes/Swift/Mailer
+END
+ArrayRecipientIterator.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/guest/buse/!svn/ver/208/trunk/lib/SwiftMailer/classes/Swift/Mailer/ArrayRecipientIterator.php
+END
+RecipientIterator.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/guest/buse/!svn/ver/208/trunk/lib/SwiftMailer/classes/Swift/Mailer/RecipientIterator.php
+END

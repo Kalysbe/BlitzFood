@@ -1,0 +1,124 @@
+.buse_page_meta {
+    text-align: right;
+}
+
+.buse_page_meta li {
+    display: block;
+    float: right;
+    margin: 3px;
+    padding: 3px;
+    border: 1px solid #CCCCCC;
+}
+
+.buse_page_meta li a {
+    text-decoration: none;
+}
+
+.buse_cp_link {
+    margin: 3px;
+    padding: 3px;
+    border: 1px solid #CCCCCC;
+    float: right;
+    text-decoration: none;
+}
+
+.warning {
+    clear: both;
+    background-color: #FFFACD;
+    border: 1px solid #F4D03B;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.error {
+    background: #FFDDDD none repeat scroll 0 0;
+    border: 1px solid #FFBBBB;
+    margin: 10px;
+    padding: 10px;
+}
+
+.notice {
+    border: 1px solid #99CCFF;
+    margin: 10px;
+    padding: 10px;
+}
+
+
+
+#two_columns label {
+    clear: both;
+    float: left;
+    width: 35%;
+    text-align: right;
+    margin-right: 5px;
+}
+
+#jsddm
+{
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+#jsddm li
+{
+    float: left;
+    list-style: none;
+    text-align: left;
+    /*font: 12px Tahoma, Arial;*/
+}
+
+#jsddm li a
+{
+    display: block;
+    /*background: #20548E;*/
+    padding: 5px 12px;
+    text-decoration: none;
+    /*border-right: 1px solid white;*/
+    width: 70px;
+    /*color: #EAFFED;*/
+    white-space: nowrap;
+    text-align: left;
+    
+}
+
+#jsddm li a:hover
+{	
+    /*background: #1A4473;*/
+}
+
+#jsddm li ul
+{
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    visibility: hidden;
+    border-top: 1px solid white;
+    border: 1px solid #83A1B9;
+}
+
+#jsddm li ul li
+{
+    float: none;
+    display: inline;
+    
+    
+}
+
+#jsddm li ul li a
+{
+    width: auto;
+    /*background: #9F1B1B;*/
+    background: #FFFFFF;
+    color: #000000;
+    border-bottom: 1px dashed #83A1B9;
+    text-transform: none;
+}
+
+#jsddm li ul li a:hover
+{	
+    background: #83A1B9;
+}

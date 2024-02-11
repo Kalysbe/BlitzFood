@@ -1,0 +1,156 @@
+<h2>Архив торгов</h2>
+
+<div id="current_year" class="trade_archive_block">
+    <br />
+    <h4>За текущий год</h4>
+    <br />
+    <table width="100%" class="class1">
+        <tr>
+            <th></th>
+            <th>Общий объем торгов , тыс. сом</th>
+            <th>Количество ценных бумаг шт.</th>
+            <th>Количество сделок</th>
+            <th>Торги на первичном рынке, тыс. сом</th>
+            <th>Торги на вторичном рынке, тыс. сом</th>
+            <th>Торги в секторе листинговых ценных бумаг, тыс. сом</th>
+            <th>Торги в секторе не листинговых ценных бумаг, тыс. сом</th>
+
+        </tr>
+        {% for Trade in CurrentYear %}
+        <tr>
+            <th>{{ Trade['Month'] }}/{{ Trade['Year'] }}&nbsp; </th>
+            <td align="right"> {{ Trade['TotalVolume'] }}</td>
+            <td align="right">{{ Trade['SecondaryAmount'] }}</td>
+            <td align="right">{{ Trade['DealsAmount'] }}</td>
+            <td align="right">{{ Trade['PrimaryDeals'] }}</td>
+            <td align="right">{{ Trade['SecondaryDeals'] }}</td>
+            <td align="right">{{ Trade['ListingTrades'] }}</td>
+            <td align="right">{{ Trade['NonListingTrades'] }}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <th>Итого:</th>
+            <td align="right">{{ total_current['total_volume'] }}</td>
+            <td align="right">{{ total_current['secondary_amount'] }}</td>
+            <td align="right">{{ total_current['deals_amount'] }}</td>
+            <td align="right">{{ total_current['primary_deals'] }}</td>
+            <td align="right">{{ total_current['secondary_deals'] }}</td>
+            <td align="right">{{ total_current['listing_trades'] }}</td>
+            <td align="right">{{ total_current['non_listing_trades'] }}</td>
+        </tr>
+    </table>
+</div>
+
+<div id="past_year" class="trade_archive_block" style="display: none;">
+    <br />
+    <h4>За прошлый год</h4>
+    <br />
+    <table width="100%" class="class1">
+        <tr>
+            <th></th>
+            <th>Общий объем торгов , тыс. сом</th>
+            <th>Количество ценных бумаг шт.</th>
+            <th>Количество сделок</th>
+            <th>Торги на первичном рынке, тыс. сом</th>
+            <th>Торги на вторичном рынке, тыс. сом</th>
+            <th>Торги в секторе листинговых ценных бумаг, тыс. сом</th>
+            <th>Торги в секторе не листинговых ценных бумаг, тыс. сом</th>
+
+        </tr>
+        {% for Trade in PastYear %}
+        <tr>
+            <th>{{ Trade['Month'] }}/{{ Trade['Year'] }}&nbsp; </th>
+            <td align="right"> {{ Trade['TotalVolume'] }}</td>
+            <td align="right">{{ Trade['SecondaryAmount'] }}</td>
+            <td align="right">{{ Trade['DealsAmount'] }}</td>
+            <td align="right">{{ Trade['PrimaryDeals'] }}</td>
+            <td align="right">{{ Trade['SecondaryDeals'] }}</td>
+            <td align="right">{{ Trade['ListingTrades'] }}</td>
+            <td align="right">{{ Trade['NonListingTrades'] }}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <th>Итого:</th>
+            <td align="right">{{ past_year_total['total_volume'] }}</td>
+            <td align="right">{{ past_year_total['secondary_amount'] }}</td>
+            <td align="right">{{ past_year_total['deals_amount'] }}</td>
+            <td align="right">{{ past_year_total['primary_deals'] }}</td>
+            <td align="right">{{ past_year_total['secondary_deals'] }}</td>
+            <td align="right">{{ past_year_total['listing_trades'] }}</td>
+            <td align="right">{{ past_year_total['non_listing_trades'] }}</td>
+        </tr>
+    </table>
+</div>
+
+<div id="all_years" class="trade_archive_block" style="display: none;">
+    <br />
+    <h4>По годам</h4>
+    <br />
+    <table width="100%" class="class1">
+        <tr>
+            <th></th>
+            <th>Общий объем торгов , тыс. сом</th>
+            <th>Количество ценных бумаг шт.</th>
+            <th>Количество сделок</th>
+            <th>Торги на первичном рынке, тыс. сом</th>
+            <th>Торги на вторичном рынке, тыс. сом</th>
+            <th>Торги в секторе листинговых ценных бумаг, тыс. сом</th>
+            <th>Торги в секторе не листинговых ценных бумаг, тыс. сом</th>
+
+        </tr>
+        {% for Trade in TotalYear %}
+        <tr>
+            <th>{{ Trade['Month'] }}/{{ Trade['Year'] }}&nbsp; </th>
+            <td align="right"> {{ Trade['TotalVolume'] }}</td>
+            <td align="right">{{ Trade['SecondaryAmount'] }}</td>
+            <td align="right">{{ Trade['DealsAmount'] }}</td>
+            <td align="right">{{ Trade['PrimaryDeals'] }}</td>
+            <td align="right">{{ Trade['SecondaryDeals'] }}</td>
+            <td align="right">{{ Trade['ListingTrades'] }}</td>
+            <td align="right">{{ Trade['NonListingTrades'] }}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <th>Итого:</th>
+            <td align="right">{{ all_years_total['total_volume'] }}</td>
+            <td align="right">{{ all_years_total['secondary_amount'] }}</td>
+            <td align="right">{{ all_years_total['deals_amount'] }}</td>
+            <td align="right">{{ all_years_total['primary_deals'] }}</td>
+            <td align="right">{{ all_years_total['secondary_deals'] }}</td>
+            <td align="right">{{ all_years_total['listing_trades'] }}</td>
+            <td align="right">{{ all_years_total['non_listing_trades'] }}</td>
+        </tr>
+    </table>
+</div>
+
+<div class="results_view f_r">
+    Период:
+    <a href="#" id="tradearchive_current_link" class="tradearchive_links current">За текущий год</a> /
+    <a href="#" id="tradearchive_past_link" class="tradearchive_links">За прошлый год</a> /
+    <a href="#" id="tradearchive_years_link" class="tradearchive_links">По годам</a>
+</div>
+
+<script type="text/javascript">
+
+    $("#tradearchive_current_link").bind("click", function(){
+        $(".trade_archive_block").css("display", "none");
+        $("#current_year").css("display", "block");
+        $(".tradearchive_links").removeClass("current");
+        $("#tradearchive_current_link").addClass("current");
+    });
+
+    $("#tradearchive_past_link").bind("click", function(){
+        $(".trade_archive_block").css("display", "none");
+        $("#past_year").css("display", "block");
+        $(".tradearchive_links").removeClass("current");
+        $("#tradearchive_past_link").addClass("current");
+    });
+
+    $("#tradearchive_years_link").bind("click", function(){
+        $(".trade_archive_block").css("display", "none");
+        $("#all_years").css("display", "block");
+        $(".tradearchive_links").removeClass("current");
+        $("#tradearchive_years_link").addClass("current");
+    });
+
+</script>

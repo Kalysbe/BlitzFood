@@ -1,0 +1,291 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Kyrgyz Stock Exchange</title>
+        <link rel="shortcut icon" type="image/x-png" href="{{root}}/views/kse/images/favicon.png" />
+	<link rel="stylesheet" type="text/css" href="{{ root }}/views/kse/styles/style.css" />
+        <link rel="stylesheet" type="text/css" href="{{ root }}/views/kse/styles/common.css" />
+	<link rel="stylesheet" type="text/css" href="{{ root }}/views/kse/styles/scroller.css" />
+	<!--[if IE 6]><body class="ie6"><![endif]-->
+	<!--[if IE 7]><body class="ie7"><![endif]-->
+	{#<script type="text/javascript" src="{{ root }}/scripts/jquery.js"></script>#}
+
+        <link type="text/css" href="{{ root }}/scripts/jquery-ui/css/buse/jquery-ui.css" rel="Stylesheet" />
+        <script type="text/javascript" src="{{ root }}/scripts/jquery-ui/js/jquery-1.4.2.min.js"></script>
+        <script type="text/javascript" src="{{ root }}/scripts/jquery-ui/js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="{{ root }}/scripts/ckeditor/ckeditor.js"></script>
+        <script type="text/javascript" src="{{ root }}/scripts/ckeditor/adapters/jquery.js"></script>
+        <script type="text/javascript">
+                    var timeout    = 500;
+                    var closetimer = 0;
+                    var ddmenuitem = 0;
+
+                    function jsddm_open()
+                    {  jsddm_canceltimer();
+                       jsddm_close();
+                       ddmenuitem = $(this).find('ul').css('visibility', 'visible');}
+
+                    function jsddm_close()
+                    {  if(ddmenuitem) ddmenuitem.css('visibility', 'hidden');}
+
+                    function jsddm_timer()
+                    {  closetimer = window.setTimeout(jsddm_close, timeout);}
+
+                    function jsddm_canceltimer()
+                    {  if(closetimer)
+                       {  window.clearTimeout(closetimer);
+                          closetimer = null;}}
+
+                    $(document).ready(function()
+                    {
+                        $('#jsddm > li').bind('mouseover', jsddm_open)
+                       $('#jsddm > li').bind('mouseout',  jsddm_timer)
+                    }
+
+                    );
+
+                    document.onclick = jsddm_close;
+
+                </script>
+        <script type="text/javascript">
+        $(function() {
+
+            $("input:submit").button();
+
+            var tips = $(".validateTips");
+            function updateTips(t) {
+                tips
+                    .text(t)
+                    .addClass('ui-state-highlight');
+                setTimeout(function() {
+                    tips.removeClass('ui-state-highlight', 1500);
+                }, 500);
+            }
+
+            function doLogIn() {
+                $.post("{{ root }}/handlers/login.php", {
+                    doLogin: 1,
+                    mLogin: $("#mLogin").val(),
+                    mPass: $("#mPass").val()
+                }, function(result) {
+                    if (result == 0) {
+                        updateTips("<div class='error'>{{ Lang['{BadLoginOrPassword}'] }}</div>");
+                    } else if (result == 1) {
+                        window.location.replace("{{ root }}/{{ lang_code }}/{{ main_page }}");
+                    }
+                });
+            }
+
+            $("#login-dialog").dialog({
+                autoOpen: false,
+                height: 250,
+                width: 400,
+                modal: true,
+                title: "{{ Lang['{LogInButton}'] }}",
+                buttons: {
+                    "{{ Lang['{doLogIn}'] }}": function() {
+                        doLogIn();
+                    },
+                    "{{ Lang['{doCancel}'] }}": function() {
+                            $(this).dialog('close');
+                    }
+                },
+                close: function() {
+                        allFields.val('').removeClass('ui-state-error');
+                }
+            });
+
+            $('#loginButton')
+            .click(function() {
+                    $('#login-dialog').dialog('open');
+            });
+
+        });
+
+    </script>
+
+    <script type="text/javascript" src="{{ root }}/views/kse/js/scroll.js"></script>
+    {% include 'common_head.html' %}
+</head>
+<body>
+
+<div id="body">
+	<div class="header">
+		<h1>
+			<a href="{{ root }}"><img src="{{ root }}/views/kse/images/logo.jpg" border="0"/></a>
+			<span class="sitename">Кыргызская Фондовая Биржа</span>
+		</h1>
+		<div class="header_right">
+			<div class="search">
+				<form action="/" class="f_l">
+					<input type="text" class="src_txt f_l" value="Поиск по сайту" onfocus="this.value=''" />
+					<input type="button" class="src_btn f_l" value="" />
+					<a href="{{ root }}" class="def_menu"><img src="{{ root }}/views/kse/images/icon_home.jpg"/></a>
+					<a href="#" class="def_menu"><img src="{{ root }}/views/kse/images/icon_mail.jpg"/></a>
+                                        {% if Logged %}
+                                        <a href="{{ root }}/handlers/logout.php" class="def_menu">{{ LoggedUser.getUsername }}</a>
+                                        {% else %}
+					<a href="#" class="def_menu" id="loginButton"><img src="{{ root }}/views/kse/images/icon_key.jpg"/></a>
+                                        {% endif %}
+				</form>
+				<div class="lang">
+					<ul class="lang">
+						<li><a href="{{ root }}/ru/MainPage" class="selected">Рус</a></li>
+						<li><a href="{{ root }}/ky/MainPage">Кыр</a></li>
+						<li><a href="{{ root }}/en/MainPage">Eng</a></li>
+					</ul>
+				</div><!--/lang-->
+			</div><!--/search-->
+		</div><!--/header_right-->
+		<div class="banner_top">
+			<a href="{{ root }}/{{ lang_code }}/FinMarket"><img src="{{ root }}/views/kse/images/banner_top.jpg" border="0"/></a>
+		</div><!--/banner_top-->
+		<div class="clear"><img src="{{ root }}/views/kse/images/pixel.gif" /></div>
+		<div class="kse_marquee">
+			<ul class="kse_marquee" id="QuatationsOnline">
+                                {{ ViewsPage_KseScroll.Text }}
+
+			</ul>
+                    <script type="text/javascript">
+                        {#$function(){
+                            $("#QuatationsOnline").load("/scripts/quatations.php");
+                        }#}
+                    </script>
+
+		</div><!--/marquee-->
+	</div><!--/header-->
+	<div class="topmenu">
+		{% include 'topmenu.html' %}
+	</div><!--/topmenu-->
+	<div class="content_block">
+		<div class="left">
+                    {{ ViewsPage_KseMenu.Text }}
+                    {#
+			<ul class="leftmenu">
+				<li><a href="#">Листинг акций</a></li>
+			</ul><!--/leftmenu-->
+			<ul class="leftmenu">
+				<li><a href="#">Корпоративный рынок</a></li>
+				<li><a href="#">Информация о рынке</a></li>
+				<li><a href="#">Эмитенты и инструменты</a></li>
+				<li><a href="#">Информация о торгах</a></li>
+				<li><a href="#">Индексы и рейтинги </a></li>
+			</ul><!--/leftmenu-->
+			<ul class="leftmenu">
+				<li><a href="#">Рынок государственных ценных бумаг</a></li>
+				<li><a href="#">Информация о рынке</a></li>
+				<li>
+					<a href="#">Эмитенты и инструменты</a>
+					<ul class="second">
+						<li><a href="#">Уровень 2</a></li>
+						<li><a href="#">Уровень 2</a></li>
+						<li><a href="#">Уровень 2</a></li>
+					</ul>
+				</li>
+				<li>
+					<ul class="second">
+						<li>
+						<a href="#">Эмитенты и инструменты</a>
+						<ul class="third">
+							<li><a href="#">Уровень 3</a></li>
+							<li><a href="#">Уровень 3</a></li>
+							<li><a href="#">Уровень 3</a></li>
+						</ul>
+						</li>
+					</ul>
+				</li>
+			</ul><!--/leftmenu-->
+			<ul class="leftmenu">
+				<li><a href="#">Информация о торгах</a></li>
+				<li><a href="#">Индексы и рейтинги</a></li>
+			</ul><!--/leftmenu-->
+			<ul class="leftmenu">
+				<li><a href="#">Валютный рынок</a></li>
+				<li><a href="#">Информация о рынке</a></li>
+				<li><a href="#">Эмитенты и инструменты</a></li>
+				<li><a href="#">Информация о торгах</a></li>
+				<li><a href="#">Индексы и рейтинги</a></li>
+			</ul><!--/leftmenu-->
+			<ul class="leftmenu">
+				<li><a href="#">Аналитика</a></li>
+				<li><a href="#">Участие в торгах</a></li>
+				<li><a href="#">Технологии</a></li>
+				<li><a href="#">Контактная информация</a></li>
+			</ul><!--/leftmenu-->
+                        #}
+		</div><!--left-->
+		<div class="center">
+			 {% if Page.Status == 4 %}
+                          {% include Page.Text %}
+                          {% elseif Page.Status == 8 %}
+                          {% include ControllerInclusion %}
+                          {% else %}
+                          <div class="page_text">{{ Page.Text }}</div>
+                          {% if Logged and Page.Status == 1 %}
+                          <div class="buse_page_meta">
+                              <ul>
+                                  <li class="ui-corner-all"><a href="{{ root }}/{{ lang_code }}/EditPage/{{ Page.Uname }}">Редактировать</a></li>
+                                  <li class="ui-corner-all"><a href="{{ root }}/{{ lang_code }}/RenamePage/{{ Page.Uname }}">Переименовать</a></li>
+                                  <li class="ui-corner-all"><a href="{{ root }}/{{ lang_code }}/HidePage/{{ Page.Uname }}">Скрыть</a></li>
+                              </ul>
+                          </div>
+                          {% endif %}
+                          {% endif %}
+		</div><!--/center-->
+		<div class="right">
+			<div class="docs">
+				<ul class="docs">
+                                    {% for Attachment in Attachments %}
+                                    <li>
+                                        <p class="grey">{{ Attachment.Description}}</p>
+                                        <div class="pdf_link">
+                                            <a href="{{root}}{{ Attachment.Filepath }}{{ Attachment.Filename}}" class="f_l">
+                                                <img src="{{ root }}/views/kse/images/{{ Attachment.Icon }}" border="0" alt="{{ Attachment.Name }}"/></a>
+                                            <a href="{{root}}{{ Attachment.Filepath }}{{ Attachment.Filename}}" class="bullet_link pdf_link">Приложение</a>
+                                            <p class="pdf_size">{{ Attachment.Size }}</p>
+                                        </div>
+                                    </li>
+                                    {% endfor %}
+				</ul><!--/docs-->
+			</div><!--/docs-->
+			<div class="banner_inner_right">
+				
+			</div><!--/banner_inner_right-->
+		</div><!--/right-->
+
+		<div class="clear"><img src="{{ root }}/views/kse/images/pixel.gif" /></div>
+	</div><!--/content_block-->
+</div><!--/body-->
+<div class="clear"><img src="{{ root }}/views/kse/images/pixel.gif" /></div>
+<div id="footer">
+	<div class="footer_content">
+		<div class="footer_inner">
+			<div class="footer_left">
+
+				<p class="footer">ЗАО "Кыргызская Фондовая Биржа"</p>
+                                <p>720010 Кыргызская Республика, <br />г. Бишкек, ул. Московская, 172, +996 312 31 14 84</p>
+				<p class="footer">Электронная почта: <a href="mailto:office@kse.kg" class="mail">office@kse.kg</a></p>
+			</div><!--/footer_left-->
+			<div class="footer_right">
+                            <p class="footer">Все права защищены © 2004-2010</p>
+				<p class="footer">Лицензия №37 НКРЦБ от 30.11.2000 г.</p>
+				<!--<a href="#" class="counter">&nbsp;</a>-->
+			</div><!--/footer_right-->
+		</div><!--/footer_inner-->
+	</div><!--/footer_content-->
+</div><!--/footer-->
+<div id="login-dialog">
+            <p class="validateTips"></p>
+            <div id="two_columns">
+                <label>Логин:</label>
+                <input type="text" name="mLogin" value="" id="mLogin" class="text ui-widget-content ui-corner-all" />
+                <label>Пароль:</label>
+                <input type="password" name="mPass" value="" id="mPass" class="text ui-widget-content ui-corner-all" />
+            </div>
+        </div>
+<div class="fcc">
+    {{ SapeCode }}
+</div>
+</body>
+</html>

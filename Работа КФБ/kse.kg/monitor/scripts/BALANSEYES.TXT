@@ -1,0 +1,4 @@
+cfg="HTMMaxCycle=1" 
+htm="<tr bgcolor=FFFFFF><td colspan=3>[FBISAPI[FBISAPI:NULL]:COMPANIES] </td></tr>"
+cfg="HTMMaxCycle=-1" 
+htm="<TR bgcolor="#FFFFFF" valign="top"><td>[FBISAPI[FBISAPI:NULL]:ARTICLE]</td><td>[FBISAPI[FBISAPI:NULL]:VALUE1]</td><td>[FBISAPI[FBISAPI:NULL]:BALANSE_T]</td></tr>"

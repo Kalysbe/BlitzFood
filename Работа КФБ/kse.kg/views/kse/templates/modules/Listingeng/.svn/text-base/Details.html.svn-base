@@ -1,0 +1,317 @@
+{% if ListingError %}
+
+<div class="error ui-corner-all">
+    {{ ListingError }}
+</div>
+
+{% else %}
+
+<table class="class1" width="45%" style="float: left;">
+    <tr>
+        <th>Общая информация</th>
+        <th>&nbsp;</th>
+    </tr>
+    <tr>
+        <td>Наименование компании</td>
+        <td>{{ CompanyInfo['CompanyName'] }}</td>
+    </tr>
+    <tr>
+        <td>Ценная бумага</td>
+        <td>{{ CompanyInfo['Security'] }}</td>
+    </tr>
+    <tr>
+        <td>Торговые символы</td>
+        <td>{{ CompanyInfo['Symbols'] }}</td>
+    </tr>
+    <tr>
+        <td>Отрасль</td>
+        <td>{{ CompanyInfo['Sphere'] }}</td>
+    </tr>
+    <tr>
+        <td>Вид деятельности</td>
+        <td>{{ CompanyInfo['Activity'] }}</td>
+    </tr>
+    <tr>
+        <td>Дата прохождения листинга </td>
+        <td>{{ CompanyInfo['ListingDate'] }}</td>
+    </tr>
+    <tr>
+        <td>ФИО руководителя</td>
+        <td>{{ CompanyInfo['Owner'] }}</td>
+    </tr>
+    <tr>
+        <td>Должность руководителя </td>
+        <td>{{ CompanyInfo['OwnerPosition'] }}</td>
+    </tr>
+    <tr>
+        <td>Адрес</td>
+        <td>{{ CompanyInfo['Address'] }}</td>
+    </tr>
+    <tr>
+        <td>Телефон / Факс </td>
+        <td>{{ CompanyInfo['Phone'] }}</td>
+    </tr>
+    <tr>
+        <td>Аудитор </td>
+        <td>{{ CompanyInfo['Auditor'] }}</td>
+    </tr>
+    <tr>
+        <td>Регистратор </td>
+        <td>{{ CompanyInfo['Registrar'] }}</td>
+    </tr>
+    <tr>
+        <td>Маркет-мейкер </td>
+        <td>{{ CompanyInfo['MarketMaker'] }}</td>
+    </tr>
+</table>
+
+{% if Logged %}
+    {% include 'modules/Listing/UploadNewReport.html' %}
+{% endif %}
+
+<script type="text/javascript">
+
+    $(function() {
+        $("#hidden_balance").dialog({
+            autoOpen: false,
+            height: 500,
+            width: 500,
+            modal: true,
+            buttons: {           
+                "Закрыть": function() {  
+                    $(this).dialog('close');
+                }
+            },
+            close: function() {
+                allFields.val('').removeClass('ui-state-error');
+            }
+        });
+        $("#hidden_prospect").dialog({
+            autoOpen: false,
+            height: 500,
+            width: 500,
+            modal: true,
+            buttons: {
+                "Закрыть": function() {
+                    $(this).dialog('close');
+                }
+            },
+            close: function() {
+                allFields.val('').removeClass('ui-state-error');
+            }
+        });
+        $("#hidden_fin_rep").dialog({
+            autoOpen: false,
+            height: 500,
+            width: 500,
+            modal: true,
+            buttons: {
+                "Закрыть": function() {
+                    $(this).dialog('close');
+                }
+            },
+            close: function() {
+                allFields.val('').removeClass('ui-state-error');
+            }
+        });
+        $("#hidden_cash_flow").dialog({
+            autoOpen: false,
+            height: 500,
+            width: 500,
+            modal: true,
+            buttons: {
+                "Закрыть": function() {
+                    $(this).dialog('close');
+                }
+            },
+            close: function() {
+                allFields.val('').removeClass('ui-state-error');
+            }
+        });
+        $("#hidden_cap_rep").dialog({
+            autoOpen: false,
+            height: 500,
+            width: 500,
+            modal: true,
+            buttons: {
+                "Закрыть": function() {
+                    $(this).dialog('close');
+                }
+            },
+            close: function() {
+                allFields.val('').removeClass('ui-state-error');
+            }
+        });
+        $("#hidden_news").dialog({
+            autoOpen: false,
+            height: 500,
+            width: 500,
+            modal: true,
+            buttons: {
+                "Закрыть": function() {
+                    $(this).dialog('close');
+                }
+            },
+            close: function() {
+                allFields.val('').removeClass('ui-state-error');
+            }
+        });
+        $("#hidden_analytics").dialog({
+            autoOpen: false,
+            height: 500,
+            width: 500,
+            modal: true,
+            buttons: {
+                "Закрыть": function() {
+                    $(this).dialog('close');
+                }
+            },
+            close: function() {
+                allFields.val('').removeClass('ui-state-error');
+            }
+        });
+
+        $('#showArchive_balance')
+            .click(function() {
+                $('#hidden_balance').dialog('open');
+            });
+        $('#showArchive_prospect')
+            .click(function() {
+                $('#hidden_prospect').dialog('open');
+            });
+        $('#showArchive_fin_rep')
+            .click(function() {
+                $('#hidden_fin_rep').dialog('open');
+            });
+        $('#showArchive_cash_flow')
+            .click(function() {
+                $('#hidden_cash_flow').dialog('open');
+            });
+        $('#showArchive_cap_rep')
+            .click(function() {
+                $('#hidden_cap_rep').dialog('open');
+            });
+        $('#showArchive_news')
+            .click(function() {
+                $('#hidden_news').dialog('open');
+            });
+        $('#showArchive_analytics')
+            .click(function() {
+                $('#hidden_analytics').dialog('open');
+            });
+    });
+
+    
+</script>
+
+<div style="float: right; width: 48%; margin-top: 20px;">
+    <h3>Раскрытие информации</h3>
+    <table class="class1" width="100%">
+    {% for Report in Reports %}
+    <tr>
+        <td width="20px"><a href="{{ root }}/Listing/{{ Report['Filepath'] }}">
+                <img src="{{ root }}/views/kse/images/icon_pdf.jpg" width="20px"/>
+            </a></td>
+        <td><a href="{{ root }}/Listing/{{ Report['Filepath'] }}">{{ Report['Name'] }}</a></td>
+        <td><a id="showArchive_{{ Report['Type'] }}">Архив</a></td>
+    </tr>
+    {% endfor %}
+    </table>
+</div>
+
+<div id="hidden_balance">
+    <h3>Бухгалтерский Баланс: Архив</h3><br /><br />
+    <ul class="leftmenu">
+    {% for Report in ReportsArchive['balance'] %}
+        <li style="height: 30px; border-bottom: 1px dashed #CCCCCC;"><a href="{{ root }}/Listing/{{ Report['Filepath'] }}">{{ Report.Date }}</a></li>
+    {% endfor %}
+    </ul>
+</div>
+
+<div id="hidden_prospect">
+    <h3>Листинговый проспект: Архив</h3><br /><br />
+    <ul class="leftmenu">
+    {% for Report in ReportsArchive['prospect'] %}
+        <li style="height: 30px; border-bottom: 1px dashed #CCCCCC;"><a href="{{ root }}/Listing/{{ Report['Filepath'] }}">{{ Report.Date }}</a></li>
+    {% else %}
+        <li class="warning ui-corner-all"><h3>Нет доступных файлов</h3></li>
+    {% endfor %}
+    </ul>
+</div>
+
+<div id="hidden_fin_rep">
+    <h3>Отчет о финансовых результатах: Архив</h3><br /><br />
+    <ul class="leftmenu">
+    {% for Report in ReportsArchive['fin_rep'] %}
+        <li style="height: 30px; border-bottom: 1px dashed #CCCCCC;"><a href="{{ root }}/Listing/{{ Report['Filepath'] }}">{{ Report.Date }}</a></li>
+    {% else %}
+        <li class="warning ui-corner-all"><h3>Нет доступных файлов</h3></li>
+    {% endfor %}
+    </ul>
+</div>
+
+<div id="hidden_cash_flow">
+    <h3>Отчет о движении денежных средств: Архив</h3><br /><br />
+    <ul class="leftmenu">
+    {% for Report in ReportsArchive['cash_flow'] %}
+        <li style="height: 30px; border-bottom: 1px dashed #CCCCCC;"><a href="{{ root }}/Listing/{{ Report['Filepath'] }}">{{ Report.Date }}</a></li>
+    {% else %}
+        <li class="warning ui-corner-all"><h3>Нет доступных файлов</h3></li>
+    {% endfor %}
+    </ul>
+</div>
+
+<div id="hidden_cap_rep">
+    <h3>Отчет об изменениях в капитале: Архив</h3><br /><br />
+    <ul class="leftmenu">
+    {% for Report in ReportsArchive['cap_rep'] %}
+        <li style="height: 30px; border-bottom: 1px dashed #CCCCCC;"><a href="{{ root }}/Listing/{{ Report['Filepath'] }}">{{ Report.Date }}</a></li>
+    {% else %}
+        <li class="warning ui-corner-all"><h3>Нет доступных файлов</h3></li>
+    {% endfor %}
+    </ul>
+</div>
+
+<div id="hidden_news">
+    <h3>Новости: Архив</h3><br /><br />
+    <ul class="leftmenu">
+    {% for Report in ReportsArchive['news'] %}
+        <li style="height: 30px; border-bottom: 1px dashed #CCCCCC;"><a href="{{ root }}/Listing/{{ Report['Filepath'] }}">{{ Report.Date }}</a></li>
+    {% else %}
+        <li class="warning ui-corner-all"><h3>Нет доступных файлов</h3></li>
+    {% endfor %}
+    </ul>
+</div>
+
+<div id="hidden_analytics">
+    <h3>Аналитика: Архив</h3><br /><br />
+    <ul class="leftmenu">
+    {% for Report in ReportsArchive['analytics'] %}
+        <li style="height: 30px; border-bottom: 1px dashed #CCCCCC;"><a href="{{ root }}/Listing/{{ Report['Filepath'] }}">{{ Report.Date }}</a></li>
+    {% else %}
+        <li class="warning ui-corner-all"><h3>Нет доступных файлов</h3></li>
+    {% endfor %}
+    </ul>
+</div>
+
+{% endif %}
+{% if Logged %}
+<div style="clear: both; width: 100%; padding: 15px; border: 1px solid #CCCCCC" class="ui-corner-all">
+    <h2>Управление проспектом</h2>
+    <br />
+    <h3>Торговые символы</h3>
+    <div class="notice ui-corner-all">
+        <h4>Рекомендация</h4>
+        <p>Каждый символ распологается на новой строке. 
+            Первым торговым символом должен идти официальный торговый символ</p>
+    </div>
+    <form action="{{ root }}/modules/Listing/Symbols.php" method="POST">
+    <textarea name="SymbolsList" style="border: 1px solid #CCCCCC;" rows="{{ SymbolsNum }}">{% for Symbol in SymbolsList %}{{ Symbol }}\n{% endfor %}</textarea>
+    <br />
+    <input type="submit" name="doUpdateSymbols" value="Обновить символы" />
+    <input type="hidden" name="CompanyId" value="{{ CompanyInfo['CompanyId'] }}" />
+    <input type="hidden" name="url" value="{{ root }}/{{ lang_code }}/Listing" />
+    </form>
+</div>
+{% endif %}
+

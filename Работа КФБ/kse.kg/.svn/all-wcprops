@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/guest/buse/!svn/ver/215/trunk
+END
+LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/guest/buse/!svn/ver/2/trunk/LICENSE
+END
+default.config.inc.php
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/guest/buse/!svn/ver/3/trunk/default.config.inc.php
+END
+INSTALL
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/guest/buse/!svn/ver/106/trunk/INSTALL
+END
+mainfile.php
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/guest/buse/!svn/ver/147/trunk/mainfile.php
+END
+.htaccess
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/guest/buse/!svn/ver/159/trunk/.htaccess
+END
+index.php
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/guest/buse/!svn/ver/168/trunk/index.php
+END

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="Windows-1251"?>
+<graph caption='Значения даются в млн. сом' PYAxisName="по годам" SYAxisName='Объем'  decimalPrecision='0' formatNumberScale='0' bgcolor='000000' canvasBgColor='ffffff' baseFontColor='ffff00'
+	yaxisminvalue='00' yaxismaxvalue='400' shownames='1' pieRadius='350' baseFontSize='18' numberSuffix="" >
+	<set name='Жилищные сертификаты' value='30.81' color='A66EDD' />
+	<set name='Облигации' isSliced="1" value='1079.48' color='F6BD0F'  />
+	<set name='Муниципальные ЦБ' value='260' color='AFD8F8' />
+	<set name='Акции' value='8412.77' color='8BBA00' />
+</graph>

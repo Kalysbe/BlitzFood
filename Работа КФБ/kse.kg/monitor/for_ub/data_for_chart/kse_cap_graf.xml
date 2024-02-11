@@ -1,0 +1,17 @@
+<graph bgcolor='000000' canvasBgColor='000000' baseFontColor='ffff00' caption='' subcaption='' outCnvBaseFontColor='ffffff'
+hovercapbg='F47E00' divlinecolor='696969' hovercapborder='F47E00'  showvalues='1' baseFontSize='13' 
+numdivlines='3' numVdivlines='0' yaxisminvalue='8000' yaxismaxvalue='5000'  rotateNames='1' showLimits='1' showShadow='1' formatNumber='0 ' decimalPrecision='2'>
+  <set name='11.2014' value='9206.32' hoverText='1' color='#d2b48c' />
+  <set name='12.2014' value='9315.37' hoverText='1' color='#d2b48c'/>
+  <set name='01.2015' value='9507.6' hoverText='1' color='#d2b48c'/>
+  <set name='02.2015' value='10004.18' hoverText='1' color='#d2b48c'/>
+  <set name='03.2015' value='9430.25' hoverText='1' color='#d2b48c'/>
+  <set name='04.2015' value='9281.63' hoverText='1' color='#d2b48c'/>
+  <set name='05.2015' value='9389.65' hoverText='1' color='#d2b48c'/>
+  <set name='06.2015' value='9329.87' hoverText='1' color='#d2b48c'/>
+  <set name='07.2015' value='9055.85' hoverText='1' color='#d2b48c'/>
+  <set name='08.2015' value='11020.25' hoverText='1' color='#d2b48c'/>
+  <set name='09.2015' value='11154.67' hoverText='1' color='#d2b48c'/>
+  <set name='10.2015' value='11504.17' hoverText='1' color='#d2b48c'/>
+  <set name='11.2015' value='11497.43' hoverText='1' color='#d2b48c'/>
+</graph>

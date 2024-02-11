@@ -1,0 +1,15 @@
+htm="<table bgcolor="#0B0B64" border="0" cellpadding="3" cellspacing="1"  width="80%">"
+htm="  <TR valign="top">"
+htm="    <td><font color="#FFFFFF">Ёмитент </font></td>"
+htm="    <td><font color="#FFFFFF">сом </font></td>"
+htm="    <td><font color="#FFFFFF"> год </font></td>"
+htm="  </tr>"
+sql=balance.sql
+cfg="HTMMaxCycle=1" 
+htm="<tr bgcolor=FFFFFF><td colspan=3>[FBISAPI:NAME] </td></tr>"
+cfg="HTMMaxCycle=-1" 
+htm="<TR bgcolor="#FFFFFF" valign="top"><td>[FBISAPI:ARTICLE]</td><td>[FBISAPI:VALUE1]</td><td>[FBISAPI:D]</td></tr>"
+sql=
+htm="</table>"
+htm="<br><br><br>"
+

@@ -1,0 +1,31 @@
+<h2>{{ Blog.Title }}</h2>
+
+<div id="DatePicker" style="width: 300px; float: right; margin: 0px; text-align: right;">
+    <h3>{{ lang['{ForPeriod}'] }}</h3>
+    <form action="" method="POST">
+    {{ lang['{PeriodFrom}'] }}: <input type="text" name="EntriesDateFrom" id="EntriesDateFrom" value="" /><br />
+    {{ lang['{PeriodTo}'] }}: <input type="text" name="EntriesDateTo" id="EntriesDateTo" value="" /><br />
+    <input type="submit" name="doByDate" value="Показать" />
+    </form>
+    <script type="text/javascript">
+        $("#EntriesDateFrom").datepicker({dateFormat: 'yy-mm-dd'});
+        $("#EntriesDateTo").datepicker({dateFormat: 'yy-mm-dd'});
+        $("input:submit").button();
+    </script>
+</div>
+
+<ul>
+{% for Entry in Entries %}
+    <li><strong>{{ Entry.Date }}</strong> <a href="{{ root }}/{{ lang_code }}/{{ BlogName }}/{{Entry.Id}}/{{Entry.Name}}">{{Entry.Title}}</a>
+    <br />{{ Entry.Intro }}</li>
+{% endfor %}
+</ul>
+<br /><br />
+<div>{{ lang['{TotalPages}'] }}: {{PagesNum}}</div>
+{% for each in Pages %}
+    {% if CurrentPage == each %}
+    <b>{{ each }}</b>
+    {% else %}
+    <a href="{{ root }}/{{ lang_code }}/{{ BlogName }}/Page:{{ each }}" class="page_link" style="margin: 5px;"> {{ each }}</a>
+    {% endif %}
+{% endfor %}

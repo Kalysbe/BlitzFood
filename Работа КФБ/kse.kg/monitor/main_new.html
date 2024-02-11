@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<head>
+<html> 
+<head> 
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> 
+  <script> 
+  $(document).ready(function(){
+  
+	var arrPage = [ {"page":"katirovki_mon1.php", "pTime":"10"}, 
+					{"page":"katirovki_mon2.php", "pTime":"10"}, 
+					{"page":"test_ind.php", "pTime":"10"}, 
+					{"page":"kse_index_graf.php", "pTime":"10"}, 
+					{"page":"kse_cap_graf.php", "pTime":"10"}, 
+					{"page":"cur_mon.php", "pTime":"10"}      ];
+    var curPage = -1;
+	var pageInfo;
+	var lastcurrtime;
+	
+	function getPageName()
+	{
+		curPage = curPage + 1;
+		if ( curPage > (arrPage.length-1) ) 
+		{ 
+			curPage=0; 
+		}
+		
+		pageInfo = arrPage[curPage].page;
+		return arrPage[curPage].page;
+	}
+	
+	function updateTime() 
+	{
+		//
+		var currtime = new Date();
+		var ptime = Number(arrPage[curPage].pTime)*1000;
+		if ((currtime - lastcurrtime) > ptime)
+		{
+			show();
+			lastcurrtime = new Date();
+		}
+		var currtime1 = new Date(currtime.getTime());
+		
+		var currtime2 = new Date(currtime.toGMTString());
+		var currtime3 = (currtime.getHours() + ":"+ currtime.getMinutes() + ":" + currtime.getSeconds()) + "page=" + pageInfo;
+//		$('#1').html(getPageName()); 
+		$('#1').html(currtime3);
+//		$('#2').html(currtime2);
+//		$('#3').html(currtime3);       
+	}
+
+	function show()  
+    {  
+		var myUrl = "http://www.kse.kg/monitor/" + getPageName();
+		$.ajax({  
+            url: myUrl,  
+            cache: false,  
+            success: function(html){  
+                $("#content").html(html);  
+            }  
+        });
+	}	
+  lastcurrtime = new Date();
+  show();
+  setInterval(updateTime, 1000); // 1000 miliseconds
+  //show();
+  //setInterval(show,10000);  
+  });
+   
+  </script> 
+</head> 
+<body>
+  <h1>
+  <b> 
+  <div class="divTime" border= 1 id="1">The Current time is: </div>
+  </b> 
+  <div class="divContent" border= 1  id="content">Hello</div>
+  </h1> 
+</body> 
+</html>

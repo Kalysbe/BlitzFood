@@ -1,0 +1,21 @@
+{
+  "button": {
+    "send": "Send"
+  },
+  "info": {
+    "auth_error": "Authentication Error",
+    "forgot_pass_descr": "Please enter your registered email address and press the [Send] button. We will send you an email with the URL for the change to the email address you have entered."
+  },
+  "label": {
+    "app_title": "Integrated Road Management System",
+    "email": "Email",
+    "lnkPassRec": "Forgot Your Password ?"
+  },
+  "language": "Language:",
+  "login": {
+    "enter": "Enter",
+    "title": "Log In",
+    "user_login": "Login or email",
+    "user_password": "Password"
+  }
+}

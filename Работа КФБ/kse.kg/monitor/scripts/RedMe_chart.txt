@@ -1,0 +1,27 @@
+JpgQuality=70 - Quality
+
+ChartW=200
+ChartW - width
+
+ChartH=150
+ChartH - height
+
+Chart[1].TYPE=LINE 
+Chart[1].TYPE - тип
+'LINE'  - просто лини€
+'AREA'  - закрашено
+'BAR'   - столбики
+'PIE'   - пирог
+
+ChartXAngle=90 - направление текста по оси X
+
+Chart3D=ON
+ON  - 3D
+OFF - не 3D
+       
+Chart[1].Color=FFAAAA  
+Chart[1].Color - ÷вет линии
+
+Chart[1].BorderSize=1 
+
+

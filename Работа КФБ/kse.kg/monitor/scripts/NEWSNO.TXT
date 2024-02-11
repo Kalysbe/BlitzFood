@@ -1,0 +1,8 @@
+htm="Архив новостей "
+htm="<br>"
+cfg="HTMMaxCycle=1" 
+htm="[FBISAPI:COMPANIES]"
+cfg="HTMMaxCycle=-1" 
+htm="[FBISAPI:NEWS_T]"
+htm="<br>"
+htm="нет данных"

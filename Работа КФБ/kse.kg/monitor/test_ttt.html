@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+<html> 
+<head> 
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> 
+  <script> 
+  $(document).ready(function(){
+	function updateTime() {
+		var currtime = new Date();
+		var currtime1 = new Date(currtime.getTime());
+		var currtime2 = new Date(currtime.toGMTString());
+		var currtime3 = (currtime.getHours() + ":"+ currtime.getMinutes() + ":" + currtime.getSeconds());
+		$('#1').html(currtime3);
+//		$('#2').html(currtime2);
+//		$('#3').html(currtime3);       
+	}
+
+	function show()  
+        {  
+            $.ajax({  
+                url: "http://www.kse.kg/monitor/gold.php",  
+                cache: false,  
+                success: function(html){  
+                    $("#content").html(html);  
+                }  
+            });
+		}	
+  setInterval(updateTime, 1000); // 1000 miliseconds
+  setInterval(show,20000);  
+  });
+   
+  </script> 
+</head> 
+<body>
+  <h1>
+  <b> 
+  <div border= 1 id="1">The Current time is: </div>
+  </b> 
+  <div border= 1  id="content">Hello</div>
+  </h1> 
+</body> 
+</html>

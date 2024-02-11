@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graph caption='' PYAxisName="по годам" SYAxisName=''  decimalPrecision='2' formatNumberScale='0' bgcolor='000000' canvasBgColor='000000' baseFontColor='ffff00' baseFontSize='12' yaxisminvalue='00' yaxismaxvalue='4300' rotateNames="0">
+<categories font="Arial" fontSize="12" fontColor="ffffff" FontSize='18'>
+	<category name='2001'/> 
+	<category name='2002'/> 
+	<category name='2003'/> 
+	<category name='2004'/> 
+	<category name='2005'/> 
+	<category name='2006'/> 
+	<category name='2007'/> 
+	<category name='2008'/> 
+	<category name='2009'/> 
+	<category name='2010'/> 
+	<category name='2011'/> 
+	<category name='2012'/> 
+	<category name='2013'/> 
+	<category name='2014'/> 
+	<category name='10 мес. 2015'/> 
+ </categories>
+   <dataset seriesname="Листинговый сектор" color="FF5904" showValues="1" areaAlpha="80" showAreaBorder="1" areaBorderThickness="2" areaBorderColor="FF0000" >
+	<set value='144.20'/> 
+	<set value='426.06'/> 
+	<set value='102.73'/> 
+	<set value='301.33'/> 
+	<set value='562.27'/> 
+	<set value='840.75'/> 
+	<set value='988.38'/> 
+	<set value='596.28'/> 
+	<set value='842.81'/> 
+	<set value='97.48'/> 
+	<set value='860.94'/> 
+	<set value='398.65'/> 
+	<set value='663.41'/> 
+	<set value='392.84'/> 
+	<set value='2891.53'/> 
+
+   </dataset>
+   <dataset seriesname="Нелистинговый сектор" color="99cc99" showValues="1"  anchorSides='20' >
+	<set value='797.10'/> 
+	<set value='703.28'/> 
+	<set value='393.97'/> 
+	<set value='1907.99'/> 
+	<set value='683.54'/> 
+	<set value='3075.55'/> 
+	<set value='4198.87'/> 
+	<set value='3485.49'/> 
+	<set value='2108.38'/> 
+	<set value='362.23'/> 
+	<set value='500.07'/> 
+	<set value='770.7'/> 
+	<set value='858.57'/> 
+	<set value='1226.83'/> 
+	<set value='900.6'/> 
+
+
+   </dataset>
+</graph>

@@ -1,0 +1,23 @@
+<div>
+    <div class="warning ui-corner-all">
+    <h3>Вы действительно хотите переименовать страницу?</h3>
+    <p>Страница <a href="{{root}}/{{ lang_code }}/{{ SubPage.Uname }}">{{ SubPage.Uname }}</a> больше не будет доступна, пока Вы не
+    создадите страницу с таким-же именем. Содержимое и заголвок страницы останутся без изменений. Также,
+    обратите внимание на то, что Вам необходимо вручную изменить ссылки на с других страниц на новый адрес.
+    В противном случае, пользователи не будут получать страницу со старым именем перейдя по ссылке. </p>
+    </div>
+    <form action="{{ root }}/handlers/renamepage.php" method="POST">
+        <div id="two_columns">
+            <label>Старое имя:</label>
+            <p><strong>{{ SubPage.Uname }}</strong></p>
+            <div class="clean"></div>
+            <label>Новое имя:</label>
+            <p><input type="text" name="mNewPageName" value="" class="ui-widget-content ui-corner-all" /></p>
+            <div class="clean"></div>
+            <label>&nbsp;</label>
+            <p><input type="submit" name="doRenamePage" value="Переименовать" /></p>
+            <input type="hidden" name="pageId" value="{{ SubPage.Id }}" />
+            <div class="clean"></div>
+        </div>
+    </form>
+</div>

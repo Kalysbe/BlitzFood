@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="https://auction.kse.kg/?admin&amp;go=database&amp;page=2" method="POST" class="setting-block">
+        <table>
+            <tbody>
+                <tr>
+                    <td>Дата:</td>
+                    <td>18/01/2023</td>
+                </tr>
+                <tr>
+                    <td>Алгоритм:</td>
+                    <td><select style="width:200" name="type" disabled="">
+                            <option value="ls.auction_NBKR_GKV">Аукцион НБКР по ГКВ</option>
+                            <option selected="selected" value="ls.auction_NBKR_GKO5">Аукцион НБКР по ГКО</option>
+                        </select></td>
+                </tr>
+
+            </tbody>
+        </table>
+        <br>
+        <input type="hidden" name="auctid" value="0806eb71487f7c28d4e4837ea676a6e9">
+        <input type="hidden" name="act" id="act" value="estimate_show">
+        <!-- <input class="btn control" type="button" value="Пересчитать" onclick="auction_reestimate(&quot;https://auction.kse.kg/?admin&amp;go=database&amp;page=2&amp;auctionreestimate=0806eb71487f7c28d4e4837ea676a6e9&quot;);">  -->
+        <!-- <input class="btn success" type="button" value="Подтвердить предварительные расчеты" onclick="auction_estimate_go(&quot;https://auction.kse.kg/?admin&amp;go=database&amp;page=2&amp;auctionestimatego=0806eb71487f7c28d4e4837ea676a6e9&quot;);"> -->
+        <!-- <input type="button" class="btn danger" value="Очистить аукцион" onclick="clean_auction(&quot;https://auction.kse.kg/?admin&amp;go=database&amp;page=2&amp;cleanauction=0806eb71487f7c28d4e4837ea676a6e9&quot;);"> -->
+        <button class="btn control">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+                <path
+                    d="M11 20.95q-3.025-.375-5.012-2.638Q4 16.05 4 13q0-1.65.65-3.163Q5.3 8.325 6.5 7.2l1.425 1.425q-.95.85-1.437 1.975Q6 11.725 6 13q0 2.2 1.4 3.887 1.4 1.688 3.6 2.063Zm2 0v-2q2.175-.4 3.587-2.075Q18 15.2 18 13q0-2.5-1.75-4.25T12 7h-.075l1.1 1.1-1.4 1.4-3.5-3.5 3.5-3.5 1.4 1.4-1.1 1.1H12q3.35 0 5.675 2.325Q20 9.65 20 13q0 3.025-1.987 5.288Q16.025 20.55 13 20.95Z" />
+            </svg>
+            Пересчитать
+        </button>
+
+        <button class="btn success">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+                <path d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4Z" />
+            </svg>
+            Подтвердить предварительные расчеты
+        </button>
+        <button class="btn danger">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+                <path
+                    d="M7 21q-.825 0-1.412-.587Q5 19.825 5 19V6H4V4h5V3h6v1h5v2h-1v13q0 .825-.587 1.413Q17.825 21 17 21ZM17 6H7v13h10ZM9 17h2V8H9Zm4 0h2V8h-2ZM7 6v13Z" />
+            </svg>
+            Очистить аукцион
+        </button>
+        <input class="btn" type="button" value="fdsfsd">
+    </form>
+    <button class='btn' type='submit'>
+        Начать аукцион
+    </button>
+</body>
+
+</html>

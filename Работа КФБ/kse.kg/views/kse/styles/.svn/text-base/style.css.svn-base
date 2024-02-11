@@ -1,0 +1,731 @@
+*{	margin:0; padding:0; list-style: none; border:0;}
+
+html {
+	margin:0; 
+	padding:0;
+	width:100%;
+	height:100%;
+	font:normal 12px Trebuchet MS, Arial, Tahoma, Helvetica, sans-serif, Verdana;
+	color:#343434;
+}
+
+body {
+	height: auto !important;
+	height: 100%;
+	min-height: 100%;	
+	position: relative;
+	background:#ffffff;
+}
+
+a {
+	color:#008b9f;
+	text-decoration:underline;
+}
+
+a:hover {
+	text-decoration:none;
+}
+
+/************Универсальные элементы************/
+h1 {
+	float:left;
+	width:359px;
+	height:103px;
+	padding:22px 0 0 4px;
+}
+
+h2 {
+	font:normal 18px Trebuchet MS, Arial, Tahoma, Helvetica, sans-serif, Verdana;
+	color:#1464ad;
+	line-height:22px;
+}
+
+h3 {
+	font:normal 16px Trebuchet MS, Arial, Tahoma, Helvetica, sans-serif, Verdana;
+	color:#1464ad;
+	line-height:22px;
+}
+
+h4 {
+	font:normal 14px Trebuchet MS, Arial, Tahoma, Helvetica, sans-serif, Verdana;
+	color:#1464ad;
+	line-height:22px;
+}
+
+div.clear {
+	display:block;
+	clear:both;
+	height:1px;
+}
+
+div.space {
+	display:block;
+	clear:both;
+	height:15px;
+}
+
+.f_l {
+	float:left;
+}
+
+.f_r {
+	float:right;
+}
+
+a.bullet_link {
+	display:block;
+	color:#0ab1d8;
+	font:normal 11px Trebuchet MS, Arial, Tahoma, Helvetica, sans-serif, Verdana;
+	padding:0 0 0 10px;
+	margin:5px 0 5px 0;
+	background:url('/views/kse/images/bullet1.jpg') no-repeat left 6px;
+}
+
+a.bullet_link:hover {
+	color:#FA2F00;
+}
+
+a.pdf_link {
+	float:left;
+	margin:20px 0 0 10px;
+}
+
+p.about {
+	padding:11px 0 6px 0;
+	line-height:14px;
+}
+
+p.date {
+	color:#1464ad;
+	font:normal 11px Trebuchet MS, Arial, Tahoma, Helvetica, sans-serif, Verdana;
+	line-height:14px;
+}
+
+p.grey {
+	color:#a5a5a5;
+	line-height:14px;
+	padding:0 0 14px 0;
+}
+
+p.pdf_size {
+	margin:37px 0 0 74px;
+}
+
+/************Основные блоки************/
+#body {
+	width:1004px;
+	margin:0 auto;
+	padding:0 0 90px 0;
+}
+
+div.content_block {
+	width:922px;
+	padding:15px 0 0 0;
+	margin:0 auto;
+        margin-top: 15px;
+}
+
+div.left {
+	float:left;
+	width:185px;
+}
+
+div.center {
+	float:left;
+	width:457px;
+	margin:0 35px 0 15px;
+}
+
+div.center_big {
+	float:left;
+	width:722px;
+	margin:0 0 0 15px;
+}
+
+div.right {
+	float:right;
+	width:230px;
+}
+
+/************Шапка************/
+div.header {
+	width:922px;
+	height:172px;
+	margin:0 auto;
+}
+
+span.sitename {
+	display:none;
+}
+
+div.header_right {
+	width:451px;
+	float:right;
+	padding:27px 0 0 0;
+	border:0px solid red;
+}
+
+input.src_txt {
+	width:131px;
+	padding:4px 0 4px 5px;
+	color:#d4dbe0;
+	font:normal 11px Trebuchet MS, Arial, Tahoma, Helvetica, sans-serif, Verdana;
+	border:1px solid #d3dbdf;
+}
+
+input.src_btn {
+	width:11px;
+	height:11px;
+	margin:8px 0 0 9px;
+	cursor:pointer;
+	background:url('/views/kse/images/icon_src.jpg') no-repeat center center;
+}
+
+a.def_menu {
+	float:left;
+	width:11px;
+	height:11px;
+	margin:8px 0 0 18px;	
+}
+
+div.lang {
+	float:right;
+	padding:5px 0 0 0;
+}
+
+ul.lang {
+	display:block;
+}
+
+ul.lang li {
+	float:left;
+	padding:0 0 0 17px;
+}
+
+ul.lang li a {
+	float:left;
+	padding:0 4px 2px 4px;
+	color:#1464ad;
+	font:normal 11px Trebuchet MS, Arial, Tahoma, Helvetica, sans-serif, Verdana;
+}
+
+ul.lang li a:hover, ul.lang li a.selected {
+	color:#ffffff;
+	background:url('/views/kse/images/lang_bg.jpg') repeat-x left top;
+	text-decoration:none;
+}
+
+div.marquee {
+	width:922px;
+	height:46px;
+	overflow:hidden;
+}
+
+body.ie6 div.marquee {
+	margin:-8px 0 0 0;
+}
+
+body.ie7 div.marquee {
+	margin:-1px 0 0 0;
+}
+
+ul.kse_marquee {
+	display:block;
+	padding:15px 0 0 0;
+}
+
+ul.kse_marquee li {
+	float:left;
+	color:#646464;
+	font:normal 11px Trebuchet MS, Arial, Tahoma, Helvetica, sans-serif, Verdana;
+	padding:0 10px 0 0;
+	margin:0 42px 0 0;
+}
+
+ul.kse_marquee li.green {
+	background:url('/views/kse/images/arrow_green.jpg') no-repeat right center;
+}
+
+ul.kse_marquee li.red {
+	background:url('/views/kse/images/arrow_red.jpg') no-repeat right center;
+}
+
+/************Верхнее меню************/
+/*
+div.topmenu {
+	width:922px;
+	height:40px;
+	margin:0 auto;
+	background:url('/views/kse/images/topmenu_bg.jpg') repeat-x left top;
+}
+
+ul.topmenu {
+	display:block;
+}
+
+ul.topmenu li {
+	float:left;
+	width:230px;
+	text-align:center;
+}
+
+ul.topmenu li a {
+	width:230px;
+	padding:5px 0 5px 0;
+	display:block;
+	text-decoration:none;
+	text-transform:uppercase;
+	color:#ffffff;
+}
+
+ul.topmenu li a:hover {
+	color:#000;
+} 
+*/
+.sf-menu, .sf-menu * {
+	margin:			0;
+	padding:		0;
+	list-style:		none;
+}
+.sf-menu {
+	line-height:	1.0;
+}
+.sf-menu ul {
+	position:		absolute;
+	top:			-999em;
+	width:			230px; /* left offset of submenus need to match (see below) */
+}
+.sf-menu ul li {
+	width:			100%;
+}
+.sf-menu li:hover {
+	visibility:		inherit; /* fixes IE7 'sticky bug' */
+}
+.sf-menu li {
+	float:			left;
+	position:		relative;
+}
+.sf-menu a {
+	display:		block;
+	position:		relative;
+}
+.sf-menu li:hover ul,
+.sf-menu li.sfHover ul {
+	left:			0;
+	top:			29px; /* match top ul list item height */
+	z-index:		99;
+}
+ul.sf-menu li:hover li ul,
+ul.sf-menu li.sfHover li ul {
+	top:			-999em;
+}
+ul.sf-menu li li:hover ul,
+ul.sf-menu li li.sfHover ul {
+	left:			230px; /* match ul width */
+	top:			0;
+}
+ul.sf-menu li li:hover li ul,
+ul.sf-menu li li.sfHover li ul {
+	top:			-999em;
+}
+ul.sf-menu li li li:hover ul,
+ul.sf-menu li li li.sfHover ul {
+	left:			230px; /* match ul width */
+	top:			0;
+}
+
+div.sf-menu {
+	width:922px;
+	margin:0 auto;
+	background:url('/views/kse/images/topmenu_bg.jpg') repeat-x left top;
+}
+
+
+ul.sf-menu li {
+        /*height:40px;*/
+	text-align:center;
+        background-color:#FFFFFF;
+        /*border-left: 1px solid #83A1B9;
+        border-right: 1px solid #83A1B9;
+        border-: 1px solid white;*/
+        
+        padding: 0px;
+        margin: 0px;
+        
+        border-bottom: 1px dashed #83A1B9;
+}
+
+ul.sf-menu ul {
+    border: 1px solid #83A1B9;
+}
+
+ul.sf-menu>li {
+    background:url('/views/kse/images/topmenu_bg.jpg') repeat-x left top;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+    height: 29px;
+    text-transform:uppercase;
+}
+
+.sf-menu .top_element {
+    text-transform:uppercase;
+    color: #FFFFFF;
+}
+
+ul.sf-menu li a {
+	width:230px;
+	text-decoration:none;
+	
+        color: #000000;
+        padding: 0px;
+        margin: 0px;
+        padding:5px 0 5px 0;
+        text-transform:none;
+}
+
+ul.sf-menu li a:hover {
+	color:#000;
+}
+
+div.topmenu {
+    padding-bottom: 15px;
+}
+
+/************Левое меню************/
+ul.leftmenu {
+	display:block;
+	padding:0 0 25px 0;
+}
+
+ul.leftmenu li a {
+	display:inline-block;
+	padding:0 0 0 12px;
+	background:url('/views/kse/images/bullet1.jpg') no-repeat left 10px;
+	color:#0ab1d8;
+	font:normal 13px Trebuchet MS, Arial, Tahoma, Helvetica, sans-serif, Verdana;
+	line-height:22px;
+}
+
+ul.leftmenu li a:hover {
+	color:#fa2f00;
+}
+
+body.ie6 ul.leftmenu li ul.second {
+	float:left;
+}
+
+ul.leftmenu li ul.second li a {
+	display:inline-block;
+	margin:0 0 0 20px;
+	padding:0 0 0 14px;
+	background:url('/views/kse/images/bullet2.jpg') no-repeat left 12px;
+}
+
+ul.leftmenu li ul.second li ul.third {
+	display:block;
+	padding:0;
+}
+
+ul.leftmenu li ul.second li ul.third li a {
+	display:inline-block;
+	margin:0 0 0 35px;
+	padding:0 0 0 14px;
+	background:url('/views/kse/images/bullet2.jpg') no-repeat left 12px;
+}
+
+/************Таблицы************/
+table.class1 {
+	border-collapse:collapse;
+	color:#000000;
+	font:normal 12px Trebuchet MS, Arial, Tahoma, Helvetica, sans-serif, Verdana;
+	margin:0 0 10px 0;
+}
+
+table.class1 tr th {
+	color:#909090;
+	font:normal 11px Trebuchet MS, Arial, Tahoma, Helvetica, sans-serif, Verdana;
+	padding:0 0 2px 0;
+}
+
+table.class1 tr td {
+	padding:10px;
+	border:1px solid #d3dbdf;
+}
+
+table.class1 tr td.center {
+	text-align:center;
+}
+
+table.class2 {
+	color:#000000;
+	font:normal 12px Trebuchet MS, Arial, Tahoma, Helvetica, sans-serif, Verdana;
+	margin:0 0 10px 0;
+}
+
+table.class2 tr th {
+	color:#a7a8aa;
+	font:normal 10px Trebuchet MS, Arial, Tahoma, Helvetica, sans-serif, Verdana;
+	padding:0 0 6px 0;
+	text-align:left;
+}
+
+table.class2 tr td {
+	padding:3px 2px 3px 2px;
+}
+
+/************Баннеры************/
+div.banner_top {
+	float:right;
+	padding:8px 0 0 0;
+	margin:0;
+}
+
+div.banner_top a img {
+	width:451px;
+	height:60px;
+}
+
+div.banner_index {
+	width:193px;
+	height:90px;
+	padding:6px 0 0 0;
+}
+
+div.banner_inner_center {
+	width:452px;
+	height:303px;
+	padding:6px 0 0 0;
+}
+
+div.banner_inner_right {
+	width:230px;
+	height:383px;
+	padding:39px 0 16px 0;
+}
+
+/************Вид итогов************/
+div.results_view {
+	display:block;
+	color:#0ab1d8;
+	font:normal 11px Trebuchet MS, Arial, Tahoma, Helvetica, sans-serif, Verdana;
+	padding:0 0 0 10px;
+	margin:5px 0 5px 0;
+	background:url('/views/kse/images/bullet1.jpg') no-repeat left 6px;
+}
+
+div.results_view a {
+	color:#0ab1d8;
+	font:normal 11px Trebuchet MS, Arial, Tahoma, Helvetica, sans-serif, Verdana;
+}
+
+div.results_view a.current {
+	text-decoration:none;
+}
+
+div.results_view a:hover {
+	color:#FA2F00;
+}
+
+/************Индексы************/
+div.indices {
+	width:205px;
+	padding:0 32px 0 0;
+	float:left;
+}
+
+/************Курсы валют************/
+div.rates {
+	width:220px;
+	float:left;
+}
+
+/************О бирже и  Новости************/
+div.about_kse {
+	padding:0 0 34px 0;
+}
+
+div.news {
+	padding:0 0 34px 0;
+}
+
+ul.news li {
+	padding:15px 0 12px 0;
+}
+
+p.new_brief {
+	line-height:14px;
+	padding:2px 0 3px 0;
+}
+
+/************Подвал************/
+#footer {
+	width:100%;
+	height:82px;
+	position:absolute; bottom:0;
+	margin:0;
+	padding:0;
+}
+
+p.footer {
+	line-height:15px;
+}
+
+div.footer_content {
+	width:922px; 
+	height:82px;
+	margin:0 auto;
+}
+
+div.footer_inner {
+	width:722px;
+	float:right;
+	border-top:1px solid #a6a6a6;
+}
+
+div.footer_left {
+	width:492px;
+	float:left;
+	padding:15px 0 0 0;
+}
+
+div.footer_right {
+	width:230px;
+	float:left;
+	padding:15px 0 0 0;
+}
+
+a.counter {
+	float:left;
+	margin:7px 0 0 0;
+}
+
+a.mail {
+	color:#00a2ff;
+}
+
+a.mail:hover {
+	color:#FA2F00;
+}
+
+/************Внутренняя страница, вариант 1************/
+p.inner {
+	padding:15px 0 0 0;
+	line-height:18px;
+}
+
+ul.inner {
+	display:block;
+	padding:15px 0 0 0;
+}
+
+ul.inner li {
+	display:block;
+	background:url('/views/kse/images/bullet3.jpg') no-repeat 1px 8px;
+	padding:0 0 0 10px;
+}
+
+ul.inner li a {
+	color:#00a2ff;
+}
+
+ul.inner li a:hover {
+	color:#FA2F00;
+}
+
+div.docs {
+	padding:39px 0 0 0;
+}
+
+ul.docs {
+	display:block;
+}
+
+ul.docs li {
+	width:228px;
+	padding:0 0 30px 0;
+}
+
+div.pdf_link {
+	padding:10px 0 0 0;
+}
+
+.listing_table {
+    border: 1px solid #82A1B6;
+    margin: 0px;
+}
+
+
+
+.main_table_header {
+    background-color: #2A74B5;
+    color: #FFFFFF;
+    text-align: center;
+    border-right: 1px solid #CCCCCC;
+}
+
+.main_table_header td {
+    border-right: 1px solid #CCCCCC;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: bold;
+}
+
+.listing_category td {
+    background-color: #99B0C2;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.center li {
+    background: url("/views/kse/images/bullet1.jpg") no-repeat scroll left 10px transparent;
+    font: 13px/22px Trebuchet MS,Arial,Tahoma,Helvetica,sans-serif,Verdana;
+    padding: 0 0 0 12px;
+}
+
+.center_big li {
+    background: url("/views/kse/images/bullet1.jpg") no-repeat scroll left 10px transparent;
+    font: 13px/22px Trebuchet MS,Arial,Tahoma,Helvetica,sans-serif,Verdana;
+    padding: 0 0 0 12px;
+}
+
+/* Fin Market */
+
+.FinMarket li {
+    clear: both;
+    margin-top: 20px;
+    border-bottom: 1px dashed #EFEFEF;
+    padding-left: 5px;
+    padding-top: 10px;
+}
+
+.FinMarket .fin_file {
+    float: left;
+    width: 80px;
+}
+
+.FinMarket .fin_description {
+    float: left;
+    width: 500px;
+}
+
+input {
+    border: 1px solid #CCCCCC;
+}
+
+.quote_tooltip {
+    background-color: #EFEFEF;
+    border: 2px solid #999999;
+    padding: 3px;
+}
+
+.scroll_quote {
+    float: left;
+    margin-left: 10px;
+}
+
+.fcc {
+    display: none;
+}

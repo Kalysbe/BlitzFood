@@ -1,0 +1,9 @@
+INSTALLATION
+
+* Prepare your database and fire all queries from Maintance/install.sql
+
+* Move default.config.inc.php to config.inc.php and edit it to satisfy your
+server settings
+
+&#9650;
+&#9660;

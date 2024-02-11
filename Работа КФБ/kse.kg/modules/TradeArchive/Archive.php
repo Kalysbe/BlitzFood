@@ -1,0 +1,148 @@
+<?php
+
+$Module = "TradeArchive";
+
+function TradeArchive_loadController() {
+    $Controller = new ControllerClass();
+
+    //$Controller->setText("sometext");
+
+    $Uri = MainClass::getSingleton()->getFullUriPath();
+
+    $Controller->appendVariable("ControllerInclusion", "modules/TradeArchive/TradeArchive.html");
+
+	$link = MainClass::getSingleton()->getDbConnection();
+	
+    $year = date("Y");
+
+    /*
+    * Current year archive
+    */
+    $sql = "SELECT * FROM `mod_trade_archive` WHERE (`year`='" . $year . "') ORDER BY `month` DESC";
+    $result = mysqli_query($link, $sql);
+    $rows = mysqli_num_rows($result);
+
+    $total_current['total_volume'] = 0;
+    $total_current['secondary_amount'] = 0;
+    $total_current['deals_amount'] = 0;
+    $total_current['primary_deals'] = 0;
+    $total_current['secondary_deals'] = 0;
+    $total_current['listing_trades'] = 0;
+    $total_current['non_listing_trades'] = 0;
+
+    for ($i = 0; $i < $rows; $i++) {
+        mysqli_data_seek($result, $i);
+        $obj = mysqli_fetch_object($result);
+        $Trade['TotalVolume'] = number_format(str_replace(",",".",$obj->total_volume), 2, ",", " ");
+        $total_current['total_volume'] += $obj->total_volume;
+        $Trade['SecondaryAmount'] = number_format(str_replace(",",".",$obj->sec_amount), 2, ",", " ");
+        $total_current['secondary_amount'] += $obj->sec_amount;
+        $Trade['DealsAmount'] = number_format(str_replace(",",".",$obj->deals_amount), 2, ",", " ");
+        $total_current['deals_amount'] += $obj->deals_amount;
+        $Trade['PrimaryDeals'] = number_format(str_replace(",",".",$obj->primary_deals), 2, ",", " ");
+        $total_current['primary_deals'] += $obj->primary_deals;
+        $Trade['SecondaryDeals'] = number_format(str_replace(",",".",$obj->secondary_deals), 2, ",", " ");
+        $total_current['secondary_deals'] += $obj->secondary_deals;
+        $Trade['ListingTrades'] = number_format(str_replace(",",".",$obj->listing_trades), 2, ",", " ");
+        $total_current['listing_trades'] += $obj->listing_trades;
+        $Trade['NonListingTrades'] = number_format(str_replace(",",".",$obj->nonlisting_trades), 2, ",", " ");
+        $total_current['non_listing_trades'] += $obj->nonlisting_trades;
+        $Trade['Month'] = $obj->month;
+        $Trade['Year'] = $obj->year;
+        $CurrentYear[] = $Trade;
+    }
+    $Controller->appendVariable("CurrentYear", $CurrentYear);
+    $Controller->appendVariable("total_current", $total_current);
+
+    
+
+    /*
+    * Past year archive
+    */
+    $year = $year - 1;
+    $sql = "SELECT * FROM `mod_trade_archive` WHERE (`year`='" . $year . "') ORDER BY `month` DESC";
+    $result = mysqli_query($link, $sql);
+    $rows = mysqli_num_rows($result);
+
+    $past_year['total_volume'] = 0;
+    $past_year['secondary_amount'] = 0;
+    $past_year['deals_amount'] = 0;
+    $past_year['primary_deals'] = 0;
+    $past_year['secondary_deals'] = 0;
+    $past_year['listing_trades'] = 0;
+    $past_year['non_listing_trades'] = 0;
+    for ($i = 0; $i < $rows; $i++) {
+        mysqli_data_seek($result, $i);
+        $obj = mysqli_fetch_object($result);
+        $Trade['TotalVolume'] = number_format(str_replace(",",".",$obj->total_volume), 2, ",", " ");
+        $past_year['total_volume'] += $obj->total_volume;
+        $Trade['SecondaryAmount'] = number_format(str_replace(",",".",$obj->sec_amount), 2, ",", " ");
+        $past_year['secondary_amount'] += $obj->sec_amount;
+        $Trade['DealsAmount'] = number_format(str_replace(",",".",$obj->deals_amount), 2, ",", " ");
+        $past_year['deals_amount'] += $obj->deals_amount;
+        $Trade['PrimaryDeals'] = number_format(str_replace(",",".",$obj->primary_deals), 2, ",", " ");
+        $past_year['primary_deals'] += $obj->primary_deals;
+        $Trade['SecondaryDeals'] = number_format(str_replace(",",".",$obj->secondary_deals), 2, ",", " ");
+        $past_year['secondary_deals'] += $obj->secondary_deals;
+        $Trade['ListingTrades'] = number_format(str_replace(",",".",$obj->listing_trades), 2, ",", " ");
+        $past_year['listing_trades'] += $obj->listing_trades;
+        $Trade['NonListingTrades'] = number_format(str_replace(",",".",$obj->nonlisting_trades), 2, ",", " ");
+        $past_year['non_listing_trades'] += $obj->nonlisting_trades;
+        $Trade['Month'] = $obj->month;
+        $Trade['Year'] = $obj->year;
+        $PastYear[] = $Trade;
+    }
+    $Controller->appendVariable("PastYear", $PastYear);
+    $Controller->appendVariable("past_year_total", $past_year);
+
+    /*
+    * All year archive
+    */
+    $sql = "SELECT SUM(`total_volume`) AS `total_volume`,
+        SUM(`sec_amount`) AS `sec_amount`,
+        SUM(`deals_amount`) AS `deals_amount`,
+        SUM(`primary_deals`) AS `primary_deals`,
+        SUM(`secondary_deals`) AS `secondary_deals`,
+        SUM(`listing_trades`) AS `listing_trades`,
+        SUM(`nonlisting_trades`) AS `nonlisting_trades`,
+      year
+
+        FROM `mod_trade_archive` WHERE (`year`>2000) GROUP BY `year`";
+    $result = mysqli_query($link, $sql);
+    $rows = mysqli_num_rows($result);
+
+    $all_years_total['total_volume'] = 0;
+    $all_years_total['secondary_amount'] = 0;
+    $all_years_total['deals_amount'] = 0;
+    $all_years_total['primary_deals'] = 0;
+    $all_years_total['secondary_deals'] = 0;
+    $all_years_total['listing_trades'] = 0;
+    $all_years_total['non_listing_trades'] = 0;
+    for ($i = 0; $i < $rows; $i++) {
+        mysqli_data_seek($result, $i);
+        $obj = mysqli_fetch_object($result);
+        $Trade['TotalVolume'] = number_format(str_replace(",",".",$obj->total_volume), 2, ",", " ");
+        $all_years_total['total_volume'] += $obj->total_volume;
+        $Trade['SecondaryAmount'] = number_format(str_replace(",",".",$obj->sec_amount), 2, ",", " ");
+        $all_years_total['secondary_amount'] += $obj->sec_amount;
+        $Trade['DealsAmount'] = number_format(str_replace(",",".",$obj->deals_amount), 2, ",", " ");
+        $all_years_total['deals_amount'] += $obj->deals_amount;
+        $Trade['PrimaryDeals'] = number_format(str_replace(",",".",$obj->primary_deals), 2, ",", " ");
+        $all_years_total['primary_deals'] += $obj->primary_deals;
+        $Trade['SecondaryDeals'] = number_format(str_replace(",",".",$obj->secondary_deals), 2, ",", " ");
+        $all_years_total['secondary_deals'] += $obj->secondary_deals;
+        $Trade['ListingTrades'] = number_format(str_replace(",",".",$obj->listing_trades), 2, ",", " ");
+        $all_years_total['listing_trades'] += $obj->listing_trades;
+        $Trade['NonListingTrades'] = number_format(str_replace(",",".",$obj->nonlisting_trades), 2, ",", " ");
+        $all_years_total['non_listing_trades'] += $obj->nonlisting_trades;
+       // $Trade['Month'] = $obj->month;
+        $Trade['Year'] = $obj->year;
+        $TotalYear[] = $Trade;
+    }
+    $Controller->appendVariable("TotalYear", $TotalYear);
+    $Controller->appendVariable("all_years_total", $all_years_total);
+
+    return $Controller;
+}
+
+?>

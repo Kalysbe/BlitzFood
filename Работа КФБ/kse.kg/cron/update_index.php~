@@ -1,0 +1,68 @@
+<?php
+/* 
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+require_once("../config.inc.php");
+
+mysql_connect($_DB["HOST"], $_DB["USER"], $_DB["PASS"]);
+mysql_select_db($_DB["NAME"]);
+mysql_query("SET NAMES 'utf8'");
+
+$query = "select
+     www.makedate(t.date0) as date1, t.ind, t.cap
+from
+     ts.capitalisation t
+/*where
+t.date0>=(select max(t2.date0)-500 from ts.capitalisation t2) and date0<=(select max(t3.date0) from ts.capitalisation t3)*/
+order by date0 asc";
+
+$conn = oci_connect($_DB["ORA_USER"], $_DB["ORA_PASS"], $_DB["ORA_CSTRING"], $_DB["ORA_CHARSET"]);
+if (!$conn) {
+    $e = oci_error();
+    trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
+	exit;
+}
+
+$stid = oci_parse($conn, $query);
+if (!$stid) {
+    $e = oci_error($conn);
+    trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
+}
+
+// Perform the logic of the query
+$r = oci_execute($stid);
+if (!$r) {
+    $e = oci_error($stid);
+    trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
+}
+
+function FormatNum($num)
+{
+	if (strlen($num) < 2)
+		return '0'.$num;
+	else return $num;
+}
+
+mysql_query("DELETE FROM `mod_cap_index` WHERE 1");
+while ($row = oci_fetch_array($stid, OCI_ASSOC+OCI_RETURN_NULLS+OCI_RETURN_LOBS)) {
+    $b = array();
+    foreach ($row as $k => $item) {
+        //echo $k . "=====>" . $item . "<br />";
+        if ($k == "DATE1")
+        {
+            $d = explode("/", $item);
+            $b["d"] = $d[0];
+            $b["m"] = $d[1];
+            $b["y"] = $d[2];
+        }
+        else
+            $b[$k] = $item;
+    }
+
+    $date = $b["y"] . "-" . $b["m"] . "-" . $b["d"];
+    $sql = "INSERT INTO `mod_cap_index` (`date`, `index`,
+        `capitalization`) VALUES ('" . $date . "', '" . $b["IND"] . "', '" . $b["CAP"] . "')";
+    mysql_query($sql);
+}
+?>

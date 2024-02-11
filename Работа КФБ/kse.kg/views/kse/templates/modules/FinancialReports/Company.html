@@ -1,0 +1,26 @@
+{% if NoSuchCompany %}
+<h2>Ошибка</h2>
+<div class="error ui-corner-all">
+    Компания не найдена в базе данных
+</div>
+{% else %}
+<h2>{{ CompanyTitle }}</h2>
+
+{% if Logged %}
+
+<div id="two_columns label">
+    <label>Новый файл: </label>
+    <input type="file" name="newFile" value="" /><br />
+    <label>Период с:</label>
+    <input type="text" name="mDateFrom" id="mDateFrom" value="" /><br />
+    <label>Период по:</label>
+    <input type="text" name="mDateTo" id="mDateTo" value="" />
+    <script type="text/javascript">
+        $("#mDateFrom").datepicker();
+        $("#mDateTo").datepicker();
+    </script>
+</div>
+
+{% endif %}
+
+{% endif %}

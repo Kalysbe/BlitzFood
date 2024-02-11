@@ -1,0 +1,4 @@
+sql=analitics.sql
+exec="SQL?ANALITIKYES.TXT:ANALITIKNO.TXT"
+sql=
+

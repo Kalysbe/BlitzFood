@@ -1,0 +1,27 @@
+<?php
+
+class User {
+    private $Id;
+    private $Username;
+    private $Email;
+
+    public function __construct($uid) {
+        $sql = "SELECT * FROM `users` WHERE (`uid`='" . $uid . "')";
+        $result = mysql_query($sql);
+        $rows = mysql_num_rows($result);
+        if ($rows == 1) {
+            $obj = mysql_fetch_object($result);
+            $this->Id = $uid;
+            $this->Username = $obj->login;
+            $this->Email = $obj->email;
+        }
+    }
+
+    public function getUsername() {
+        return $this->Username;
+    }
+
+    public function getEmail() {
+        return $this->getEmail();
+    }
+};

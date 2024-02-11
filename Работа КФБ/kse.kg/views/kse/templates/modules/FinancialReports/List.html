@@ -1,0 +1,9 @@
+<h2>Список компаний раскрывающих информацию:</h2>
+<br />
+<ul>
+
+    {% for Company in Companies %}
+    <li><a href="{{ root }}/{{lang_code}}/FinancialReports/{{ Company.Name }}">{{ Company.Title }}</a></li>
+    {% endfor %}
+
+</ul>

@@ -1,0 +1,77 @@
+<!--#include virtual="include\top.htm"-->
+              <IMG  src="img/archive.gif" width="159" height="23">
+<table width="100%">
+<tr>
+<td valign="top"><div align="justify">
+              <br>
+			  За последние 12 месяцев
+			  <br>
+			  <br>
+<!--M o n t h l y -->
+              <table bgcolor="#0B0B64" width="100%" border="0" cellpadding="3" cellspacing="1">
+                <TR valign="top" bgcolor="#000066"> 
+                  <TD align=left bordercolor="#000066" width="55"><font color="#FFFFFF">&nbsp;</font></TD>
+                  <TD align="center"><b><font color="#FFFFFF">Общий 
+                    объем торгов , сом </font></b></TD>
+                  <TD align="center"><font color="#FFFFFF"><b>Количество ценных бумаг
+                    шт. </b></font></TD>
+                  <TD align="center"><font color="#FFFFFF"><b>Количество сделок</b></font></TD>
+                  <TD align="center"><b><font color="#FFFFFF">Торги 
+                    на первичном рынке, сом</font></b> </TD>
+                  <TD align="center"><b><font color="#FFFFFF">Торги 
+                    на вторичном рынке, сом </font></b></TD>
+                  <TD align="center"><b><font color="#FFFFFF">Торги 
+                    в секторе листинговых ценных бумаг, сом</font></b>
+                  </TD>
+                  <TD align="center"><b><font color="#FFFFFF">Торги 
+                    в секторе не листинговых ценных бумаг, сом</font></b>
+                  </TD>
+                </TR>
+                <!--#exec isapi="/scripts/fbisapi.DLL?sql=Monthly.sql&htm=archive.htm"-->
+              </TABLE>
+<!--E N D  M o n t h l y -->
+
+
+
+             <br>
+
+			 <br>
+                         Итого за год:
+                         <br>
+			 <br>
+<table bgcolor="#0B0B64" width="100%" border="0" cellpadding="3" cellspacing="1">
+                <TR valign="top" bgcolor="#000066"> 
+                  <TD align=left bordercolor="#000066"><font color="#FFFFFF">&nbsp;</font></TD>
+                  <TD align="center"><b><font color="#FFFFFF">Общий 
+                    объем торгов , сом </font></b></TD>
+                  <TD align="center"><font color="#FFFFFF"><b>Количество ценных бумаг
+                    шт. </b></font></TD>
+                  <TD align="center"><font color="#FFFFFF"><b>Количество сделок</b></font></TD>
+                  <TD align="center"><b><font color="#FFFFFF">Торги 
+                    на первичном рынке, сом</font></b> </TD>
+                  <TD align="center"><b><font color="#FFFFFF">Торги 
+                    на вторичном рынке, сом </font></b></TD>
+                  <TD align="center"><b><font color="#FFFFFF">Торги 
+                    в секторе листинговых ценных бумаг, сом</font></b>
+                  </TD>
+                  <TD align="center"><b><font color="#FFFFFF">Торги 
+                    в секторе не листинговых ценных бумаг, сом</font></b>
+                  </TD>
+                </TR>
+                <!--#exec isapi="/scripts/fbisapi.DLL?sql=Yearly.sql&htm=archive.htm"-->
+              </TABLE>
+			  <BR><BR><BR><BR>			 
+			 
+			 </td>
+		<td width="15">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+ </TD>
+      <TD vAlign=top><BR> 
+
+	 </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<!--#include virtual="include\bottom.htm"-->

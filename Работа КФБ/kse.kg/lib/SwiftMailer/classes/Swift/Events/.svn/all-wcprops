@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/guest/buse/!svn/ver/208/trunk/lib/SwiftMailer/classes/Swift/Events
+END
+SendEvent.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/guest/buse/!svn/ver/208/trunk/lib/SwiftMailer/classes/Swift/Events/SendEvent.php
+END
+SendListener.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/guest/buse/!svn/ver/208/trunk/lib/SwiftMailer/classes/Swift/Events/SendListener.php
+END
+ResponseEvent.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/guest/buse/!svn/ver/208/trunk/lib/SwiftMailer/classes/Swift/Events/ResponseEvent.php
+END
+SimpleEventDispatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/guest/buse/!svn/ver/208/trunk/lib/SwiftMailer/classes/Swift/Events/SimpleEventDispatcher.php
+END
+TransportChangeEvent.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/guest/buse/!svn/ver/208/trunk/lib/SwiftMailer/classes/Swift/Events/TransportChangeEvent.php
+END
+ResponseListener.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/guest/buse/!svn/ver/208/trunk/lib/SwiftMailer/classes/Swift/Events/ResponseListener.php
+END
+TransportChangeListener.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/guest/buse/!svn/ver/208/trunk/lib/SwiftMailer/classes/Swift/Events/TransportChangeListener.php
+END
+EventObject.php
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/guest/buse/!svn/ver/208/trunk/lib/SwiftMailer/classes/Swift/Events/EventObject.php
+END
+TransportExceptionEvent.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/guest/buse/!svn/ver/208/trunk/lib/SwiftMailer/classes/Swift/Events/TransportExceptionEvent.php
+END
+CommandEvent.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/guest/buse/!svn/ver/208/trunk/lib/SwiftMailer/classes/Swift/Events/CommandEvent.php
+END
+TransportExceptionListener.php
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/guest/buse/!svn/ver/208/trunk/lib/SwiftMailer/classes/Swift/Events/TransportExceptionListener.php
+END
+Event.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/guest/buse/!svn/ver/208/trunk/lib/SwiftMailer/classes/Swift/Events/Event.php
+END
+CommandListener.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/guest/buse/!svn/ver/208/trunk/lib/SwiftMailer/classes/Swift/Events/CommandListener.php
+END
+EventListener.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/guest/buse/!svn/ver/208/trunk/lib/SwiftMailer/classes/Swift/Events/EventListener.php
+END
+EventDispatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/guest/buse/!svn/ver/208/trunk/lib/SwiftMailer/classes/Swift/Events/EventDispatcher.php
+END

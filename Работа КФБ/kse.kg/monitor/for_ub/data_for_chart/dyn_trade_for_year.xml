@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graph caption='' PYAxisName="по годам" SYAxisName=''  decimalPrecision='0' formatNumberScale='0' bgcolor='000000' canvasBgColor='000000' baseFontColor='ffff00'
+yaxisminvalue='00' yaxismaxvalue='10000' rotateNames="0">
+	<categories font="Arial" fontSize="14" fontColor="ffffff">
+		<category name="1995"/>
+		<category name='1996'/>
+		<category name='1997'/>
+		<category name='1998'/>
+		<category name='1999'/>
+		<category name='2000'/>
+		<category name='2001'/>
+		<category name='2002'/>
+		<category name='2003'/>
+		<category name='2004'/>
+		<category name='2005'/>
+		<category name='2006'/>
+		<category name='2007'/>
+		<category name='2008'/>
+		<category name='2009'/>
+		<category name='2010'/>
+		<category name='2011'/>
+		<category name='2012'/>
+		<category name='2013'/>
+		<category name='2014'/>
+		<category name='окт. 2015'/>
+	</categories>
+	<dataset seriesName='Объем торгов (млн. сом)' parentYAxis='P' color='4682B4' numberPrefix=''>
+		<set value='0.61' />
+		<set value='6.04' />
+		<set value='16.98' />
+		<set value='46.1' />
+		<set value='251.07' />
+		<set value='1106.12' />
+		<set value='941.3' />
+		<set value='1129.34' />
+		<set value='496.7' />
+		<set value='2209.32' />
+		<set value='1245.81' />
+		<set value='3916.3' />
+		<set value='5188.57' />
+		<set value='4183.78' />
+		<set value='2951.19' />
+		<set value='459.71' />
+		<set value='1511.02' />
+		<set value='1169.38' />
+		<set value='1648.14' />
+		<set value='1634.3' />
+		<set value='3360.5' />
+	</dataset>
+	<dataset seriesName='Количество сделок' parentYAxis='S' color='FF8000' anchorSides='20' anchorRadius='4' anchorBorderColor='009900' font="Arial" fontSize="11" anchorFontColor="ffffff">
+		<set value='949' />
+		<set value='1570' />
+		<set value='1126' />
+		<set value='2519' />
+		<set value='2652' />
+		<set value='10886' />
+		<set value='6599' />
+		<set value='3167' />
+		<set value='1659' />
+		<set value='2305' />
+		<set value='1745' />
+		<set value='2284' />
+		<set value='4092' />
+		<set value='3408' />
+		<set value='926' />
+		<set value='693' />
+		<set value='1678' />
+		<set value='2185' />
+		<set value='3325' />
+		<set value='3516' />
+		<set value='1660' />
+   </dataset>
+</graph>

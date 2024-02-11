@@ -1,0 +1,63 @@
+
+*** These modified files were found in JOE when it aborted on Fri May 11 18:01:52 2012
+*** JOE was aborted because the terminal closed
+
+*** File '(Unnamed)'
+./gol_sh.sh
+./gol_sh.sh
+./gol_sh.sh
+./gol_sh.sh
+./gol_sh.sh
+./gol_sh.sh
+./gol_sh.sh
+./gol_sh.sh
+./gol_sh.sh
+./gol_sh.sh
+./gol_sh.sh
+
+*** These modified files were found in JOE when it aborted on Fri May 18 16:56:42 2012
+*** JOE was aborted because the terminal closed
+
+*** File './nbkr_3.sh'
+#!/bin/sh
+user="kseuser";
+pass="kseuserpass";
+db="kse";
+
+#res_nbkr_site='';
+
+max_base_date=`echo ' select distinct dayofmonth(date) + (month(date)*256) + (year(date)*65536) from gkv_3 where date=(select max(date) from gkv_3);' | mysql -ukseuser -pkseuserpass -Dkse | sed '/date/d'`;
+echo "mySql_1=$max_base_date";
+
+q="'";
+res_nbkr_site=`links -dump " http://www.nbkr.kg/index1.jsp?item=119&lang=RUS " | \
+#	grep "|" | grep '.*|[0-9.]|*'| awk -F "|" '{print "\047"$2"\047;"$3";"$4";"$5";"$6";"$7}' | \
+	grep "|" | grep '.*|[0-9.]|*'| awk -F "|" '{print $2";"$3";"$4";"$5";"$6";"$7";"}' |
+	sed 's/ //g' | awk -v pDate=$max_base_date ' split($1,a,".") {}; pDate < a[1]+a[2]*256+a[3]*65536 {print $1}'`;
+
+for item in $res_nbkr_site; do
+    echo "insert in the database - " $item ;
+    #|sed -e 's/;/,/g'`
+    done
+
+#echo ${res_nbkr_site};
+#echo $res_nbkr_site;
+
+#if  [ $res_nbkr_site -ne '' ] ; then
+#  echo "per have record"	
+#fi
+
+#sql="INSERT INTO gkv_3 (date,ask,bid,min_percent,max_percent,average) VALUES ($per)"
+
+*** File '(Unnamed)'
+./nbkr_3.sh
+./nbkr_3.sh
+./nbkr_3.sh
+./nbkr_3.sh
+./nbkr_3.sh
+./nbkr_3.sh
+./nbkr_3.sh
+./nbkr_3.sh
+./nbkr_3.sh
+./nbkr_3.sh
+./nbkr_3.sh

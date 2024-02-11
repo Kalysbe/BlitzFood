@@ -1,0 +1,289 @@
+<?php
+/*
+ *  BUSE - BUisiness Site Engine
+ *  Copyright (C) 2010  Epos Software Foundation
+ *
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+//mysql_connect($_DB["HOST"], $_DB["USER"], $_DB["PASS"]);
+//mysql_select_db($_DB["NAME"]);
+//mysql_query("SET NAMES utf8");
+session_start();
+if ($_SITE["DEBUG"] != 0) {
+    error_reporting(255);
+} else {
+    error_reporting(0);
+}
+
+class MainClass {
+    private static $_this;
+    private $DbConnected;
+    private $Connection;    // Database connection
+    private $SiteVars;
+    private $UriPath = array();
+    private $UriLanguage;
+    private $UriNamespace;
+    private $UriRest = array();
+    private $LoggedUid;
+    private $LoggedLevel;
+    private $_Variables;
+    private $Tests = 0;
+    private $isInnerPage;
+
+    private function __construct()
+    {
+        $DbConnected = false;
+        $this->_Variables = array();
+    }
+
+    public static function getSingleton() {
+        if (!isset(self::$_this)) {
+            $c = __CLASS__;
+            self::$_this = new $c;
+        }
+        return self::$_this;
+    }
+
+    public function buildUriPath() {
+        $this->UriPath = explode("/", $_SERVER["REQUEST_URI"]);
+        if (count($this->UriPath) < 3)
+            return false;
+        else {
+            $this->UriLanguage = $this->UriPath[1];
+            $this->UriNamespace = $this->UriPath[2];
+            return true;
+        }
+    }
+
+    public function checkUserLogin() {
+        if (isset($_SESSION["LOGGED"])) {
+            if ($_SESSION["LOGGED"] == true) {
+                $result = mysql_query("SELECT `uid` FROM `sessions` WHERE
+                (`hash`='" . $_SESSION["HASH"] . "')");
+                $rows = mysql_num_rows($result);
+                if ($rows == 1) {
+                    $obj = mysql_fetch_object($result);
+                    $this->LoggedUid = $obj->uid;
+                    $sql = "SELECT `level` FROM `users` WHERE (`uid`='" . $obj->uid . "')";
+                    $result = mysql_query($sql);
+                    $rows = mysql_num_rows($result);
+                    
+                    if ($rows == 1) {
+                        $level = mysql_fetch_object($result);
+                        $this->LoggedLevel = $level->level;
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    public function getLoggedUid() {
+        if ($this->LoggedUid)
+            return $this->LoggedUid;
+        else return 0;
+    }
+
+    public function getFullUriPath() {
+        return $this->UriPath;
+    }
+
+    public function getUriPath($element) {
+        if (count($this->UriPath) == $element + 1) {
+            return $this->UriPath[$element];
+        } else return false;
+    }
+
+    public function getUserLevel() {
+        return $this->LoggedLevel;
+    }
+
+    public function getLanguageCode() {
+        return $this->UriLanguage;
+    }
+
+    public function getNamespace() {
+        return $this->UriNamespace;
+    }
+
+    public function getPageName() {
+        if (count($this->UriPath) <= 3) {
+            return $this->UriNamespace;
+        }
+        if (count($this->UriPath) > 3) {
+            if (trim($this->UriPath[3]) == "") {
+                return $this->UriNamespace;
+            }
+            return trim($this->UriPath[3]);
+        }
+    }
+
+    public function getRows($table, $criteria) {
+        $result = mysql_query("SELECT COUNT(1) FROM `" . $table . "` WHERE (" . $criteria . ")");
+        $array = mysql_fetch_array($result);
+        return $array[0];
+    }
+
+    public function getVariables() {
+        return $this->_Variables;
+    }
+
+    public function loadSetting() {
+        $result = mysql_query("SELECT `value` FROM `settings` WHERE (`name`='" . $name . "')");
+        $rows = mysql_num_rows($result);
+        if ($rows != 0)
+            $obj = mysql_fetch_object($result);
+        else return null;
+        return $obj->value;
+    }
+
+    /*
+     * Appends message to errors array
+     */
+    public function appendError($text, $redirect = "") {
+        $_SESSION["ERROR"][] = $text;
+        if ($redirect != "") {
+            
+        }
+    }
+
+    public function appendMessage($text, $redirect = "") {
+        $_SESSION["MESSAGE"][] = $text;
+        if ($redirect != "") {
+
+        }
+    }
+
+    /*
+     * Connects to database
+     */
+    public function connectToDb($host, $user, $pass, $name) {
+        $this->Connection = mysql_connect($host, $user, $pass);
+        if (!$this->Connection) {
+            $this->appendError("{DbConnectionError}");
+            return false;
+        } else {
+            if (!mysql_select_db($name, $this->Connection)) {
+                $this->appendError("{DatabaseNotExistsError}");
+                return false;
+            } else {
+                mysql_query("SET NAMES utf8");
+                $this->DbConnected = true;
+                return $this->Connection;
+            }
+        }
+    }
+
+    public function appendSiteVars($array) {
+        foreach($array as $k=>$v) {
+            $this->SiteVars[$k] = $v;
+        }
+    }
+
+    public function getSiteVar($name) {
+        return $this->SiteVars[$name];
+    }
+
+    public function setSiteVars($array) {
+        $this->SiteVars = $array;
+    }
+
+    public function appendVariables($Vars) {
+        $this->_Variables = array_merge($this->_Variables, $Vars);
+        
+    }
+
+    public function parseInput($string) {
+        return $string;
+    }
+
+    public function test() {
+        print_r($this->_Variables);
+    }
+
+    public function setLanguage($code) {
+        $this->UriLanguage = $code;
+    }
+
+    public function setNamespace($namespace) {
+        $this->UriNamespace = $namespace;
+    }
+
+    public function setAsInner($bool) {
+        $this->isInnerPage = $bool;
+    }
+
+    public function isInner() {
+        return $this->isInnerPage;
+    }
+};
+
+// Connect to database and push site variables
+MainClass::getSingleton()->connectToDb($_DB["HOST"], $_DB["USER"], $_DB["PASS"], $_DB["NAME"]);
+MainClass::getSingleton()->setSiteVars($_SITE);
+unset($_DB);
+
+// Redirect to default page if no page was requested
+if (!MainClass::getSingleton()->buildUriPath()) {
+    MainClass::getSingleton()->setLanguage(MainClass::getSingleton()->getSiteVar("DEFAULT_LANGUAGE"));
+    MainClass::getSingleton()->setNamespace(MainClass::getSingleton()->getSiteVar("MAIN_PAGE"));
+    MainClass::getSingleton()->setAsInner(false);
+    //Header("Location: " . MainClass::getSingleton()->getSiteVar("%ROOT%") . "/" .
+    //    MainClass::getSingleton()->getSiteVar("DEFAULT_LANGUAGE") . "/" .
+    //    MainClass::getSingleton()->getSiteVar("MAIN_PAGE"));
+} elseif (MainClass::getSingleton()->getNamespace() == MainClass::getSingleton()->getSiteVar("MAIN_PAGE")){
+    Header("Location:" . MainClass::getSingleton()->getSiteVar("%ROOT%"));
+} else {
+    MainClass::getSingleton()->setAsInner(true);
+}
+
+$Translit = array(
+    "Ґ"=>"G","Ё"=>"YO","Є"=>"E","Ї"=>"YI","І"=>"I",
+    "і"=>"i","ґ"=>"g","ё"=>"yo","№"=>"#","є"=>"e",
+    "ї"=>"yi","А"=>"A","Б"=>"B","В"=>"V","Г"=>"G",
+    "Д"=>"D","Е"=>"E","Ж"=>"ZH","З"=>"Z","И"=>"I",
+    "Й"=>"Y","К"=>"K","Л"=>"L","М"=>"M","Н"=>"N",
+    "О"=>"O","П"=>"P","Р"=>"R","С"=>"S","Т"=>"T",
+    "У"=>"U","Ф"=>"F","Х"=>"H","Ц"=>"TS","Ч"=>"CH",
+    "Ш"=>"SH","Щ"=>"SCH","Ъ"=>"'","Ы"=>"YI","Ь"=>"",
+    "Э"=>"E","Ю"=>"YU","Я"=>"YA","а"=>"a","б"=>"b",
+    "в"=>"v","г"=>"g","д"=>"d","е"=>"e","ж"=>"zh",
+    "з"=>"z","и"=>"i","й"=>"y","к"=>"k","л"=>"l",
+    "м"=>"m","н"=>"n","о"=>"o","п"=>"p","р"=>"r",
+    "с"=>"s","т"=>"t","у"=>"u","ф"=>"f","х"=>"h",
+    "ц"=>"ts","ч"=>"ch","ш"=>"sh","щ"=>"sch","ъ"=>"",
+    "ы"=>"yi","ь"=>"","э"=>"e","ю"=>"yu","я"=>"ya"
+);
+
+function file_upload_error_message($error_code) {
+    switch ($error_code) {
+        case UPLOAD_ERR_INI_SIZE:
+            return 'The uploaded file exceeds the upload_max_filesize directive in php.ini';
+        case UPLOAD_ERR_FORM_SIZE:
+            return 'The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form';
+        case UPLOAD_ERR_PARTIAL:
+            return 'The uploaded file was only partially uploaded';
+        case UPLOAD_ERR_NO_FILE:
+            return 'No file was uploaded';
+        case UPLOAD_ERR_NO_TMP_DIR:
+            return 'Missing a temporary folder';
+        case UPLOAD_ERR_CANT_WRITE:
+            return 'Failed to write file to disk';
+        case UPLOAD_ERR_EXTENSION:
+            return 'File upload stopped by extension';
+        default:
+            return 'Unknown upload error';
+    }
+}

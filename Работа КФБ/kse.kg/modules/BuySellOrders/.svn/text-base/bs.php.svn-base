@@ -1,0 +1,144 @@
+<?php
+
+
+function order_send($operation, $emitent, $price, $amount, $comment) {
+
+    $message = '
+        Новая заявка на сайте КФБ
+
+        На сайте Кыргызской Фондовой Биржи (http://www.kse.kg)
+          была подана заявка на операции с ценными бумагами.
+          Тип операции: ' . $operation . '
+          Ценная бумага: ' . $emitent . '
+          Цена: ' . $price . '
+          Количество: ' . $amount . '
+          Комментарий: ' . $comment . '
+    ';
+
+    require_once $_SERVER["DOCUMENT_ROOT"] . '/lib/SwiftMailer/swift_required.php';
+    //Create the Transport
+    $transport = Swift_SmtpTransport::newInstance('192.168.0.12', 25);
+
+    //Create the Mailer using your created Transport
+    $mailer = Swift_Mailer::newInstance($transport);
+
+    //Create a message
+    $message = Swift_Message::newInstance('Новая заявка на сайте WWW.KSE.KG')
+      ->setFrom(array('postmaster@kse.kg' => 'Kyrgyz Stock Exchange'))
+      ->setTo(array('misha@kse.kg',
+          'aibek@kse.kg',
+          'info@niet-araket.kg',
+          'rba_kg@mail.ru',
+          'bnc@bnc.kg',
+          'senti@senti.kg',
+          'aalam@imfiko.bishkek.su',
+          'ashimbekova@rambler.ru',
+          'ventra2010@mail.ru',
+          'global_finance@mail.ru',
+          'orientcapital@rambler.ru',
+          'office@kls-s.com',
+          'bbb_123@mail.ru'
+
+          ))
+      ->setBody($message)
+      ;
+
+    //Send the message
+    $numSent = $mailer->batchSend($message);
+
+    //print("Sent %d messages\n", $numSent);
+
+    /*
+    // multiple recipients
+    $to  = 'misha@kse.kg' . ', '; // note the comma
+    $to .= 'just.tester@namba.kg' . ', ';
+    $to .= 'm.savochkin@gmail.com';
+
+    // subject
+    $subject = 'Новая заявка на сайте КФБ';
+
+    // message
+    $message = '
+    <html>
+    <head>
+      <title>Новая заявка на сайте КФБ</title>
+    </head>
+    <body>
+      <p>На сайте <a href="http://www.kse.kg" title="ЗАО КФБ">Кыргызской Фондовой Биржи</a>
+      была подана заявка на операции с ценными бумагами.</p>
+      <br />
+      Тип операции: <b>' . $operation . '</b><br />
+      Ценная бумага: <b>' . $emitent . '</b><br />
+      Цена: <b>' . $price . '</b><br />
+      Количество: <b>' . $amount . '</b><br />
+      Комментарий: <b>' . $comment . '</b><br />
+    </body>
+    </html>
+    ';
+
+    // To send HTML mail, the Content-type header must be set
+    $headers  = 'MIME-Version: 1.0' . "\r\n";
+    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+    // Additional headers
+    $headers .= 'To: Mihail Savochkin <misha@kse.kg>' . "\r\n";
+    $headers .= 'From: Kyrgyz Stock Exchange <postmaster@kse.kg>' . "\r\n";
+    $headers .= 'Bcc: m.savochkin@gmail.com,just.tester@namba.kg' . "\r\n";
+
+    // Mail it
+    mail($to, $subject, $message, $headers);*/
+}
+
+$Module = "BuySellOrders";
+
+function BuySellOrders_loadController() {
+
+    $Controller = new ControllerClass();
+
+    if (isset($_POST["doSendMessage"])) {
+        $operation = $_POST["mOperation"];
+        $text = $_POST["mText"];
+        $price = $_POST["mPrice"];
+        $amount = $_POST["mAmount"];
+        $company = $_POST["mEmitent"];
+        $date = date("Y-m-d H:i:s");
+
+        $sql = "INSERT INTO `mod_bs_archive` (
+            `operation`, `amount`, `company`,`price` ,`text`, `date`, `ip`, `agent`
+        ) VALUES (
+            '" . $operation . "',
+            '" . $amount . "',
+            '" . $company . "',
+            '" . $price . "',
+            '" . $text . "',
+            '" . $date . "',
+            '" . $_SERVER["REMOTE_ADDR"] . "',
+            '" . $_SERVER["HTTP_USER_AGENT"] . "'
+        )";
+        mysql_query($sql);
+        order_send($operation, $company, $price, $amount, $text);
+
+        //$sql = "SELECT * FROM `mod_bs_recipients` WHERE 1";
+        //$result = mysql_query($sql);
+        //$rows = mysql_num_rows($result)
+
+        $Controller->appendVariable("SendResult", "
+            В данный момент функция рассылки не доступна. Ваше сообщение сохранено в базе и будет доставлено
+            по адресату после восcтановления работы.
+        ");
+    }
+        
+
+
+    
+
+    $Uri = MainClass::getSingleton()->getFullUriPath();
+
+    $Controller->appendVariable("ControllerInclusion", "modules/BuySellOrders/BuySellOrders.html");
+
+    
+
+    return $Controller;
+}
+
+?>

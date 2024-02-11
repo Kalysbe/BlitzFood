@@ -1,0 +1,123 @@
+import Vue from 'vue'
+import Viewer from 'viewerjs'
+import debounce from 'lodash/debounce'
+
+const directive = ({ name = 'viewer', debug = false } = {}) => {
+  function createViewer(el, options, rebuild = false, observer = false) {
+    Vue.nextTick(() => {
+      if (observer && !imageDiff(el)) return
+      if (rebuild || !el[`$${name}`]) {
+        destroyViewer(el)
+        el[`$${name}`] = new Viewer(el, options)
+        log('Viewer created')
+      }
+      else {
+        el[`$${name}`].update()
+        log('Viewer updated')
+      }
+    })
+  }
+
+  function imageDiff(el) {
+    const imageContent = el.innerHTML.match(/<img([\w\W]+?)[\\/]?>/g)
+    const viewerImageText = imageContent ? imageContent.join('') : undefined
+    if (el.__viewerImageDiffCache === viewerImageText) {
+      log('Element change detected, but image(s) has not changed')
+      return false
+    }
+    else {
+      log('Image change detected')
+      el.__viewerImageDiffCache = viewerImageText
+      return true
+    }
+  }
+
+  function createObserver(el, options, debouncedCreateViewer, rebuild) {
+    destroyObserver(el)
+    const MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver
+    if (!MutationObserver) {
+      log('Observer not supported')
+      return
+    }
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        log(`Viewer mutation:${mutation.type}`)
+        debouncedCreateViewer(el, options, rebuild, true)
+      })
+    })
+    const config = { attributes: true, childList: true, characterData: true, subtree: true }
+    observer.observe(el, config)
+    el.__viewerMutationObserver = observer
+    log('Observer created')
+  }
+
+  function createWatcher(el, { expression }, vnode, debouncedCreateViewer) {
+    const simplePathRE = /^[A-Za-z_$][\w$]*(?:\.[A-Za-z_$][\w$]*|\['[^']*?']|\["[^"]*?"]|\[\d+]|\[[A-Za-z_$][\w$]*])*$/
+    if (!expression || !simplePathRE.test(expression)) {
+      log('Only simple dot-delimited paths can create watcher')
+      return
+    }
+    el.__viewerUnwatch = vnode.context.$watch(expression, (newVal, oldVal) => {
+      log('Change detected by watcher: ', expression)
+      debouncedCreateViewer(el, newVal, true)
+    }, {
+      deep: true,
+    })
+    log('Watcher created, expression: ', expression)
+  }
+
+  function destroyViewer(el) {
+    if (!el[`$${name}`]) {
+      return
+    }
+    el[`$${name}`].destroy()
+    delete el[`$${name}`]
+    log('Viewer destroyed')
+  }
+
+  function destroyObserver(el) {
+    if (!el.__viewerMutationObserver) {
+      return
+    }
+    el.__viewerMutationObserver.disconnect()
+    delete el.__viewerMutationObserver
+    log('Observer destroyed')
+  }
+
+  function destroyWatcher(el) {
+    if (!el.__viewerUnwatch) {
+      return
+    }
+    el.__viewerUnwatch()
+    delete el.__viewerUnwatch
+    log('Watcher destroyed')
+  }
+
+  function log() {
+    debug && console.log(...arguments)
+  }
+
+  const directive = {
+    bind(el, binding, vnode) {
+      log('Viewer bind')
+      const debouncedCreateViewer = debounce(createViewer, 50)
+      debouncedCreateViewer(el, binding.value)
+
+      createWatcher(el, binding, vnode, debouncedCreateViewer)
+
+      if (!binding.modifiers.static) {
+        createObserver(el, binding.value, debouncedCreateViewer, binding.modifiers.rebuild)
+      }
+    },
+    unbind(el, binding) {
+      log('Viewer unbind')
+      destroyObserver(el)
+      destroyWatcher(el)
+      destroyViewer(el)
+    },
+  }
+
+  return directive
+}
+
+export default directive

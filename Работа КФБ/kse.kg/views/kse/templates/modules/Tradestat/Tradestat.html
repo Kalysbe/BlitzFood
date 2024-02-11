@@ -1,0 +1,483 @@
+<h2>{{ lang['Last Trade Results'] }}</h2>
+<br /><br />
+<div id="tradestat_last" class="tradestat_table">
+    <h3 class="tradeResult_date">{{ lang['Trades for'] }} {{ Date }}</h3>
+    <table class="class1" width="100%">
+        <tr>
+            <th width="*"></th>
+            <th width="23%">{{ lang['{MlnSom}'] }}</th>
+            <th width="23%">%</th>
+            <th width="5%"></th>
+        </tr>
+        <tr class="tradeResult">
+            <td>{{ lang['{Trades Volume}'] }}</td>
+            <td class="center">{{ Last['TotalVolume'] }}</td>
+            <td class="center">{{ Last['TotalVolumePercent'] }}</td>
+            <td class="center">{{ Last['TotalVolumeImage'] }}</td>
+        </tr>
+        <tr class="tradeResult">
+            <td>{{ lang['{Primary Market}'] }}</td>
+            <td class="center">{{ Last['Primary'] }}</td>
+            <td class="center">{{ Last['PrimaryPercent'] }}</td>
+            <td class="center">{{ Last['PrimaryImage'] }}</td>
+        </tr>
+        <tr class="tradeResult">
+            <td>{{ lang['{Secondary Market}'] }}</td>
+            <td class="center">{{ Last['Secondary'] }}</td>
+            <td class="center">{{ Last['SecondaryPercent'] }}</td>
+            <td class="center">{{ Last['SecondaryImage'] }}</td>
+        </tr>
+        <tr class="tradeResult">
+            <td>{{ lang['{Listing}'] }}</td>
+            <td class="center">{{ Last['Listing'] }}</td>
+            <td class="center">{{ Last['ListingPercent'] }}</td>
+            <td class="center">{{ Last['ListingImage'] }}</td>
+        </tr>
+        <tr class="tradeResult">
+            <td>{{ lang['{Non Listing}'] }}</td>
+            <td class="center">{{ Last['NonListing'] }}</td>
+            <td class="center">{{ Last['NonListingPercent'] }}</td>
+            <td class="center">{{ Last['NonListingImage'] }}</td>
+        </tr>
+    </table>
+    <BR>
+    <table class="class5" width="100%" border="1" cellpadding="3" cellspacing="1">
+
+        <TR>
+            <TH>{{ lang['curname'] }}</TH>
+            <th>ISIN</th>
+            <TH>{{ lang['tradesymbol'] }}</TH>
+            <TH>{{ lang['maxprice'] }}</TH>
+            <TH>{{ lang['minprice'] }}</TH>
+            <TH>{{ lang['tradevolume'] }}</TH>
+            <TH>{{ lang['amountoftransactions'] }}</TH>
+            <TH>{{ lang['amountofsecurities'] }}</TH>
+        </TR>
+        {% for my_cur_row in TradeLast %}
+        <TR class="company_trade">
+            <TD align="left">{{ my_cur_row['NameRus'] }}</TD>
+            <TD align="left">{{ my_cur_row['isin'] }}</TD>
+            <TD class="center" title="{{ my_cur_row['NameRus']}}" style="cursor: help">{{ my_cur_row['ShortName'] }}</TD>
+            <TD align="right">{{ my_cur_row['MaxCost'] }}</TD>
+            <TD align="right">{{ my_cur_row['MinCost'] }}</TD>
+            <TD align="right">{{ my_cur_row['Total_Volume'] }}</TD>
+            <TD align="right">{{ my_cur_row['CountDeal'] }}</TD>
+            <TD align="right">{{ my_cur_row['CountInstr'] }}</TD>
+        </TR>
+        {% endfor %}
+    </TABLE>
+
+</div>
+
+<div id="tradestat_week" class="tradestat_table" style="display: none;">
+    <h3>{{ lang['Forweek'] }} ({{ week_interval }})</h3>
+    <table class="class1" width="100%">
+        <tr>
+            <th width="*"></th>
+            <th width="23%">{{ lang['{MlnSom}'] }}</th>
+            <th width="23%">%</th>
+            <th width="5%"></th>
+        </tr>
+        <tr>
+            <td>{{ lang['{Trades Volume}'] }}</td>
+            <td class="center">{{ Week['TotalVolume'] }}</td>
+            <td class="center">{{ Week['TotalVolumePercent'] }}</td>
+            <td class="center">{{ Last['TotalVolumeImage'] }}</td>
+        </tr>
+        <tr>
+            <td>{{ lang['{Primary Market}'] }}</td>
+            <td class="center">{{ Week['Primary'] }}</td>
+            <td class="center">{{ Week['PrimaryPercent'] }}</td>
+            <td class="center">{{ Last['PrimaryImage'] }}</td>
+        </tr>
+        <tr>
+            <td>{{ lang['{Secondary Market}'] }}</td>
+            <td class="center">{{ Week['Secondary'] }}</td>
+            <td class="center">{{ Week['SecondaryPercent'] }}</td>
+            <td class="center">{{ Last['SecondaryImage'] }}</td>
+        </tr>
+        <tr>
+            <td>{{ lang['{Listing}'] }}</td>
+            <td class="center">{{ Week['Listing'] }}</td>
+            <td class="center">{{ Week['ListingPercent'] }}</td>
+            <td class="center">{{ Last['ListingImage'] }}</td>
+        </tr>
+        <tr>
+            <td>{{ lang['{Non Listing}'] }}</td>
+            <td class="center">{{ Week['NonListing'] }}</td>
+            <td class="center">{{ Week['NonListingPercent'] }}</td>
+            <td class="center">{{ Last['NonListingImage'] }}</td>
+        </tr>
+    </table>
+    <br>
+
+    <table class="class5" width="100%" border="1" cellpadding="3" cellspacing="1">
+
+        <TR>
+            <TH>{{ lang['curname'] }}</TH>
+            <TH>ISIN</TH>
+            <TH>{{ lang['tradesymbol'] }}</TH>
+            <TH>{{ lang['maxprice'] }}</TH>
+            <TH>{{ lang['minprice'] }}</TH>
+            <TH>{{ lang['tradevolume'] }}</TH>
+            <TH>{{ lang['amountoftransactions'] }}</TH>
+            <TH>{{ lang['amountofsecurities'] }}</TH>
+        </TR>
+        {% for my_cur_row in TradeWeek %}
+        <TR>
+            <TD align="left">{{ my_cur_row['NameRus'] }}</TD>
+            <TD align="center">{{ my_cur_row['isin'] }}</TD>
+            <TD class="center" title="{{ my_cur_row['NameRus']}}" style="cursor: help">{{ my_cur_row['ShortName'] }}</TD>
+            <TD align="right">{{ my_cur_row['MaxCost'] }}</TD>
+            <TD align="right">{{ my_cur_row['MinCost'] }}</TD>
+            <TD align="right">{{ my_cur_row['Total_Volume'] }}</TD>
+            <TD align="right">{{ my_cur_row['CountDeal'] }}</TD>
+            <TD align="right">{{ my_cur_row['CountInstr'] }}</TD>
+        </TR>
+        {% endfor %}
+    </TABLE>
+
+    {{ WeekChart }}
+</div>
+
+<div id="tradestat_month" class="tradestat_table" style="display: none;">
+    <h3>{{ lang['For'] }} {{ month_name }} {{ lang['month'] }}</h3>
+    <table class="class1" width="100%">
+        <tr>
+            <th width="*"></th>
+            <th width="23%">{{ lang['{MlnSom}'] }}</th>
+            <th width="23%">%</th>
+            <th width="5%"></th>
+        </tr>
+        <tr>
+            <td>{{ lang['{Trades Volume}'] }}</td>
+            <td class="center">{{ Month['TotalVolume'] }}</td>
+            <td class="center">{{ Month['TotalVolumePercent'] }}</td>
+            <td class="center">{{ Last['TotalVolumeImage'] }}</td>
+        </tr>
+        <tr>
+            <td>{{ lang['{Primary Market}'] }}</td>
+            <td class="center">{{ Month['Primary'] }}</td>
+            <td class="center">{{ Month['PrimaryPercent'] }}</td>
+            <td class="center">{{ Last['PrimaryImage'] }}</td>
+        </tr>
+        <tr>
+            <td>{{ lang['{Secondary Market}'] }}</td>
+            <td class="center">{{ Month['Secondary'] }}</td>
+            <td class="center">{{ Month['SecondaryPercent'] }}</td>
+            <td class="center">{{ Last['SecondaryImage'] }}</td>
+        </tr>
+        <tr>
+            <td>{{ lang['{Listing}'] }}</td>
+            <td class="center">{{ Month['Listing'] }}</td>
+            <td class="center">{{ Month['ListingPercent'] }}</td>
+            <td class="center">{{ Last['ListingImage'] }}</td>
+        </tr>
+        <tr>
+            <td>{{ lang['{Non Listing}'] }}</td>
+            <td class="center">{{ Month['NonListing'] }}</td>
+            <td class="center">{{ Month['NonListingPercent'] }}</td>
+            <td class="center">{{ Last['NonListingImage'] }}</td>
+        </tr>
+    </table>
+    <br> {{ MonthChart }}
+
+</div>
+
+<div id="tradestat_year" class="tradestat_table" style="display: none;">
+    <h3>{{ lang['For'] }} {{ YearName }} {{ lang['year'] }}</h3>
+    <table class="class1" width="100%">
+        <tr>
+            <th width="*"></th>
+            <th width="23%">{{ lang['{MlnSom}'] }}</th>
+            <th width="23%">%</th>
+            <th width="5%"></th>
+        </tr>
+        <tr>
+            <td>{{ lang['{Trades Volume}'] }}</td>
+            <td class="center">{{ Year['TotalVolume'] }}</td>
+            <td class="center">{{ Year['TotalVolumePercent'] }}</td>
+            <td class="center">{{ Last['TotalVolumeImage'] }}</td>
+        </tr>
+        <tr>
+            <td>{{ lang['{Primary Market}'] }}</td>
+            <td class="center">{{ Year['Primary'] }}</td>
+            <td class="center">{{ Year['PrimaryPercent'] }}</td>
+            <td class="center">{{ Last['PrimaryImage'] }}</td>
+        </tr>
+        <tr>
+            <td>{{ lang['{Secondary Market}'] }}</td>
+            <td class="center">{{ Year['Secondary'] }}</td>
+            <td class="center">{{ Year['SecondaryPercent'] }}</td>
+            <td class="center">{{ Last['SecondaryImage'] }}</td>
+        </tr>
+        <tr>
+            <td>{{ lang['{Listing}'] }}</td>
+            <td class="center">{{ Year['Listing'] }}</td>
+            <td class="center">{{ Year['ListingPercent'] }}</td>
+            <td class="center">{{ Last['ListingImage'] }}</td>
+        </tr>
+        <tr>
+            <td>{{ lang['{Non Listing}'] }}</td>
+            <td class="center">{{ Year['NonListing'] }}</td>
+            <td class="center">{{ Year['NonListingPercent'] }}</td>
+            <td class="center">{{ Last['NonListingImage'] }}</td>
+        </tr>
+    </table>
+
+    <br> {{ YearChart }}
+</div>
+
+<div class="results_view f_r">
+    {{ lang['{Period}'] }}
+    <a href="#" onclick="return false;" id="tradestat_last_link" class="tradestat_links current">{{ lang['{Last trade}'] }}</a> /
+    <a href="#" onclick="return false;" id="tradestat_week_link" class="tradestat_links">{{ lang['Forweek'] }}</a> /
+    <a href="#" onclick="return false;" id="tradestat_month_link" class="tradestat_links">{{ lang['Formonth'] }}</a> /
+    <a href="#" onclick="return false;" id="tradestat_year_link" class="tradestat_links">{{ lang['Foryear'] }}</a>
+</div>
+<br><br>
+
+<div id="chartdivMonth" style="height:300px; display: none;"></div>
+
+<div id="chartdiv" style="height:300px; display: none;"></div>
+<!--<p><b>Р СџРЎР‚Р С‘Р СР ВµРЎвЂЎР В°Р Р…Р С‘Р Вµ:</b> Р РЋР Т‘Р ВµР В»Р С”Р С‘ Р С•РЎвЂљР С•Р В±РЎР‚Р В°Р В¶Р В°Р ВµР СРЎвЂ№Р Вµ Р С—Р С• Р вЂњР С•РЎРѓРЎС“Р Т‘Р В°РЎР‚РЎРѓРЎвЂљР Р†Р ВµР Р…Р Р…РЎвЂ№Р С РЎвЂ Р ВµР Р…Р Р…РЎвЂ№Р С Р В±РЎС“Р СР В°Р С–Р В°Р С Р Р† Р ВРЎвЂљР С•Р С–Р В°РЎвЂ¦ Р С—Р С•РЎРѓР В»Р ВµР Т‘Р Р…Р С‘РЎвЂ¦ РЎвЂљР С•РЎР‚Р С–Р В°РЎвЂ¦ Р С—РЎР‚Р С•Р Р†Р С•Р Т‘Р С‘РЎвЂљРЎРѓРЎРЏ Р Р† РЎР‚Р В°Р СР В°Р С”Р В°РЎвЂ¦ РЎвЂљР ВµРЎРѓРЎвЂљР С‘РЎР‚Р С•Р Р†Р В°Р Р…Р С‘РЎРЏ Р Р† Р СћР РЋ.<p/> -->
+
+<!-- partial:index.partial.html -->
+<link rel="stylesheet" type="text/css" href="http://www.kse.kg/views/kse/styles/chart.css">
+<script src="http://www.kse.kg/views/kse/js/chart.js"></script>
+<script src="http://www.kse.kg/views/kse/js/chart_1.js"></script>
+
+<!-- partial -->
+<style type="text/css">
+    .amcharts-chart-div a {
+        display: none!important;
+    }
+</style>
+<script type="text/javascript">
+	
+    var chartData = [
+    {% for WeekCharts in TradeWeekChart %} {
+    	"date": {{ WeekCharts["full_date"] }},
+        "latitude": {{ WeekCharts["total_volume"] }},
+        "distance": {{ WeekCharts["total_volume"] }},
+    },
+    {% endfor %}
+
+    ]; // График постороенный за неделю
+
+    var chartDataMonth = [
+    {% for WeekChartsMonth in TradeWeekChartMonth %} {
+            "date": {{ WeekChartsMonth["full_date"] }},
+            "latitude": {{ WeekChartsMonth["total_volume"] }},
+            "distance": {{ WeekChartsMonth["total_volume"] }}
+        },
+
+        {% endfor %}
+
+    ]; // График постороенный за неделю
+
+
+    var chart = AmCharts.makeChart("chartdiv", {
+        type: "serial",
+        dataDateFormat: "YYYY-MM-DD",
+        dataProvider: chartData,
+
+        addClassNames: true,
+        startDuration: 1,
+        color: "#909090",
+        marginLeft: 0,
+
+        categoryField: "date",
+        categoryAxis: {
+            parseDates: true,
+            minPeriod: "DD",
+            autoGridCount: false,
+            gridCount: 50,
+            gridAlpha: 0.1,
+            dateFormats: [{
+                period: 'DD',
+                format: 'DD'
+            }, {
+                period: 'WW',
+                format: 'MMM DD'
+            }, {
+                period: 'MM',
+                format: 'MMM'
+            }, {
+                period: 'YYYY',
+                format: 'YYYY'
+            }]
+        },
+
+        valueAxes: [{
+            id: "a1",
+            title: "Объем млн.сом",
+            gridAlpha: 0,
+            axisAlpha: 0
+        }, {
+            id: "a2",
+            position: "right",
+            gridAlpha: 0,
+            axisAlpha: 0,
+            labelsEnabled: false
+        }],
+        graphs: [{
+            id: "g1",
+            valueField: "distance",
+            title: "distance",
+            type: "column",
+            fillAlphas: 0.9,
+            valueAxis: "a1",
+            balloonText: "[[value]] млн.сом",
+            lineColor: "#4aa4e6",
+            alphaField: "alpha"
+        }, {
+            id: "g2",
+            valueField: "latitude",
+            classNameField: "bulletClass",
+            title: "latitude/city",
+            type: "line",
+            valueAxis: "a2",
+            lineColor: "#000",
+            lineThickness: 1,
+            bullet: "round",
+            bulletBorderColor: "#263138",
+            bulletBorderAlpha: 1,
+            bulletBorderThickness: 2,
+            bulletColor: "#263138",
+            labelPosition: "right",
+            balloonText: "объем:[[value]]",
+            showBalloon: true,
+            animationPlayed: true
+        }],
+
+        chartCursor: {
+            zoomable: false,
+            categoryBalloonDateFormat: "DD-MM-YYYY",
+            cursorAlpha: 0,
+            valueBalloonsEnabled: false
+        }
+    }); // Неделя
+
+    var chart = AmCharts.makeChart("chartdivMonth", {
+        type: "serial",
+        dataDateFormat: "YYYY-MM-DD",
+        dataProvider: chartDataMonth,
+
+        addClassNames: true,
+        startDuration: 1,
+        color: "#909090",
+        marginLeft: 0,
+
+        categoryField: "date",
+        categoryAxis: {
+            parseDates: true,
+            minPeriod: "DD",
+            autoGridCount: false,
+            gridCount: 50,
+            gridAlpha: 0.1,
+            dateFormats: [{
+                period: 'DD',
+                format: 'DD'
+            }, {
+                period: 'WW',
+                format: 'MMM DD'
+            }, {
+                period: 'MM',
+                format: 'MMM'
+            }, {
+                period: 'YYYY',
+                format: 'YYYY'
+            }]
+        },
+
+        valueAxes: [{
+            id: "a1",
+            title: "Объем млн.сом",
+            gridAlpha: 0,
+            axisAlpha: 0
+        }, {
+            id: "a2",
+            position: "right",
+            gridAlpha: 0,
+            axisAlpha: 0,
+            labelsEnabled: false
+        }],
+        graphs: [{
+            id: "g1",
+            valueField: "distance",
+            title: "distance",
+            type: "column",
+            fillAlphas: 0.9,
+            valueAxis: "a1",
+            balloonText: "[[value]] млн.сом",
+            lineColor: "#4aa4e6",
+            alphaField: "alpha",
+        }, {
+            id: "g2",
+            valueField: "latitude",
+            classNameField: "bulletClass",
+            title: "latitude/city",
+            type: "line",
+            valueAxis: "a2",
+            lineColor: "#000",
+            lineThickness: 1,
+            bullet: "round",
+            bulletBorderColor: "#263138",
+            bulletBorderAlpha: 1,
+            bulletBorderThickness: 2,
+            bulletColor: "#263138",
+            labelPosition: "right",
+            balloonText: "объем:[[value]]",
+            showBalloon: true,
+            animationPlayed: true
+        }],
+
+        chartCursor: {
+            zoomable: false,
+            categoryBalloonDateFormat: "DD-MM-YYYY",
+            cursorAlpha: 0,
+            valueBalloonsEnabled: false
+        }
+    }); // Месяц
+</script>
+
+
+
+<script type="text/javascript">
+    $("#tradestat_last_link").bind("click", function() {
+        $(".tradestat_table").css("display", "none");
+        $("#tradestat_last").css("display", "block");
+        $(".tradestat_links").removeClass("current");
+        $("#tradestat_last_link").addClass("current");
+        $("#chartdiv").css("display", "none");
+        $("#chartdivMonth").css("display", "none");
+    });
+
+    $("#tradestat_week_link").bind("click", function() {
+        $(".tradestat_table").css("display", "none");
+        $("#tradestat_week").css("display", "block");
+        $(".tradestat_links").removeClass("current");
+        $("#tradestat_week_link").addClass("current");
+        $("#chartdiv").css("display", "block");
+        $("#chartdivMonth").css("display", "none");
+    });
+
+    $("#tradestat_month_link").bind("click", function() {
+        $(".tradestat_table").css("display", "none");
+        $("#tradestat_month").css("display", "block");
+        $(".tradestat_links").removeClass("current");
+        $("#tradestat_month_link").addClass("current");
+        $("#chartdiv").css("display", "none");
+        $("#chartdivMonth").css("display", "block");
+    });
+
+    $("#tradestat_year_link").bind("click", function() {
+        $(".tradestat_table").css("display", "none");
+        $("#tradestat_year").css("display", "block");
+        $(".tradestat_links").removeClass("current");
+        $("#tradestat_year_link").addClass("current");
+        $("#chartdiv").css("display", "none");
+        $("#chartdivMonth").css("display", "none");
+    });
+</script>

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/guest/buse/!svn/ver/137/trunk/modules/BusinessCatalog
+END
+install.sql
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/guest/buse/!svn/ver/136/trunk/modules/BusinessCatalog/install.sql
+END
+business_catalog_handler.php
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/guest/buse/!svn/ver/136/trunk/modules/BusinessCatalog/business_catalog_handler.php
+END
+BusinessCatalog.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/guest/buse/!svn/ver/137/trunk/modules/BusinessCatalog/BusinessCatalog.php
+END

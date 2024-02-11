@@ -1,0 +1,106 @@
+<html>
+
+<head>
+    <title>KSE - Аукцион ГЦБ - [Administrator: 13.08.2022]</title <meta http-equiv="Content-Type"
+        content="text/html;charset=windows-1251">
+    <meta name="cache-control" content="no-cache">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv='generator' content='Nicky'>
+    <meta http-equiv='author' content='m@[tador]'>
+    <link href='style.css' id="css" type='text/css' rel='stylesheet'>
+    <link href='print.css' media='print' id="css_print" type='text/css' rel='stylesheet'>
+    <script defer type='text/javascript' src='./js/script.js'></script>
+    <script defer type='text/javascript' src='./calendar/src/script.js'></script>
+</head>
+
+<body>
+    <div class='menu'>
+        <table width='100%'>
+            <tr>
+                <td align='right'><span class='header'>
+                    <img  src="./img/favicon.png" alt="">
+                    KSE - Аукцион ГЦБ</span></td>
+                <td class="navigation-menu"><span class='act_menu_item'><a
+                            href='https://auction.kse.kg/?admin&go=database'>База</a></span>&nbsp;<span class='submenu_item'><a
+                            href='https://auction.kse.kg/?admin&go=database&page=1'>
+                            <nobr> Лот</nobr>
+                        </a></span> <span class='act_submenu_item'><a
+                            href='https://auction.kse.kg/?admin&go=database&page=2'>
+                            <nobr> Аукцион</nobr>
+                        </a></span> <span class='submenu_item'><a
+                            href='https://auction.kse.kg/?admin&go=database&page=3'>
+                            <nobr> Отчеты</nobr>
+                        </a></span> </td>
+                <td><span class='menu_item'><a href='https://auction.kse.kg/?logout'>Выход</a></span></td>
+            </tr>
+        </table>
+    </div>
+    <!-- <div class='submenu'>
+        <table width='100%'>
+            <tr>
+              
+            </tr>
+        </table>
+    </div><br> -->
+
+    $act=<div><b>Аукцион:</b><br><br>
+        <form action='https://auction.kse.kg/?admin&go=database&page=2' method='POST' class="setting-block">
+            <table>
+                <tr>
+                    <td>Дата:</td>
+                    <td>13/08/2022</td>
+                </tr>
+                <tr>
+                    <td>Алгоритм:</td>
+                    <td><select style='width:200' name='type'>
+                            <option value='ls.auction_NBKR_GKV'>Аукцион НБКР по ГКВ</option>
+                            <option selected='selected' value='ls.auction_NBKR_GKO5'>Аукцион НБКР по ГКО</option>
+                        </select></td>
+                </tr>
+                <tr>
+                    <td colspan=2>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td colspan=2>Прием приказов:
+                        <hr>
+                    </td>
+                </tr>
+                <tr class="auction_time">
+                    <td>Время начала:</td>
+                    <td><input type='text' value='09' name='bh' size='2' maxlength='2'
+                            onkeypress='event.returnValue=checkint();'>:<input type='text' value='00' name='bm' size='2'
+                            maxlength='2' onkeypress='event.returnValue=checkint();'></td>
+                </tr>
+                <tr class="auction_time">
+                    <td>Время завершения:</td>
+                    <td><input type='text' value='12' name='eh' size='2' maxlength='2'
+                            onkeypress='event.returnValue=checkint();'>:<input type='text' value='00' name='em' size='2'
+                            maxlength='2' onkeypress='event.returnValue=checkint();'></td>
+                </tr>
+                <tr>
+                    <td colspan=2>
+                        <hr>
+                    </td>
+                </tr>
+            </table><br>
+            <input type='hidden' name='auctid' value=''>
+            <input type='hidden' name='act' value='start'>
+            <input type='submit' class="start-auction"  value='Начать аукцион'>
+           
+        </form>
+    </div>
+    <div name='update_res' id='update_res' style='display:none;'></div><br><br>
+    <table width='600px'>
+        <tr>
+            <td class='info_top'>
+                <div align='center' style='padding:4px;background:#ffffff;'>
+                    <div style='color:#000000;' name='a_status' id='a_status'></div>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div id='ord_list' name='ord_list'></div><br><br><br>
+</body>
+
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.0 Transitional//EN'>
+<html><head>
+<title>KSE - Аукцион ГЦБ - [Administrator: 11.08.2022]</title
+<meta http-equiv="Content-Type" content="text/html;charset=windows-1251">
+<meta name="cache-control" content="no-cache">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="expires" content="0">
+<meta http-equiv='generator' content='Nicky'>
+<meta http-equiv='author' content='m@[tador]'>
+<link href='style.css' id="css" type='text/css' rel='stylesheet'>
+<!-- <link href='mycss.css' id="css" type='text/css' rel='stylesheet'> -->
+<link href='print.css' media='print' id="css_print" type='text/css' rel='stylesheet'>
+
+</head>
+<body>
+<div class='menu'>
+ 
+   <table width='100%'>
+   <tr>
+      <td align='left'>
+         <span class='header'>
+            <img  src="./img/favicon.png" alt=""/> 
+            <span class="auction-name">KSE - Аукцион ГЦБ</span>
+         </span>
+      </td>
+   <td class="navigation-menu">
+      <span class='act_menu_item'>
+         <a href='https://auction.kse.kg/?admin&go=database'>
+         <!-- <img src='./img/folder.gif' align='absmiddle'> -->
+          База
+         </a>
+      </span>&nbsp;
+      <span class='submenu_item'>
+         <a href='https://auction.kse.kg/?admin&go=database&page=1'>
+            <nobr>
+               <!-- <img src='./img/porting.gif' align='absmiddle'>  -->
+               Лот
+            </nobr>
+         </a>
+      </span> 
+      <span class='act_submenu_item'>
+         <a href='https://auction.kse.kg/?admin&go=database&page=2'>
+            <nobr>
+               <!-- <img src='./img/list.gif' align='absmiddle'>  -->
+               Аукцион
+            </nobr>
+         </a>
+      </span> 
+      <span class='submenu_item'>
+         <a href='https://auction.kse.kg/?admin&go=database&page=3'>
+            <nobr>
+               <!-- <img src='./img/report.gif' align='absmiddle'>  -->
+               Отчеты
+            </nobr>
+         </a>
+      </span>
+    </td>
+   <td align='right'>
+      <span class='menu_item'><a href='https://auction.kse.kg/?logout'>Выход</a></span>
+   </td>
+   </tr>
+</table>
+</div>
+<!-- <div class='submenu'>
+   <table width='100%'>
+      <tr>
+         <td align='left'>
+            <span class='submenu_item'>
+               <a href='https://auction.kse.kg/?admin&go=database&page=1'>
+                  <nobr>
+                     <img src='./img/porting.gif' align='absmiddle'> 
+                     Лот
+                  </nobr>
+               </a>
+            </span> 
+            <span class='act_submenu_item'>
+               <a href='https://auction.kse.kg/?admin&go=database&page=2'>
+                  <nobr>
+                     <img src='./img/list.gif' align='absmiddle'> 
+                     Аукцион
+                  </nobr>
+               </a>
+            </span> 
+            <span class='submenu_item'>
+               <a href='https://auction.kse.kg/?admin&go=database&page=3'>
+                  <nobr>
+                     <img src='./img/report.gif' align='absmiddle'> 
+                     Отчеты
+                  </nobr>
+               </a>
+            </span>
+          </td>
+          <td align='right'>
+            <span class='header'>KSE - Аукцион ГЦБ</span>
+         </tr>
+      </table>
+   </div> -->
+   $act=<div><b>Аукцион:</b>
+         <form action='https://auction.kse.kg/?admin&go=database&page=2' method='POST' class="setting-block">
+            <table>
+               <tr>
+                  <td>Дата:</td>
+                  <td>11/08/2022</td>
+               </tr>
+               <tr>
+                  <td>Алгоритм:</td>
+                  <td><select style='width:200' name='type'  disabled >
+                     <option selected='selected' value='ls.auction_NBKR_GKV'>Аукцион НБКР по ГКВ</option>
+                     <option  value='ls.auction_NBKR_GKO5'>Аукцион НБКР по ГКО</option></select></td>
+               </tr>
+            </table><br>
+         <br>
+         <input type='hidden' name='auctid' value='2040884890298c287ddbc6f4b654b9dd'>
+         <input type='hidden' name='act' id='act' value='estimate_show'>
+			<input type='button' value='Пересчитать' onclick='auction_reestimate("https://auction.kse.kg/?admin&go=database&page=2&auctionreestimate=2040884890298c287ddbc6f4b654b9dd");'> 
+			<input type='button' value='Подтвердить предварительные расчеты' onclick='auction_estimate_go("https://auction.kse.kg/?admin&go=database&page=2&auctionestimatego=2040884890298c287ddbc6f4b654b9dd");'>
+			<input type='button' class='danger' value='Очистить аукцион' onclick='clean_auction("https://auction.kse.kg/?admin&go=database&page=2&cleanauction=2040884890298c287ddbc6f4b654b9dd");'>
+       
+      </form>
+     
+      </div>
+      <div name='update_res' id='update_res' style='display:none;'></div><br><br>
+      <table width='600px'>
+         <tr>
+         <td class='info_top'>
+            <div align='center' style='padding:4px;background:#ffffff;'>
+               <div style='color:#000000;' name='a_status' id='a_status'></div>
+            </div>
+         </td>
+         </tr>
+      </table>
+      <div id='ord_list' name='ord_list'></div>
+      <br><br>
+      <table class="table-deals">
+         <tr>
+         <td class='info_top' colspan='9'>
+            Сделки
+         </td>
+         </tr>
+ 
+         <tr>
+         <th class='info_title' width='90' align='center'>
+            Дата
+         </th>
+         <th class='info_title' width='50' align='center'>
+            Время
+         </th>
+         <th class='info_title' width='100' align='center'>
+            Инструмент
+         </th>
+         <th class='info_title' width='100' align='center'>
+            Счет
+         </th>
+         <th class='info_title' width='70' align='center'>
+            <nobr>Цена покупки</nobr>
+         </th>
+         <th class='info_title' width='70' align='center'>
+            Количество
+         </th>
+         <th class='info_title' width='150' align='center'>
+            Сумма
+         </th>
+         <th class='info_title' width='90' align='center'>
+            Доходность к погашению, %
+         </th>
+         <th class='info_title' width='150' align='center'>
+            Покупатель
+         </th></tr>
+    <tr>
+         <td class='info' colspan='9'>
+            &nbsp;
+         </td>
+         </tr>
+    <tr>
+         <td class='info_comp' colspan='9'>
+            <b>Конкурентные</b>
+         </td>
+    </tr>
+    <tr>
+      <td class='info' colspan=5><b>Итого по лоту:</b></td>
+      <td class='info' align='right'><b>0</b></td>
+      <td class='info' align='right'><b>0,00</b></td>
+      <td class='info' align='right'></td>&nbsp;
+      <td class='info'>&nbsp;</td>
+   </tr>
+   <tr>
+      <td class='info' colspan=5><b>Итого по конкурентным:</b></td>
+      <td class='info' align='right'><b>0</b></td>
+      <td class='info' align='right'><b>0,00</b></td>
+      <td class='info' align='right'><b>0,00</b></td>
+      <td class='info'>&nbsp;</td>
+   </tr>
+    <tr>
+         <td class='info' colspan='9'>
+            &nbsp;
+         </td>
+         </tr>
+    <tr>
+         <td class='info_comp' colspan='9'>
+            <b>Неконкурентные</b>
+         </td>
+    </tr>
+    <tr>
+      <td class='info' colspan=5><b>Итого по лоту:</b></td>
+      <td class='info' align='right'><b>0</b></td>
+      <td class='info' align='right'><b>0,00</b></td>
+      <td class='info' align='right'>&nbsp;</td>
+      <td class='info'>&nbsp;</td>
+    </tr>
+    <tr>
+      <td class='info' colspan=5><b>Итого по неконкурентным:</b></td>
+      <td class='info' align='right'><b>0</b></td>
+      <td class='info' align='right'><b>0,00</b></td>
+      <td class='info' align='right'><b>0,0000</b></td>
+      <td class='info'>&nbsp;</td>
+    </tr>
+    <tr>
+         <td class='info' colspan='9'>
+            &nbsp;
+          </td>
+    </tr>
+    <tr>
+      <td class='info' colspan=5><b>Всего:</b></td>
+      <td class='info' align='right'><b>0</b></td>
+      <td class='info' align='right'><b>0,00</b></td>
+      <td class='info' align='right'><b></b></td>
+      <td class='info'>&nbsp;</td>
+   </tr>
+</table>
+<br><br><br>
+</body>
+</html>

@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: local('Helvetica Neue Thin'), local('Helvetica-Neue-Thin'),
+      url('/public/fonts/HelveticaNeueCyr-Thin.woff2') format('woff2'),
+      url('/public/fonts/HelveticaNeueCyr-Thin.woff') format('woff'),
+      url('/public/fonts/HelveticaNeueCyr-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+table {
+  border: 1px solid #e5e7eb;
+  width: 100%;
+}
+th,td {
+  border: 1px solid #e5e7eb;
+  font-size: 16px;
+  text-align: start;
+  font-weight: 500;
+  min-height: 39px !important;
+  padding: 10px;
+}
+th {
+  background: rgba(148 ,163 ,184,.1);
+}
+

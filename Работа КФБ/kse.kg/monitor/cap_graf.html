@@ -1,0 +1,150 @@
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Капитализация KSE (годовой показатель)</title>
+      <style>
+         body {
+            margin: 0;
+   
+         }
+      </style>
+   </head>
+   <body>
+      <div id="chart"></div>
+      <script src="./libs/apexcarts.js"></script>
+      <script src="./libs/jquery-3.5.0.js"></script>
+      <script src="./libs/manta_xml.var.js"></script>
+
+      <script>
+
+         var options = {
+            title:{
+               text: 'Капитализация KSE (годовой показатель)',
+               align: 'center',
+               style: {
+                  fontSize:  '24px',
+                  fontWeight:  'bold',
+                  color:'yellow'
+               },
+            },
+            series: [{
+               name: 'series1',
+               data: []
+            }],
+            noData: {
+            text: 'Загрузка...',
+            align: 'center',
+            verticalAlign: 'middle',
+            
+            },
+            stroke: {
+               curve: 'smooth'
+            },
+            theme: {
+                     mode: 'dark', 
+                     palette: 'palette3', 
+                     monochrome: {
+                        enabled: false,
+                        color: '#255aee',
+                        shadeTo: 'dark',
+                        shadeIntensity: 0.65
+                     },
+               },
+            chart: {
+               height: '100%',
+               type: 'area',
+               locales: [],
+               toolbar: {
+                  show: false,
+               },
+               locales: [{
+                  name: "ru",
+                  options: {
+                     months: [
+                        "Январь","Февраль","Март","Апрель","Май",
+                        "Июнь",
+                        "Июль",
+                        "Август",
+                        "Сентябрь",
+                        "Октябрь",
+                        "Ноябрь",
+                        "Декабрь"
+                     ],
+                     shortMonths: [
+                        "Янв",
+                        "Фев",
+                        "Мар",
+                        "Апр",
+                        "Май",
+                        "Июн",
+                        "Июл",
+                        "Авг",
+                        "Сен",
+                        "Окт",
+                        "Ноя",
+                        "Дек"
+                     ],
+                     days: [
+                        "Воскресенье",
+                        "Понедельник",
+                        "Вторник",
+                        "Среда",
+                        "Четверг",
+                        "Пятница",
+                        "Суббота"
+                     ],
+                     shortDays: [
+                        "Вс",
+                        "Пн",
+                        "Вт",
+                        "Ср",
+                        "Чт",
+                        "Пт",
+                        "Сб"
+                     ],
+                  }
+               }],
+               defaultLocale: "ru"
+
+            },
+            dataLabels: {
+               enabled: true
+            },
+            xaxis: {
+               type:'datetime',
+               categories:[]
+            },
+            tooltip: {
+                  x: {
+                     format: 'dd/MM/yyyy'
+                  },
+               },
+
+         };
+         
+         $(document).ready(function () {
+            $.ajax({
+                  type: "GET",
+                  url: "./data_for_chart/cap_graf.xml",
+                  crossDomain: true,
+                  success: function(xml) {
+                     var data = new XMLSerializer().serializeToString(xml)
+                     myJsonObject = JSON.parse(JSON.stringify(mantaXML.xml2JSON(data)))
+                     options.xaxis.categories = myJsonObject.graph.set.map(function (obj) {
+                              return obj._attrs.name.split('.').reverse().join('-')+'-01';
+                     });
+
+                     options.series[0].data = myJsonObject.graph.set.map(function (obj) {
+                              return obj._attrs.value;
+                     });
+                     var chart = new ApexCharts(document.querySelector("#chart"), options);
+                     chart.render();
+                     
+                  }
+            });
+         });
+
+
+      </script>
+   </body>
+</html>

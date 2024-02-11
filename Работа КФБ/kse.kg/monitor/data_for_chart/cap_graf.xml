@@ -1,0 +1,17 @@
+<graph bgcolor='000000' canvasBgColor='000000' baseFontColor='ffffff' caption='' subcaption='' outCnvBaseFontColor='8B8B00'
+hovercapbg='F47E00' divlinecolor='696969' hovercapborder='F47E00'  showvalues='1' baseFontSize='15' 
+numdivlines='3' numVdivlines='0' yaxisminvalue='2000' yaxismaxvalue='7000'  rotateNames='1' showLimits='1' showShadow='0' formatNumber='0 ' decimalPrecision='2'>
+  <set name='08.2021' value='36485.07' hoverText='1' color='#d2b48c'/>
+  <set name='09.2021' value='37332.19' hoverText='1' color='#d2b48c'/>
+  <set name='10.2021' value='38739.07' hoverText='1' color='#d2b48c'/>
+  <set name='11.2021' value='44892.72' hoverText='1' color='#d2b48c'/>
+  <set name='12.2021' value='51320.08' hoverText='1' color='#d2b48c'/>
+  <set name='01.2022' value='51346.75' hoverText='1' color='#d2b48c'/>
+  <set name='02.2022' value='50795.83' hoverText='1' color='#d2b48c'/>
+  <set name='03.2022' value='51855.5' hoverText='1' color='#d2b48c'/>
+  <set name='04.2022' value='52126.06' hoverText='1' color='#d2b48c'/>
+  <set name='05.2022' value='56125.11' hoverText='1' color='#d2b48c'/>
+  <set name='06.2022' value='58194.98' hoverText='1' color='#d2b48c'/>
+  <set name='07.2022' value='57312.1' hoverText='1' color='#d2b48c'/>
+  <set name='08.2022' value='61927.88' hoverText='1' color='#d2b48c'/>
+</graph>

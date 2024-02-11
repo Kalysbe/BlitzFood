@@ -1,0 +1,26 @@
+<?php
+require_once ("../config.inc.php");
+
+
+echo'<html>
+<META http-equiv=Content-type content=text/html;charset=UTF-8>  
+<body bgcolor="#000000" scroll="no"><center>
+<table width="100%" border=0 bgcolor=black>
+<tr align=center><td>
+<font color="#00FF00"><h1>Индекс KSE (показатель за месяц)</h1></font>
+</td></tr>
+<tr align=center><td>
+      <OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase=http://www.kse.kg/swflash.cab#version=6,0,0,0" width="900" height="650" id="Line" >
+         <param name="movie" value="../lib/FusionCharts/Charts/FCF_MSLine.swf" />
+         <param name="FlashVars" value="&dataURL=./data_for_chart/index_graf.xml&chartWidth=900&chartHeight=650">
+         <param name="quality" value="high" />
+         <embed src="../lib/FusionCharts/Charts/FCF_MSLine.swf" flashVars="&dataURL=./data_for_chart/index_graf.xml&chartWidth=900&chartHeight=650" chartcanvasbackground="ffffff" quality="high" width="900" height="650" name="Line" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"/>
+      </object>
+</td></tr>
+</table>
+</center>
+</body>
+</html>';
+
+
+?>

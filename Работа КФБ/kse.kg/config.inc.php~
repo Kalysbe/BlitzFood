@@ -1,0 +1,19 @@
+<?php
+$_DB["HOST"] = "localhost";     // MySQL host
+$_DB["USER"] = "kseuser";          // MySQL user
+$_DB["PASS"] = "kseuserpass";    // MySQL password
+$_DB["NAME"] = "kse";          // MySQL database name
+
+$_DB["ORA_USER"] = "ts";
+$_DB["ORA_PASS"] = "everytime";
+$_DB["ORA_CSTRING"] = "192.168.0.26/TEST.mars.kase.kz";
+$_DB["ORA_CHARSET"] = "CL8MSWIN1251";
+
+$_SITE["%NAME%"] = "BUsiness Site Engine";          // General sitename
+$_SITE["%ROOT%"] = "http://www.kse.kg";                // root url
+$_SITE["%HOME%"] = "/var/www/www.kse.kg";      // home path
+$_SITE["%ADMIN_EMAIL%"] = "m.savochkin@gmail.com";  // admin email
+$_SITE["DEFAULT_LANGUAGE"] = "ru";                  // default language
+$_SITE["MAIN_PAGE"] = "MainPage";                   // first page
+$_SITE["DEBUG"] = 0;                                // change to 1 if you're
+                                                    // developer

@@ -1,0 +1,31 @@
+{% if AdminRights %}
+<h2>Загрузка файлов</h2>
+<br />
+
+{% if UploadSuccess %}
+<div class="message ui-corner-all">
+    Файлы были загружены. Перейти к <a href="{{ root }}/{{ lang_code }}/FileManager">файловому менеджеру</a>?
+</div>
+{% endif %}
+
+<script type="text/javascript">
+    function onAddAttachmentField() {
+        $("#fileForm").append('<input type="file" name="' + new Date().getTime() + '" /><br />');
+        $("#fileForm>input").css("width", "100%");
+    }
+</script>
+
+<form action="" method="POST" enctype="multipart/form-data">
+    <div id="fileForm">
+        <input type="file" name="mFile1" style="width: 100%" />
+    </div>
+    <input type="submit" name="doUploadFile" value="Загрузить" />
+</form>
+<p style="margin-top: 30px"><a href="#" onClick="onAddAttachmentField()">Добавить поле</a></p>
+
+{% else %}
+<div class="error ui-corner-all">
+    Эта страница доступна только администраторам сайта.
+</div>
+
+{% endif %}

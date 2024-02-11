@@ -1,0 +1,42 @@
+<?php
+
+function Scroller_getModuleBuffer($id) {
+	$link = MainClass::getSingleton()->getDbConnection();
+    $buffer = "
+    ";
+    $sql = "SELECT * FROM `mod_quotes`";
+    $result = mysqli_query($link, $sql);
+    $rows = $result->num_rows;
+    $Quotes = array();
+    for ($i = 0; $i < $rows; $i++) {
+        mysqli_data_seek($result, $i);
+        $obj = mysqli_fetch_object($result);
+        $q["short_name"] = $obj->short_name;
+        $q["full_name"] = $obj->full_name;
+        if ($obj->buy_amount != 0)
+            $q["buy_amount"] = $obj->buy_amount;
+        else
+            $q["buy_amount"] = "";
+        $q["buy_price"] = $obj->buy_price;
+        if ($obj->sell_amount != 0)
+            $q["sell_amount"] = $obj->sell_amount;
+        else
+            $q["sell_amount"] = "";
+        $q["sell_price"] = $obj->sell_price;
+        $Quotes[] = $q;
+    }
+
+    foreach ($Quotes as $q) {
+        $buffer.= "<li>
+            <div class=\"scroll_quote\" title=\"" . $q["full_name"] . "\">" . $q["short_name"] . "</div>
+            <div class=\"scroll_quote\" title=\"Цена продажи\">" . $q["sell_price"] . "</div>
+            <div class=\"scroll_quote\" title=\"Количество на продажу\">" . $q["sell_amount"] . "</div>
+            <div class=\"scroll_quote\" title=\"Цена покупки\">" . $q["buy_price"] . "</div>
+            <div class=\"scroll_quote\" title=\"Количество на покупку\">" . $q["buy_amount"] . "</div>
+            <div style=\"clear: both\"></div>
+            </li>";
+    }
+    return $buffer;
+}
+
+?>

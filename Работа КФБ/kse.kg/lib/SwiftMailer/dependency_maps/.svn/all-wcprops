@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/guest/buse/!svn/ver/208/trunk/lib/SwiftMailer/dependency_maps
+END
+cache_deps.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/guest/buse/!svn/ver/208/trunk/lib/SwiftMailer/dependency_maps/cache_deps.php
+END
+mime_deps.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/guest/buse/!svn/ver/208/trunk/lib/SwiftMailer/dependency_maps/mime_deps.php
+END
+transport_deps.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/guest/buse/!svn/ver/208/trunk/lib/SwiftMailer/dependency_maps/transport_deps.php
+END

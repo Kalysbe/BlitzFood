@@ -1,0 +1,1 @@
+select id, name as compname from ls.companies t;

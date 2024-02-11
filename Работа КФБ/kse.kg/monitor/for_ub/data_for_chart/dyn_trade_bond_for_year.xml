@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graph caption='' PYAxisName="по годам" SYAxisName=''  decimalPrecision='0' formatNumberScale='0' bgcolor='000000' canvasBgColor='000000' baseFontColor='ffffff' baseFontSize='18'
+yaxisminvalue='00' yaxismaxvalue='400' >
+<set name='2000' value='' color='20B2AA' />
+<set name='2001' value='53.99' color='20B2AA' />
+<set name='2002' value='114.25' color='20B2AA' />
+<set name='2003' value='29.13' color='20B2AA' />
+<set name='2004' value='5.75' color='20B2AA' />
+<set name='2005' value='10.86' color='20B2AA' />
+<set name='2006' value='' color='20B2AA' />
+<set name='2007' value='' color='20B2AA' />
+<set name='2008' value='' color='20B2AA' />
+<set name='2009' value='30.37' color='20B2AA' />
+<set name='2010' value='40.54' color='20B2AA' />
+<set name='2011' value='60.53' color='20B2AA' />
+<set name='2012' value='102.55' color='20B2AA' />
+<set name='2013' value='307.42' color='20B2AA' />
+<set name='2014' value='346.67' color='20B2AA' />
+<set name='10 мес 2015' value='221.78' color='20B2AA' />
+
+</graph>

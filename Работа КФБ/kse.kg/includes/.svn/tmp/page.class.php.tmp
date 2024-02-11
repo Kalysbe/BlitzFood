@@ -1,0 +1,414 @@
+<?php
+
+class ModuleInfo {
+    public $Title;
+    public $Name;
+    public $Description;
+    public $Handler;
+    public $View;
+    public $Language;
+};
+
+class PageInfo {
+    public $Id;
+    public $Title;
+    public $Text;
+    public $Status;
+    public $Uname;
+};
+
+define('PAGE_STATUS_COMMON', 1);
+define('PAGE_STATUS_HANDLED', 4);
+define('PAGE_STATUS_RENAMED', 7);
+define('PAGE_STATUS_CONTROLLER', 8);
+
+/*
+ * Page Handler
+ * Load or create new page
+ * Page statuses:
+ */
+class Page {
+    private $Id;
+    private $Title;
+    private $Text;
+    private $Status;
+    private $Uname;
+    private $isNew;
+    private $isByName;
+    private $isById;
+    private $isDefault;
+    private $isHandlersLoaded = false;
+    private $mVars = array();
+    private $Controller;
+    private $hasAttachment = false;
+    private $attachments = array();
+
+    public function __construct($pageUname = "", $pageId = 0, $isDefault = false) {
+        $this->isDefault = $isDefault;
+        if ($pageUname != "") {
+            $sql = "SELECT * FROM `pages` WHERE (`page_uname`='" .
+            $pageUname . "' AND `language`='" . MainClass::getSingleton()->getLanguageCode() . "')";
+            $result = mysql_query($sql);
+            $rows = mysql_num_rows($result);
+            if ($rows == 0) {
+                $this->Title = "{UnknownPageTitle}";
+                $this->Text = "{UnknownPageText}";
+            } else {
+                $obj = mysql_fetch_object($result);
+                $this->Title = $obj->page_title;
+                $this->Text = $obj->page_text;
+                $this->Status = $obj->status;
+                $this->Uname = $obj->page_uname;
+                $this->Id = $obj->page_id;
+            }
+            $this->isNew = false;
+        } elseif ($pageId != 0) {
+            $sql = "SELECT * FROM `pages` WHERE (`page_id`='" . $pageId . "')";
+            $result = mysql_query($sql);
+            $rows = mysql_num_rows($result);
+            if ($rows == 0) {
+                $this->Title = "{UnknownPageTitle}";
+                $this->Text = "{UnknownPageText}";
+            } else {
+                $obj = mysql_fetch_object($result);
+                $this->Title = $obj->page_title;
+                $this->Text = $obj->page_text;
+                $this->Status = $obj->status;
+                $this->Uname = $obj->page_uname;
+                $this->Id = $obj->page_id;
+            }
+            $this->isNew = false;
+        } else {
+            // Generaly new page
+            $this->isNew = true;
+        }
+    }
+
+    private function processPage() {
+        // 4 is for statis html pages
+        // They are including other pages using Twig
+        $this->loadHandlers();
+        MainClass::getSingleton()->appendVariables($this->mVars);
+        //print_r($this->mVars);
+        if ($this->Status == PAGE_STATUS_HANDLED) {
+                $sql = "SELECT * FROM `page_extensions` WHERE (`page_id`=)";
+        } elseif ($this->Status == PAGE_STATUS_COMMON) {
+            if (!$this->isDefault) {
+                $this->processLinks();
+                $this->processModule();
+                $this->loadAttachments();
+            }
+        } elseif ($this->Status == PAGE_STATUS_RENAMED) {
+            Header("Location: " .
+                MainClass::getSingleton()->getSiteVar("%ROOT%") . "/" .
+                    MainClass::getSingleton()->getLannguage() . "/" .
+                    $this->Text);
+            exit();
+        } elseif ($this->Status == PAGE_STATUS_CONTROLLER) {
+            require_once(MainClass::getSingleton()->getSiteVar("%HOME%") . "/includes/controller.class.php");
+            if (file_exists($this->Text)) {
+                require_once(MainClass::getSingleton()->getSiteVar("%HOME%") . "/" . $this->Text);
+                if (function_exists($Module . "_loadController")) {
+                    $controller_hook = $Module . "_loadController";
+                    $this->Controller = $controller_hook();
+                    $this->Text = $this->Controller->getText();
+                    
+                    MainClass::getSingleton()->appendVariables($this->Controller->getVariables());
+                }
+            } else {
+                MainClass::getSingleton()->appendError("Module controller does't exists");
+            }
+                                
+        }
+    }
+
+    private function loadHandlers() {
+        $Variables = array();
+        if (!$this->isHandlersLoaded) {
+            $sql = "SELECT `handler` FROM `page_handlers` WHERE (`page_id`='" . $this->Id . "')";
+            $result = mysql_query($sql);
+            $rows = mysql_num_rows($result);
+            for ($i = 0; $i < $rows; $i++) {
+                mysql_data_seek($result, $i);
+                $obj = mysql_fetch_object($result);
+                
+                if (file_exists('./page_handlers/' . $obj->handler)) {
+                    include_once('./page_handlers/' . $obj->handler);
+                } else {
+                    MainClass::getSingleton()->appendError("{UnknownPageHandler}");
+                }
+            }
+        }
+        
+        $this->mVars = array_merge((array)$this->mVars, $Variables);
+
+    }
+
+    private function loadModule($id) {
+        $sql = "SELECT * FROM `modules` WHERE (`mid`='" . $id . "')";
+        $result = mysql_query($sql);
+        $rows = mysql_num_rows($result);
+        if ($rows != 1)
+            return;
+        $obj = mysql_fetch_object($result);
+        $module = new ModuleInfo();
+        $module->Description = $obj->description;
+        $module->Handler = $obj->main_handler;
+        $module->Language = $obj->language;
+        $module->Name = $obj->name;
+        $module->Title = $obj->title;
+        $module->View = $obj->main_view;
+        return $module;
+    }
+
+    /*
+     * Return true if attachment was loaded
+     * and false if there is no attachments for this page
+     */
+    private function loadAttachments() {
+        $sql = "SELECT
+                at.filename as Filename,
+                at.filepath as Filepath,
+                at.name as Name,
+                at.mime as Mime,
+                at.description as Description,
+                at.filesize as Size
+            FROM `attachments` as at, `page_attachments` as pat
+            WHERE (pat.page_id='" . $this->Id . "' AND at.attachment_id=pat.attachment_id)";
+        $result = mysql_query($sql);
+        $rows = mysql_num_rows($result);
+        if ($rows == 0)
+            return false;
+
+        $this->hasAttachment = true;
+        for ($i = 0; $i < $rows; $i++) {
+            mysql_data_seek($result, $i);
+            $Attachment = mysql_fetch_array($result);
+            $this->attachments[] = $Attachment;
+        }
+        return true;
+    }
+
+    public function getAttachments() {
+        if ($this->hasAttachment)
+                return $this->attachments;
+        else 
+            return array();
+    }
+
+    private function processLinks() {
+        $internalLinks = array();
+            $replacements = array();
+            preg_match_all("|\[\[(.*)\]\]|Uis", $this->Text, $internalLinks);
+            foreach ($internalLinks[0] as $k => $fullPattern) {
+
+                if (strpos($internalLinks[1][$k], ":") > 0) {
+                    $pair = explode(":", $internalLinks[1][$k]);
+                    $replacements[$internalLinks[0][$k]] =
+                    "<a href=\"" .
+                    MainClass::getSingleton()->getSiteVar("%ROOT%") . "/" .
+                    $_SESSION["LANGUAGE"]  . "/" . $pair[0] . "\">" . $pair[1] . "</a>";
+                } else {
+                    $replacements[$internalLinks[0][$k]] = "<a href=\"" .
+                    MainClass::getSingleton()->getSiteVar("%ROOT%") . "/" .
+                    $_SESSION["LANGUAGE"]  . "/" . $internalLinks[1][$k] . "\">" . $internalLinks[1][$k] . "</a>";
+                }
+            }
+            $this->Text = strtr($this->Text, $replacements);
+    }
+
+    private function processModule() {
+        $sql = "SELECT * FROM `modules_applied` WHERE (`page_id`='" . $this->Id . "')";
+        $result = mysql_query($sql);
+        $rows = mysql_num_rows($result);
+        for ($i = 0; $i < $rows; $i++) {
+            mysql_data_seek($result, $i);
+            $obj = mysql_fetch_object($result);
+            $module = $this->loadModule($obj->mid);
+            if ($module) {
+                if (file_exists(MainClass::getSingleton()->getSiteVar("%HOME%").
+                    "/modules/" . $module->Name . "/" . $module->Handler)) {
+                    require_once(MainClass::getSingleton()->getSiteVar("%HOME%").
+                    "/modules/" . $module->Name . "/" . $module->Handler);
+                    $module_hook = $module->Name . "_getModuleBuffer";
+                    $this->Text = strtr($this->Text,
+                            array($obj->phrase => $module_hook($obj->mappid)));
+                } else {
+                    MainClass::getSingleton()->appendError("{UnknownPageModule}");
+                }
+            }
+        }
+    }
+
+    private function parseModules() {
+        $modules = array();
+
+        preg_match_all("|{module:(.*)}|Uis", $this->Text, $modules);
+        $moduleContentArray = $modules[1];
+        $fullPatternsArray = $modules[0];
+        foreach ($fullPatternsArray as $index => $fullPattern) {
+            $parameters = explode("|", $moduleContentArray[$index]);
+                $moduleName = $parameters[0];
+            if (strpos($moduleContentArray[$index], "|") > 0) {
+                // We found other parameters
+                
+                if ($moduleName == "") {
+                    // Empty module name
+                    continue;
+                } 
+                $sql = "SELECT * FROM `modules` WHERE (`name`='" .
+                    $moduleName . "' AND `language`='" .
+                    $_SESSION["LANGUAGE"] . "')";
+                $result = mysql_query($sql);
+                $rows = mysql_num_rows($result);
+                if ($rows != 1)
+                    continue;
+                else {
+                    $obj = mysql_fetch_object($result);
+                    mysql_query("INSERT INTO `modules_applied` 
+                    (`mid`, `page_id`, `phrase`, `status`) VALUES ('" .
+                    $obj->mid . "', '" . $this->Id . "', '" . $fullPatternsArray[$index] . "', '1') ");
+                    $moduleId = mysql_insert_id();
+
+                    foreach ($parameters as $parameter) {
+                        if (strpos($parameter, "=") > 0) {
+                            $pair = explode("=", $parameter);
+                            mysql_query("INSERT INTO `modules_parameters`
+                            (`mappid`, `name`, `value`) VALUES ('" . 
+                            $moduleId . "', '" . $pair[0] . "', '" .
+                            $pair[1] . "')");
+                        }
+                    }
+                }
+            } else {
+                $sql = "SELECT * FROM `modules` WHERE (`name`='" .
+                    $moduleName . "' AND `language`='" .
+                    $_SESSION["LANGUAGE"] . "')";
+                $result = mysql_query($sql);
+                $rows = mysql_num_rows($result);
+                if ($rows != 1)
+                    continue;
+                else {
+                    $obj = mysql_fetch_object($result);
+                    mysql_query("INSERT INTO `modules_applied`
+                    (`mid`, `page_id`, `status`) VALUES ('" .
+                    $obj->mid . "', '" . $this->Id . "', '1') ");
+                }
+            }
+        }
+    }
+
+    private function removeModules() {
+        // Remove all modules for this page
+        $sql = "SELECT * FROM `modules_applied` WHERE (`page_id`='" .
+            $this->Id . "')";
+        $result = mysql_query($sql);
+        
+        $rows = mysql_num_rows($result);
+        for ($i = 0; $i < $rows; $i++) {
+            mysql_data_seek($result, $i);
+            $obj = mysql_fetch_object($result);
+            mysql_query("DELETE FROM `modules_parameters` WHERE (`mappid`='" .
+                $obj->mappid . "')");
+        }
+        mysql_query("DELETE FROM `modules_applied` WHERE (`page_id`='" .
+            $this->Id . "')");
+    }
+
+    public function translate($Lang) {
+        $this->Title = strtr($this->Title, $Lang);
+        $this->Text = strtr($this->Text, $Lang);
+    }
+
+    public function getUname() {
+        return $this->Uname;
+    }
+
+    public function getTitle() {
+        return $this->Title;
+    }
+
+    public function getText() {
+        $this->processPage();
+        return $this->Text;
+    }
+
+    public function getStatus() {
+        return $this->Status;
+    }
+
+    public function getId() {
+        return $this->Id;
+    }
+
+    public function setTitle($title) {
+        $this->Title = $title;
+    }
+
+    public function setText($string) {
+        $this->Text = $string;
+    }
+
+    public function setUname($string) {
+        $this->Uname = $string;
+    }
+
+    /*
+     * setStatus(int)
+     * Set status for page
+     */
+    public function setStatus($int) {
+        $this->Status = $int;
+    }
+
+    /*
+     * array getVariables()
+     * return array of additional Variables
+     */
+    public function getVariables() {
+        return $this->mVars;
+    }
+
+    /*
+     * save()
+     * Save page into database or update it if
+     * isNew == false
+     */
+    public function save() {
+        if ($this->isNew) {
+            $sql = "INSERT INTO `pages` (`page_uname`, `page_title`, `page_text`,
+            `creator`, `cr_date`, `cr_ip`, `status`, `category`, `language`)
+            VALUES ('" . $this->Uname . "', '" . $this->Title . "', '" . $this->Text . "', '" .
+            MainClass::getSingleton()->getLoggedUid() . "', '" . time() . "', '" .
+            $_SERVER["REMOTE_ADDR"] . "', '1', '0', '" . $_SESSION["LANGUAGE"] . "')";
+            mysql_query($sql);
+            $this->Id = mysql_insert_id();
+            $this->isNew = false;
+        } else {
+            $sql = "UPDATE `pages` SET
+                `page_uname`='" . $this->Uname . "',
+                `page_title`='" . $this->Title . "',
+                `page_text`= '" . $this->Text . "',
+                `update_date`='" . time() . "',
+                `update_ip`='" . $_SERVER["REMOTE_ADDR"] . "'
+                WHERE (`page_id`='" . $this->Id . "');
+            ";
+            mysql_query($sql);
+        }
+        
+
+        $this->removeModules();
+        $this->parseModules();
+    }
+/*
+    public function loadAttachments() {
+        $sql = "SELECT * FROM `page_attachments` WHERE (`page_id`='" . $this->Id . "')";
+        $result = mysql_query($sql);
+        $rows = mysql_num_rows($result);
+        for ($i = 0; $i < $rows; $i++) {
+            mysql_data_seek($result, $i);
+            $obj = mysql_fetch_object($result);
+        }
+    }*/
+
+};

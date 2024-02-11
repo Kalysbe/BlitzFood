@@ -1,0 +1,29 @@
+<?php
+
+$sql = "SELECT * FROM `categories` WHERE (`status`>0)";
+$result = mysql_query($sql);
+$rows = mysql_num_rows($result);
+
+
+for ($i = 0; $i < $rows; $i++) {
+    mysql_data_seek($result, $i);
+    $obj = mysql_fetch_object($result);
+    $Variables["Categories"][] = $obj->category_name;
+}
+
+$sql = "SELECT * FROM `attachments`,`page_attachments` WHERE (`attachments`.`attachment_id`=`page_attachments`.`attachment_id`
+    AND `page_attachments`.`page_id`='" . $this->Id . "')";
+$result = mysql_query($sql);
+echo mysql_error();
+$rows = mysql_num_rows($result);
+
+$Attachments = array();
+
+for ($i = 0; $i < $rows; $i++) {
+    mysql_data_seek($result, $i);
+    $att = mysql_fetch_object($result);
+    $Attachments[$i]['filename'] = $att->filename;
+    $Attachments[$i]['filepath'] = $att->filepath;
+}
+
+$Variables["PageAttachmentsHandler"] = $Attachments;

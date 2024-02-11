@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/guest/buse/!svn/ver/208/trunk/lib/SwiftMailer/classes/Swift/Mime/Headers
+END
+AbstractHeader.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/guest/buse/!svn/ver/208/trunk/lib/SwiftMailer/classes/Swift/Mime/Headers/AbstractHeader.php
+END
+UnstructuredHeader.php
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/guest/buse/!svn/ver/208/trunk/lib/SwiftMailer/classes/Swift/Mime/Headers/UnstructuredHeader.php
+END
+IdentificationHeader.php
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/guest/buse/!svn/ver/208/trunk/lib/SwiftMailer/classes/Swift/Mime/Headers/IdentificationHeader.php
+END
+MailboxHeader.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/guest/buse/!svn/ver/208/trunk/lib/SwiftMailer/classes/Swift/Mime/Headers/MailboxHeader.php
+END
+ParameterizedHeader.php
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/guest/buse/!svn/ver/208/trunk/lib/SwiftMailer/classes/Swift/Mime/Headers/ParameterizedHeader.php
+END
+PathHeader.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/guest/buse/!svn/ver/208/trunk/lib/SwiftMailer/classes/Swift/Mime/Headers/PathHeader.php
+END
+DateHeader.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/guest/buse/!svn/ver/208/trunk/lib/SwiftMailer/classes/Swift/Mime/Headers/DateHeader.php
+END

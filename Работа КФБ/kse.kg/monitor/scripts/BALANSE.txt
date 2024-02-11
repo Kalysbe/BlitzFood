@@ -1,0 +1,12 @@
+htm="<table bgcolor="#0B0B64" border="0" cellpadding="3" cellspacing="1"  width="80%">"
+htm="  <TR valign="top">"
+htm="    <td><font color="#FFFFFF">Ёмитент </font></td>"
+htm="    <td><font color="#FFFFFF">сом </font></td>"
+htm="    <td><font color="#FFFFFF"> год </font></td>"
+htm="  </tr>"
+sql=balance.sql
+exec="SQL?BALANSEYES.TXT:BALANSENO.TXT"
+sql=
+htm="</table>"
+htm="<br><br><br>"
+

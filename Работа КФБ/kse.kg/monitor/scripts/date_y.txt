@@ -1,0 +1,1 @@
+select substr(ts.makedate(max(date0)),length(ts.makedate(max(date0)))-3) as date1 from ls.balance;

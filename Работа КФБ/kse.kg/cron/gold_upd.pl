@@ -1,0 +1,22 @@
+#!/usr/bin/perl -w
+
+use DBI;
+
+system @m=`links -dump http://www.forexpf.ru/_informer_/comod.php?id=017864523 | sed -e 's/ if(flg==1){//g' |sed -e 's/;/;\n/g' | grep document.getElementById | sed -e 's/document.getElementById("//g' | sed -e 's/").innerHTML//g' | sed -e 's/  //g'  | sed -e 's/"//g'| sed -e 's/;//g' | awk -F '=' '{ print $1 "-" $2}'`;
+print '1--';
+print "@m";
+print '---1';
+                            
+$database="kse";
+$hostname="localhost";                               
+$user="kseuser";          
+$password='kseuserpass';
+
+$dsn= "DBI:mysql:database=$database;host=$hostname";
+$dbh = DBI->connect($dsn , $user, $password) || die print "Can't connect";
+$sth = $dbh->prepare( q{
+          insert into Blog_Entries_eng (name, bid, ask) values (@m[$1],@m[$2],?)
+          }) || die "Can't prepare statement: $DBI::errstr";
+
+$sth->execute;
+$dbh->disconnect;

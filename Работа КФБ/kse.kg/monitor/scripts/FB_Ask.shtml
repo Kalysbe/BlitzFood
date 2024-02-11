@@ -1,0 +1,17 @@
+<html>
+<body>
+
+
+<form name="web" method="POST" action="/Scripts/fbisapi.DLL?sql=ItogiT_Ask.sql&htm=tr.htm">
+<table border="0" cellspacing="10" cellpadding="0">
+<tr>
+<td><input type="text" name="data" size="50" value="05-03-2004" maxlength="160" /></td>
+<td><input type="submit" value="Давай!" /></td>
+</tr>
+</table>
+</form>
+
+
+</body>
+</html>
+

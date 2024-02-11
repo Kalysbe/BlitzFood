@@ -1,0 +1,68 @@
+<graph bgcolor='000000' canvasBgColor='000000' baseFontColor='8B8B00' caption='' subcaption=''
+hovercapbg='F47E00' divlinecolor='696969' hovercapborder='F47E00' formatNumberScale='3' decimalPrecision='2' showvalues='0' baseFontSize='15' decimalSeparator=',' 
+numdivlines='5' numVdivlines='0' yaxisminvalue='100' yaxismaxvalue='370'  rotateNames='1' showLimits='1' showShadow='0'>
+<categories>
+  <category name='23.07.2022'/>
+  <category name='25.07.2022'/>
+  <category name='26.07.2022'/>
+  <category name='27.07.2022'/>
+  <category name='28.07.2022'/>
+  <category name='29.07.2022'/>
+  <category name='30.07.2022'/>
+  <category name='01.08.2022'/>
+  <category name='02.08.2022'/>
+  <category name='03.08.2022'/>
+  <category name='04.08.2022'/>
+  <category name='05.08.2022'/>
+  <category name='06.08.2022'/>
+  <category name='08.08.2022'/>
+  <category name='09.08.2022'/>
+  <category name='10.08.2022'/>
+  <category name='11.08.2022'/>
+  <category name='12.08.2022'/>
+  <category name='13.08.2022'/>
+  <category name='15.08.2022'/>
+  <category name='16.08.2022'/>
+  <category name='17.08.2022'/>
+  <category name='18.08.2022'/>
+  <category name='19.08.2022'/>
+  <category name='20.08.2022'/>
+  <category name='22.08.2022'/>
+  <category name='23.08.2022'/>
+  <category name='24.08.2022'/>
+  <category name='25.08.2022'/>
+  <category name='26.08.2022'/>
+</categories>
+<dataset seriesName='' color='ffff00' anchorBorderColor='ffff00' anchorBgColor='ffff00'>
+  <set value='1666.1232'/>
+  <set value='1666.923'/>
+  <set value='1666.923'/>
+  <set value='1665.7131'/>
+  <set value='1649.7183'/>
+  <set value='1649.7183'/>
+  <set value='1649.7183'/>
+  <set value='1678.4146'/>
+  <set value='1678.4146'/>
+  <set value='1678.4146'/>
+  <set value='1680.5319'/>
+  <set value='1684.8363'/>
+  <set value='1684.8363'/>
+  <set value='1684.8363'/>
+  <set value='1684.8363'/>
+  <set value='1684.8363'/>
+  <set value='1684.8363'/>
+  <set value='1680.8376'/>
+  <set value='1680.8376'/>
+  <set value='1712.4036'/>
+  <set value='1712.4036'/>
+  <set value='1897.9021'/>
+  <set value='1896.8334'/>
+  <set value='1896.8334'/>
+  <set value='1896.8334'/>
+  <set value='1948.4867'/>
+  <set value='1889.2981'/>
+  <set value='1945.2797'/>
+  <set value='1945.2797'/>
+  <set value='1945.2797'/>
+</dataset>
+</graph>

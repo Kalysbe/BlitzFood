@@ -1,0 +1,24 @@
+    <div id="popupContact">
+    
+        <a id="popupContactClose">x</a>
+    <form action="{{ root }}/handlers/login.php" method="POST">
+        <h1>{{ lang['LogIn'] }}</h1>
+        <p id="contactArea">
+            {{ lang['IfNotRegisteredNotice'] }}
+        <br/><br/>
+        <dl>
+            <dt>{{ lang['rLogin'] }}:</dt>
+            <dd><input type="text" name="mLogin" value="" /></dd>
+        </dl>
+        <dl>
+            <dt>{{ lang['rPassword'] }}:</dt>
+            <dd><input type="password" name="mPassword" value="" /></dd>
+        </dl>
+        <br/><br/>
+            {{ lang['LogInProblems?'] }} | {{ lang['ForgetPassword?'] }}
+        <br/><br/>
+        
+        <input type="submit" name="doLogin" value="Войти" />
+    </form>
+    </div>
+    <div id="backgroundPopup"></div>

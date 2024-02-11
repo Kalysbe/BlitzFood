@@ -1,0 +1,88 @@
+{% if AdminRights %}
+<h2>Редактирование страницы</h2>
+
+{% if PageSaved %}
+
+<div class="warning ui-corner-all">
+    Страница была успешно сохранена.
+    <a href="{{ root }}/{{ lang_code }}/{{ EditPage['page_uname'] }}">Перейти: {{ EditPage['page_title'] }}</a>
+</div>
+{% endif %}
+
+<div id="two_columns">
+    <form action="" method="POST">
+        <label>Системное имя страницы:</label>
+        <p>{{ EditPage['page_uname'] }}</p>
+        <div class="clean"></div>
+        <label>Наименование страницы:</label>
+        <p><input type="text" name="mPageTitle" value="{{ EditPage['page_title'] }}" class="ui-widget-content ui-corner-all" /></p>
+        <div class="clean"></div>
+        <label>Текст:</label>
+        <p style="clear: both;">
+            <textarea id="mPageText" name="mPageText" style="width: 100%; height: 300px; border: 1px solid #CCCCCC">{{ EditPage['page_text'] }}</textarea>
+        </p>
+        <div class="clean"></div>
+        <label>&nbsp;</label>
+        <p><input type="submit" name="doEditPage" value="Сохранить" /></p>
+        <div class="clean"></div>
+        <input type="hidden" name="page_id" value="{{ EditPage['page_id'] }}" />
+        <input type="hidden" name="page_uname" value="{{ EditPage['page_uname'] }}" />
+        <input type="button" id="attachments_button" name="attachments_button" value="Прикрепить документ" />
+        <br /><br />
+        <h3>Прикреплённые документы:</h3>
+        <br />
+        <ul>
+        {% for Att in attachments_list %}
+            <li><h4>{{ Att['name'] }}</h4>
+                <a href="#" onClick="deattachFile({{ Att['attachment_id'] }})" id="deattach_link_{{ Att['attachment_id'] }}">Удалить</a>
+                <br />
+                <strong>Ссылки:</strong>
+                <ul>
+                    <li>Полная: {{ root }}{{ Att['filepath'] }}{{ Att['filename'] }}</li>
+                    <li>Относительная:{{ Att['filepath'] }}{{ Att['filename'] }}</li>
+                </ul>
+                
+                
+            </li>
+        {% endfor %}
+        </ul>
+        <div id="attachments_list" style="display: none;">
+        </div>
+        <div id="deattachments_list" style="display: none;">
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#mPageText").ckeditor({language: 'ru'});
+        $("#attachments_button").button();
+    });
+
+    function attachFile(id) {
+        $("#attachments_list").append('<input type="hidden" name="attachment' + id +'" value=' +  id +' />');
+        $("#attach_link_" + id).css("display", "none");
+    }
+
+    function deattachFile(id) {
+        $("#deattachments_list").append('<input type="hidden" name="deattachment' + id +'" value=' +  id +' />');
+        $("#deattach_link_" + id).css("display", "none");
+    }
+</script>
+{% else %}
+<div class="error ui-corner-all">
+    У Вас нет доступа к содержимому этой страницы
+</div>
+{% endif %}
+
+<br /><br />
+<div id="file_list">
+    <h3>Доступные файлы:</h3>
+    <ul>
+    {% for file in file_list %}
+        <li>{{ file['name'] }}  
+            <a href="#" onClick="attachFile({{ file['attachment_id'] }})" id="attach_link_{{ file['attachment_id'] }}">Прикрепить</a>
+        </li>
+    {% endfor %}
+    </ul>
+</div>

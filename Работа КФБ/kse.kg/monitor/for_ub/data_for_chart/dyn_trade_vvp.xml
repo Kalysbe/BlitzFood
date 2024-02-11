@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graph caption='' PYAxisName="по годам" SYAxisName=''  decimalPrecision='0' formatNumberScale='0' bgcolor='000000' canvasBgColor='000000' baseFontColor='ffff00' yaxisminvalue='00' yaxismaxvalue='10000' rotateNames="0" 
+	basefontSize="14">
+ <categories font="Arial"  fontColor="ffffff" fontSize="22">
+	<category name='январь'/> 
+	<category name='февраль'/> 
+	<category name='март'/> 
+	<category name='апрель'/> 
+	<category name='май'/> 
+	<category name='июнь'/> 
+	<category name='июль'/> 
+	<category name='август'/> 
+	<category name='сентябрь'/> 
+ </categories>
+   <dataset seriesname="ВВП Кыргызстана" color="FF5904" showValues="1" areaAlpha="80" showAreaBorder="1" areaBorderThickness="2" areaBorderColor="FF0000" >
+		<set value='24137.9'/> 
+		<set value='50791.8'/> 
+		<set value='79411.9'/> 
+		<set value='108928.2'/> 
+		<set value='139721.2'/> 
+		<set value='172407.5'/> 
+		<set value='210917.3'/> 
+		<set value='250078'/> 
+		<set value='292889.3'/> 
+   </dataset>
+   <dataset seriesname="Капитализация КФБ" color="99cc99" showValues="1"  anchorSides='20' fontSize="14">
+	<set value='9342.99'/> 
+<set value='10433.71'/> 
+<set value='9063.53'/> 
+<set value='9342.22'/> 
+<set value='9447.62'/> 
+<set value='9236.81'/> 
+<set value='10394.99'/> 
+<set value='11035.82'/> 
+<set value='11574.96'/> 
+
+   </dataset>
+</graph>

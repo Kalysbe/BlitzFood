@@ -1,0 +1,14 @@
+<?php
+$_DB["HOST"] = "localhost";     // MySQL host
+$_DB["USER"] = "root";          // MySQL user
+$_DB["PASS"] = "sens40kf6k";    // MySQL password
+$_DB["NAME"] = "buse";          // MySQL database name
+
+$_SITE["%NAME%"] = "BUsiness Site Engine";          // General sitename
+$_SITE["%ROOT%"] = "http://buse.kg";                // root url
+$_SITE["%HOME%"] = "/var/www/sites/busengine";      // home path
+$_SITE["%ADMIN_EMAIL%"] = "m.savochkin@gmail.com";  // admin email
+$_SITE["DEFAULT_LANGUAGE"] = "ru";                  // default language
+$_SITE["MAIN_PAGE"] = "MainPage";                   // first page
+$_SITE["DEBUG"] = 0;                                // change to 1 if you're
+                                                    // developer

@@ -1,0 +1,1 @@
+htm="<font color=#ff0000>Неверное имя пользователя или пароль! Авторизоваться не удалось.</font>&nbsp;&nbsp;&nbsp;<a class=link href='javascript:history.back(1)'>Попробовать снова</a>"

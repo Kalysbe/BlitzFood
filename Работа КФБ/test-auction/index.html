@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <div class="menu"> 
+        <table width='100%'>
+            <tr>
+            <td>
+                <a class='menu_item' href="https://auction.kse.kg">
+                  <div class="auction-logo">
+                   <img src='favicon.png' alt=''>
+                  </div>
+                  <span class="auction-name">KSE - Аукцион ГЦБ</span>
+                </a>
+            </td>
+            <td class='navigation-menu'>
+                  <a class="menu_item" href='https://auction.kse.kg/?admin&go=database'>
+                     <div class="menu_item-icon">
+                     <span class="material-symbols-outlined">
+                           home
+                        </span>
+                     </div> 
+                     База
+                  </a>
+                  <a class="menu_item" href='https://auction.kse.kg/?admin&go=database&page=1'>
+                     <div class="menu_item-icon">  
+                     <span class="material-symbols-outlined ">
+                           settings
+                      </span>
+                     </div> 
+                     <nobr>Лот</nobr>
+                  </a>
+                  <a class="menu_item" href='https://auction.kse.kg/?admin&go=database&page=2'>
+                        <div class="menu_item-icon">
+                        <span class="material-symbols-outlined ">
+                           widgets
+                        </span>
+                        </div>
+                     <nobr>Аукцион</nobr>   
+                  </a>
+                  <a class="menu_item" href='https://auction.kse.kg/?admin&go=database&page=3'>
+                        <div class="menu_item-icon">
+                         <span class="material-symbols-outlined">
+                           description
+                        </span>
+                     </div>
+                     <nobr>Отчеты</nobr>
+                  </a>
+            </td>
+            <td style='position:relative;text-align:end;'>
+                  <a class="menu_item logout" href='https://auction.kse.kg/?logout'>
+                     <div class="menu_item-icon">
+                        <span class="material-symbols-outlined ">
+                           logout
+                        </span>
+                     </div>
+                     Выход
+                  </a>
+              
+            </td>
+         </tr>
+        </table>
+            </div>
+    </nav>
+    <table class="table-deals"><tbody><tr>
+        <td class="info_top" colspan="5">
+           Приказы на покупку
+        </td>
+        </tr>
+
+        <tr>
+        <td class="info_title" width="200">
+           Инструмент
+        </td>
+        <td class="info_title" width="70" align="center">
+           Цена
+        </td>
+        <td class="info_title" width="70" align="center">
+           Количество
+        </td>
+        <td class="info_title" width="100" align="center">
+           Счет
+        </td>
+        <td class="info_title" align="center" width="150">
+           Выставлено
+        </td></tr>
+   <tr>
+        <td class="info" colspan="5">
+           &nbsp;
+        </td>
+        </tr>
+   <tr>
+        <td class="info_comp" colspan="5">
+           <b>Конкурентные</b>
+        </td>
+        </tr>
+         <tr>
+        <td class="info_lot" colspan="2">
+           <b>Итого по лоту:</b>
+        </td>
+        <td class="info_lot" align="center">
+           <b>0</b>
+        </td>
+        <td class="info_lot" colspan="2">
+           &nbsp;
+        </td>
+        </tr>
+        <tr>
+        <td class="info" colspan="2">
+           <b>Итого по конкурентным:</b>
+        </td>
+        <td class="info" align="center">
+           <b>0</b>
+        </td>
+        <td class="info" colspan="2">
+           &nbsp;
+        </td>
+        </tr>
+        <tr>
+        <td class="info" colspan="5">
+           &nbsp;
+        </td>
+        </tr>
+        <tr>
+        <td class="info_comp" colspan="5">
+           <b>Неконкурентные</b>
+        </td>
+        </tr>
+         <tr>
+        <td class="info_lot" colspan="2">
+           <b>Итого по лоту:</b>
+        </td>
+        <td class="info_lot" align="center">
+           <b>0</b>
+        </td>
+        <td class="info_lot" colspan="2">
+           &nbsp;
+        </td>
+        </tr>
+        <tr>
+        <td class="info" colspan="2">
+           <b>Итого по неконкурентным:</b>
+        </td>
+        <td class="info" align="center">
+           <b>0</b>
+        </td>
+        <td class="info" colspan="2">
+           &nbsp;
+        </td>
+        </tr>
+        <tr>
+        <td class="info" colspan="5">
+           &nbsp;
+        </td>
+        </tr>
+        <tr>
+        <td class="info" colspan="2">
+           <b>Всего:</b>
+        </td>
+        <td class="info" align="center">
+           <b>0</b>
+        </td>
+        <td class="info" colspan="2">
+           &nbsp;
+        </td>
+        </tr>
+        </tbody></table>
+        <table>
+         <tr class="remove"><td>1</td></tr>
+         <tr class="remove"><td>2</td></tr>
+         <tr class="remove"><td>3</td></tr>
+        </table>
+    <script src="js.js"></script>
+</body>
+</html>

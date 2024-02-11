@@ -1,0 +1,49 @@
+<script type="text/javascript" src="{{ root }}/scripts/superfish/js/superfish.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('sssssul.sfss-menu').superfish();
+    });
+</script>
+                <ul class="sf-menu">
+			<li><a href="{{ root }}/{{ lang_code }}/GeneralInfo" class="top_element">{{ lang['{temp_about}'] }}<!--О бирже--></a>
+                            <ul>
+                                <li><a href="{{ root }}/{{ lang_code }}/GeneralInfo">{{ lang['{temp_general_info}'] }}</a></li>
+                                <li><a href="{{ root }}/{{ lang_code }}/OurStrategy">{{ lang['{temp_our_strategy}'] }}</a></li>
+                                <li><a href="{{ root }}/{{ lang_code }}/CorporateDocuments">{{ lang['{temp_corporate_documents}'] }}</a></li>
+                                <li><a href="{{ root }}/{{ lang_code }}/Auctioneers">{{ lang['{temp_auctioneers}'] }}</a></li>
+                                <li><a href="{{ root }}/{{ lang_code }}/Members">{{ lang['{temp_members}'] }}</a>
+                                    <ul>
+                                        <li><a href="{{ root }}/{{ lang_code }}/Members">{{ lang['{temp_members}'] }}</a></li>
+                                        <li><a href="{{ root }}/{{ lang_code }}/MembersRating">{{ lang['{temp_members_rating}'] }}</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="{{ root }}/{{ lang_code }}/Partners">{{ lang['{temp_partners}'] }}</a></li>
+                            </ul>
+
+                        </li>
+			<li><a href="{{ root }}/{{ lang_code }}/Standards" class="top_element">{{ lang['{temp_standards}'] }}</a>
+                            <ul>
+                                <li><a href="{{ root }}/{{ lang_code }}/KSENormatives">{{ lang['{temp_kse_normatives}'] }}</a>
+                                    <!--<ul id="jsddm_sub">
+                                        <li><a href="#">test</a></li>
+                                    </ul>-->
+                                </li>
+                                <li><a href="{{ root }}/{{ lang_code }}/DepoNormatives">{{ lang['{temp_depo_normatives}'] }}</a></li>
+                            </ul>
+                        </li>
+			<li><a href="{{ root }}/{{ lang_code }}/Statistics" class="top_element">{{ lang['{temp_statistics}'] }}</a>
+                            <ul>
+                                <li><a href="{{ root }}/{{ lang_code }}/TradeResults">{{ lang['{temp_trade_results}'] }}</a></li>
+                                <li><a href="{{ root }}/{{ lang_code }}/TradeArchive">{{ lang['{temp_archive}'] }}</a></li>
+                                <li><a href="{{ root }}/{{ lang_code }}/IndexAndCapitalization">{{ lang['{temp_index_and_capitalization}'] }}</a></li>
+                                <li><a href="{{ root }}/{{ lang_code }}/Quotes">{{ lang['{temp_quotes}'] }}</a></li>
+                            </ul>
+                        </li>
+
+			<li><a href="{{ root }}/{{ lang_code }}/Education" class="top_element">{{ lang['{temp_study_center}'] }}</a>
+                            <ul>
+                                <li><a href="{{ root }}/{{ lang_code }}/Education">{{ lang['{temp_education}'] }}</a></li>
+                                <li><a href="{{ root }}/{{ lang_code }}/EduPlan">{{ lang['{temp_edu_plan}'] }}</a></li>
+                            </ul>
+                        </li>
+		</ul>

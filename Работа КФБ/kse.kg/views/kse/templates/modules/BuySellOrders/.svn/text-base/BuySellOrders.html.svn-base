@@ -1,0 +1,30 @@
+<h2>Купля/Продажа ценных бумаг</h2>
+<br /><br/>
+
+{% if SendResult %}
+<div class="error ui-corner-all">
+    {{ SendResult }}
+</div><br /><br />
+{% endif %}
+
+В этом разделе любой желающий может подать заявку на продажу или покупку ценных
+бумаг на площадке ЗАО "Кыргызская Фондовая Биржа". Сразу после заполнения формы
+заявки - информация указанная Вами будет отправлена в брокерские компании,
+представители которых в минимальные сроки свяжутся с ваим по указанным вами
+контактным данным. 
+<br />
+<form action="" method="POST">
+    Операция:
+    <select name="mOperation">
+        <option value="sell">Продажа</option>
+        <option value="buy">Покупка</option>
+    </select><br /><br />
+    Ценная бумага: <input type="text" name="mEmitent" value="" /><br /><br />
+    Цена: <input type="text" name="mPrice" value="" /><br /><br />
+    Количество: <input type="text" name="mAmount" value="" /><br /><br />
+    Комментарии: <textarea name="mText" style="width: 100%; height: 150px; border: 1px solid #CCCCCC;"></textarea><br /><br />
+    <input type="submit" name="doSendMessage" value="Отправить" class="button" />
+    <br />
+    <br />
+</form>
+

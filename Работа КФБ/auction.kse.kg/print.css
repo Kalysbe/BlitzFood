@@ -1,0 +1,20 @@
+body{font-family:Tahoma; font-size:100%; background:#ffffff;}
+div.menu{display:none;}
+div.submenu{display:none;}
+div.panel{display:none;}
+select{display:none;}
+span.panel_item{display:none;}
+span.print_panel_item{display:inline;color:#0000FF;cursor:hand;text-decoration:underline;background:#ffffff;padding-top:2px;padding-bottom:0px;padding-left:2px;padding-right:2px;font-size:80%;}
+td.info_top{background:#cccccc;color:#000000;font-size:11px;font-weight:bold;border:1px solid #000000;}
+td.info{background:#eeeeee;}
+td.info_lot{background:#eeeeee;}
+td.info_error{background:#eeeeee;color:#ff0000;}
+td.info_done{background:#eeeeee;color:#0000ff;}
+td.info_notfull{background:#eeeeee;color:#666666;}
+td.info_active{border:1px solid #000000;background:#eeeeee;}
+td.info_header{color:#000000;font-size:12px;padding:3px;border:1px solid #000000;font-weight:bold;}
+span.title{font-family:Tahoma; font-size:20px;}
+span.print_caption{display:block;font-family:Tahoma; font-size:20px;}
+input[type=submit]{display:none;}
+input[type=button]{display:none;}
+button {display: none;}

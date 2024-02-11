@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/guest/buse/!svn/ver/9/trunk/views/default/templates/modules/Blog
+END
+ControlPanel.html
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/guest/buse/!svn/ver/9/trunk/views/default/templates/modules/Blog/ControlPanel.html
+END
+Entry.html
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/guest/buse/!svn/ver/9/trunk/views/default/templates/modules/Blog/Entry.html
+END
+Entries.html
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/guest/buse/!svn/ver/7/trunk/views/default/templates/modules/Blog/Entries.html
+END

@@ -1,0 +1,97 @@
+<?php
+
+/* modules/Blog/ControlPanel.html */
+class __TwigTemplate_2fedfe1678b49d5858a760b43197779a extends Twig_Template
+{
+  public function display(array $context)
+  {
+    // line 1
+    echo "<h3>Панель управления</h3>
+
+
+<ul>
+";
+    // line 5
+    $context['_parent'] = (array) $context;
+    $seq363811 = twig_iterator_to_array((isset($context['Posts']) ? $context['Posts'] : null));
+    $context['loop']['length'] = count($seq363811);
+    $context['loop'] = array(
+      'parent'    => $context['_parent'],
+      'length'    => $context['loop']['length'],
+      'index0'    => 0,
+      'index'     => 1,
+      'revindex0' => $context['loop']['length'] - 1,
+      'revindex'  => $context['loop']['length'],
+      'first'     => true,
+      'last'      => false,
+    );
+    foreach ($seq363811 as $context["_key"] => $context["Post"])
+    {
+      echo "
+    <li>
+        <b>
+            <p class=\"entry_title\">
+                <a href=\"";
+      // line 9
+      echo (isset($context['root']) ? $context['root'] : null);
+      echo "/";
+      echo (isset($context['lang_code']) ? $context['lang_code'] : null);
+      echo "/";
+      echo $this->getAttribute((isset($context['Blog']) ? $context['Blog'] : null), "Name", array());
+      echo "/ControlPanel/Edit/";
+      echo $this->getAttribute((isset($context['Post']) ? $context['Post'] : null), "Id", array());
+      echo "\">
+                    ";
+      // line 10
+      echo $this->getAttribute((isset($context['Post']) ? $context['Post'] : null), "Title", array());
+      echo "
+                </a>
+            </p>
+            <p class=\"entry_meta\">
+                
+            </p>
+        </b>
+    </li>
+";
+      ++$context['loop']['index0'];
+      ++$context['loop']['index'];
+      --$context['loop']['revindex0'];
+      --$context['loop']['revindex'];
+      $context['loop']['first'] = false;
+      $context['loop']['last'] = 0 === $context['loop']['revindex0'];
+    }
+    $context = $context['_parent'];
+    // line 18
+    echo "
+</ul>
+
+<div class=\"section\">
+    <form action=\"";
+    // line 22
+    echo (isset($context['root']) ? $context['root'] : null);
+    echo "/modules/Blog/ControlPanel.php\" method=\"POST\">
+        <h3>{BlogFastPublication}</h3>
+        <input type=\"text\" name=\"mEntryName\" value=\"\" />
+        <textarea name=\"mEntryText\" id=\"mEntryText\"></textarea>
+        <script type=\"text/javascript\">
+            \$(\"#mEntryText\").ckeditor();
+        </script>
+        ";
+    // line 29
+    if ((isset($context['Blog']) ? $context['Blog'] : null))
+    {
+      echo "
+        <input type=\"submit\" name=\"doAddEntry\" value=\"Добавить\" />
+        <input type=\"hidden\" name=\"BlogId\" value=\"";
+      // line 31
+      echo $this->getAttribute((isset($context['Blog']) ? $context['Blog'] : null), "Id", array());
+      echo "\" />
+        ";
+    }
+    // line 32
+    echo "
+    </form>
+</div>";
+  }
+
+}

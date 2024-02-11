@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="auth-content d-flex flex-column align-items-center justify-content-between">
+
+        <div class="d-flex align-items-center mt-3">
+            <img height="36px" src="./images/logotype.png" alt="">
+            <img class="mx-3" src="./images/Rectangle.png" alt="">
+            <h6 class="logo_text mb-0">Быстро <br>
+                и надежно</h6>
+        </div>
+        <div class="container">
+            <div class="mx-auto p-3" style="background-color: rgb(243,236,213);max-width: 416px;">
+                <p class="text-danger m-0">Ошибка. Введите данные для входа</p>
+            </div>
+            <form class="bg-body p-4 mx-auto" action="" style="max-width:416px">
+               
+                <h5 class="primary_title mt-2 mb-4">Вход в аккаунт</h5>
+                <div class="input-box form-floating my-3">
+                    <img class="img__before" src="./images/mail.png" alt="">
+                    <input class="ps-5 border-danger form-control" id="inputMail" type="text" placeholder="Электронная почта"
+                        style="background-color: #EFF5FF;">
+                        <label for="inputMail" class="text__hints" style="margin-left: calc(48px - 0.75rem);">Электронная почта</label>
+                </div>
+                <div class="input-box form-floating my-3">
+                    <img class="img__before" src="./images/pass.png" alt="">
+                    <input class="form-control border-danger ps-5" id="inputPass" type="password" placeholder="Пароль"
+                        style="background-color: #EFF5FF;">
+                        <label for="inputPass" class="text__hints" style="margin-left: calc(48px - 0.75rem);">Пароль</label>
+                    <img src="./images/Combined Shape.png" alt="">
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <a class="link__primary text-decoration-none" href="">Забыли пароль?</a>
+                    <button class="btn btn__warning py-3 px-4">Войти в аккаунт</button>
+                </div>
+
+            </form>
+            <div class="mt-4 text-center">
+                <span class="text-white">Нет аккаунта? <a class="text-white ms-3" href="">Регистрация</a></span>
+            </div>
+
+        </div>
+        <span class="mb-3" style="color:#fff;opacity: 0.7;font-size: 14px;">
+            © 2003–2019 «Первый VPS»
+        </span>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/guest/buse/!svn/ver/33/trunk/modules/FinancialReports
+END
+install.sql
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/guest/buse/!svn/ver/33/trunk/modules/FinancialReports/install.sql
+END
+finrep_handler.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/guest/buse/!svn/ver/33/trunk/modules/FinancialReports/finrep_handler.php
+END
+FinRep.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/guest/buse/!svn/ver/33/trunk/modules/FinancialReports/FinRep.php
+END

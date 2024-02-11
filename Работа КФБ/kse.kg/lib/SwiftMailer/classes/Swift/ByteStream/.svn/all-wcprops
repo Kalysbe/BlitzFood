@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/guest/buse/!svn/ver/208/trunk/lib/SwiftMailer/classes/Swift/ByteStream
+END
+AbstractFilterableInputStream.php
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/guest/buse/!svn/ver/208/trunk/lib/SwiftMailer/classes/Swift/ByteStream/AbstractFilterableInputStream.php
+END
+ArrayByteStream.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/guest/buse/!svn/ver/208/trunk/lib/SwiftMailer/classes/Swift/ByteStream/ArrayByteStream.php
+END
+FileByteStream.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/guest/buse/!svn/ver/208/trunk/lib/SwiftMailer/classes/Swift/ByteStream/FileByteStream.php
+END

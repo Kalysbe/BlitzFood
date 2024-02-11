@@ -1,0 +1,63 @@
+select '<FONT size=1  title=KSE Index>KSE</FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=indeks_i_kab.shtml target=_blank><img src=img/chart.gif alt=График border=0></a>' as N,
+       round(Ind,2) as ind, www.getdiff(indchng) as IndPicture,  www.formatchange(Indchng) as Indchng
+from (select t.ind, (ind/(select t2.ind from ts.capitalisation t2 where t2.date0=
+       (select max(t1.date0) as maxdate from ts.capitalisation t1 where t1.date0<t.date0)
+       )-1)*100 as indchng
+   from ts.capitalisation t
+   where t.date0=(select max(t2.date0) from ts.capitalisation t2)
+   order by  t.date0)
+
+union all
+
+select '<FONT size=1  title=RTS Index>RTSI</FONT>&nbsp;&nbsp;&nbsp;<a href=http://www.rts.ru target=_blank><img src=img/chart.gif alt=График border=0></a>' as N,
+       round(RTSI,2) as ind, www.getdiff(indchng) as IndPicture, www.formatchange(Indchng) as Indchng
+from (select t.RTSI, (RTSI/(select t2.RTSI from ls.indexes t2 where t2.date0=
+       (select max(t1.date0) as maxdate from ls.indexes t1 where t1.date0<t.date0)
+       )-1)*100 as indchng
+   from ls.indexes t
+   where t.date0=(select max(t2.date0) from ls.indexes t2)
+   order by  t.date0)
+
+union all
+
+select '<FONT size=1 title=Dow Jones Index>DJI</FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=http://www.nyse.com/about/listed/lcddata.html?ticker=DJI target=_blank><img src=img/chart.gif alt=График border=0></a>' as N,
+       round(DJI,2) as ind, www.getdiff(indchng) as IndPicture, www.formatchange(Indchng) as Indchng
+from (select t.DJI, (DJI/(select t2.DJI from ls.indexes t2 where t2.date0=
+       (select max(t1.date0) as maxdate from ls.indexes t1 where t1.date0<t.date0)
+       )-1)*100 as indchng
+   from ls.indexes t
+   where t.date0=(select max(t2.date0) from ls.indexes t2)
+   order by  t.date0)
+
+union all
+
+select '<FONT size=1  title=Sine and Pulse Index>SP500</FONT>&nbsp;<a href=http://www.nyse.com/about/listed/lcddata.html?ticker=SPX_I target=_blank><img src=img/chart.gif alt=График border=0></a>' as N,
+       round(S_P500,2) as ind, www.getdiff(indchng) as IndPicture, www.formatchange(Indchng) as Indchng
+from (select t.S_P500, (S_P500/(select t2.S_P500 from ls.indexes t2 where t2.date0=
+       (select max(t1.date0) as maxdate from ls.indexes t1 where t1.date0<t.date0)
+       )-1)*100 as indchng
+   from ls.indexes t
+   where t.date0=(select max(t2.date0) from ls.indexes t2)
+   order by  t.date0)
+
+union all
+
+select '<FONT size=1  title=Sine and Pulse Index>MICEX</FONT>&nbsp;<a href=http://beta.micex.ru/marketdata/indices/today alt=График border=0><img src=img/chart.gif alt=График border=0</a>' as N,
+       round(micex,2) as ind, www.getdiff(indchng) as IndPicture, www.formatchange(Indchng) as Indchng
+from (select t.micex, (micex/(select t2.micex from ls.indexes t2 where t2.date0=
+       (select max(t1.date0) as maxdate from ls.indexes t1 where t1.date0<t.date0)
+       )-1)*100 as indchng
+   from ls.indexes t
+   where t.date0=(select max(t2.date0) from ls.indexes t2)
+   order by  t.date0)
+
+union all
+
+select '<FONT size=1  title=Sine and Pulse Index>KASE</FONT>&nbsp;&nbsp;&nbsp;<a href=http://www.kase.kz/ alt=График border=0><img src=img/chart.gif alt=График border=0</a>' as N,
+       round(kase,2) as ind, www.getdiff(indchng) as IndPicture, www.formatchange(Indchng) as Indchng
+from (select t.kase, (kase/(select t2.kase from ls.indexes t2 where t2.date0=
+       (select max(t1.date0) as maxdate from ls.indexes t1 where t1.date0<t.date0)
+       )-1)*100 as indchng
+   from ls.indexes t
+   where t.date0=(select max(t2.date0) from ls.indexes t2)
+   order by  t.date0)

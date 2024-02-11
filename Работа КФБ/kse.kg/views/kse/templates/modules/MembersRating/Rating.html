@@ -1,0 +1,37 @@
+<h2>Рейтинг участников торгов ЗАО "КФБ" за {{ current_year }} год</h2>
+<br>
+<table width="100%" class="class1">
+    <tr>
+        <th>Наименование компании</th>
+        <th>Объем млн.сом</th>
+        <th>Кол-во сделок</th>
+		<th>Кол-во фин. инструментов</th>
+		<th>Кол-во рыночных сделок</th>
+		<th>Объем рыночных сделок, тыс. сом</th>
+		<th>Итоговый балл</th>
+    </tr>
+{% for company in rating %}
+    <tr>
+        <td>{{ company['name'] }}</td>
+        <td align="right">{{ company['volume'] }}</td>
+        <td align="right">{{ company['amount'] }}</td>
+		<td align="right">{{ company['count_fin_instr'] }}</td>
+		<td align="right">{{ company['count_market_deal'] }}</td>
+		<td align="right">{{ company['volume_market_deal'] }}</td>
+		<td align="right">{{ company['factor'] }}</td>
+    </tr>
+{% endfor %}
+</table>
+{% if current_year == 2014 %}
+<b> <font size=1>* пересчитано в связи с тем, что сделки по листинговым облигациям с 3 октября 2014 года являются партнерскими</b></font><br>
+{% endif %}
+
+<div class="results_view f_r"> Года
+{% for year in available_years %}
+/ <a href="{{ root }}/{{ lang_code }}/MembersRating/{{ year }}"{% if year == current_year %}
+
+        class="current"
+     {% endif %}>{{ year }}</a>
+
+{% endfor %}
+</div>

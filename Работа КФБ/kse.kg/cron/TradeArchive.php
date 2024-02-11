@@ -1,0 +1,110 @@
+<?php
+
+require_once("../config.inc.php");
+
+$link = mysqli_connect($_DB["HOST"], $_DB["USER"], $_DB["PASS"], $_DB["NAME"] );
+mysqli_query($link, "SET NAMES 'utf8'");
+
+$query = "select date1, sum(sTotal)/1000 as sTotal,
+sum(sVolume) as sVolume,
+sum(sMark) as sMark,
+sum(sRazm) as sRazm,
+sum(sSecond) as sSecond,
+sum(sList) as sList,
+sum(sUnList) as sUnList
+from
+
+        (select WWW.GETMONTH(ts.makedate(t.date0)) as date1,
+               sum(t.volume)/2 as sVolume,
+               sum(t.price/t.price)/2 as sMark,
+               sum(t.price*t.volume)/2 as sTotal,
+               max(nvl(r.total,0)) as sRazm,
+               sum(t.price*t.volume)/2-max(nvl(r.total,0)) as sSecond,
+               max(nvl(l.total,0)) as sList,
+               sum(t.price*t.volume)/2-max(nvl(l.total,0)) as sUnList
+         from sys.deal2 t,ls.srazm r,ls.slist l
+         where /*(t.date0 > 131664927)  and*/ t.date0=r.date0(+) and t.date0=l.date0(+)
+         group by t.date0)
+group by date1
+/*order by to_number(substr(date1,(instr(date1,'/')+1)))*65536 +
+to_number(substr(date1,1,instr(date1,'/')-1))*256*/";
+
+$conn = oci_connect($_DB["ORA_USER"], $_DB["ORA_PASS"], $_DB["ORA_CSTRING"], $_DB["ORA_CHARSET"]);
+if (!$conn) {
+    $e = oci_error();
+    trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
+}
+
+$stid = oci_parse($conn, $query);
+if (!$stid) {
+    $e = oci_error($conn);
+    trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
+}
+
+// Perform the logic of the query
+$r = oci_execute($stid);
+if (!$r) {
+    $e = oci_error($stid);
+    trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
+}
+
+function FormatNum($num)
+{
+	if (strlen($num) < 2)
+		return '0'.$num;
+	else return $num;
+}
+
+
+mysqli_query($link, "DELETE FROM `mod_trade_archive` WHERE 1");
+while ($row = oci_fetch_array($stid, OCI_ASSOC+OCI_RETURN_NULLS+OCI_RETURN_LOBS)) {
+    $buffer = array();
+    foreach ($row as $k => $item) {
+        if ($k == "STOTAL")
+        {
+            //$item = $item / 1000;
+            $item = round($item, 1);
+        }
+        else if ($k == "SVOLUME")
+        {
+            //$item = $item / 1000;
+            //$item = round($item, 1);
+        }
+        else if ($k == "SRAZM")
+        {
+
+            $item = $item / 1000;
+            $item = round($item, 1);
+
+        }
+        else if ($k == "SSECOND")
+        {
+            $item = $item / 1000;
+            $item = round($item, 1);
+        }
+        else if ($k == "SLIST")
+        {
+            $item = $item / 1000;
+            $item = round($item, 1);
+        }
+        else if ($k == "SUNLIST")
+        {
+            $item = $item / 1000;
+            $item = round($item, 1);
+        }
+        $buffer[$k] = str_replace(",", ".", $item);
+    }
+    $d = explode("/", $buffer["DATE1"]);
+    $sql = "INSERT INTO `mod_trade_archive` (`total_volume`,
+        `sec_amount`, `deals_amount`, `primary_deals`, `secondary_deals`,
+        `listing_trades`, `nonlisting_trades`, `month`, `year`) VALUES
+        ('" . $buffer["STOTAL"] . "', '" . $buffer["SVOLUME"] . "',
+        '" . $buffer["SMARK"] . "', '" . $buffer["SRAZM"] . "',
+        '" . $buffer["SSECOND"] . "', '" . $buffer["SLIST"] . "',
+        '" . $buffer["SUNLIST"] . "', '" . $d[0] . "', '" . $d[1] . "')";
+    mysqli_query($link, $sql);
+    echo "<pre>" . $sql . "</pre><hr />";
+}
+
+?>
+

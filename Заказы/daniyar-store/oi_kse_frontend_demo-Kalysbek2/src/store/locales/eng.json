@@ -1,0 +1,195 @@
+{
+    "loginButton": "Login",
+    "headerLocation":"Bishkek, st. Moscow, 172",
+    "navbarItems":[
+      {"name":"Home","link":"/"},
+      {"name":"Information Disclosure","link":"/openinformation"},
+      {"name":"Analytics","link":"/analytics"},
+      {"name":"Contacts","link":"/contacts"}
+    ],
+    "pageFooter": {
+        "labelLocation":"Address",
+        "footerLocation":"Bishkek, st. Moscow, 172",
+        "labelContacts":"Contacts",
+        "labelEmail":"Email",
+        "bottomFooterText":"All rights reserved © 2004-2022 Copying materials - only with written permission. License No. 37 NKRTSB dated November 30, 2000",
+        "footerLinks":[
+          {
+            "title":"About the Exchange",
+            "links":[
+              {"name":"General information"},
+              {"name":"Shareholders"},
+              {"name":"Board of Directors"}
+            ]
+          },
+          {
+            "title":"Normative base",
+            "links":[
+              {"name":"Exchange activity"},
+              {"name":"Depositary activities"}
+            ]
+          },
+          {
+            "title":"Trading statistics",
+            "links":[
+              {"name":"Results of the last trades"},
+              {"name":"Trade archive"},
+              {"name":"Index and capitalization"},
+              {"name":"Quotes"},
+              {"name":"Schedule of GS auctions"}
+            ]
+          },
+          {
+            "title":"Training Center",
+            "links":[
+              {"name":"General information"},
+              {"name":"Work plan for the year"}
+            ]
+          }
+        ]
+    },
+    "pageHome": {
+        "whoAreWeTitle":"Who are we ?",
+        "whoAreWeText":"The Information Disclosure Center of the Kyrgyz Stock Exchange (CIS) has been actively functioning since 2010, the main task is the prompt delivery of corporate information of public companies in the form of financial statements and information on material facts occurring in the course of financial and economic activities of companies disclosed in accordance with the legislation of the Kyrgyz Republic 'On securities market'.",
+        "whatWeDoTitle":"What we do ?",
+        "whatWeDoText":"The KSE Information Disclosure Center is a platform for publishing reports and material corporate information of companies engaged in transparent activities, for conveying important events to a wide range of people, including company owners, individual and institutional investors, as well as other financial market participants.",
+        "ourClientsTitle":"INFORMATION DISCLOSURE CENTER CJSC 'Kyrgyz Stock Exchange'",
+        "ourClientsText":"We are trusted by 150+ public companies 600+ financial reports per year Important corporate events of companies every day"
+    },
+    "pageOpenInfo": {
+        "title":"Company List",
+        "placeholderSearch":"Search (by code or company name)",
+        "tableLabel1":"Trade symbol",
+        "tableLabel2":"Company"
+    },
+    "pageAnalytics":{
+        "title":"Analytics"
+      },
+    "pageContacts": {
+        "ourContactTitle":"Connect with us",
+        "ourContact": [
+            {"id":0, "icon":"location_on","value":"Kyrgyzstan, Bishkek"},
+            {"id":1, "icon":"map","value":"st. Moscow 172 weekdays from 9-00 to 18-00"},
+            {"id":2, "icon":"settings","value":"Break: 12:00 - 13:00"},
+            {"id":3, "icon":"email","value":"office@kse.kg"},
+            {"id":4, "icon":"phone","value":"(0312) 31 15 01"}
+          ]
+    },
+    "pageAuthLayout": {
+        "navbarItems": [
+            {"name":"Home","link":"/"},
+            {"name":"Information Disclosure","link":"/openinformation"}
+        ]
+      },
+      "pageLogin": {
+        "labelAuthorization":"Authorization",
+        "labelLogin":"Login",
+        "labelPassword":"Password",
+        "errorAuthorization":"An authorization error has occurred!"
+      },
+      "pageDetailCompany": {
+        "firstLeader":"First leader",
+        "primaryActivity":"Primary activity",
+        "email":"Email",
+        "contacts":"Contacts",
+        "financialIndicators":"Financial indicators",
+        "financialIndicators1":"Financial indicators 1",
+        "financialIndicators2":"Financial indicators 2"
+      },
+      "pageDetailCompanyReport": {
+        "documents":"Documents",
+        "news":"News",
+        "dateDocument":"The date of recieving",
+        "nameDocument":"Document's name"
+      },
+      "pageDashboardLayout": {
+        "myDocumentsSB":"My documents",
+        "createReportSB":"Create report",
+        "cartSB":"Cart",
+        "legislationSB":"Legislation",
+        "manualSB":"Manual",
+        "manageAccountSB":"Users",
+        "slideEditingSB":"Slide editing"
+      },
+      "pageUserMenu": {
+        "mp":"MP",
+        "myProfile":"My profile",
+        "s":"S",
+        "settings":"Settings"
+      },
+      "pageReports": {
+        "title":"Reports",
+        "labelPlaceholder":"Search by name",
+        "labelCompany":"Company name",
+        "labelStatus":"Status",
+        "labelDate":"Date of dispatch / acceptance",
+        "labelType":"Document type",
+        "labelLink":"Link",
+        "labelSignature":"Signature"
+      },
+      "pageDocsTemList": {
+        "title":"Documents",
+        "labelNameCompany":"Document's name",
+        "selectButton":"Select",
+        "footerTable":["Document's name",""]
+    },
+    "pageCart": {
+        "title":"Cart",
+        "labelPlaceholder":"Search by name",
+        "labelCompany":"Company name",
+        "labelStatus":"Status",
+        "labelDate":"Date of dispatch / acceptance",
+        "labelType":"Document type",
+        "labelQuarter":"Quarter"
+    },
+    "pageLegislation": {
+        "title":"Regulations",
+        "files":[
+            {
+                "name": "Law of the Kyrgyz Republic On the Securities Market",
+                "link": "/files/lawofthekyrgyzrepubliconthesecuritiesmarket.pdf"
+              },
+              {
+                "name": "Law of the Kyrgyz Republic On Joint Stock Companies",
+                "link": "/files/lawofthekyrgyzrepubliconjointstockcompanies.pdf"
+              },
+              {
+                "name":
+                  "Regulations on the \b procedure for reporting (information) and disclosure of information by financial market entities",
+                "link":
+                  "/files/positionoforderofreportinginformationanddisclosure.pdf"
+              },
+              {
+                "name": "Violations against the procedure of the Securities Regulatory Authority",
+                "link": "/files/ViolationsAgainsttheOrderoftheSecuritiesMarketRegulatoryAuthority.pdf"
+              }
+        ]
+    },
+    "pageManual": {
+        "title":"Practical guidance on the use of the electronic system of CJSC \"Kyrgyz Stock Exchange\"",
+        "introductory":"This guide contains a practical algorithm for using the electronic system of the Kyrgyz Stock Exchange CJSC (hereinafter referred to as the “stock exchange”) for remote transmission of information subject to disclosure in accordance with the Law of the Kyrgyz Republic “On the Securities Market”, the Regulations “On the Procedure for Submitting Reporting (Information) and Disclosing Information financial market entities” and the Information Disclosure Agreement. In order to effectively use the electronic system, the issuer is recommended to be guided by the following points in the process of work, which can be supplemented or changed in case of system upgrade.",
+        "loginTitle":"Login to your personal account",
+        "loginText":"To work in the electronic system, the issuer must follow the link oi.kse.kg. After loading the electronic system, an authorization form will appear, where the issuer needs to fill in the Login and Password fields issued by the stock exchange to enter the personal account. After entering your personal account, a working menu will appear on the left. Before starting work, you must change the default Password. The issuer needs to check the data in \"My profile\", if necessary, make the appropriate changes and \"Update\".",
+        "elecSignatureTitle":"Electronic digital signature (EDS)",
+        "elecSignatureText":{
+          "1":"To use a digital signature when sending information to the stock exchange, the issuer must:",
+          "2":"1. In the \"My Profile\" tab, enter the TIN of the legal entity in the \"Company TIN\" field;",
+          "3":"2. In the \"Settings\" tab, enter in the \"PIN\" field the TIN of the authorized person for signing reports and information, and then mark it with the \"Legal Entity \" label."
+          },
+          "createReportTitle":"CREATION OF THE REPORT AND MATERIAL FACTS",
+          "createReportText":{
+            "1":"Creation of a quarterly and annual report: In the working menu, the “Create report” tab - Select the form Appendix 2-1 - Select the submission period (Quarterly or Annual report) - Fill in all the items and “Save”.",
+            "2":"Creation of material facts: In the working menu, the \"Create report\" tab - Select the appropriate form of a material fact from the list - Fill in all the items and \"Save\"."
+          },
+          "sendingDocumentsTitle":"Sending documents to the stock exchange",
+          "sendingDocumentsText":{
+            "1":"Sending and storing documents is carried out through the \"My Documents\" tab. If the document is filled in correctly, the “Submit” icon should appear in the corresponding line, if you need to change the data, click on the “Edit” icon. Before sending, you must \nSign\n the EDS document by an authorized employee of the issuer, then send it. After sending the document, the status will change to \"Cancel sending\", which means that the document has been sent to the stock exchange server for placement.",
+            "2":"Note: making additions or changes to the document is possible before confirmation by the stock exchange, for this you need to click on \"Cancel sending\", enter the necessary information, click \"Update\" and \"Send\" the corrected document."
+          },
+          "gettingConfirmTitle":"Obtaining confirmation of information disclosure",
+          "gettingConfirmText":{
+            "1":"After the report is accepted, the stock exchange sends the issuer a confirmation in the form of a \"Receipt\" with the EDS of an authorized employee of the stock exchange. To receive a receipt, the issuer needs to refresh the page in the electronic system by pressing the F5 key to change the status \"Cancel sending\" to \"Receipt\", and then print the sent report and receipt for inclusion in the report of the State Financial Supervision Authority.",
+            "2":"Note: After submitting a report or material fact, the issuer can check the publication on the stock exchange website by clicking on the link."
+          }
+      }
+  }

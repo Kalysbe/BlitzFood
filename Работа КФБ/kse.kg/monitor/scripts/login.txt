@@ -1,0 +1,15 @@
+  htm="<table border="0" cellspacing="0" cellpadding="2" ><form name="web" method="post"   action="/scripts/FBISAPI.dll?sql=LoginFind.sql&exec=InsServ.txt">"
+
+  htm="<tr>"
+  htm="<td colspan=3 align=center><font size=1 face="Verdana" color=#5a71a2>Авторизация</font></td>"
+  htm="</tr>"  	
+  htm="<tr>"
+  htm="<td align=center><input type="text" name="LOGIN" value="" maxlength="15"   size="4" style='width: 50; height: 20; background-color: #F2F2F9; font-size: 9pt; border: 1 solid #CCCCCC' /></td>"
+  
+  htm="<td align=left><input type="password" name="PASSWORD" value="" maxlength="15"   size="4" style='width: 35; height: 20; background-color: #F2F2F9; font-size: 9pt; border: 1 solid #CCCCCC' /></td>"
+  
+  htm="<td align=left><input type="submit" value="Ok" style='width: 40; height: 20;   background:#F2F2F9; color:#5a71a2; border: 2 solid #CCCCCC; font: 11px Arial;' /></td>"
+  
+  htm="</td></tr>"
+  
+  htm="</form></table>"

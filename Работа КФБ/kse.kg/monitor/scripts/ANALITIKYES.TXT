@@ -1,0 +1,3 @@
+cfg="HTMMaxCycle=1" 
+htm="<p>[FBISAPI:NAME]<br>[FBISAPI:D]<br>[FBISAPI:ARTGROUP]<BR><BR>[FBISAPI:ARTICLE]<BR>[FBISAPI:VALUE1]</p>"
+sql=

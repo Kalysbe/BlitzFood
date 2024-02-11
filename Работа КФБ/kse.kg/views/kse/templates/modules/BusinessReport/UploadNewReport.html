@@ -1,0 +1,26 @@
+
+<div style="float: right; width: 45%; border: 1px solid #CCCCCC; padding: 5px;" class="ui-corner-all">
+    <form action="" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="CompanyId" value="{{ company_info['id'] }}" />
+    <h3>Загрузить новый отчет</h3>
+    <label>
+        Тип отчета:
+    </label>
+    <select name="report_type">
+        <!--<option value="bulletin">Бюллетень</option>-->
+        <option value="quarterly">Ежеквартальный отчёт</option>
+        <option value="annual">Годовой отчёт</option>
+        <option value="news">Сообщения</option>
+        <option value="analytics">Аналитика</option>
+    </select>
+    <br />
+    <label>Файл:</label><p><input type="file" name="report_file" /></p>
+    <label>Дата отчета:</label>
+    <p><input type="textarea" name="report_date" value="" id="report_date" style="border: 1px solid #CCCCCC;"/></p>
+    <script type="text/javascript">
+        $("#report_date").datepicker({ dateFormat: 'yy-mm-dd' });
+    </script><br />
+    <center><input type="submit" name="do_upload_report" value="Загрузить" /></center><br /><br />
+    </form>
+</div>
+<br /><br />

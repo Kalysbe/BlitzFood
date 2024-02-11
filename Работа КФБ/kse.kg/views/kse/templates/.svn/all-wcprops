@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/guest/buse/!svn/ver/214/trunk/views/kse/templates
+END
+register_page.html
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/guest/buse/!svn/ver/9/trunk/views/kse/templates/register_page.html
+END
+edit_page.html
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/guest/buse/!svn/ver/100/trunk/views/kse/templates/edit_page.html
+END
+main_old.html
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/guest/buse/!svn/ver/9/trunk/views/kse/templates/main_old.html
+END
+page_rename.html
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/guest/buse/!svn/ver/9/trunk/views/kse/templates/page_rename.html
+END
+inner_attachment.html
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/guest/buse/!svn/ver/165/trunk/views/kse/templates/inner_attachment.html
+END
+login_page.html
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/guest/buse/!svn/ver/9/trunk/views/kse/templates/login_page.html
+END
+main.html
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/guest/buse/!svn/ver/168/trunk/views/kse/templates/main.html
+END
+menu.html
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/guest/buse/!svn/ver/9/trunk/views/kse/templates/menu.html
+END
+new_page.html
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/guest/buse/!svn/ver/9/trunk/views/kse/templates/new_page.html
+END
+topmenu.html
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/guest/buse/!svn/ver/183/trunk/views/kse/templates/topmenu.html
+END
+attachment.html
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/guest/buse/!svn/ver/9/trunk/views/kse/templates/attachment.html
+END
+common_head.html
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/guest/buse/!svn/ver/74/trunk/views/kse/templates/common_head.html
+END
+form.login.html
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/guest/buse/!svn/ver/9/trunk/views/kse/templates/form.login.html
+END
+inner.html
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/guest/buse/!svn/ver/165/trunk/views/kse/templates/inner.html
+END

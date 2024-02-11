@@ -1,0 +1,215 @@
+<?php
+
+function Tradestat_getModuleBuffer() {
+
+<<<<<<< .mine
+    $query = "select * from
+(
+select tc.shortname as name, tc.namerus,ts.makedate(tc.zakdate),(case when ts.makedate(tc.zakdate) like '-' then '' else concat(', äàòà çàêðûòèÿ ',to_char(ts.makedate(tc.zakdate))) end) as dt,
+       (select (max(ts.makeb(www.dot(round(price,2)), direct)))
+       from ts.orders t where t.ownid=tc.ords_id) as b,
+       (select sum(volume)
+       from ts.orders t where t.ownid=tc.ords_id
+       and t.price=(select max(ts.makeb(price, direct)) from ts.orders t where t.ownid=tc.ords_id)
+       ) as bv,
+       (select (min(ts.makes(www.dot(round(price,2)), direct)))
+       from ts.orders t where t.ownid=tc.ords_id) as s,
+       (select sum(volrest)
+       from ts.orders t where t.ownid=tc.ords_id
+       and t.price=(select min(ts.makes(price, direct)) from ts.orders t where t.ownid=tc.ords_id)
+       ) as sv
+  from ts.ts_currinstrument_arcts tc
+ )
+ where b is not null or s is not null";
+/*
+    $conn = oci_connect($_DB["ORA_USER"], $_DB["ORA_PASS"], $_DB["ORA_CSTRING"], $_DB["ORA_CHARSET"]);
+    if (!$conn) {
+        $e = oci_error();
+        trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
+    }
+=======
+    $rows = mysql_num_rows($result);
+
+    if ($rows == 0) {
+        return "
+            <h2>Итоги торгов</h2>
+            <div class=\"notice ui-corner-all\"><h3>Информация временно недоступна</h3></div>
+        ";
+    }
+
+    $obj = mysql_fetch_object($result);
+    $buffer = '
+    <script type="text/javascript">
+        function ShowTradestatTable() {
+            $("#TradeStatTable").css("display", "block");
+            $("#TradeStatChart").css("display", "none");
+        }
+
+        function ShowTradestatChart() {
+            $("#TradeStatChart").css("display", "block");
+            $("#TradeStatTable").css("display", "none");
+        }
+    </script>';
+
+    $buffer.= "
+    <h2>Итоги торгов " . $obj->day . "." . $obj->month . "." . $obj->year . "</h2>
+    <div id=\"TradeStatTable\">
+    <table class=\"class1\" width=\"100%\">
+        <tr>
+            <th width=\"*\"></th>
+            <th width=\"23%\">млн.сом</th>
+            <th width=\"23%\">%</th>
+            <th width=\"5%\"></th>
+        </tr>
+";
+>>>>>>> .r66
+
+<<<<<<< .mine
+    $stid = oci_parse($conn, $query);
+    if (!$stid) {
+        $e = oci_error($conn);
+        trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
+    }
+=======
+        // Images for changed values
+        $tvc = "pixel.gif";
+        $primary = "pixel.gif";
+        $secondary = "pixel.gif";
+        $listing = "pixel.gif";
+        $nonlisting = "pixel.gif";
+
+        if ($obj->total_volume_change > 0)
+            $tvc = "arrow_green.jpg";
+        elseif ($obj->total_volume_change < 0)
+            $tvc = "arrow_red.jpg";
+        if ($obj->primary_change > 0)
+            $primary = "arrow_green.jpg";
+        elseif ($obj->primary_change < 0)
+            $primary = "arrow_red.jpg";
+        else
+            $primary = "pixel.gif";
+        if ($obj->secondary_change > 0)
+            $secondary = "arrow_green.jpg";
+        elseif ($obj->secondary_change < 0)
+            $secondary = "arrow_red.jpg";
+        if ($obj->listing_change > 0)
+            $listing = "arrow_green.jpg";
+        elseif ($obj->listing_change < 0)
+            $listing = "arrow_red.jpg";
+        if ($obj->non_listing_change > 0)
+            $nonlisting = "arrow_green.jpg";
+        elseif ($obj->non_listing_change < 0)
+            $nonlisting = "arrow_red.jpg";
+>>>>>>> .r66
+
+<<<<<<< .mine
+    // Perform the logic of the query
+    $r = oci_execute($stid);
+    if (!$r) {
+        $e = oci_error($stid);
+        trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
+    }
+=======
+        $buffer.= "
+        <tr>
+            <td>Объем торгов</td>
+            <td class=\"center\">" . $obj->total_volume . "</td>
+            <td class=\"center\">" . $obj->total_volume_percent . "</td>
+            <td class=\"center\"><img src=\"/views/kse/images/" . $tvc . "\" /></td>
+        </tr>
+        <tr>
+            <td>Первичный</td>
+            <td class=\"center\">" . $obj->primary . "</td>
+            <td class=\"center\">" . $obj->primary_percent . "</td>
+            <td class=\"center\"><img src=\"/views/kse/images/" . $primary . "\" /></td>
+        </tr>
+        <tr>
+            <td>Вторичный</td>
+            <td class=\"center\">" . $obj->secondary . "</td>
+            <td class=\"center\">" . $obj->secondary . "</td>
+            <td class=\"center\"><img src=\"/views/kse/images/" . $secondary . "\" /></td>
+        </tr>
+        <tr>
+            <td>Листинг</td>
+            <td class=\"center\">" . $obj->listing . "</td>
+            <td class=\"center\">" . $obj->listing . "</td>
+            <td class=\"center\"><img src=\"/views/kse/images/" . $listing . "\" /></td>
+        </tr>
+        <tr>
+            <td>Нелистинг</td>
+            <td class=\"center\">" . $obj->non_listing . "</td>
+            <td class=\"center\">" . $obj->non_listing . "</td>
+            <td class=\"center\"><img src=\"/views/kse/images/" . $nonlisting . "\" /></td>
+        </tr>
+        ";
+>>>>>>> .r66
+
+<<<<<<< .mine
+    function FormatNum($num)
+    {
+            if (strlen($num) < 2)
+                    return '0'.$num;
+            else return $num;
+    }
+
+    mysql_query("DELETE FROM `mod_tradestat_quatations` WHERE 1");
+    while ($row = oci_fetch_array($stid, OCI_ASSOC+OCI_RETURN_NULLS+OCI_RETURN_LOBS)) {
+        $buffer = array();
+        foreach ($row as $k => $item) {
+            echo $k . "====>" . $item . "<br />";
+            $buffer[$k] = mb_convert_encoding($item, "UTF-8", "Windows-1251");
+        }
+        $sql = "INSERT INTO `mod_tradestat_quatations` (`symbol`, `name`, `buy_amount`,
+            `buy_price`, `sell_amount`, `sell_price`) VALUES ('" .
+            $buffer["NAME"] . "', '" . $buffer["NAMERUS"] . "',
+            '" . $buffer["BV"] . "', '" . $buffer["B"] . "', '" .
+            $buffer["SV"] . "', '" . $buffer["S"] . "')";
+        mysql_query($sql);
+    }
+*/
+
+    return $query;
+=======
+    $buffer.= "</table>
+    </div>
+    ";
+
+    require_once($_SERVER["DOCUMENT_ROOT"] . "/lib/FusionCharts/Includes/FusionCharts_Gen.php");
+
+    $FC = new FusionCharts("Column3D","440","250");
+
+    # Setting Relative Path of chart swf file.
+    $FC->setSwfPath(MainClass::getSingleton()->getSiteVar("%ROOT%") . "/lib/FusionCharts/Charts/");
+
+    # Store chart attributes in a variable
+    $strParam="decimalPrecision=0;formatNumberScale=0;rotateNames=1;";
+
+    # Set chart attributes
+    $FC->setChartParams($strParam);
+
+    
+    $FC->addChartData($obj->primary, "name=Первичный");
+    $FC->addChartData($obj->secondary, "name=Вторичный");
+    $FC->addChartData($obj->listing, "name=Листинг");
+    $FC->addChartData($obj->non_listing, "name=Нелистинг");
+    
+    
+
+    # Render chart
+    $buffer.= "<div id=\"TradeStatChart\" style=\"display: none\">";
+    $buffer.= $FC->renderChart(false, false);
+    $buffer.= "</div>";
+
+    $buffer.= "
+        <p>
+	<!--<a class=\"bullet_link f_l\" href=\"#\">Архив торгов</a>&nbsp;--></p>
+        <div class=\"results_view f_r\">
+	<a class=\"current\" href=\"#\" onClick=\"ShowTradestatTable()\">Таблица</a> /
+        <a href=\"#\" onClick=\"ShowTradestatChart()\"> График</a></div>
+    ";
+   
+    return $buffer;
+>>>>>>> .r66
+}
+
+?>

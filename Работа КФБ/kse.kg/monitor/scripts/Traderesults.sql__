@@ -1,0 +1,16 @@
+select ts.makedate(date0) as date1, sVolume, www.GETDIFF(VolCng) as VolPicture, VolCng, smark,
+      to_char(sTotal,'fm999G999G990D0000', 'nls_numeric_characters='', ''''') as sTotal, www.GETDIFF(TotalCng) as TotalPicture, to_char(TotalCng,'fm999G999G990D00', 'nls_numeric_characters='', ''''') as TotalCng,
+       to_char(sRazm,'fm999G999G990D0000', 'nls_numeric_characters='', ''''') as sRazm, www.GETDIFF(RazmCng) as RazmPicture, to_char(RazmCng,'fm999G999G990D00', 'nls_numeric_characters='', ''''') as RazmCng,
+       to_char(sSecond,'fm999G999G990D0000', 'nls_numeric_characters='', ''''') as sSecond, www.GETDIFF(SecondCng) as SecondPicture, to_char(SecondCng,'fm999G999G990D00', 'nls_numeric_characters='', ''''') as SecondCng,
+       to_char(sList,'fm999G999G990D0000', 'nls_numeric_characters='', ''''') as sList, www.GETDIFF(ListCng) as ListPicture, to_char(ListCng,'fm999G999G990D00', 'nls_numeric_characters='', ''''') as ListCng,
+       to_char(sUnList,'fm999G999G990D0000', 'nls_numeric_characters='', ''''') as sUnList, www.GETDIFF(UnListCng) as UnListPicture, to_char(UnListCng,'fm999G999G990D00', 'nls_numeric_characters='', ''''') as UnListCng
+from (select date0, round(sum(t.volume)/2000000,1) as sVolume, round(www.prevvolume(t.date0),1) as VolCng,
+       sum(t.mark)/2 as sMark,
+       round(sum(t.total)/2000000,3) as sTotal, round(www.prevtotal(t.date0),1) as TotalCng,
+       round(nvl(www.srazm(t.date0),0)/1000000,3) as sRazm, round(www.PREVRAZM(t.date0),1) as RazmCng,
+       round(sum(t.total)/2000000-nvl(www.srazm(t.date0),0)/1000000,3) as sSecond, round(www.prevsecond(t.date0),1) as SecondCng,
+       round(nvl(www.slist(t.date0),0)/1000000,3) as sList, round(www.prevlist(t.date0),1) as ListCng,
+       round(sum(t.total)/2000000-nvl(www.slist(t.date0),0)/1000000,3) as sUnList, round(www.prevunlist(t.date0),1) as UnListCng
+     from ts.f1a_q1 t
+     where t.date0=(select max(t1.date0) from ts.f1a_q1 t1)
+     group by t.date0);

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/guest/buse/!svn/ver/213/trunk/modules/IndexAndCapitalization
+END
+install.sql
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/guest/buse/!svn/ver/43/trunk/modules/IndexAndCapitalization/install.sql
+END
+IndexAndCapitalization.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/guest/buse/!svn/ver/213/trunk/modules/IndexAndCapitalization/IndexAndCapitalization.php
+END

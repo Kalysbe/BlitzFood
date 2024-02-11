@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/guest/buse/!svn/ver/58/trunk/handlers
+END
+logout.php
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/guest/buse/!svn/ver/2/trunk/handlers/logout.php
+END
+editpage.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/guest/buse/!svn/ver/3/trunk/handlers/editpage.php
+END
+register.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/guest/buse/!svn/ver/4/trunk/handlers/register.php
+END
+renamepage.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/guest/buse/!svn/ver/4/trunk/handlers/renamepage.php
+END
+upload.php
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/guest/buse/!svn/ver/5/trunk/handlers/upload.php
+END
+newpage.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/guest/buse/!svn/ver/58/trunk/handlers/newpage.php
+END
+login.php
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/guest/buse/!svn/ver/2/trunk/handlers/login.php
+END

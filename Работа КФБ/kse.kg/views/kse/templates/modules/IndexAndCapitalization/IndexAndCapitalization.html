@@ -1,0 +1,160 @@
+﻿<link rel="stylesheet" type="text/css" href="https://www.kse.kg/views/kse/styles/chart.css">
+<script src="https://www.kse.kg/views/kse/js/chart.js"></script>
+<script src="https://www.kse.kg/views/kse/js/chart_1.js"></script>
+<style type="text/css">
+    .amcharts-chart-div a {
+        display: none!important;
+    }
+</style>
+<h2 style="float: left;">{{ lang['indexcapitalization'] }}</h2>
+
+<div id="DatePicker" style="width: 300px; float: right; margin: 0px; text-align: right;">
+    <h3>{{ lang['{ForPeriod}'] }}</h3>
+    <form action="" method="POST">
+        {{ lang['{PeriodFrom}'] }}: <input type="text" name="IndexDateFrom" id="IndexDateFrom" value="" /><br /> {{ lang['{PeriodTo}'] }}: <input type="text" name="IndexDateTo" id="IndexDateTo" value="" /><br />
+        <input type="submit" name="doByDate" value="Показать" />
+    </form>
+    <script type="text/javascript">
+        $("#IndexDateFrom").datepicker({
+            dateFormat: 'yy-mm-dd'
+        });
+        $("#IndexDateTo").datepicker({
+            dateFormat: 'yy-mm-dd'
+        });
+        $("input:submit").button();
+    </script>
+</div>
+
+<br /><br />
+<table width="400px" class="class1" style="margin-top: 50px; margin-bottom: 50px;">
+    <tr>
+        <th class="date_cap">{{ lang['indexon'] }} {{IndexDate}}</th>
+        <th>&nbsp;</th>
+    </tr>
+    <tr class='index'>
+        <td>{{ lang['{index}'] }}</td>
+        <td>{{ IndexValue }}</td>
+    </tr>
+    <tr class="capitalization">
+        <td>{{ lang['{capitalizationMlnsom}'] }}</td>
+        <td>{{ CapitalizationValue }}</td>
+    </tr>
+</table>
+<div id="IndexChart" style="height:300px; width: 600px"></div>
+<div id="CapitalizationChart">
+    {{ CapitalizationChart }}
+</div>
+{#
+<br /><br />
+<table width="400px" class="class1" style="margin-top: 50px; margin-bottom: 50px;">
+    <tr>
+        <th>Индекс на {{IndexDate}}</th>
+        <th>&nbsp;</th>
+    </tr>
+    <tr>
+        <td>Индекс</td>
+        <td>{{ IndexValue }}</td>
+    </tr>
+    <tr>
+        <td>Капитализация (млн.сом)</td>
+        <td>{{ IndexCapitalization }}</td>
+    </tr>
+</table>
+
+<div id="IndexChart" style="height:300px; width: 600px"></div>
+<div id="CapitalizationChart">
+    {{ CapitalizationChart }}
+</div>#}
+
+<script type="text/javascript">
+    var chartData = [
+    	{% for IndexChart in IndexChart %} {
+            "date": {{ IndexChart["x"] }},
+            "latitude": {{ IndexChart["y"] }},
+            "distance": {{ IndexChart["y"] }}
+        },
+        {% endfor %}
+
+    ]; // График постороенный за месяц (индекс)
+
+    var chart = AmCharts.makeChart("IndexChart", {
+        type: "serial",
+        dataDateFormat: "YYYY-MM-DD",
+        dataProvider: chartData,
+
+        addClassNames: true,
+        startDuration: 1,
+        color: "#909090",
+        marginLeft: 0,
+
+        categoryField: "date",
+        categoryAxis: {
+            parseDates: true,
+            minPeriod: "DD",
+            autoGridCount: false,
+            gridCount: 50,
+            gridAlpha: 0.1,
+            dateFormats: [{
+                period: 'DD',
+                format: 'DD'
+            }, {
+                period: 'WW',
+                format: 'MMM DD'
+            }, {
+                period: 'MM',
+                format: 'MMM'
+            }, {
+                period: 'YYYY',
+                format: 'YYYY'
+            }]
+        },
+
+        valueAxes: [{
+            id: "a1",
+            title: "Индекс",
+            gridAlpha: 0,
+            axisAlpha: 0
+        }, {
+            id: "a2",
+            position: "right",
+            gridAlpha: 0,
+            axisAlpha: 0,
+            labelsEnabled: false
+        }],
+        graphs: [{
+            id: "g1",
+            valueField: "distance",
+            title: "distance",
+            valueAxis: "a1",
+            lineColor: "#fff",
+            bulletColor: "#fff",
+            bulletBorderColor: "#ff",
+            alphaField: "alpha"
+        }, {
+            id: "g2",
+            valueField: "latitude",
+            classNameField: "bulletClass",
+            title: "latitude/city",
+            type: "line",
+            valueAxis: "a2",
+            lineColor: "#4AA4E6",
+            lineThickness: 1,
+            bullet: "round",
+            bulletBorderColor: "#263138",
+            bulletBorderAlpha: 1,
+            bulletBorderThickness: 2,
+            bulletColor: "#263138",
+            labelPosition: "right",
+            balloonText: "Индекс:[[value]]",
+            showBalloon: true,
+            animationPlayed: true
+        }],
+
+        chartCursor: {
+            zoomable: false,
+            categoryBalloonDateFormat: "DD-MM-YYYY",
+            cursorAlpha: 0,
+            valueBalloonsEnabled: false
+        }
+    }); // Месяц
+</script>

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/guest/buse/!svn/ver/106/trunk/modules/Currency
+END
+install.sql
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/guest/buse/!svn/ver/27/trunk/modules/Currency/install.sql
+END
+currency_handler.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/guest/buse/!svn/ver/106/trunk/modules/Currency/currency_handler.php
+END

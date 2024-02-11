@@ -1,0 +1,85 @@
+<html>
+
+<head>
+  <title></title>
+</head>
+<body>
+<?php
+$page_k=@file_get_contents('http://www.kase.kz/');
+$page_r=@file_get_contents('http://stock.rbc.ru/demo/rusindex.0/intraday/index.rus.shtml');
+$page_r=@file_get_contents('http://stock.rbc.ru/demo/index.0/intraday/index.rus.shtml');
+//$page_w
+if ($page_k==FALSE or $page_r==FALSE){
+     echo "ERROR ERROR";
+}
+else
+{
+     $page_k = strstr($page_k,'Индекс KASE</a></td><td><span title="">');
+     $table_start_k =strpos($page_k, '<span title="">');
+     $table_end_k  = strpos($page_k, '</span></td><td>') ;
+     $str_k=substr($page_k, $table_start_k, $table_end_k - $table_start_k);
+
+     $page_r = strstr($page_r,'>ММВБ Индекс ММВБ</A>');
+     $table_start = strpos($page_r, '>ММВБ Индекс ММВБ</A>');
+     $table_end  = strpos($page_r, 'RTS2</A>') ;
+     $str_r=substr($page_r, $table_start, $table_end - $table_start);
+
+     $page_w = strstr($page_w,'Dow Jones 30 Industrials</TD>');
+     $table_start_w = strpos($page_w, 'Dow Jones 30 Industrials</TD>');
+     $table_end_w  = strpos($page_w, 'China Shanghai Comp</TD>') ;
+     $str_w=substr($page_w, $table_start_w, $table_end_w - $table_start_w);
+
+
+     preg_match_all("|>ММВБ Индекс ММВБ</A></TD>[\s]<TD class=[A-Za-z]+>([^<]+)</TD>|is",$str_r,$micex);
+     preg_match_all("|РТС Индекс РТС</A></TD>[\s]<TD class=[A-Za-z]+>([^<]+)</td>|is",$str_r,$rts);
+     preg_match_all("|Dow Jones 30 Industrials</TD>[\s]<TD class=[A-Za-z]+>([^<]+)</td>|is",$str_w,$dji);
+     preg_match_all("|SnP 500 Index</TD>[\s]<TD class=[A-Za-z]+>([^<]+)</td>|is",$str_w,$sp);
+     //preg_match_all("|(?<=>)(\d*\.\d*)(?=<\/TD>)|is",$str_k,$kase);
+     $kase=str_replace(' ' ,'',$str_k);
+     $kase=str_replace(',' ,'.',$kase);
+
+     echo "RTS ".$rts[1][0];
+     echo "<br>";
+     echo "DJ_Ind ".$dji[1][0];
+     echo "<br>";
+     echo "S&amp;P ".$sp[1][0];
+     echo "<br>";
+     echo "MICEX ".$micex[1][0];
+     echo "<br>";
+     echo "Kase ".$kase;
+     
+}
+/*
+// Ссылка на XML-файл
+  $url = "http://www.cbr.ru/scripts/XML_daily.asp?date_req=".date("d/m/Y");
+  // Загружаем файл
+  $content = file_get_contents($url);
+  // Регулярное выражение
+  $pattern = "|<valute id=\\"([^"]+)\\">[s]*<NumCode>([^<]+)</NumCode>[s]*<CharCode>([^<]+)</CharCode>[s]*<Nominal>([^<]+)</Nominal>[s]*<Name>([^<]+)</Name>[s]*<Value>([^<]+)</Value>[s]*</Valute>|is";
+  preg_match_all($pattern,$content,$out);
+  echo "<table border=1>";
+  echo "<tr>
+          <td>ID</td>
+          <td>Числовой код</td>
+          <td>Символьный код</td>
+          <td>Номинал</td>
+          <td>Название</td>
+          <td>Курс</td>
+        </tr>";
+  for($i = 0; $i < count($out[1]); $i++)
+  {
+    echo "<tr>
+            <td>".$out[1][$i]."</td>
+            <td>".$out[2][$i]."</td>
+            <td>".$out[3][$i]."</td>
+            <td>".$out[4][$i]."</td>
+            <td>".$out[5][$i]."</td>
+            <td>".$out[6][$i]."</td>
+          </tr>";
+  }
+  echo "</table>";
+?>
+*/
+?>
+</body>
+</html>

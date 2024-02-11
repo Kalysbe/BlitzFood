@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/guest/buse/!svn/ver/81/trunk/modules/Scroller
+END
+install.sql
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/guest/buse/!svn/ver/74/trunk/modules/Scroller/install.sql
+END
+scroller_handler.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/guest/buse/!svn/ver/81/trunk/modules/Scroller/scroller_handler.php
+END
+Scroller.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/guest/buse/!svn/ver/74/trunk/modules/Scroller/Scroller.php
+END

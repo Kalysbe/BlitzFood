@@ -1,0 +1,35 @@
+<h2 class="title">Результат поиска</h2>
+<ul>
+<h3>Раскрытие информации</h3>
+{% for Searches in Search %}
+	<li><a href="http://www.kse.kg/ru/PublicInfo/{{ Searches["brep_company_name"] }}">{{ Searches["title"] }}</a></li>
+{% endfor %}
+</ul>
+
+{% if ListingList != null %}
+	<h3>Листинг</h3>
+	{% for Listing in ListingList %}
+		<li><a href="{{Listing[0]}}">{{Listing[1]}}</a></li>
+	{% endfor %}
+{% endif %}
+
+
+<h3>Новости сайта</h3>
+<ul>
+{% for NewSearch in NewSearch %}
+	{% if NewSearch["blogentry_id"] != null %}
+		<li>{{ NewSearch["public_date"] }} <a href="http://www.kse.kg/ru/RussianAllNewsBlog/{{ NewSearch["blogentry_id"] }}"> {{ NewSearch["title"] }}</a></li>
+	{% endif %}
+{% endfor %}
+</ul>
+
+<br /><br />
+<div>{{ lang['{TotalPages}'] }}: {{Pages}}</div>
+{% for Page in PagesList %}
+    {% if CurrentPage == Page %}
+    <b>{{ Page }}</b>
+    {% else %}
+    <a href="{{ root }}/{{ lang_code }}/Search/search={{ word }}&Page={{ each }}" class="page_link" style="margin: 5px;"> {{ Page }}</a>
+    {% endif %}
+{% endfor %}
+<!-- /Search --> 

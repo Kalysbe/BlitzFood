@@ -1,0 +1,2 @@
+<h3>{{ EntryTitle }}</h3>
+<p>{{ EntryText }}</p>

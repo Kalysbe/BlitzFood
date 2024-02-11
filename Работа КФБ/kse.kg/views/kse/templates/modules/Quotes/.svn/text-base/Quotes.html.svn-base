@@ -1,0 +1,29 @@
+<table class="class1" width="100%">
+    <tr>
+        <th>Торговый символ</th>
+        <th>Наименование</th>
+        <th>Продажа: кол-во</th>
+        <th>Продажа: цена</th>
+        <th>Покупка: кол-во</th>
+        <th>Покупка: цена</th>
+    </tr>
+    {% for Quote in Quotes %}
+    <tr>
+        <td>{{ Quote["short_name"] }}</td>
+        <td>{{ Quote["full_name"] }}</td>
+        <td class="center">{{ Quote["sell_amount"] }}</td>
+        <td class="center">{{ Quote["sell_price"] }}</td>
+        <td class="center">{{ Quote["buy_amount"] }}</td>
+        <td class="center">{{ Quote["buy_price"] }}</td>
+    </tr>
+    {% else %}
+    <tr>
+        <td class="center">-</td>
+        <td class="center">-</td>
+        <td class="center">-</td>
+        <td class="center">-</td>
+        <td class="center">-</td>
+        <td class="center">-</td>
+    </tr>
+    {% endfor %}
+</table>

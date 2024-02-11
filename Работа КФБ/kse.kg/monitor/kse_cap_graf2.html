@@ -1,0 +1,70 @@
+   <html>
+      <body>
+         <h1>ApexCharts Demo with FusionExport</h1>
+         <div id="chart"></div>
+         <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+         <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+         <script src="xmltojson.js"></script>
+
+         <script>
+
+            var options = {
+               series: [{
+                  name: 'series1',
+                  data: []
+               }],
+               noData: {
+               text: 'Загрузка...',
+               align: 'center',
+               verticalAlign: 'middle',
+               
+               },
+               stroke: {
+                  curve: 'smooth'
+               },
+               chart: {
+                  height: 500,
+                  type: 'area'
+               },
+               dataLabels: {
+                  enabled: false
+               },
+               xaxis: {
+                  type:'datetime',
+                  categories:[]
+               },
+               tooltip: {
+                     x: {
+                        format: 'dd/MM/yyyy'
+                     },
+                  },
+
+            };
+            console.log('it')
+            $(document).ready(function () {
+               $.ajax({
+                     type: "GET",
+                    // url: "https://www.kse.kg/monitor/data_for_chart/index_graf.xml",
+					url: "./data_for_chart/index_graf.xml",
+                     crossDomain: true,
+                     success: function(xml) {
+                        var data = new XMLSerializer().serializeToString(xml)
+                        myJsonObject = xml2json.parser(data)
+                        options.xaxis.categories = myJsonObject.graph.categories.category.map(function (obj) {
+                                 return obj.name.split('.').reverse().join('-');
+                        });
+
+                        options.series[0].data = myJsonObject.graph.dataset.set.map(function (obj) {
+                                 return obj.value;
+                        });
+                        var chart = new ApexCharts(document.querySelector("#chart"), options);
+                        chart.render();
+                        
+                     }
+               });
+            });
+
+
+         </script>
+      </body>
+   </html>

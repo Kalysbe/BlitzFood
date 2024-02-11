@@ -1,0 +1,10 @@
+htm=" <form name='ad' method='post' action="/scripts/FBISAPI.dll?exec=rez.txt">
+htm="<select name="COMPANIES" size="5" style='background:A6EFFF; color:#222222; border: 2 solid #0050B2; font: 12px Arial;'>"
+htm="<option selected>------------</option>"
+out=Autorize.err
+sql=                   
+sql=companies.sql
+out=
+htm="<option>[FBISAPI:COMPNAME]</option>"
+sql=
+htm="</select>"

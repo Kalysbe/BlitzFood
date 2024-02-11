@@ -1,0 +1,306 @@
+
+root { 
+    display: block;
+}
+
+body
+{
+    margin: 0px;
+    font-family: Arial, Verdana, Sans;
+    font-size: 16px;
+}
+
+#page
+{
+    height: 100%;
+}
+
+#header
+{
+    margin: 0px;
+    height: 75px;
+    border-bottom: 3px solid #7ab382;
+    width: 100%;
+    background: url('/views/default/images/logo.png') no-repeat;
+
+    background-position: 5px;
+}
+
+#header h3
+{
+    margin: 0px;
+    margin-left: 80px;
+}
+
+#header .left
+{
+    margin: 0px;
+    width: 45%;
+    float: left;
+}
+
+#header a
+{
+    color: #000000;
+    text-decoration: none;
+}
+
+#header .right
+{
+    margin: 0px;
+    margin-right: 20px;
+    width: 45%;
+    float: right;
+    text-align: right;
+    font-size: 12px;
+}
+
+#header .right div
+{
+    margin-top: 10px;
+    
+}
+
+#header input
+{
+    border: 1px solid #CCCCCC;
+    font-size: 12px;
+}
+
+dl
+{
+    clear: both;
+    margin: 0px;
+    margin-top: 20px;
+}
+
+dt
+{
+    width: 40%;
+    float: left;
+    text-align: right;
+    margin-top: 20px;
+}
+
+dd
+{
+    width: 50%;
+    float: left;
+    text-align: left;
+    margin-top: 20px;
+}
+
+#center
+{
+    clear: both;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+}
+
+#lside
+{
+    float: left;
+    width: 10%;
+}
+
+#content
+{
+    float: left;
+    width: 75%;
+}
+
+#footer
+{
+    
+    border-top: 3px solid #7ab382;
+    clear: both;
+    
+    
+}
+
+#footer p
+{
+    margin: 0 0 0 0;
+    font-size: 12px;
+}
+
+#footer strong
+{
+    margin: 0 0 0 0;
+    margin-bottom: 15px;
+}
+
+#footer a
+{
+    color: #20548E;
+    text-decoration: none;
+    display: block;
+}
+
+#footer a:hover
+{
+    background-color: #EE0000;
+    color: #FFFFFF;
+}
+
+a
+{
+    color: #20548E;
+}
+
+
+#backgroundPopup{
+    display:none;
+    position:fixed;
+    _position:absolute; /* hack for internet explorer 6*/
+    height:100%;
+    width:100%;
+    top:0;
+    left:0;
+    background:#000000;
+    border:1px solid #cecece;
+    z-index:1;
+    text-align: left;
+}
+#popupContact{
+    display:none;
+    position:fixed;
+    _position:absolute; /* hack for internet explorer 6*/
+    height:384px;
+    width:408px;
+    background:#FFFFFF;
+    border:2px solid #cecece;
+    z-index:2;
+    padding:12px;
+    font-size:13px;
+    text-align: left;
+}
+#popupContact h1{
+    text-align:left;
+    color:#7ab382;
+    font-size:22px;
+    font-weight:700;
+    border-bottom:1px dotted #D3D3D3;
+    padding-bottom:2px;
+    margin-bottom:20px;
+    text-align: left;
+}
+#popupContactClose{
+    font-size:14px;
+    line-height:14px;
+    right:6px;
+    top:4px;
+    position:absolute;
+    color:#7ab382;
+    font-weight:700;
+    display:block;
+}
+
+#errors
+{
+    text-align: center;
+    border: 1px dashed #880909;
+    background-color: #f2c9c9;
+}
+
+.meta
+{
+
+    border-top: 1px solid #7ab382;
+    padding: 3px;
+    margin: 10px;
+    font-size: 12px;
+    text-align: right;
+    width: 100%;
+}
+
+.meta ul
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+.meta li
+{
+    margin: 0px;
+    
+    padding: 0px;
+    display: inline;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.meta a
+{
+    margin: 0px;
+    padding: 0px;
+    color: Maroon;
+
+}
+
+
+/*menu*/
+
+#menu
+{
+    margin: 0;
+    padding: 0;
+    clear: both;
+    width: 100%;
+}
+
+
+
+#menu li
+{
+    float: left;
+    list-style: none;
+    font: 12px Tahoma, Arial;
+    width: 20%;
+}
+
+#menu li a
+{
+    display: block;
+    background: #20548E;
+    padding: 5px 12px;
+    text-decoration: none;
+    border-right: 1px solid white;
+    width: 100%;
+    color: #EAFFED;
+    white-space: nowrap;
+}
+
+#menu li a:hover
+{
+    background: #1A4473;
+}
+
+#menu li ul
+{
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    visibility: hidden;
+    border-top: 1px solid white;
+}
+
+#menu li ul li
+{
+    float: none;
+    display: inline;
+}
+
+#menu li ul li a
+{
+    width: auto;
+    background: #9F1B1B;
+}
+
+#menu li ul li a:hover
+{
+    background: #7F1616;
+}

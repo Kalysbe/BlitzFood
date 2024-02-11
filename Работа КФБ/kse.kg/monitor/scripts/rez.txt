@@ -1,0 +1,5 @@
+htm=top.htm
+exec="BALANSE=[FBISAPI:BALANSE]?BALANSE.txt:"
+exec="NEWS=[FBISAPI:NEWS]?NEWS.txt:"
+exec="ANALITIK=[FBISAPI:ANALITIK]?ANALITIK.txt:"
+htm=bottom.htm

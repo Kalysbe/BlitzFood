@@ -1,0 +1,32 @@
+<h3>Панель управления</h3>
+<ul>
+{% for Post in Posts %}
+    <li>
+        <b>
+            <p class="entry_title">
+                <a href="{{ root }}/{{ lang_code }}/{{ Blog.Name }}/ControlPanel/Edit/{{ Post.Id }}">
+                    {{ Post.Title }}
+                </a>
+            </p>
+            <p class="entry_meta">
+                
+            </p>
+        </b>
+    </li>
+{% endfor %}
+</ul>
+
+<div class="section">
+    <form action="{{ root }}/modules/Blog/ControlPanel.php" method="POST">
+        <h3>{BlogFastPublication}</h3>
+        <input type="text" name="mEntryName" value="" />
+        <textarea name="mEntryText" id="mEntryText"></textarea>
+        <script type="text/javascript">
+            CKEDITOR.replace( "mEntryText" );
+        </script>
+        {% if Blog %}
+        <input type="submit" name="doAddEntry" value="Добавить" />
+        <input type="hidden" name="BlogId" value="{{ Blog.Id }}" />
+        {% endif %}
+    </form>
+</div>

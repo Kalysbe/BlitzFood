@@ -1,0 +1,164 @@
+root { 
+    display: block;
+}
+
+body {
+    margin: 0px;
+    font-family: Verdana, Arial;
+    font-size: 14px;
+}
+
+img {
+    border: none;
+}
+
+#clean {
+    clear: both;
+}
+
+#page {
+    width: 1024px;
+    margin: 0 auto;
+}
+
+#header {
+    background-color: #C5E1F8;
+    border-bottom: 3px solid #3F7DB0;
+    margin: 0px;
+    padding: 0px;
+    margin-top: 5px;
+}
+
+#header .logo {
+    margin-left: 10px;
+    float: left;
+    width: 429px;
+}
+
+#loginside {
+    float: right;
+    padding: 5px;
+}
+
+
+#header h1 {
+    margin: 0px;
+    padding: 10px;
+    font-size: 5em;
+    float: left;
+}
+
+#topmenu ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+#topmenu li {
+    display: block;
+    float: left;
+    padding: 7px;
+    margin: 3px;
+}
+
+#topmenu li a {
+    color: #000000;
+}
+
+.overmenuitem {
+    background-color: #3F7DB0;
+    color: #FFFFFF;
+}
+
+#left_side {
+    float: left;
+    padding: 5px;
+    width: 700px;
+}
+
+#left_side .page_title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#left_side .page_meta {
+    text-align: right;
+}
+
+#left_side .page_meta li {
+    display: block;
+    float: right;
+    margin: 3px;
+    padding: 3px;
+    font-size: 0.8em;
+    border: 1px solid #CCCCCC;
+}
+
+#left_side .page_meta li a {
+    color: #444444;
+    text-decoration: none;
+}
+
+#right_side {
+    float: right;
+    width: 300px;
+}
+
+#sideblock {
+    border: 1px solid #C5E1F8;
+    padding: 0px;
+    margin: 3px;
+    margin-bottom: 10px;
+}
+
+#sideblock #sb_title {
+    padding: 5px;
+    font-size: 1.1em;
+    background-color: #C5E1F8;
+}
+
+#sideblock #sb_content {
+    padding: 5px;
+}
+
+#footer {
+    background-color: #C5E1F8;
+    border-top: 3px solid #3F7DB0;
+    margin: 0px;
+    padding: 10px;
+    margin-bottom: 5px;
+    text-align: center;
+    font-size: 0.6em;
+}
+
+.error {
+    background: #FFDDDD none repeat scroll 0 0;
+    border: 1px solid #FFBBBB;
+    margin: 10px;
+    padding: 10px;
+    font-size: 0.8em;
+}
+
+.message {
+    background: #DDFFDD none repeat scroll 0 0;
+    border: 1px solid #BBFFBB;
+    margin: 10px;
+    padding: 10px;
+    font-size: 0.8em;
+}
+
+.warning {
+    background-color: #FFFACD;
+    border: 1px solid #F4D03B;
+    margin: 10px;
+    padding: 10px;
+    font-size: 0.8em;
+}
+
+#two_columns label {
+    clear: both;
+    float: left;
+    width: 35%;
+    text-align: right;
+    margin-right: 5px;
+}

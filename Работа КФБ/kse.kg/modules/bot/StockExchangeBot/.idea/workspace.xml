@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="19ebeae8-5c18-4d41-9dbd-47f766c7c832" name="Default Changelist" comment="last version2.0">
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime.txt" beforeDir="false" afterPath="$PROJECT_DIR$/runtime.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dateutil/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dateutil/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dateutil/_common.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dateutil/_version.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dateutil/easter.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dateutil/easter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dateutil/parser/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dateutil/parser/_parser.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dateutil/parser/isoparser.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dateutil/relativedelta.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dateutil/relativedelta.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dateutil/rrule.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dateutil/rrule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dateutil/tz/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dateutil/tz/_common.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dateutil/tz/_factories.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dateutil/tz/tz.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dateutil/tz/win.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dateutil/tzwin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dateutil/tzwin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dateutil/utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dateutil/zoneinfo/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dateutil/zoneinfo/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dateutil/zoneinfo/dateutil-zoneinfo.tar.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dateutil/zoneinfo/rebuild.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/python_dateutil-2.8.1.dist-info/INSTALLER" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/python_dateutil-2.8.1.dist-info/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/python_dateutil-2.8.1.dist-info/METADATA" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/python_dateutil-2.8.1.dist-info/RECORD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/python_dateutil-2.8.1.dist-info/WHEEL" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/python_dateutil-2.8.1.dist-info/top_level.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/python_dateutil-2.8.1.dist-info/zip-safe" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/GettiGrinn/telegramBot" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1hr9kFxogD7q1OcwBFW35Zh0Vzi" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunManager" selected="Python.bot">
+    <configuration name="bot" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="StockExchangeBot" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bot.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="handlers" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="StockExchangeBot" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/handlers.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.bot" />
+      <item itemvalue="Python.handlers" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.handlers" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="19ebeae8-5c18-4d41-9dbd-47f766c7c832" name="Default Changelist" comment="" />
+      <created>1600758485276</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1600758485276</updated>
+    </task>
+    <task id="LOCAL-00001" summary="last version2.0">
+      <created>1600940588943</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1600940589007</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="last version2.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="last version2.0" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="130" y="38" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600848336652">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="130" y="38" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1600848336652" />
+    <state x="503" y="266" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1600847681115">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="503" y="266" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1600847681115" />
+    <state x="428" y="211" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1600928228356">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="428" y="211" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1600928228356" />
+    <state x="476" y="128" key="FileChooserDialogImpl" timestamp="1600948528450">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="476" y="128" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1600948528450" />
+    <state width="1206" height="405" key="GridCell.Tab.0.bottom" timestamp="1600948548054">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1206" height="405" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1600948548054" />
+    <state width="1206" height="405" key="GridCell.Tab.0.center" timestamp="1600948548054">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1206" height="405" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1600948548054" />
+    <state width="1206" height="405" key="GridCell.Tab.0.left" timestamp="1600948548053">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1206" height="405" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1600948548053" />
+    <state width="1206" height="405" key="GridCell.Tab.0.right" timestamp="1600948548054">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1206" height="405" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1600948548054" />
+    <state width="1184" height="184" key="GridCell.Tab.1.bottom" timestamp="1600928466628">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1184" height="184" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1600928466628" />
+    <state width="1184" height="184" key="GridCell.Tab.1.center" timestamp="1600928466628">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1184" height="184" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1600928466628" />
+    <state width="1184" height="184" key="GridCell.Tab.1.left" timestamp="1600928466628">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1184" height="184" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1600928466628" />
+    <state width="1184" height="184" key="GridCell.Tab.1.right" timestamp="1600928466628">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1184" height="184" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1600928466628" />
+    <state x="198" y="18" key="SettingsEditor" timestamp="1600949608977">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="198" y="18" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1600949608977" />
+    <state x="418" y="127" width="540" height="524" key="StructurePopup" timestamp="1600943803088">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="418" y="127" width="540" height="524" key="StructurePopup/0.0.1366.728@0.0.1366.728" timestamp="1600943803088" />
+    <state x="290" y="194" key="Vcs.Push.Dialog.v2" timestamp="1600948233950">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="290" y="194" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1600948233950" />
+    <state x="514" y="296" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600946529318">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="514" y="296" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1600946529318" />
+  </component>
+</project>

@@ -1,0 +1,1388 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="keywords" content="Кыргызская фондовая биржа ,Фондовая биржа, Биржа, Фондовый рынок, Акции , Финансы , Купить акции ,Kyrgyz Stock Exchange , KSE ,Кыргыз фондулук биржа , фондулук биржа"/>
+	<meta property=”og:image” content="" /> <!-- для Facebook -->
+        <meta property="og:image:width" content="100"/>
+        <meta property="og:image:height" content="100"/>
+	<title>Главная :: Kyrgyz Stock Exchange</title>
+    <link rel="icon" type="image/x-png" href="https://www.kse.kg/views/kse/images/favicon.png" sizes="16x16"/>
+	<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+	<!-- <link rel="stylesheet" type="text/css" href="https://www.kse.kg/views/kse/styles/style.css" /> -->
+	<!-- <link rel="stylesheet" type="text/css" href="https://www.kse.kg/views/kse/styles/newstyle.css" /> -->
+    <link rel="stylesheet" href="style.css">
+	<!-- <link rel="stylesheet" type="text/css" href="https://www.kse.kg/views/kse/styles/t_main.css" /> -->
+    <link rel="stylesheet" type="text/css" href="https://www.kse.kg/views/kse/styles/common.css" />
+	<link rel="stylesheet" type="text/css" href="https://www.kse.kg/views/kse/styles/scroller.css" />
+	
+	<script type="text/javascript" src="https://www.kse.kg/scripts/jquery.js"></script>
+	
+        <link type="text/css" href="https://www.kse.kg/scripts/jquery-ui/css/buse/jquery-ui.css" rel="Stylesheet" />
+        <script type="text/javascript" src="https://www.kse.kg/scripts/jquery-ui/js/jquery-1.4.2.min.js"></script>
+        <script type="text/javascript" src="https://www.kse.kg/scripts/jquery-ui/js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="https://www.kse.kg/scripts/ckeditor/ckeditor.js"></script>
+        <script type="text/javascript" src="https://www.kse.kg/scripts/ckeditor/adapters/jquery.js"></script>
+		<script language="Javascript" src="https://www.kse.kg/lib/JSd3/d3.min.js"></script>
+		<script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script> 
+		
+        <script type="text/javascript">
+                    var timeout    = 500;
+                    var closetimer = 0;
+                    var ddmenuitem = 0;
+
+                    function jsddm_open() {
+                        jsddm_canceltimer();
+                        jsddm_close();
+                        ddmenuitem = $(this).find('ul').css('visibility', 'visible');
+                    }
+
+                    function jsddm_close() {
+                        if (ddmenuitem)
+                            ddmenuitem.css('visibility', 'hidden');
+                    }
+
+                    function jsddm_timer() {
+                        closetimer = window.setTimeout(jsddm_close, timeout);
+                    }
+
+                    function jsddm_canceltimer() {
+                        if(closetimer) {
+                            window.clearTimeout(closetimer);
+                            closetimer = null;
+                        }
+                    }
+
+                    $(document).ready(function() {
+                            $('#jsddm > li').bind('mouseover', jsddm_open);
+                            $('#jsddm > li').bind('mouseout',  jsddm_timer);
+                            
+                        }
+                    );
+
+                    document.onclick = jsddm_close;
+                </script>
+        <script type="text/javascript">
+        $(function() {
+
+            var tips = $(".validateTips");
+            function updateTips(t) {
+                tips
+                    .text(t)
+                    .addClass('ui-state-highlight');
+                setTimeout(function() {
+                    tips.removeClass('ui-state-highlight', 1500);
+                }, 500);
+            }
+
+            function doLogIn() {
+                $.post("https://www.kse.kg/handlers/login.php", {
+                    doLogin: 1,
+                    mLogin: $("#mLogin").val(),
+                    mPass: $("#mPass").val()
+                }, function(result) {
+                    console.log(result);
+					if (result == 0) {
+                        updateTips("<div class='error'>Неверное имя пользователя или пароль</div>");
+                    } else if (result == 1) {
+                        window.location.replace("https://www.kse.kg/ru/MainPage");
+                    }
+                });
+            }
+
+            $("#login-dialog").dialog({
+                autoOpen: false,
+                height: 250,
+                width: 400,
+                modal: true,
+                title: "Вход",
+                buttons: {
+                    "Войти": function() {
+                        doLogIn();
+                    },
+                    "Отмена": function() {
+                            $(this).dialog('close');
+                    }
+                },
+                close: function() {
+                        allFields.val('').removeClass('ui-state-error');
+                }
+            });
+
+            $('#loginButton')
+            .click(function() {
+                    $('#login-dialog').dialog('open');
+            });
+
+        });
+	
+		
+	
+		
+    </script>
+    <script type="text/javascript" src="https://www.kse.kg/views/kse/js/scroll.js"></script>
+	<script type="text/javascript" src="./management.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <!--common_head
+<script language="Javascript" src="https://www.kse.kg/lib/FusionCharts/FusionCharts.js"></script>
+<script language="Javascript" src="https://www.kse.kg/scripts/jquery.tools.min.js"></script>
+
+<script type="text/javascript">
+    $(function() {
+        $('div.scroll_quote').tooltip({tipClass: 'quote_tooltip'});
+    });
+</script>
+end of common_head-->
+</head>
+<body>
+		<div class="fcc">
+	    <script type="text/javascript">
+<!--
+var _acic={dataProvider:10};(function(){var e=document.createElement("script");e.type="text/javascript";e.async=true;e.src="https://www.acint.net/aci.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})()
+//-->
+</script>
+	</div>	
+
+					
+<div class="hamburger-menu">
+    <div class="hamburger-menu-wrapper">
+              <div class="hamburger-menu-content container">
+                <div class="search">
+                  <form method="POST" action="https://www.kse.kg/ru/Search" class="f_l">
+                      <input type="text" name="search_top" class="src_txt f_l" placeholder="Поиск" onfocus="this.value=''" />
+                      <input type="submit" class="src_btn f_l" value="" />
+                  </form>
+              </div>
+              <div class="banner_top">
+                <a href="https://www.kse.kg/ru/Finmarket">
+                    Финансовый рынок KG
+                </a>
+            </div><!--/banner_top-->
+                <div class="accordion-section">
+                  <button class="header_dropmenu accordion-header">
+                    <i class="material-icons">library_books</i> 
+                      О нас 
+                    <i class="material-icons">east</i>
+                  </button>
+                  <ul class="accordion-content">
+                    <li><a href="https://www.kse.kg/ru/GeneralInfo">Общая информация</a></li>
+                    <li><a href="https://www.kse.kg/ru/Auctioneers">Акционеры</a></li>
+                    <li><a href="https://www.kse.kg/ru/Management">Руководство</a></li>
+                    <li><a href="https://www.kse.kg/ru/Revisory">Ревизионная комиссия</a></li>
+                        <li> 
+                            <details>
+                            <summary style="display: flex;align-items: center;">
+                                <a href="https://www.kse.kg/ru/CommitteeListing">Комитеты</a>
+                                <i style="cursor: pointer;margin-left: 15px;" class="material-icons">expand_more</i>
+                            </summary>
+                            <ul>
+                                <li><a href="https://www.kse.kg/ru/CommitteeListing">Листинговый комитет</a></li>
+                                <li><a href="https://www.kse.kg/ru/CommitteeStrategicPlanning">Комитет по стратегическому планированию и корпоративному развитию</a></li>
+                                <li><a href="https://www.kse.kg/ru/CommitteeAudit">Комитет по аудиту и вознаграждениям</a></li>
+                            </ul>
+                          </details>
+                    </li>
+                    <li>
+                        <details>
+                            <summary style="display: flex;align-items: center;">
+                                <a href="https://www.kse.kg/ru/Members">Участники торгов</a>
+                                <i style="cursor: pointer;margin-left: 15px;" class="material-icons">expand_more</i>
+                            </summary>
+                            <ul>
+                                <li><a href="https://www.kse.kg/ru/Members">Участники торгов</a></li>
+                                <li><a href="https://www.kse.kg/ru/MembersSTDM">Участники торгов СТДМ</a></li>
+                                <li><a href="https://www.kse.kg/ru/MembersCommoditySector">Участники торгов товарного сектора</a></li>
+                                <li><a href="https://www.kse.kg/ru/MembersRating">Рейтинг участников</a></li>
+                            </ul>
+                        </details>
+                      
+                        
+                    </li>
+                    <li><a href="https://www.kse.kg/ru/Partners">Наши партнеры</a></li>
+                    <li><a href="https://www.kse.kg/ru/OurStrategy">Cтратегия развития</a></li>
+                    <li><a href="https://www.kse.kg/ru/CorporateDocuments">Корпоративные документы</a></li>
+                    <li><a href="https://www.kse.kg/ru/Contacts">Контакты</a></li>
+                </ul> 
+                </div>
+                 <div class="accordion-section">
+                  <button class="header_dropmenu accordion-header">
+                    <i class="material-icons">open_with</i> 
+                    Направления
+                    <i class="material-icons">east</i>
+                  </button>
+                  <ul class="accordion-content">
+                          <li><a href="http://ts.kse.kg/" target="_blank">Товарно-сырьевой сектор</a></li>
+                          <li><a href="https://www.kse.kg/ru/Listing">Листинг</a></li>
+                          <li><a href="https://www.kse.kg/ru/PublicInfo">Центр раскрытия информации</a></li>
+                          <li><a href="https://www.kse.kg/ru/Prices">Тарифы</a></li>
+                          <li><a href="https://www.kse.kg/ru/Analytics">Аналитика</a></li>
+                          <li><a href="https://www.kse.kg/ru/FinMarket">Финансовый рынок KG</a></li>
+                          <li><a href="https://www.kse.kg/ru/PressClub">Пресс-клуб</a></li>
+                          <li><a href="https://www.kse.kg/ru/Announcement">25 лет ЗАО КФБ</a></li>
+                          
+                  </ul>
+                </div>
+                <div class="accordion-section">
+                  <button class="header_dropmenu accordion-header">
+                    <i class="material-icons">fact_check</i> 
+                    Нормативная база
+                    <i class="material-icons">east</i>
+                  </button>
+                  <ul class="accordion-content">
+                    <li><a href="https://www.kse.kg/ru/KSENormatives">Биржевая деятельность</a>
+                    </li>
+                    <li><a href="https://www.kse.kg/ru/DepoNormatives">Депозитарная деятельность</a></li>
+                    <li><a href="https://www.kse.kg/ru/OpenInformation">Центр раскрытия информации</a></li>
+                </ul>
+                </div>
+                 <div class="accordion-section">
+                  <button class="header_dropmenu accordion-header">
+                    <i class="material-icons">analytics</i> 
+                    Статистика торгов
+                    <i class="material-icons">east</i>
+                  </button>
+                  <ul class="accordion-content">
+                      <li><a href="https://www.kse.kg/ru/TradeResults">Итоги последних торгов</a></li>
+                      <li><a href="https://www.kse.kg/ru/TradeArchive">Архив торгов</a></li>
+                      <li><a href="https://www.kse.kg/ru/IndexAndCapitalization">Индекс и Капитализация</a></li>
+                      <li><a href="https://www.kse.kg/ru/Quotes">Котировки по ЦБ</a></li>
+                      <li><a href="https://www.kse.kg/ru/QuotesGold">Котировки по драг. металлам</a></li>
+                      <li><a href="https://www.kse.kg/ru/ScheduleGS">Расписание аукционов по ГЦБ</a></li>
+                  </ul>
+                </div>
+                <div class="accordion-section">
+                  <button class="header_dropmenu accordion-header">
+                    <i class="material-icons">school</i> 
+                    Учебный центр
+                    <i class="material-icons">east</i>
+                  </button>
+                  <ul class="accordion-content">
+                      <li><a href="https://www.kse.kg/ru/Education">Общая информация</a></li>
+                      <li><a href="https://www.kse.kg/ru/EduPlan">План работы на год</a></li>
+                  </ul>
+                </div>
+        
+</div>
+		
+</div>
+</div>
+		
+<div id="body">
+	<div class="header">
+    <div class="header-wrapper container">
+          <a class="kse_logo" href="https://www.kse.kg"><h1 class="sitename">Кыргызская фондовая биржа</h1><img width="100%" height="40px" src="https://www.kse.kg/views/kse/images/logo_KSE.png" border="0"/></a>
+      <div class="header_right">
+          
+          <div class="banner_top">
+              <a href="https://www.kse.kg/ru/Finmarket">
+                  Финансовый рынок KG
+                  <!-- <img src="https://www.kse.kg/views/kse/images/banner_top.jpg" border="0"/> -->
+              </a>
+          </div><!--/banner_top-->
+          <div class="search">
+              <form method="POST" action="https://www.kse.kg/ru/Search" class="f_l">
+                  <input type="text" name="search_top" class="src_txt f_l" placeholder="Поиск" onfocus="this.value=''" />
+                  <input type="submit" class="src_btn f_l" value="" />
+                  
+                  
+              </form>
+          </div>
+          <div class="lang">
+              <a href="https://www.kse.kg/ru/MainPage" class="selected">Рус</a>
+              <a href="https://www.kse.kg/ky/MainPage" >Кыр</a>
+              <a href="https://www.kse.kg/en/MainPage" >Eng</a>
+        </div><!--/lang-->
+          
+          <a href="#" class="def_menu" id="loginButton">
+              <button class="btn_login">
+              <i class="material-icons">login</i>
+              </button>
+              <!-- <img src="https://www.kse.kg/views/kse/images/icon_key.jpg"/> -->
+          </a>
+      
+      </div><!--/header_right-->
+    </div>
+      <div class="fcc">
+      <script type="text/javascript">
+<!--
+var _acic={dataProvider:10};(function(){var e=document.createElement("script");e.type="text/javascript";e.async=true;e.src="https://www.acint.net/aci.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})()
+//-->
+</script>
+  </div>	
+  
+  
+      
+      <div class="clear"><img src="https://www.kse.kg/views/kse/images/pixel.gif" /></div>
+      <div class="topmenu container">
+          <script type="text/javascript" src="https://www.kse.kg/scripts/superfish/js/superfish.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('sssssul.sfss-menu').superfish();  
+    });
+ 
+</script>
+    <div class="sf-navbar">
+        <div class="sf-navbar-menu">
+          <a class="menu-item" href="#">
+            <i class="material-icons">home</i>
+            Главная
+          </a>
+            <a class="menu-item" id="about" href="https://www.kse.kg/ru/GeneralInfo">
+                <i class="material-icons">library_books</i>
+                О Бирже
+            </a>
+		      <a class="menu-item" href="https://www.kse.kg/ru/Listing">
+                <i class="material-icons">list_alt</i>
+                Листинг
+            </a>
+			<a class="menu-item" href="https://www.kse.kg/ru/Statistics" >
+                <i class="material-icons">
+                stacked_bar_chart
+                </i> Статистика торгов</a>
+            <a class="menu-item" href="https://www.kse.kg/ru/Quotes" >
+                <i class="material-icons">list_alt</i>
+                Котировки по ЦБ
+            </a>
+            <a class="menu-item" id="open-information" href="https://www.kse.kg/ru/PublicInfo">
+                <i class="material-icons">query_stats</i>
+                Центр раскрытия информации
+            </a>
+            <a class="menu-item" id="contacts" href="https://www.kse.kg/ru/Contacts">
+                <i class="material-icons">contacts</i>
+                Контакты
+            </a>
+           
+        </div>
+        <div class="right_sf-menu">
+        <button class="call-modal-menu">
+          <i class="material-icons">menu</i>
+          <span>Меню</span>
+          </button>
+        </div>
+	</div>
+        
+
+          <div class="right_topmenu">
+              
+                                  
+          </div>
+      </div><!--/topmenu-->
+      
+     
+  </div><!--/header-->
+  
+  <div class="kse_marquee container">
+    <ul class="kse_marquee" id="QuatationsOnline">
+        
+              
+<li>
+      <div class="scroll_quote quote_name" title="АООТ Кызыл-Кыя тамекиси, акция простая">KKTM</div>
+      <div class="scroll_quote" title="Цена продажи">5</div>
+      <div class="scroll_quote" title="Количество на продажу">4510</div>
+      <div class="scroll_quote" title="Цена покупки"></div>
+      <div class="scroll_quote" title="Количество на покупку"></div>
+      <div style="clear: both"></div>
+      </li><li>
+      <div class="scroll_quote quote_name" title="ОАО Оргтехстрой, акция простая">ORGT</div>
+      <div class="scroll_quote" title="Цена продажи">55</div>
+      <div class="scroll_quote" title="Количество на продажу">2060</div>
+      <div class="scroll_quote" title="Цена покупки"></div>
+      <div class="scroll_quote" title="Количество на покупку"></div>
+      <div style="clear: both"></div>
+      </li><li>
+      <div class="scroll_quote quote_name" title="АООТ Кадам, акция простая">KADM</div>
+      <div class="scroll_quote" title="Цена продажи">500</div>
+      <div class="scroll_quote" title="Количество на продажу">314</div>
+      <div class="scroll_quote" title="Цена покупки"></div>
+      <div class="scroll_quote" title="Количество на покупку"></div>
+      <div style="clear: both"></div>
+      </li><li>
+      <div class="scroll_quote quote_name" title="ОАО Кантский цементный завод, акция простая">KNTK</div>
+      <div class="scroll_quote" title="Цена продажи">1000</div>
+      <div class="scroll_quote" title="Количество на продажу">30</div>
+      <div class="scroll_quote" title="Цена покупки">260</div>
+      <div class="scroll_quote" title="Количество на покупку">55</div>
+      <div style="clear: both"></div>
+      </li><li>
+      <div class="scroll_quote quote_name" title="ОАО ТНК Дастан, акция простая">DAST</div>
+      <div class="scroll_quote" title="Цена продажи">201</div>
+      <div class="scroll_quote" title="Количество на продажу">426</div>
+      <div class="scroll_quote" title="Цена покупки"></div>
+      <div class="scroll_quote" title="Количество на покупку"></div>
+      <div style="clear: both"></div>
+      </li><li>
+      <div class="scroll_quote quote_name" title="ОАО Арпа имени Насыркула Урманбетова, акция простая">ARPA</div>
+      <div class="scroll_quote" title="Цена продажи"></div>
+      <div class="scroll_quote" title="Количество на продажу"></div>
+      <div class="scroll_quote" title="Цена покупки">5</div>
+      <div class="scroll_quote" title="Количество на покупку">400</div>
+      <div style="clear: both"></div>
+      </li><li>
+      <div class="scroll_quote quote_name" title="ОАО Бишкексут, акция простая">BSUT</div>
+      <div class="scroll_quote" title="Цена продажи"></div>
+      <div class="scroll_quote" title="Количество на продажу"></div>
+      <div class="scroll_quote" title="Цена покупки">500</div>
+      <div class="scroll_quote" title="Количество на покупку">60</div>
+      <div style="clear: both"></div>
+      </li><li>
+      <div class="scroll_quote quote_name" title="ОАО Апросах, акция простая">BAKA</div>
+      <div class="scroll_quote" title="Цена продажи">100</div>
+      <div class="scroll_quote" title="Количество на продажу">149</div>
+      <div class="scroll_quote" title="Цена покупки"></div>
+      <div class="scroll_quote" title="Количество на покупку"></div>
+      <div style="clear: both"></div>
+      </li><li>
+      <div class="scroll_quote quote_name" title="ОАО Кыргызнефтегаз, акция простая">KNEF2</div>
+      <div class="scroll_quote" title="Цена продажи"></div>
+      <div class="scroll_quote" title="Количество на продажу"></div>
+      <div class="scroll_quote" title="Цена покупки">250</div>
+      <div class="scroll_quote" title="Количество на покупку">580</div>
+      <div style="clear: both"></div>
+      </li><li>
+      <div class="scroll_quote quote_name" title="ОАО Международный аэропорт Манас, акция простая">MAIR</div>
+      <div class="scroll_quote" title="Цена продажи">850</div>
+      <div class="scroll_quote" title="Количество на продажу">700</div>
+      <div class="scroll_quote" title="Цена покупки"></div>
+      <div class="scroll_quote" title="Количество на покупку"></div>
+      <div style="clear: both"></div>
+      </li><li>
+      <div class="scroll_quote quote_name" title="ОАО Кыргызтелеком, акция простая">KTEL2</div>
+      <div class="scroll_quote" title="Цена продажи"></div>
+      <div class="scroll_quote" title="Количество на продажу"></div>
+      <div class="scroll_quote" title="Цена покупки">3.2</div>
+      <div class="scroll_quote" title="Количество на покупку">10333</div>
+      <div style="clear: both"></div>
+      </li><li>
+      <div class="scroll_quote quote_name" title="ОАО Ак-Булак, акция простая">AKBK2</div>
+      <div class="scroll_quote" title="Цена продажи">125</div>
+      <div class="scroll_quote" title="Количество на продажу">359</div>
+      <div class="scroll_quote" title="Цена покупки"></div>
+      <div class="scroll_quote" title="Количество на покупку"></div>
+      <div style="clear: both"></div>
+      </li><li>
+      <div class="scroll_quote quote_name" title="ЗАО Кыргызская Фондовая Биржа, акция простая">KGSE2</div>
+      <div class="scroll_quote" title="Цена продажи">48000</div>
+      <div class="scroll_quote" title="Количество на продажу">23</div>
+      <div class="scroll_quote" title="Цена покупки"></div>
+      <div class="scroll_quote" title="Количество на покупку"></div>
+      <div style="clear: both"></div>
+      </li><li>
+      <div class="scroll_quote quote_name" title="ОАО Маяк, акция простая">MAYK</div>
+      <div class="scroll_quote" title="Цена продажи">25</div>
+      <div class="scroll_quote" title="Количество на продажу">2108</div>
+      <div class="scroll_quote" title="Цена покупки"></div>
+      <div class="scroll_quote" title="Количество на покупку"></div>
+      <div style="clear: both"></div>
+      </li><li>
+      <div class="scroll_quote quote_name" title="ОАО Финансовая компания кредитных союзов, акция простая">FCCU7</div>
+      <div class="scroll_quote" title="Цена продажи">.83</div>
+      <div class="scroll_quote" title="Количество на продажу">3006452</div>
+      <div class="scroll_quote" title="Цена покупки"></div>
+      <div class="scroll_quote" title="Количество на покупку"></div>
+      <div style="clear: both"></div>
+      </li><li>
+      <div class="scroll_quote quote_name" title="ОАО Микрофинансовая компания Салым Финанс, акция привилегированная">SALFp</div>
+      <div class="scroll_quote" title="Цена продажи">1200</div>
+      <div class="scroll_quote" title="Количество на продажу">46</div>
+      <div class="scroll_quote" title="Цена покупки"></div>
+      <div class="scroll_quote" title="Количество на покупку"></div>
+      <div style="clear: both"></div>
+      </li><li>
+      <div class="scroll_quote quote_name" title="ОАО Шоппинг онлайн центр, акция простая">SHOP</div>
+      <div class="scroll_quote" title="Цена продажи">1500</div>
+      <div class="scroll_quote" title="Количество на продажу">1</div>
+      <div class="scroll_quote" title="Цена покупки"></div>
+      <div class="scroll_quote" title="Количество на покупку"></div>
+      <div style="clear: both"></div>
+      </li><li>
+      <div class="scroll_quote quote_name" title="ОАО Электрические станции, акция простая">ELST</div>
+      <div class="scroll_quote" title="Цена продажи"></div>
+      <div class="scroll_quote" title="Количество на продажу"></div>
+      <div class="scroll_quote" title="Цена покупки">.68</div>
+      <div class="scroll_quote" title="Количество на покупку">47273</div>
+      <div style="clear: both"></div>
+      </li><li>
+      <div class="scroll_quote quote_name" title="ОАО Финансовая компания кредитных союзов, акция простая">FCCU9</div>
+      <div class="scroll_quote" title="Цена продажи">.84</div>
+      <div class="scroll_quote" title="Количество на продажу">83916</div>
+      <div class="scroll_quote" title="Цена покупки"></div>
+      <div class="scroll_quote" title="Количество на покупку"></div>
+      <div style="clear: both"></div>
+      </li><li>
+      <div class="scroll_quote quote_name" title="ЗАО Микрофинансовая компания Элет-Капитал, облигация">ELETb</div>
+      <div class="scroll_quote" title="Цена продажи">1000</div>
+      <div class="scroll_quote" title="Количество на продажу">76247</div>
+      <div class="scroll_quote" title="Цена покупки"></div>
+      <div class="scroll_quote" title="Количество на покупку"></div>
+      <div style="clear: both"></div>
+      </li><li>
+      <div class="scroll_quote quote_name" title="ОАО Группа К51, облигация">ALDVb</div>
+      <div class="scroll_quote" title="Цена продажи">1000</div>
+      <div class="scroll_quote" title="Количество на продажу">17822</div>
+      <div class="scroll_quote" title="Цена покупки"></div>
+      <div class="scroll_quote" title="Количество на покупку"></div>
+      <div style="clear: both"></div>
+      </li><li>
+      <div class="scroll_quote quote_name" title="Золотые мерные слитки НБКР, 1 грамм">GOLDB1</div>
+      <div class="scroll_quote" title="Цена продажи">7078</div>
+      <div class="scroll_quote" title="Количество на продажу">5</div>
+      <div class="scroll_quote" title="Цена покупки"></div>
+      <div class="scroll_quote" title="Количество на покупку"></div>
+      <div style="clear: both"></div>
+      </li><li>
+      <div class="scroll_quote quote_name" title="Золотые мерные слитки НБКР, 2 грамм">GOLDB2</div>
+      <div class="scroll_quote" title="Цена продажи">12860.5</div>
+      <div class="scroll_quote" title="Количество на продажу">5</div>
+      <div class="scroll_quote" title="Цена покупки"></div>
+      <div class="scroll_quote" title="Количество на покупку"></div>
+      <div style="clear: both"></div>
+      </li><li>
+      <div class="scroll_quote quote_name" title="Золотые мерные слитки НБКР, 5 грамм">GOLDB5</div>
+      <div class="scroll_quote" title="Цена продажи">30161</div>
+      <div class="scroll_quote" title="Количество на продажу">5</div>
+      <div class="scroll_quote" title="Цена покупки"></div>
+      <div class="scroll_quote" title="Количество на покупку"></div>
+      <div style="clear: both"></div>
+      </li><li>
+      <div class="scroll_quote quote_name" title="Золотые мерные слитки НБКР, 10 грамм">GOLDB10</div>
+      <div class="scroll_quote" title="Цена продажи">59351</div>
+      <div class="scroll_quote" title="Количество на продажу">5</div>
+      <div class="scroll_quote" title="Цена покупки"></div>
+      <div class="scroll_quote" title="Количество на покупку"></div>
+      <div style="clear: both"></div>
+      </li><li>
+      <div class="scroll_quote quote_name" title="Золотые мерные слитки НБКР, 31.1035 грамм">GOLDB31.1035</div>
+      <div class="scroll_quote" title="Цена продажи">184083</div>
+      <div class="scroll_quote" title="Количество на продажу">5</div>
+      <div class="scroll_quote" title="Цена покупки"></div>
+      <div class="scroll_quote" title="Количество на покупку"></div>
+      <div style="clear: both"></div>
+      </li><li>
+      <div class="scroll_quote quote_name" title="Золотые мерные слитки НБКР, 100 грамм">GOLDB100</div>
+      <div class="scroll_quote" title="Цена продажи">589989.5</div>
+      <div class="scroll_quote" title="Количество на продажу">5</div>
+      <div class="scroll_quote" title="Цена покупки"></div>
+      <div class="scroll_quote" title="Количество на покупку"></div>
+      <div style="clear: both"></div>
+      </li><li>
+      <div class="scroll_quote quote_name" title="ОсОО Строй дом. КГ, облигация">STRYb</div>
+      <div class="scroll_quote" title="Цена продажи">1000</div>
+      <div class="scroll_quote" title="Количество на продажу">23201</div>
+      <div class="scroll_quote" title="Цена покупки"></div>
+      <div class="scroll_quote" title="Количество на покупку"></div>
+      <div style="clear: both"></div>
+      </li><li>
+      <div class="scroll_quote quote_name" title="ЗАО Банк Азии, социальная облигация">BASAb</div>
+      <div class="scroll_quote" title="Цена продажи">1000</div>
+      <div class="scroll_quote" title="Количество на продажу">55879</div>
+      <div class="scroll_quote" title="Цена покупки"></div>
+      <div class="scroll_quote" title="Количество на покупку"></div>
+      <div style="clear: both"></div>
+      </li><li>
+      <div class="scroll_quote quote_name" title="ОАО Электрические станции, акция простая">ELST2</div>
+      <div class="scroll_quote" title="Цена продажи">.84</div>
+      <div class="scroll_quote" title="Количество на продажу">22</div>
+      <div class="scroll_quote" title="Цена покупки"></div>
+      <div class="scroll_quote" title="Количество на покупку"></div>
+      <div style="clear: both"></div>
+      </li><li>
+      <div class="scroll_quote quote_name" title="ЗАО Микрофинансовая Компания ОКСУС, облигация">OKSUb</div>
+      <div class="scroll_quote" title="Цена продажи">1000</div>
+      <div class="scroll_quote" title="Количество на продажу">1529</div>
+      <div class="scroll_quote" title="Цена покупки"></div>
+      <div class="scroll_quote" title="Количество на покупку"></div>
+      <div style="clear: both"></div>
+      </li><li>
+      <div class="scroll_quote quote_name" title="ОАО Микрофинансовая компания АБН, облигация">MABNb4</div>
+      <div class="scroll_quote" title="Цена продажи">5000</div>
+      <div class="scroll_quote" title="Количество на продажу">3455</div>
+      <div class="scroll_quote" title="Цена покупки"></div>
+      <div class="scroll_quote" title="Количество на покупку"></div>
+      <div style="clear: both"></div>
+      </li>
+
+    </ul>
+            
+            
+</div><!--/marquee-->
+  <div class="carousel-container container">
+    <div class="carousel-slide">
+ 
+      <div class="carousel-item" >
+        <div class="carousel-item-wrap" >
+          <!-- <img src="https://venturesafrica.com/wp-content/uploads/2016/01/ACMR-1920.jpg" alt=""> -->
+          <img src="https://delifyinvestments.com/image/banner/community.jpg" alt="">
+        <div class="carousel-caption">
+            <div class="container">
+                <h2>Товарно-сырьевой сектор КФБ</h2>
+                <p>Объявляет о возобновление своей деятельности,находите новые сделки, новых партнёров!</p>
+					      <button id="mobile-reverse"> <a href="http://ts.kse.kg/" target="_blank" >Посмотреть </a></button>
+                    <!-- <img src="https://www.marketpulse.com/wp-content/uploads/2021/08/AdobeStock_85082364.jpeg" alt=""> -->
+                    <!-- <img src="https://www.advantagefutures.com/wp_contents/uploads/commodity-images.jpg" alt=""> -->
+                </div>
+        </div>
+    </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="carousel-item-wrap">
+          <img src="https://www.predictivesuccess.com/wp-content/uploads/2022/08/data_analytics_triloks-scaled.jpg" alt="">
+        <div class="carousel-caption">
+            <div class="container">
+                <h2>Open information system</h2>
+                <p>Встречайте обновленную версию сервиса, теперь подавать отчеты стало еще удобнее и приятнее!</p>
+                <button id="mobile-reverse">
+                   <a href="https://oi.kse.kg/" target="_blank">Посмотреть</a>
+                </button>
+            </div>
+       </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="carousel-item-wrap">
+          <img src="https://www.predictivesuccess.com/wp-content/uploads/2022/08/data_analytics_triloks-scaled.jpg" alt="">
+            <div class="carousel-caption">
+                <div class="container">
+                    <h2>Кыргызская фондовая биржа</h2>
+                    <p>Приглашает пройти обучение по курсу "Организация и функционирование рынка ценных бумаг"</p>
+                    <h3  id="mobile-reverse">Телефоны для справок</h3>
+                    <p id="mobilefd-reverse">(312) 31-14-84 &nbsp &nbsp  (551) 31-14-84</p>
+                </div>
+            </div>
+      </div>
+      </div>
+    </div>
+    <div class="carousel-controls">
+      <div class="carousel-buttons">
+        <button class="carousel-prev material-icons">west</button>
+        <button class="carousel-next material-icons">east</button>
+      </div>
+        <div class="carousel-dots"></div>
+        </div>
+        
+  </div>
+  </div>
+  
+	<!-- <div class="carousel container">
+		<div class="carousel-inner ">
+			<input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
+			<div class="carousel-item c_item-1">
+				<div class="carousel-item-content">
+					<h2>Товарно-сырьевой сектор КФБ</h2>
+					<p>Объявляет о возобновление своей деятельности,находите новые сделки, новых партнёров!</p>
+					<button> <a href="http://ts.kse.kg/" target="_blank" >Посмотреть</a></button>
+				</div>
+			</div>
+			<input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
+			<div class="carousel-item c_item-2">
+				<div class="carousel-item-content">
+					<h2>Open information system</h2>
+					<p>Встречайте обновленную версию сервиса, теперь подавать отчеты стало еще удобнее и приятнее!</p>
+					<button> <a href="https://oi.kse.kg/" target="_blank">Посмотреть</a></button>
+				</div>
+			</div>
+			<input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
+			<div class="carousel-item c_item-3">
+				<div class="carousel-item-content">
+					<h2>Кыргызская фондовая биржа</h2>
+					<p>Приглашает пройти обучение по курсу "Организация и функционирование рынка ценных бумаг"</p>
+					<h3>Телефоны для справок</h3>
+					<p>(312) 31-14-84 &nbsp &nbsp  (551) 31-14-84</p>
+				</div>
+			</div>
+			<label for="carousel-3" class="carousel-control prev control-1">‹</label>
+			<label for="carousel-2" class="carousel-control next control-1">›</label>
+			<label for="carousel-1" class="carousel-control prev control-2">‹</label>
+			<label for="carousel-3" class="carousel-control next control-2">›</label>
+			<label for="carousel-2" class="carousel-control prev control-3">‹</label>
+			<label for="carousel-1" class="carousel-control next control-3">›</label>
+			<ol class="carousel-indicators">
+				<li>
+					<label for="carousel-1" class="carousel-bullet"></label>
+				</li>
+				<li>
+					<label for="carousel-2" class="carousel-bullet"></label>
+				</li>
+				<li>
+					<label for="carousel-3" class="carousel-bullet"</label>
+				</li>
+			</ol>
+		</div>
+	</div> -->
+	<div class="content_block" >
+		<div class="left">
+                    <ul class="leftmenu">
+	<li>     
+<li>
+		<strong><a href="http://ts.kse.kg" target="_blank">Товарно-сырьевой сектор</a></strong></li>
+<li>
+		<strong><a href="https://www.kse.kg/ru/Listing">Листинг</a></strong></li>
+<li>
+		<strong><a href="https://www.kse.kg/ru/PublicInfo">Центр раскрытия информации</a></strong></li>
+ 
+	<li>
+		<strong><a href="https://www.kse.kg/ru/Prices">Тарифы</a></strong></li>
+	<li>
+		<strong><a href="https://www.kse.kg/ru/Analytics">Аналитика</a></strong></li>
+	<li>
+		<strong><a href="https://www.kse.kg/ru/FinMarket">Финансовый рынок.KG</a></strong></li>
+	<li>
+		<strong><a href="https://www.kse.kg/ru/PressClub">Пресс-клуб</a></strong></li>
+
+	
+	<!--<li>
+		<strong><a href="https://www.kse.kg/ru/BuySellOrders">Покупка/Продажа ЦБ</a></strong></li> -->
+<li>
+		<strong><a href="https://www.kse.kg/ru/Announcement">25 лет ЗАО КФБ</font></a></strong></li>
+	
+	<li>
+		<strong><a href="https://www.kse.kg/ru/Contacts">Контакты</a></strong></li>
+	
+	
+</ul>
+
+<img alt='image1 (9K)' src='https://www.kse.kg/files/images/ucheba.jpg' height='360' width='168' border='0' /></a>
+                    
+		</div><!--left-->
+		<div class="center container">
+	<div class="fcc">
+	    <script type="text/javascript">
+<!--
+var _acic={dataProvider:10};(function(){var e=document.createElement("script");e.type="text/javascript";e.async=true;e.src="https://www.acint.net/aci.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})()
+//-->
+</script>
+	</div>
+
+			 
+                <div class="page_text"><p>
+	
+    // <script type="text/javascript">
+    //     function ShowTradestatTable() {
+    //         $("#TradeStatTable").css("display", "block");
+    //         $("#TradeStatChart").css("display", "none");
+    //     }
+
+    //     function ShowTradestatChart() {
+    //         $("#TradeStatChart").css("display", "block");
+    //         $("#TradeStatTable").css("display", "none");
+    //     }
+    // </script>
+    <div id="TradeStatTable">
+    
+    <h5>Итоги торгов за 4.4.2023</h5>
+    <table class="class1 class1-2" width="100%">
+     <tr>
+        <th></th>
+        <th style="font-size:8px;padding-bottom:0px;">Млн. сом</th>
+        <th></th>
+      
+
+     </tr>
+
+        <tr>
+            <td><font color="#1464AD">Объем торгов</font></td>
+            <td>1.308 </td>
+            <td><font color="red">&#9660;86.1 %</font></td>
+            <!--<td class="center"><img src="/views/kse/images/<font color="red">&#9660;" /></td>-->
+        </tr>
+        <tr>
+            <td><font color="#1464AD">Первичный</font></td>
+            <td>1.223</td>
+            <td><font color="red">&#9660;86.7 %</font></td>
+            <!--<td class="center"><img src="/views/kse/images/<font color="red">&#9660;" /></td>-->
+        </tr>
+        <tr>
+            <td><font color="#1464AD">Вторичный</font></td>
+            <td>0.085</td>
+            <td><font color="red">&#9660;59.2 %</font></td>
+            <!--<td class="center"><img src="/views/kse/images/<font color="red">&#9660;" /></td>-->
+        </tr>
+        <tr>  
+            <td><font color="#1464AD">Листинг</font></td>
+            <td>1.223</td>
+            <td><font color="red">&#9660;87 %</font></td>
+            <!--<td class="center"><img src="/views/kse/images/<font color="red">&#9660;" /></td>-->
+        </tr>
+        <tr>
+            <td><font color="#1464AD">Нелистинг</font></td>
+            <td>0.085</td>
+            <td><font color="green">&#9650;8400 %</font></td>
+            <!--<td class="center"><img src="/views/kse/images/<font color="green">&#9650;" /></td>-->
+        </tr>
+        </table>
+    </div>
+    <div id="TradeStatChart" style="display: none">
+    <h2>Итоги торгов за 4.4.2023</h2><div id='Column3D'></div>	
+	<script type="text/javascript">
+		google.charts.load("current", {packages:['corechart']});
+		google.charts.setOnLoadCallback(drawChart);
+		
+		function drawChart()
+		{
+			var data = google.visualization.arrayToDataTable([
+			 ["Рынок", "Значение", { role: "style" } ],
+				["Первичный",1.223,"lightblue"],
+				["Вторичный",0.085,"orange"],
+				["Листинг",1.223,"green"],
+				["Нелистинг",0.085,"red"]
+			]);
+		
+	 
+	  
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0,1,2]);
+
+      var options = {
+        width: 640,
+        height: 450,
+        bar: {groupWidth: "95%"},
+        legend: { position: "none" },
+		
+      };
+		
+		var chart = new google.visualization.ColumnChart(document.getElementById("Column3D"));
+		chart.draw(view, options);
+		}
+	</script></div></p>
+
+<div class="wrapper_rates">
+<div class="rates">
+	<p>
+		
+        <h5>Индексы:</h5>
+				<table class="class1" cellpadding="0" cellspacing="0" width="100%">
+                                    <tr>
+                                        <th colspan="2">Значения на 04.04.2023</th>
+                                    </tr>
+    
+            <tr>
+                    <td><font color="#1464AD">KSE</font></td>
+                    <td class="center">2527.14 %</td>
+                    <td class="center"><font color="black">0</font></td>
+                    <!--<td class="center"> - </td>-->
+            </tr>
+        </table></p>
+</div>
+</div>
+<div class="indices">
+  <div class="switch-box_charts">
+    <button>Индекс</button>
+    <button class="active">Капитализация</button>
+  </div>
+	<p>
+  <div class='index_chart'>
+  <h5>Индекс</h5>
+  <div id='index_chart'>
+
+  </div>
+  </div>
+  <div class='cap_chart'>
+  <h5>Капитализация</h5>
+  <div id='cap_chart'></div>
+  </div>		
+     <script src="/views/kse/js/amcharts_index.js"></script>
+    <script src="/views/kse/js/amcharts_xy.js"></script>
+    <script src="/views/kse/js/amcharts_animated.js"></script>
+		<script>
+		
+    am5.ready(function() {
+  // Капитализация
+	var data = 	[{"date":"04.02.2022","value":1472},{"date":"05.02.2022","value":1472},{"date":"07.02.2022","value":1464},{"date":"08.02.2022","value":1464},{"date":"09.02.2022","value":1464},{"date":"10.02.2022","value":1459},{"date":"11.02.2022","value":1459},{"date":"12.02.2022","value":1459},{"date":"14.02.2022","value":1451},{"date":"15.02.2022","value":1451},{"date":"16.02.2022","value":1451},{"date":"17.02.2022","value":1435},{"date":"18.02.2022","value":1458},{"date":"19.02.2022","value":1458},{"date":"21.02.2022","value":1458},{"date":"22.02.2022","value":1458},{"date":"23.02.2022","value":1458},{"date":"24.02.2022","value":1451},{"date":"25.02.2022","value":1451},{"date":"26.02.2022","value":1451},{"date":"28.02.2022","value":1519},{"date":"01.03.2022","value":1519},{"date":"02.03.2022","value":1519},{"date":"03.03.2022","value":1519},{"date":"04.03.2022","value":1519},{"date":"05.03.2022","value":1519},{"date":"07.03.2022","value":1515},{"date":"08.03.2022","value":1515},{"date":"09.03.2022","value":1503},{"date":"10.03.2022","value":1500},{"date":"11.03.2022","value":1508},{"date":"12.03.2022","value":1508},{"date":"14.03.2022","value":1508},{"date":"15.03.2022","value":1460},{"date":"16.03.2022","value":1422},{"date":"17.03.2022","value":1422},{"date":"18.03.2022","value":1422},{"date":"19.03.2022","value":1422},{"date":"21.03.2022","value":1422},{"date":"22.03.2022","value":1423},{"date":"23.03.2022","value":1505},{"date":"24.03.2022","value":1505},{"date":"25.03.2022","value":1505},{"date":"26.03.2022","value":1489},{"date":"28.03.2022","value":1505},{"date":"29.03.2022","value":1505},{"date":"30.03.2022","value":1501},{"date":"31.03.2022","value":1501},{"date":"01.04.2022","value":1501},{"date":"02.04.2022","value":1501},{"date":"04.04.2022","value":1501},{"date":"05.04.2022","value":1501},{"date":"06.04.2022","value":1501},{"date":"07.04.2022","value":1501},{"date":"08.04.2022","value":1502},{"date":"09.04.2022","value":1502},{"date":"11.04.2022","value":1502},{"date":"12.04.2022","value":1502},{"date":"13.04.2022","value":1502},{"date":"14.04.2022","value":1502},{"date":"15.04.2022","value":1502},{"date":"16.04.2022","value":1502},{"date":"18.04.2022","value":1502},{"date":"19.04.2022","value":1490},{"date":"20.04.2022","value":1490},{"date":"21.04.2022","value":1490},{"date":"22.04.2022","value":1489},{"date":"23.04.2022","value":1486},{"date":"25.04.2022","value":1486},{"date":"26.04.2022","value":1486},{"date":"27.04.2022","value":1486},{"date":"28.04.2022","value":1486},{"date":"29.04.2022","value":1486},{"date":"30.04.2022","value":1486},{"date":"02.05.2022","value":1486},{"date":"03.05.2022","value":1486},{"date":"04.05.2022","value":1486},{"date":"05.05.2022","value":1486},{"date":"06.05.2022","value":1486},{"date":"07.05.2022","value":1486},{"date":"09.05.2022","value":1479},{"date":"10.05.2022","value":1479},{"date":"11.05.2022","value":1669},{"date":"12.05.2022","value":1662},{"date":"13.05.2022","value":1661},{"date":"14.05.2022","value":1661},{"date":"16.05.2022","value":1661},{"date":"17.05.2022","value":1661},{"date":"18.05.2022","value":1661},{"date":"19.05.2022","value":1661},{"date":"20.05.2022","value":1661},{"date":"21.05.2022","value":1661},{"date":"23.05.2022","value":1661},{"date":"24.05.2022","value":1668},{"date":"25.05.2022","value":1668},{"date":"26.05.2022","value":1668},{"date":"27.05.2022","value":1676},{"date":"28.05.2022","value":1676},{"date":"30.05.2022","value":1676},{"date":"31.05.2022","value":1676},{"date":"01.06.2022","value":1676},{"date":"02.06.2022","value":1676},{"date":"03.06.2022","value":1676},{"date":"04.06.2022","value":1676},{"date":"06.06.2022","value":1676},{"date":"07.06.2022","value":1676},{"date":"08.06.2022","value":1676},{"date":"09.06.2022","value":1676},{"date":"10.06.2022","value":1676},{"date":"11.06.2022","value":1676},{"date":"13.06.2022","value":1676},{"date":"14.06.2022","value":1676},{"date":"15.06.2022","value":1676},{"date":"16.06.2022","value":1676},{"date":"17.06.2022","value":1676},{"date":"18.06.2022","value":1676},{"date":"20.06.2022","value":1676},{"date":"21.06.2022","value":1696},{"date":"22.06.2022","value":1696},{"date":"23.06.2022","value":1696},{"date":"24.06.2022","value":1639},{"date":"25.06.2022","value":1639},{"date":"27.06.2022","value":1638},{"date":"28.06.2022","value":1638},{"date":"29.06.2022","value":1638},{"date":"30.06.2022","value":1638},{"date":"01.07.2022","value":1638},{"date":"02.07.2022","value":1638},{"date":"04.07.2022","value":1638},{"date":"05.07.2022","value":1638},{"date":"06.07.2022","value":1638},{"date":"07.07.2022","value":1638},{"date":"08.07.2022","value":1638},{"date":"09.07.2022","value":1638},{"date":"11.07.2022","value":1638},{"date":"12.07.2022","value":1638},{"date":"13.07.2022","value":1637},{"date":"14.07.2022","value":1637},{"date":"15.07.2022","value":1637},{"date":"16.07.2022","value":1637},{"date":"18.07.2022","value":1637},{"date":"19.07.2022","value":1637},{"date":"20.07.2022","value":1637},{"date":"21.07.2022","value":1637},{"date":"22.07.2022","value":1666},{"date":"23.07.2022","value":1666},{"date":"25.07.2022","value":1666},{"date":"26.07.2022","value":1666},{"date":"27.07.2022","value":1665},{"date":"28.07.2022","value":1649},{"date":"29.07.2022","value":1649},{"date":"30.07.2022","value":1649},{"date":"01.08.2022","value":1678},{"date":"02.08.2022","value":1678},{"date":"03.08.2022","value":1678},{"date":"04.08.2022","value":1680},{"date":"05.08.2022","value":1684},{"date":"06.08.2022","value":1684},{"date":"08.08.2022","value":1684},{"date":"09.08.2022","value":1684},{"date":"10.08.2022","value":1684},{"date":"11.08.2022","value":1684},{"date":"12.08.2022","value":1680},{"date":"13.08.2022","value":1680},{"date":"15.08.2022","value":1712},{"date":"16.08.2022","value":1712},{"date":"17.08.2022","value":1897},{"date":"18.08.2022","value":1896},{"date":"19.08.2022","value":1896},{"date":"20.08.2022","value":1896},{"date":"22.08.2022","value":1948},{"date":"23.08.2022","value":1889},{"date":"24.08.2022","value":1945},{"date":"25.08.2022","value":1945},{"date":"26.08.2022","value":1945},{"date":"27.08.2022","value":1945},{"date":"29.08.2022","value":1937},{"date":"30.08.2022","value":1937},{"date":"31.08.2022","value":1937},{"date":"01.09.2022","value":1937},{"date":"02.09.2022","value":1937},{"date":"03.09.2022","value":1937},{"date":"05.09.2022","value":1937},{"date":"06.09.2022","value":1937},{"date":"07.09.2022","value":1937},{"date":"08.09.2022","value":1925},{"date":"09.09.2022","value":1925},{"date":"10.09.2022","value":1925},{"date":"12.09.2022","value":1925},{"date":"13.09.2022","value":1925},{"date":"14.09.2022","value":1925},{"date":"15.09.2022","value":1925},{"date":"16.09.2022","value":1930},{"date":"17.09.2022","value":1930},{"date":"19.09.2022","value":1930},{"date":"20.09.2022","value":1894},{"date":"21.09.2022","value":1894},{"date":"22.09.2022","value":1894},{"date":"23.09.2022","value":1895},{"date":"24.09.2022","value":1895},{"date":"26.09.2022","value":1895},{"date":"27.09.2022","value":1895},{"date":"28.09.2022","value":1894},{"date":"29.09.2022","value":1894},{"date":"30.09.2022","value":1896},{"date":"01.10.2022","value":1896},{"date":"03.10.2022","value":1896},{"date":"04.10.2022","value":1870},{"date":"05.10.2022","value":1885},{"date":"06.10.2022","value":1885},{"date":"07.10.2022","value":1885},{"date":"08.10.2022","value":1885},{"date":"10.10.2022","value":1885},{"date":"11.10.2022","value":1885},{"date":"12.10.2022","value":1885},{"date":"13.10.2022","value":1885},{"date":"14.10.2022","value":1885},{"date":"15.10.2022","value":1885},{"date":"17.10.2022","value":1900},{"date":"18.10.2022","value":1917},{"date":"19.10.2022","value":1917},{"date":"20.10.2022","value":1917},{"date":"21.10.2022","value":1960},{"date":"22.10.2022","value":1960},{"date":"24.10.2022","value":1960},{"date":"25.10.2022","value":1960},{"date":"26.10.2022","value":1960},{"date":"27.10.2022","value":1960},{"date":"28.10.2022","value":1960},{"date":"29.10.2022","value":1960},{"date":"31.10.2022","value":1960},{"date":"01.11.2022","value":1960},{"date":"02.11.2022","value":1968},{"date":"03.11.2022","value":1968},{"date":"04.11.2022","value":1968},{"date":"05.11.2022","value":1968},{"date":"07.11.2022","value":1968},{"date":"08.11.2022","value":1968},{"date":"09.11.2022","value":1968},{"date":"10.11.2022","value":1968},{"date":"11.11.2022","value":1971},{"date":"12.11.2022","value":1971},{"date":"14.11.2022","value":1971},{"date":"15.11.2022","value":1977},{"date":"16.11.2022","value":1977},{"date":"17.11.2022","value":1982},{"date":"18.11.2022","value":1982},{"date":"19.11.2022","value":1982},{"date":"21.11.2022","value":1982},{"date":"22.11.2022","value":1982},{"date":"23.11.2022","value":1982},{"date":"24.11.2022","value":1982},{"date":"25.11.2022","value":1982},{"date":"26.11.2022","value":1982},{"date":"28.11.2022","value":1978},{"date":"29.11.2022","value":1982},{"date":"30.11.2022","value":1982},{"date":"01.12.2022","value":1990},{"date":"02.12.2022","value":1990},{"date":"03.12.2022","value":1990},{"date":"05.12.2022","value":1990},{"date":"06.12.2022","value":1990},{"date":"07.12.2022","value":1990},{"date":"08.12.2022","value":2110},{"date":"09.12.2022","value":2110},{"date":"10.12.2022","value":2110},{"date":"12.12.2022","value":1978},{"date":"13.12.2022","value":1968},{"date":"14.12.2022","value":1968},{"date":"15.12.2022","value":1987},{"date":"16.12.2022","value":1987},{"date":"17.12.2022","value":1987},{"date":"19.12.2022","value":2095},{"date":"20.12.2022","value":1999},{"date":"21.12.2022","value":1999},{"date":"22.12.2022","value":2104},{"date":"23.12.2022","value":2104},{"date":"24.12.2022","value":2104},{"date":"26.12.2022","value":2104},{"date":"27.12.2022","value":2243},{"date":"28.12.2022","value":2243},{"date":"29.12.2022","value":2283},{"date":"30.12.2022","value":2312},{"date":"31.12.2022","value":2312},{"date":"02.01.2023","value":2312},{"date":"03.01.2023","value":2312},{"date":"04.01.2023","value":2312},{"date":"05.01.2023","value":2312},{"date":"06.01.2023","value":2312},{"date":"07.01.2023","value":2312},{"date":"09.01.2023","value":2312},{"date":"10.01.2023","value":2312},{"date":"11.01.2023","value":2312},{"date":"12.01.2023","value":2312},{"date":"13.01.2023","value":2312},{"date":"14.01.2023","value":2312},{"date":"16.01.2023","value":2312},{"date":"17.01.2023","value":2152},{"date":"18.01.2023","value":2192},{"date":"19.01.2023","value":2479},{"date":"20.01.2023","value":2559},{"date":"21.01.2023","value":2559},{"date":"23.01.2023","value":2559},{"date":"24.01.2023","value":2560},{"date":"25.01.2023","value":2560},{"date":"26.01.2023","value":2560},{"date":"27.01.2023","value":2555},{"date":"28.01.2023","value":2555},{"date":"30.01.2023","value":2554},{"date":"31.01.2023","value":2554},{"date":"01.02.2023","value":2554},{"date":"02.02.2023","value":2554},{"date":"03.02.2023","value":2554},{"date":"04.02.2023","value":2554},{"date":"06.02.2023","value":2498},{"date":"07.02.2023","value":2352},{"date":"08.02.2023","value":2352},{"date":"09.02.2023","value":2482},{"date":"10.02.2023","value":2549},{"date":"11.02.2023","value":2549},{"date":"13.02.2023","value":2549},{"date":"14.02.2023","value":2537},{"date":"15.02.2023","value":2537},{"date":"16.02.2023","value":2527},{"date":"17.02.2023","value":2527},{"date":"18.02.2023","value":2527},{"date":"20.02.2023","value":2527},{"date":"21.02.2023","value":2527},{"date":"22.02.2023","value":2527},{"date":"23.02.2023","value":2527},{"date":"24.02.2023","value":2527},{"date":"25.02.2023","value":2527},{"date":"27.02.2023","value":2539},{"date":"28.02.2023","value":2524},{"date":"01.03.2023","value":2477},{"date":"02.03.2023","value":2477},{"date":"03.03.2023","value":2477},{"date":"04.03.2023","value":2477},{"date":"05.03.2023","value":2477},{"date":"06.03.2023","value":2477},{"date":"07.03.2023","value":2477},{"date":"08.03.2023","value":2477},{"date":"09.03.2023","value":2477},{"date":"10.03.2023","value":2477},{"date":"11.03.2023","value":2477},{"date":"13.03.2023","value":2477},{"date":"14.03.2023","value":2477},{"date":"15.03.2023","value":2477},{"date":"16.03.2023","value":2477},{"date":"17.03.2023","value":2524},{"date":"18.03.2023","value":2524},{"date":"20.03.2023","value":2524},{"date":"21.03.2023","value":2524},{"date":"22.03.2023","value":2524},{"date":"23.03.2023","value":2524},{"date":"24.03.2023","value":2524},{"date":"25.03.2023","value":2524},{"date":"27.03.2023","value":2524},{"date":"28.03.2023","value":2524},{"date":"29.03.2023","value":2526},{"date":"30.03.2023","value":2526},{"date":"31.03.2023","value":2526},{"date":"01.04.2023","value":2526},{"date":"03.04.2023","value":2527},{"date":"04.04.2023","value":2527}]
+
+  var root = am5.Root.new("index_chart");
+  
+ 
+  root.setThemes([
+    am5themes_Animated.new(root)
+  ]);
+  
+  
+  
+  var chart = root.container.children.push(am5xy.XYChart.new(root, {
+    panX: true,
+    panY: true,
+    wheelX: "panX",
+    wheelY: "zoomX",
+    pinchZoomX:true
+  }));
+  
+ 
+  var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {}));
+  cursor.lineY.set("visible", false);
+ 
+
+
+  var xRenderer = am5xy.AxisRendererX.new(root, { minGridDistance: 100});
+  xRenderer.labels.template.setAll({
+    // rotation:45,
+  centerY: am5.p50,
+	centerX: am5.p150,
+	paddingLeft:50
+  });
+
+  
+  var xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, {
+    maxDeviation: 0.3,
+    categoryField: "date",
+    renderer: xRenderer,
+    baseInterval: { count: 2 },
+    tooltip: am5.Tooltip.new(root, {})
+  }));
+  
+  var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+    maxDeviation: 0.3,
+    renderer: am5xy.AxisRendererY.new(root, {}),
+   
+  }));
+  
+  var series = chart.series.push(am5xy.LineSeries.new(root, {
+    name: "Series 1",
+    xAxis: xAxis,
+    yAxis: yAxis,
+    valueYField: "value",
+    sequencedInterpolation: true,
+    categoryXField: "date",
+    
+    tooltip: am5.Tooltip.new(root, {
+      labelText:"Индекс: {valueY}"
+    })
+  }));
+
+var xRenderer = xAxis.get("renderer");
+xRenderer.grid.template.setAll({
+    opacity:0
+});
+  xAxis.data.setAll(data);
+  series.data.setAll(data);
+  
+  series.appear(1000);
+  chart.appear(1000, 100);
+  
+  });
+
+am5.ready(function() {
+  // Капитализация
+	var data = [{"date":"04.02.2022","value":51.317811832},{"date":"05.02.2022","value":51.317811832},{"date":"07.02.2022","value":51.039121392},{"date":"08.02.2022","value":51.039121392},{"date":"09.02.2022","value":51.039121392},{"date":"10.02.2022","value":50.84475288},{"date":"11.02.2022","value":50.84475288},{"date":"12.02.2022","value":50.84475288},{"date":"14.02.2022","value":50.591980651},{"date":"15.02.2022","value":50.591980651},{"date":"16.02.2022","value":50.591980651},{"date":"17.02.2022","value":50.015091441},{"date":"18.02.2022","value":50.816883836},{"date":"19.02.2022","value":50.816883836},{"date":"21.02.2022","value":50.816883836},{"date":"22.02.2022","value":50.816883836},{"date":"23.02.2022","value":50.816883836},{"date":"24.02.2022","value":50.56606244},{"date":"25.02.2022","value":50.56606244},{"date":"26.02.2022","value":50.56606244},{"date":"28.02.2022","value":52.96606244},{"date":"01.03.2022","value":52.96606244},{"date":"02.03.2022","value":52.96606244},{"date":"03.03.2022","value":52.96606244},{"date":"04.03.2022","value":52.96606244},{"date":"05.03.2022","value":52.96606244},{"date":"07.03.2022","value":52.82671722},{"date":"08.03.2022","value":52.82671722},{"date":"09.03.2022","value":52.40868156},{"date":"10.03.2022","value":52.30327915},{"date":"11.03.2022","value":52.58196959},{"date":"12.03.2022","value":52.58196959},{"date":"14.03.2022","value":52.554100546},{"date":"15.03.2022","value":50.90982695},{"date":"16.03.2022","value":49.565145577},{"date":"17.03.2022","value":49.565145577},{"date":"18.03.2022","value":49.565145577},{"date":"19.03.2022","value":49.565145577},{"date":"21.03.2022","value":49.565145577},{"date":"22.03.2022","value":49.613407439},{"date":"23.03.2022","value":52.456943422},{"date":"24.03.2022","value":52.456943422},{"date":"25.03.2022","value":52.456943422},{"date":"26.03.2022","value":51.916005278},{"date":"28.03.2022","value":52.456943422},{"date":"29.03.2022","value":52.456943422},{"date":"30.03.2022","value":52.317598202},{"date":"31.03.2022","value":52.317598202},{"date":"01.04.2022","value":52.317598202},{"date":"02.04.2022","value":52.317598202},{"date":"04.04.2022","value":52.317598202},{"date":"05.04.2022","value":52.317598202},{"date":"06.04.2022","value":52.317598202},{"date":"07.04.2022","value":52.317598202},{"date":"08.04.2022","value":52.346555319},{"date":"09.04.2022","value":52.346555319},{"date":"11.04.2022","value":52.346555319},{"date":"12.04.2022","value":52.346555319},{"date":"13.04.2022","value":52.346555319},{"date":"14.04.2022","value":52.346555319},{"date":"15.04.2022","value":52.346555319},{"date":"16.04.2022","value":52.346555319},{"date":"18.04.2022","value":52.346555319},{"date":"19.04.2022","value":51.928519659},{"date":"20.04.2022","value":51.928519659},{"date":"21.04.2022","value":51.928519659},{"date":"22.04.2022","value":51.900650615},{"date":"23.04.2022","value":51.795248205},{"date":"25.04.2022","value":51.795248205},{"date":"26.04.2022","value":51.795248205},{"date":"27.04.2022","value":51.795248205},{"date":"28.04.2022","value":51.795248205},{"date":"29.04.2022","value":51.795248205},{"date":"30.04.2022","value":51.795248205},{"date":"02.05.2022","value":51.795248205},{"date":"03.05.2022","value":51.795248205},{"date":"04.05.2022","value":51.795248205},{"date":"05.05.2022","value":51.795248205},{"date":"06.05.2022","value":51.795248205},{"date":"07.05.2022","value":51.795248205},{"date":"09.05.2022","value":51.553938897},{"date":"10.05.2022","value":51.553938897},{"date":"11.05.2022","value":58.185938897},{"date":"12.05.2022","value":57.935117501},{"date":"13.05.2022","value":57.906160384},{"date":"14.05.2022","value":57.906160384},{"date":"16.05.2022","value":57.906160384},{"date":"17.05.2022","value":57.906160384},{"date":"18.05.2022","value":57.906160384},{"date":"19.05.2022","value":57.906160384},{"date":"20.05.2022","value":57.906160384},{"date":"21.05.2022","value":57.906160384},{"date":"23.05.2022","value":57.906160384},{"date":"24.05.2022","value":58.125979384},{"date":"25.05.2022","value":58.125979384},{"date":"26.05.2022","value":58.125979384},{"date":"27.05.2022","value":58.429761071},{"date":"28.05.2022","value":58.429761071},{"date":"30.05.2022","value":58.429761071},{"date":"31.05.2022","value":58.429761071},{"date":"01.06.2022","value":58.429761071},{"date":"02.06.2022","value":58.429761071},{"date":"03.06.2022","value":58.410456327},{"date":"04.06.2022","value":58.410456327},{"date":"06.06.2022","value":58.410456327},{"date":"07.06.2022","value":58.410456327},{"date":"08.06.2022","value":58.410456327},{"date":"09.06.2022","value":58.410456327},{"date":"10.06.2022","value":58.410456327},{"date":"11.06.2022","value":58.410456327},{"date":"13.06.2022","value":58.410456327},{"date":"14.06.2022","value":58.410456327},{"date":"15.06.2022","value":58.410456327},{"date":"16.06.2022","value":58.410456327},{"date":"17.06.2022","value":58.410456327},{"date":"18.06.2022","value":58.410456327},{"date":"20.06.2022","value":58.410456327},{"date":"21.06.2022","value":59.110456327},{"date":"22.06.2022","value":59.110456327},{"date":"23.06.2022","value":59.110456327},{"date":"24.06.2022","value":57.141374847},{"date":"25.06.2022","value":57.141374847},{"date":"27.06.2022","value":57.109754124},{"date":"28.06.2022","value":57.109754124},{"date":"29.06.2022","value":57.109754124},{"date":"30.06.2022","value":57.109754124},{"date":"01.07.2022","value":57.08188508},{"date":"02.07.2022","value":57.08188508},{"date":"04.07.2022","value":57.08188508},{"date":"05.07.2022","value":57.08188508},{"date":"06.07.2022","value":57.08188508},{"date":"07.07.2022","value":57.08188508},{"date":"08.07.2022","value":57.08188508},{"date":"09.07.2022","value":57.08188508},{"date":"11.07.2022","value":57.08188508},{"date":"12.07.2022","value":57.08188508},{"date":"13.07.2022","value":57.06058508},{"date":"14.07.2022","value":57.06058508},{"date":"15.07.2022","value":57.06058508},{"date":"16.07.2022","value":57.06058508},{"date":"18.07.2022","value":57.06058508},{"date":"19.07.2022","value":57.06058508},{"date":"20.07.2022","value":57.06058508},{"date":"21.07.2022","value":57.06058508},{"date":"22.07.2022","value":58.06058508},{"date":"23.07.2022","value":58.06058508},{"date":"25.07.2022","value":58.088454124},{"date":"26.07.2022","value":58.088454124},{"date":"27.07.2022","value":58.04629316},{"date":"28.07.2022","value":57.48891228},{"date":"29.07.2022","value":57.48891228},{"date":"30.07.2022","value":57.48891228},{"date":"01.08.2022","value":58.48891228},{"date":"02.08.2022","value":58.48891228},{"date":"03.08.2022","value":58.48891228},{"date":"04.08.2022","value":58.562693967},{"date":"05.08.2022","value":58.712693967},{"date":"06.08.2022","value":58.712693967},{"date":"08.08.2022","value":58.712693967},{"date":"09.08.2022","value":58.712693967},{"date":"10.08.2022","value":58.712693967},{"date":"11.08.2022","value":58.712693967},{"date":"12.08.2022","value":58.573348747},{"date":"13.08.2022","value":58.573348747},{"date":"15.08.2022","value":59.673348747},{"date":"16.08.2022","value":59.673348747},{"date":"17.08.2022","value":66.137548747},{"date":"18.08.2022","value":66.100306021},{"date":"19.08.2022","value":66.100306021},{"date":"20.08.2022","value":66.100306021},{"date":"22.08.2022","value":67.900306021},{"date":"23.08.2022","value":65.837718074},{"date":"24.08.2022","value":67.788551154},{"date":"25.08.2022","value":67.788551154},{"date":"26.08.2022","value":67.788551154},{"date":"27.08.2022","value":67.788551154},{"date":"29.08.2022","value":67.509860714},{"date":"30.08.2022","value":67.509860714},{"date":"31.08.2022","value":67.509860714},{"date":"01.09.2022","value":67.509860714},{"date":"02.09.2022","value":67.509860714},{"date":"03.09.2022","value":67.509860714},{"date":"05.09.2022","value":67.509860714},{"date":"06.09.2022","value":67.509860714},{"date":"07.09.2022","value":67.509860714},{"date":"08.09.2022","value":67.091825054},{"date":"09.09.2022","value":67.091825054},{"date":"10.09.2022","value":67.091825054},{"date":"12.09.2022","value":67.091825054},{"date":"13.09.2022","value":67.091825054},{"date":"14.09.2022","value":67.091825054},{"date":"15.09.2022","value":67.091825054},{"date":"16.09.2022","value":67.284622302},{"date":"17.09.2022","value":67.284622302},{"date":"19.09.2022","value":67.284622302},{"date":"20.09.2022","value":66.030515322},{"date":"21.09.2022","value":66.030515322},{"date":"22.09.2022","value":66.030515322},{"date":"23.09.2022","value":66.043713764},{"date":"24.09.2022","value":66.043713764},{"date":"26.09.2022","value":66.043713764},{"date":"27.09.2022","value":66.043713764},{"date":"28.09.2022","value":66.024416168},{"date":"29.09.2022","value":66.024416168},{"date":"30.09.2022","value":66.093252707},{"date":"01.10.2022","value":66.093252707},{"date":"03.10.2022","value":66.093252707},{"date":"04.10.2022","value":65.198910804},{"date":"05.10.2022","value":65.718568483},{"date":"06.10.2022","value":65.718568483},{"date":"07.10.2022","value":65.718568483},{"date":"08.10.2022","value":65.718568483},{"date":"10.10.2022","value":65.718568483},{"date":"11.10.2022","value":65.718568483},{"date":"12.10.2022","value":65.718568483},{"date":"13.10.2022","value":65.718568483},{"date":"14.10.2022","value":65.718568483},{"date":"15.10.2022","value":65.718568483},{"date":"17.10.2022","value":66.218568483},{"date":"18.10.2022","value":66.834753046},{"date":"19.10.2022","value":66.834753046},{"date":"20.10.2022","value":66.834753046},{"date":"21.10.2022","value":68.310053046},{"date":"22.10.2022","value":68.310053046},{"date":"24.10.2022","value":68.310053046},{"date":"25.10.2022","value":68.310053046},{"date":"26.10.2022","value":68.310053046},{"date":"27.10.2022","value":68.310053046},{"date":"28.10.2022","value":68.310253046},{"date":"29.10.2022","value":68.310253046},{"date":"31.10.2022","value":68.310253046},{"date":"01.11.2022","value":68.310253046},{"date":"02.11.2022","value":68.588943486},{"date":"03.11.2022","value":68.588943486},{"date":"04.11.2022","value":68.588943486},{"date":"05.11.2022","value":68.588943486},{"date":"07.11.2022","value":68.588943486},{"date":"08.11.2022","value":68.588943486},{"date":"09.11.2022","value":68.588943486},{"date":"10.11.2022","value":68.588943486},{"date":"11.11.2022","value":68.698190339},{"date":"12.11.2022","value":68.698190339},{"date":"14.11.2022","value":68.698190339},{"date":"15.11.2022","value":68.908190339},{"date":"16.11.2022","value":68.908190339},{"date":"17.11.2022","value":69.077634126},{"date":"18.11.2022","value":69.077634126},{"date":"19.11.2022","value":69.077634126},{"date":"21.11.2022","value":69.077634126},{"date":"22.11.2022","value":69.077634126},{"date":"23.11.2022","value":69.077634126},{"date":"24.11.2022","value":69.077634126},{"date":"25.11.2022","value":69.077634126},{"date":"26.11.2022","value":69.077634126},{"date":"28.11.2022","value":68.938288906},{"date":"29.11.2022","value":69.077634126},{"date":"30.11.2022","value":69.077634126},{"date":"01.12.2022","value":69.356324566},{"date":"02.12.2022","value":69.356324566},{"date":"03.12.2022","value":69.356324566},{"date":"05.12.2022","value":69.356324566},{"date":"06.12.2022","value":69.356324566},{"date":"07.12.2022","value":69.356324566},{"date":"08.12.2022","value":73.536681166},{"date":"09.12.2022","value":73.536681166},{"date":"10.12.2022","value":73.536681166},{"date":"12.12.2022","value":68.950272595},{"date":"13.12.2022","value":68.605299254},{"date":"14.12.2022","value":68.605299254},{"date":"15.12.2022","value":69.261417523},{"date":"16.12.2022","value":69.261417523},{"date":"17.12.2022","value":69.261417523},{"date":"19.12.2022","value":73.011754774},{"date":"20.12.2022","value":69.667469494},{"date":"21.12.2022","value":69.667469494},{"date":"22.12.2022","value":73.330703977},{"date":"23.12.2022","value":73.330703977},{"date":"24.12.2022","value":73.330703977},{"date":"26.12.2022","value":73.330703977},{"date":"27.12.2022","value":78.163624884},{"date":"28.12.2022","value":78.163624884},{"date":"29.12.2022","value":79.588697807},{"date":"30.12.2022","value":80.588697807},{"date":"31.12.2022","value":80.588697807},{"date":"02.01.2023","value":80.588697807},{"date":"03.01.2023","value":80.588697807},{"date":"04.01.2023","value":80.588697807},{"date":"05.01.2023","value":80.588697807},{"date":"06.01.2023","value":80.588697807},{"date":"07.01.2023","value":80.588697807},{"date":"09.01.2023","value":80.588697807},{"date":"10.01.2023","value":80.588697807},{"date":"11.01.2023","value":80.588697807},{"date":"12.01.2023","value":80.588697807},{"date":"13.01.2023","value":80.588697807},{"date":"14.01.2023","value":80.588697807},{"date":"16.01.2023","value":80.588697807},{"date":"17.01.2023","value":75.014889007},{"date":"18.01.2023","value":76.408341207},{"date":"19.01.2023","value":86.408341207},{"date":"20.01.2023","value":89.195245607},{"date":"21.01.2023","value":89.195245607},{"date":"23.01.2023","value":89.195245607},{"date":"24.01.2023","value":89.226515273},{"date":"25.01.2023","value":89.226515273},{"date":"26.01.2023","value":89.226515273},{"date":"27.01.2023","value":89.05945236},{"date":"28.01.2023","value":89.05945236},{"date":"30.01.2023","value":89.027831637},{"date":"31.01.2023","value":89.027831637},{"date":"01.02.2023","value":89.027831637},{"date":"02.02.2023","value":89.027831637},{"date":"03.02.2023","value":89.027831637},{"date":"04.02.2023","value":89.027831637},{"date":"06.02.2023","value":87.076998557},{"date":"07.02.2023","value":81.96776672},{"date":"08.02.2023","value":81.96776672},{"date":"09.02.2023","value":86.519617677},{"date":"10.02.2023","value":88.860617373},{"date":"11.02.2023","value":88.860617373},{"date":"13.02.2023","value":88.860617373},{"date":"14.02.2023","value":88.437007904},{"date":"15.02.2023","value":88.437007904},{"date":"16.02.2023","value":88.094218663},{"date":"17.02.2023","value":88.094218663},{"date":"18.02.2023","value":88.094218663},{"date":"20.02.2023","value":88.094218663},{"date":"21.02.2023","value":88.094218663},{"date":"22.02.2023","value":88.094218663},{"date":"23.02.2023","value":88.094218663},{"date":"24.02.2023","value":88.094218663},{"date":"25.02.2023","value":88.094218663},{"date":"27.02.2023","value":88.494218663},{"date":"28.02.2023","value":87.988857237},{"date":"01.03.2023","value":86.338452451},{"date":"02.03.2023","value":86.338452451},{"date":"03.03.2023","value":86.338452451},{"date":"04.03.2023","value":86.338452451},{"date":"05.03.2023","value":86.338452451},{"date":"06.03.2023","value":86.338452451},{"date":"07.03.2023","value":86.338452451},{"date":"08.03.2023","value":86.338452451},{"date":"09.03.2023","value":86.338452451},{"date":"10.03.2023","value":86.338452451},{"date":"11.03.2023","value":86.338452451},{"date":"13.03.2023","value":86.338452451},{"date":"14.03.2023","value":86.338452451},{"date":"15.03.2023","value":86.338452451},{"date":"16.03.2023","value":86.338452451},{"date":"17.03.2023","value":87.988857237},{"date":"18.03.2023","value":87.988857237},{"date":"20.03.2023","value":87.988857237},{"date":"21.03.2023","value":87.988857237},{"date":"22.03.2023","value":87.988857237},{"date":"23.03.2023","value":87.988857237},{"date":"24.03.2023","value":87.988857237},{"date":"25.03.2023","value":87.988857237},{"date":"27.03.2023","value":87.988857237},{"date":"28.03.2023","value":87.988857237},{"date":"29.03.2023","value":88.054961082},{"date":"30.03.2023","value":88.054961082},{"date":"31.03.2023","value":88.054961082},{"date":"01.04.2023","value":88.054961082},{"date":"03.04.2023","value":88.064993938},{"date":"04.04.2023","value":88.064993938}]
+
+  var root = am5.Root.new("cap_chart");
+  
+ 
+  root.setThemes([
+    am5themes_Animated.new(root)
+  ]);
+  
+  
+  
+  var chart = root.container.children.push(am5xy.XYChart.new(root, {
+    panX: true,
+    panY: true,
+    wheelX: "panX",
+    wheelY: "zoomX",
+    pinchZoomX:true
+  }));
+  
+ 
+  var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {}));
+  cursor.lineY.set("visible", false);
+  
+
+  var xRenderer = am5xy.AxisRendererX.new(root, { minGridDistance: 100 });
+  xRenderer.labels.template.setAll({
+    // rotation:90,
+    centerY: am5.p50,
+	centerX: am5.p150,
+	paddingLeft:50
+  });
+  
+  var xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, {
+    maxDeviation: 0.3,
+    categoryField: "date",
+    renderer: xRenderer,
+    baseInterval: { count: 2 },
+    tooltip: am5.Tooltip.new(root, {})
+  }));
+  
+  var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+    maxDeviation: 0.3,
+    renderer: am5xy.AxisRendererY.new(root, {})
+  }));
+  
+  var series = chart.series.push(am5xy.LineSeries.new(root, {
+    name: "Series 1",
+    xAxis: xAxis,
+    yAxis: yAxis,
+    valueYField: "value",
+    sequencedInterpolation: true,
+    categoryXField: "date",
+    
+    tooltip: am5.Tooltip.new(root, {
+      labelText:"Капитализация: {valueY} .млн"
+    })
+  }));
+ 
+ 
+  series.fills.template.setAll({
+  visible: true,
+  fillOpacity: 0.2
+});
+
+var xRenderer = xAxis.get("renderer");
+xRenderer.grid.template.setAll({
+    opacity:0,
+    location: 5
+});
+  xAxis.data.setAll(data);
+  series.data.setAll(data);
+  
+  series.appear(1000);
+  chart.appear(1000, 100);
+  
+  });
+		
+	</script>
+	</p>
+</div></div>
+                    
+            
+		</div><!--/center-->
+		
+		<div class="right container">
+                    <div class="news-mainpage">
+<h3>Новости</h3>
+<div>
+<h5>
+Новости биржи:
+</h5>
+<p><div class="blog_wrap"><div id="blog_module" class="blog_module">
+                
+                <div class="blog_title"><strong>27.03.2023</strong>
+                    <a href="https://www.kse.kg/ru/RussianNewsBlog/7855/Obzor torgov s 20 po 25 marta 2023 goda">Обзор торгов с 20 по 25 марта 2023 года
+                    </a>
+                </div>
+                <div class="blog_text">За прошедшую неделю объём торгов поднялся на 62,4% и составил 6,89 млн.сом. �...</div>
+                
+            
+                
+                <div class="blog_title"><strong>22.03.2023</strong>
+                    <a href="https://www.kse.kg/ru/RussianNewsBlog/7841/Obzor torgov s 13 po 17 marta 2023 goda">Обзор торгов с 13 по 17 марта 2023 года
+                    </a>
+                </div>
+                <div class="blog_text">С 13 по 17 марта было зарегистрировано 24 сделки с корпоративными ценными ...</div>
+                
+            
+                
+                <div class="blog_title"><strong>14.03.2023</strong>
+                    <a href="https://www.kse.kg/ru/RussianNewsBlog/7825/Obzor torgov s 6 po 11 marta 2023 goda">Обзор торгов с 6 по 11 марта 2023 года
+                    </a>
+                </div>
+                <div class="blog_text">За прошедшую неделю в торговой системе КФБ зарегистрировано всего 62 сд...</div>
+                
+            </div>
+     <div class="button">
+    <a href="https://www.kse.kg/ru/RussianNewsBlog/">  Все новости <i class='material-icons'>
+    arrow_forward
+    </i></a>
+</div></div></p>
+</div>
+<div>
+<h5>Новости сайта:</h5>
+<p><div class="blog_wrap"><div id="blog_module" class="blog_module">
+                
+                <div class="blog_title"><strong>05.04.2023</strong>
+                    <a href="https://www.kse.kg/ru/RussianAllNewsBlog/7905/OAO Keremet Bank : Izmenenie v sostave Ispolnitelnogo organa">ОАО Керемет Банк : Изменение в составе Исполнительного органа
+                    </a>
+                </div>
+                <div class="blog_text">Орган управления, в котором произошли измененияПравлениеФИО каждого л...</div>
+                
+            
+                
+                <div class="blog_title"><strong>05.04.2023</strong>
+                    <a href="https://www.kse.kg/ru/RussianAllNewsBlog/7904/OAO Keremet Bank : Resheniya, prinyatyie obschim sobraniem aktsionerov">ОАО Керемет Банк : Решения, принятые общим собранием акционеров
+                    </a>
+                </div>
+                <div class="blog_text">Дата проведения общего собрания31 марта 2023 годаВид общего собрания (год...</div>
+                
+            
+                
+                <div class="blog_title"><strong>05.04.2023</strong>
+                    <a href="https://www.kse.kg/ru/RussianAllNewsBlog/7903/OAO Kapital Bank TSentralnoy Azii : Resheniya, prinyatyie obschim sobraniem aktsionerov">ОАО Капитал Банк Центральной Азии : Решения, принятые общим собранием акционеров
+                    </a>
+                </div>
+                <div class="blog_text">Дата проведения общего собрания30 марта 2023 г.Вид общего собрания (годов�...</div>
+                
+            </div>
+     <div class="button">
+    <a href="https://www.kse.kg/ru/RussianAllNewsBlog/">  Все новости <i class='material-icons'>
+    arrow_forward
+    </i></a>
+</div></div></p>
+</div>
+</div>
+                    
+		</div><!--/right-->
+		<div class="clear"><img src="https://www.kse.kg/views/kse/images/pixel.gif" /></div>
+	</div><!--/content_block-->
+	<div class="container" style="width:100%;margin-top: 1%;">
+		<h3 style="margin-top: 50px;margin-bottom:30px;">Расписание аукционов ГЦБ на апрель 2023 года</h3>
+
+<h4 class="auction-subheader">ГКВ (млн сом)</h4>
+<div class="table-wrapper">
+<table class="class1" style="width:100%;">
+	<tbody>
+		<tr>
+			<th>Дата аукциона</th>
+			<th>Дата выпуска</th>
+			<th>Регистрационный номер</th>
+			<th>Срок обращения</th>
+			<th>Объем выпуска ГКВ</th>
+		</tr>
+		<tr>
+    <td>
+		06.04.2023
+    </td>
+    <td>
+		10.04.2023
+    </td>
+    <td>
+		GD052240408
+    </td>
+    <td>
+		12 мес.
+    </td>
+    <td>
+		60,0
+    </td>
+</tr>
+<tr>
+    <td>
+		13.04.2023
+    </td>
+    <td>
+		17.04.2023
+    </td>
+    <td>
+		GD052240415
+    </td>
+    <td>
+		12 мес.
+    </td>
+    <td>
+		60,0
+    </td>
+</tr>
+		<tr>
+			<td colspan="4">Итого ГКВ:</td>
+			<td>120,0</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+<h4 class="auction-subheader">ГКО (млн сом)</h4>
+<div class="table-wrapper">
+<table border="0" cellpadding="0" cellspacing="0" class="class1" style="width:100%;">
+	<tbody>
+		<tr>
+			<th>Дата аукциона</th>
+			<th>Дата выпуска</th>
+			<th>Регистрационный номер</th>
+			<th>Ставка купона</th>
+			<th>Срок обращения</th>
+			<th>Объем выпуска ГКО</th>
+		</tr>		
+
+
+<tr>
+    <td>
+		31.03.2023
+    </td>
+    <td>
+		03.04.2023
+    </td>
+    <td>
+		GBA02250403
+    </td>
+    <td>
+		5%
+    </td>
+    <td>
+		2 года
+    </td>
+    <td>
+		300,0
+    </td>
+    
+</tr>
+<tr>
+    <td>
+		14.04.2023
+    </td>
+    <td>
+		17.04.2023
+    </td>
+    <td>
+		GBA07300417
+    </td>
+    <td>
+		7%
+    </td>
+    <td>
+		7 лет
+    </td>
+    <td>
+		1 150,0
+    </td>
+    
+</tr>
+<tr>
+    <td>
+		21.04.2023
+    </td>
+    <td>
+		24.04.2023
+    </td>
+    <td>
+		GBA05280424
+    </td>
+    <td>
+		6%
+    </td>
+    <td>
+		5 лет
+    </td>
+    <td>
+		350,0
+    </td>
+ 
+</tr>
+		<tr>
+			<td colspan="5">Итого ГКО:</td>
+			<td>1 800,0</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<p>&nbsp;</p>
+
+	</div>
+</div><!--/body-->
+<div class="clear"><img src="https://www.kse.kg/views/kse/images/pixel.gif" /></div>
+<div id="footer">
+	<div class="footer_content container">
+		<div class="footer_inner">
+			<div class="footer_block">
+				<div class="footer_block-content">
+				<h2 style="color:#fff;font-weight:500;margin-bottom: 10px;font-size: 22px;"">Полезные ссылки</h2>
+				<ul>
+					<li style="margin-top:0px;"><a href="https://www.kse.kg/ru/ScheduleGS">Расписание аукционов по ГЦБ</a></li>
+					<li><a href="https://www.kse.kg/ru/TradeResults">Итоги последних торгов</a></li>
+					<li><a href="https://www.kse.kg/ru/Quotes">Котировки по ЦБ</a></li>
+					<li><a href="https://www.kse.kg/ru/PublicInfo">Центр раскрытия информации</a></li>
+				</ul>
+				</div>
+			</div>
+			<div class="footer_block">
+				<div class="footer_block-content">
+				<h2 style="color:#fff;font-weight:500;margin-bottom: 10px;font-size: 22px;">О нас</h2>
+				<ul>
+					<li style="margin-top: 0px;"><a href="https://www.kse.kg/ru/GeneralInfo">Общая информация</a></li>
+					<li><a href="https://www.kse.kg/ru/Contacts">Контакты</a></li>
+					<li><a href="https://www.kse.kg/ru/Management">Руководство</a></li>
+					<li><a href="https://www.kse.kg/ru/Partners">Наши партнеры</a></li>
+				</ul>
+				</div>
+			</div>
+			<div class="footer_block">
+				<div class="footer_block-content">
+				<h2 style="color:#fff;font-weight:500;margin-bottom: 10px;font-size: 22px;">Контакты</h2>
+				<ul class="footer_contact">
+					<li><a href="tel:+996 312 31 14 84">+996 312 31 14 84</a> </li>
+					<li>
+						<a href="tel:+996 551 31 14 84">+996 551 31 14 84</a>
+						<a href="https://wa.me/+996551311484"><img src="https://www.kse.kg/views/kse/images/icons/whatsapp.png" alt=""></a>
+						<a href="https://telegram.me/+996551311484"><img src="https://www.kse.kg/views/kse/images/icons/telegram.png" alt=""></a>
+					</li>
+					<li><a href="">office@kse.kg</a></li>
+				</ul>
+				<ul class="social-network">
+					<li><a href="https://ru-ru.facebook.com/KyrgyzStockExchange/" target="_blank"><img src="https://www.kse.kg/views/kse/images/icons/facebook.png" alt=""></a></li>
+					<li><a href="https://www.instagram.com/kse.kg/" target="_blank"><img src="https://www.kse.kg/views/kse/images/icons/instagram.png" alt=""></a></li>
+					<li><a href="https://t.me/kse_publicinfo" target="_blank"><img src="https://www.kse.kg/views/kse/images/icons/telegram.png" alt=""></a></li>
+				</ul>
+			</div>
+			</div>
+			
+		<!--/footer_right-->
+</div><!--/footer_inner-->
+	</div><!--/footer_content-->
+	
+	<p style="color:#fff;font-size: 12px;text-align: center;border-top: 1px solid #a7a8aa;padding-top: 20px;">
+		Все права защищены © 2004-2023 Копирование материалов – только с письменного разрешения. Лицензия №37 НКРЦБ от 30.11.2000 г.
+	</p>
+</div><!--/footer-->
+								<!-- WWW.NET.KG , code for www.kse.kg -->
+<script language="javascript" type="text/javascript">
+ java="1.0";
+ java1=""+"refer="+escape(document.referrer)+"&amp;page="+escape(window.location.href);
+ document.cookie="astratop=1; path=/";
+ java1+="&amp;c="+(document.cookie?"yes":"now");
+</script>
+<script language="javascript1.1" type="text/javascript">
+ java="1.1";
+ java1+="&amp;java="+(navigator.javaEnabled()?"yes":"now");
+</script>
+<script language="javascript1.2" type="text/javascript">
+ java="1.2";
+ java1+="&amp;razresh="+screen.width+'x'+screen.height+"&amp;cvet="+
+ (((navigator.appName.substring(0,3)=="Mic"))?
+ screen.colorDepth:screen.pixelDepth);
+</script>
+<script language="javascript1.3" type="text/javascript">java="1.3"</script>
+<script language="javascript" type="text/javascript">
+ java1+="&amp;jscript="+java+"&amp;rand="+Math.random();
+ document.write("<a class='rss-news' href='https://www.net.kg/stat.php?id=622&amp;fromsite=622' target='_blank'>"+
+ "<img src='https://www.net.kg/img.php?id=622&amp;"+java1+
+ "' border='0' alt='WWW.NET.KG' width='21' height='16' /></a>");
+</script>
+<noscript>
+ <a class="rss-news" href='https://www.net.kg/stat.php?id=622&amp;fromsite=622' target='_blank'><img
+  src="https://www.net.kg/img.php?id=622" border='0' alt='WWW.NET.KG' width='21'
+  height='16' /></a>
+</noscript>
+<!-- /WWW.NET.KG -->	
+
+				
+	
+	<!--		 <div class="banner">
+			
+			<a href="http://www.fkb.kg" target='_blank' ><img src="https://www.kse.kg/views/kse/images/fkb.gif" border="0"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="http://www.bankkg.kg" target='_blank' ><img src="https://www.kse.kg/views/kse/images/kbkr.gif" border="0"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="120" height="60">
+        <param name="movie" value="https://www.kse.kg/views/kse/images/120-60.swf" />
+        <object type="application/x-shockwave-flash" data="https://www.kse.kg/views/kse/images/120-60.swf" width="120" height="60">
+        </object>
+      </object>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="http://press.kse.kg" target='_blank' ><img src="https://www.kse.kg/views/kse/images/ban1.jpg" border="0"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+			</div>	 -->
+			
+
+			
+
+<div id="login-dialog">
+            <p class="validateTips"></p>
+            <div id="two_columns">
+                <label>Логин:</label>
+                <input type="text" name="mLogin" value="" id="mLogin" class="text ui-widget-content ui-corner-all" />
+                <label>Пароль:</label>
+                <input type="password" name="mPass" value="" id="mPass" class="text ui-widget-content ui-corner-all" />
+            </div>
+        </div>
+
+</body>
+</html>
+

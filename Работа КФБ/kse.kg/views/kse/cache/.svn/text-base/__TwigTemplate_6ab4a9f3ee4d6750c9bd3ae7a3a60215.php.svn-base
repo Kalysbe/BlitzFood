@@ -1,0 +1,49 @@
+<?php
+
+/* modules/Blog/Entries.html */
+class __TwigTemplate_6ab4a9f3ee4d6750c9bd3ae7a3a60215 extends Twig_Template
+{
+  public function display(array $context)
+  {
+    // line 1
+    echo "
+";
+    // line 2
+    $context['_parent'] = (array) $context;
+    $seq796338 = twig_iterator_to_array((isset($context['Entries']) ? $context['Entries'] : null));
+    $context['loop']['length'] = count($seq796338);
+    $context['loop'] = array(
+      'parent'    => $context['_parent'],
+      'length'    => $context['loop']['length'],
+      'index0'    => 0,
+      'index'     => 1,
+      'revindex0' => $context['loop']['length'] - 1,
+      'revindex'  => $context['loop']['length'],
+      'first'     => true,
+      'last'      => false,
+    );
+    foreach ($seq796338 as $context["_key"] => $context["Entry"])
+    {
+      echo "
+<div id=\"\" class=\"blog_entry\">
+    <div class=\"entry_title\">";
+      // line 4
+      echo $this->getAttribute((isset($context['Entry']) ? $context['Entry'] : null), "Title", array());
+      echo "</div>
+    <div class=\"entry_text\">";
+      // line 5
+      echo $this->getAttribute((isset($context['Entry']) ? $context['Entry'] : null), "Text", array());
+      echo "</div>
+</div>
+";
+      ++$context['loop']['index0'];
+      ++$context['loop']['index'];
+      --$context['loop']['revindex0'];
+      --$context['loop']['revindex'];
+      $context['loop']['first'] = false;
+      $context['loop']['last'] = 0 === $context['loop']['revindex0'];
+    }
+    $context = $context['_parent'];
+  }
+
+}

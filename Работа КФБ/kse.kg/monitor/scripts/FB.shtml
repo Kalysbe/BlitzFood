@@ -1,0 +1,7 @@
+<html>
+<body>
+<table border="1"><!--#exec isapi="/Scripts/fbisapi.dll?sql=ItogiT.sql&htm=tr.htm&Chart=gr1.txt"--></table>
+<img src="/Scripts/1.jpg">
+</body>
+</html>
+

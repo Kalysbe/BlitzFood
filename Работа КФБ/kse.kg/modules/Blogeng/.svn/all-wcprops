@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/guest/buse/!svn/ver/194/trunk/modules/Blog
+END
+BlogClass.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/guest/buse/!svn/ver/96/trunk/modules/Blog/BlogClass.php
+END
+install.sql.sql
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/guest/buse/!svn/ver/193/trunk/modules/Blog/install.sql.sql
+END
+BlogPage.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/guest/buse/!svn/ver/193/trunk/modules/Blog/BlogPage.php
+END
+blog_handler.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/guest/buse/!svn/ver/113/trunk/modules/Blog/blog_handler.php
+END
+ControlPanel.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/guest/buse/!svn/ver/194/trunk/modules/Blog/ControlPanel.php
+END

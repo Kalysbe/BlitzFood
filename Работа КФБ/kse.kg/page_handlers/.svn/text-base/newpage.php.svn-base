@@ -1,0 +1,13 @@
+<?php
+
+$sql = "SELECT * FROM `categories` WHERE (`status`>0)";
+$result = mysql_query($sql);
+$rows = mysql_num_rows($result);
+
+
+for ($i = 0; $i < $rows; $i++) {
+    mysql_data_seek($result, $i);
+    $obj = mysql_fetch_object($result);
+    $Variables["Categories"][] = $obj->category_name;
+}
+

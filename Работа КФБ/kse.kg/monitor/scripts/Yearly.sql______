@@ -1,0 +1,28 @@
+select date1,
+to_char(round(sum(sTotal),2),'fm999G999G999G990D00', 'nls_numeric_characters='', ''''') as sTotal,
+to_char(sum(sVolume),'fm999G999G990', 'nls_numeric_characters='', ''''') as sVolume,
+to_char(sum(sMark),'fm999G999G990', 'nls_numeric_characters='', ''''') as sMark,
+to_char(round(sum(sRazm),2),'fm999G999G999G990D00', 'nls_numeric_characters='', ''''') as sRazm,
+to_char(round(sum(sSecond),2),'fm999G999G999G990D00', 'nls_numeric_characters='', ''''') as sSecond,
+to_char(round(sum(sList),2),'fm999G999G999G990D00', 'nls_numeric_characters='', ''''') as sList,
+to_char(round(sum(sUnList),2),'fm999G999G999G990D00', 'nls_numeric_characters='', ''''') as sUnList
+from
+        (select '2003' as date1, 0 as svolume, 675 as smark, 215729690.8 as stotal, 192273141.71 as srazm,
+       23456549.09 as ssecond, 8565189.36 as slist, 206864501.44 as sunlist from ts.usertrader
+       where rownum=1
+
+       union all
+
+       select WWW.GETYEAR(ts.makedate(t.date0)) as date1,
+               sum(t.volume)/2 as sVolume,
+               sum(t.mark)/2 as sMark,
+               sum(t.total)/2 as sTotal,
+               nvl(www.srazm(t.date0),0) as sRazm,
+               sum(t.total)/2-nvl(www.srazm(t.date0),0) as sSecond,
+               nvl(www.slist(t.date0),0) as sList,
+               sum(t.total)/2-nvl(www.slist(t.date0),0) as sUnList
+         from ts.f1a_q1 t
+         where date0>=(select max(t1.date0)-65536*5+256 from ts.f1a_q1 t1)
+         group by date0)
+group by date1
+order by date1

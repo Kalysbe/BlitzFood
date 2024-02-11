@@ -1,0 +1,9 @@
+<?php
+
+#error_reporting(-1);
+#ini_set('display_errors', 1);
+#set_time_limit(0); // Just in case it takes more than your default execution time.
+
+$page=@file_get_contents('http://www.nbkr.kg/index.jsp');
+echo $page;
+?>

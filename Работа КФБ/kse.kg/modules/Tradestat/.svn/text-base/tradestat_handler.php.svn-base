@@ -1,0 +1,145 @@
+<?php
+
+function Tradestat_getModuleBuffer() {
+    $sql = "SELECT * FROM `mod_tradestat` ORDER BY `ts_result_id` DESC LIMIT 1";
+    $result = mysql_query($sql);
+
+    $rows = mysql_num_rows($result);
+
+    if ($rows == 0) {
+        return "
+            <h2>Итоги торгов</h2>
+            <div class=\"notice ui-corner-all\"><h3>Информация временно недоступна</h3></div>
+        ";
+    }
+
+    $obj = mysql_fetch_object($result);
+    $buffer = '
+    <script type="text/javascript">
+        function ShowTradestatTable() {
+            $("#TradeStatTable").css("display", "block");
+            $("#TradeStatChart").css("display", "none");
+        }
+
+        function ShowTradestatChart() {
+            $("#TradeStatChart").css("display", "block");
+            $("#TradeStatTable").css("display", "none");
+        }
+    </script>';
+
+    $buffer.= "
+    <h2>{Trade results for} " . $obj->day . "." . $obj->month . "." . $obj->year . "</h2>
+    <div id=\"TradeStatTable\">
+    <table class=\"class1\" width=\"100%\">
+        <tr>
+            <th width=\"*\"></th>
+            <th width=\"23%\">{MlnSom}</th>
+            <th width=\"28%\">%</th>
+            <!--<th width=\"5%\"></th>-->
+        </tr>
+";
+
+
+        $tvc = "<font color=\"black\">";
+        $primary = "<font color=\"black\">";
+        $secondary = "<font color=\"black\">";
+        $listing = "<font color=\"black\">";
+        $nonlisting = "<font color=\"black\">";
+
+        if ($obj->total_volume_change > 0)
+            $tvc = "<font color=\"green\">&#9650;";
+        elseif ($obj->total_volume_change < 0)
+            $tvc = "<font color=\"red\">&#9660;";
+        if ($obj->primary_change > 0)
+            $primary = "<font color=\"green\">&#9650;";
+        elseif ($obj->primary_change < 0)
+            $primary = "<font color=\"red\">&#9660;";
+        else
+            $primary = "<font color=\"black\">";
+        if ($obj->secondary_change > 0)
+            $secondary = "<font color=\"green\">&#9650;";
+        elseif ($obj->secondary_change < 0)
+            $secondary = "<font color=\"red\">&#9660;";
+        if ($obj->listing_change > 0)
+            $listing = "<font color=\"green\">&#9650;";
+        elseif ($obj->listing_change < 0)
+            $listing = "<font color=\"red\">&#9660;";
+        if ($obj->non_listing_change > 0)
+            $nonlisting = "<font color=\"green\">&#9650;";
+        elseif ($obj->non_listing_change < 0)
+            $nonlisting = "<font color=\"red\">&#9660;";
+
+        $buffer.= "
+        <tr>
+            <td><font color=\"#1464AD\">{Trades Volume}</font></td>
+            <td class=\"center\">" . $obj->total_volume . "</td>
+            <td class=\"center\">" . $tvc . abs($obj->total_volume_percent) . "</font></td>
+            <!--<td class=\"center\"><img src=\"/views/kse/images/" . $tvc . "\" /></td>-->
+        </tr>
+        <tr>
+            <td><font color=\"#1464AD\">{Primary Market}</font></td>
+            <td class=\"center\">" . $obj->primary . "</td>
+            <td class=\"center\">" . $primary .abs($obj->primary_percent) . "</font></td>
+            <!--<td class=\"center\"><img src=\"/views/kse/images/" . $primary . "\" /></td>-->
+        </tr>
+        <tr>
+            <td><font color=\"#1464AD\">{Secondary Market}</font></td>
+            <td class=\"center\">" . $obj->secondary . "</td>
+            <td class=\"center\">" . $secondary .abs($obj->secondary_percent) . "</font></td>
+            <!--<td class=\"center\"><img src=\"/views/kse/images/" . $secondary . "\" /></td>-->
+        </tr>
+        <tr>
+            <td><font color=\"#1464AD\">{Listing}</font></td>
+            <td class=\"center\">" . $obj->listing . "</td>
+            <td class=\"center\">" . $listing .abs($obj->listing_percent) . "</font></td>
+            <!--<td class=\"center\"><img src=\"/views/kse/images/" . $listing . "\" /></td>-->
+        </tr>
+        <tr>
+            <td><font color=\"#1464AD\">{Non Listing}</font></td>
+            <td class=\"center\">" . $obj->non_listing . "</td>
+            <td class=\"center\">" . $nonlisting . abs($obj->non_listing_percent) . "</font></td>
+            <!--<td class=\"center\"><img src=\"/views/kse/images/" . $nonlisting . "\" /></td>-->
+        </tr>
+        ";
+    $buffer.= "</table>
+    </div>
+    ";
+
+    require_once($_SERVER["DOCUMENT_ROOT"] . "/lib/FusionCharts/Includes/FusionCharts_Gen.php");
+
+    $FC = new FusionCharts("Column3D","440","250");
+
+    # Setting Relative Path of chart swf file.
+    $FC->setSwfPath(MainClass::getSingleton()->getSiteVar("%ROOT%") . "/lib/FusionCharts/Charts/");
+
+    # Store chart attributes in a variable
+    $strParam="formatNumber=0;";
+
+    # Set chart attributes
+    $FC->setChartParams($strParam);
+
+    
+    $FC->addChartData(str_replace(",", ".", $obj->primary), "name={Primary Market}");
+    $FC->addChartData(str_replace(",", ".", $obj->secondary), "name={Secondary Market}");
+    $FC->addChartData(str_replace(",", ".", $obj->listing), "name={Listing}");
+    $FC->addChartData(str_replace(",", ".", $obj->non_listing), "name={Non Listing}");
+    
+    
+
+    # Render chart
+    $buffer.= "<div id=\"TradeStatChart\" style=\"display: none\">";
+    $buffer.= $FC->renderChart(false, false);
+    $buffer.= "</div>";
+
+    $buffer.= "
+        <p>
+	<!--<a class=\"bullet_link f_l\" href=\"#\">Архив торгов</a>&nbsp;--></p>
+        <div class=\"results_view f_r\">
+	<a class=\"current\" href=\"#\" onClick=\"ShowTradestatTable()\">{Table}</a> /
+        <a href=\"#\" onClick=\"ShowTradestatChart()\"> {Chart}</a></div>
+    ";
+   
+    return $buffer;
+}
+
+?>

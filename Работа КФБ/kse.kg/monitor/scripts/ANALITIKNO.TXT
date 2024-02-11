@@ -1,0 +1,6 @@
+cfg="HTMMaxCycle=1"
+htm="<br><br>"
+htm="Аналитика"
+htm="[FBISAPI:NAME]<br>нет данных"
+sql=
+htm="<br><br>"

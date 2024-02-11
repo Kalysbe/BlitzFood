@@ -1,0 +1,307 @@
+{% if ListingError %}
+
+<div class="error ui-corner-all">
+    {{ ListingError }}
+</div>
+
+{% else %}
+
+<h2>{{ company_info['title'] }}</h2>
+
+<table class="class1" width="45%" style="float: left;">
+    <tr>
+        <th>Общая информация</th>
+        <th>&nbsp;</th>
+    </tr>
+    <tr>
+        <td>Наименование компании</td>
+        <td>{{ company_info['title'] }}</td>
+    </tr>
+    <tr>
+        <td>Вид деятельности</td>
+        <td>{{ company_info['activity'] }}</td>
+    </tr>
+    <tr>
+        <td>ФИО руководителя</td>
+        <td>{{ company_info['owner'] }}</td>
+    </tr>
+    <tr>
+        <td>Должность руководителя </td>
+        <td>{{ company_info['owner_position'] }}</td>
+    </tr>
+    <tr>
+        <td>Адрес</td>
+        <td>{{ company_info['address'] }}</td>
+    </tr>
+    <tr>
+        <td>Телефон / Факс </td>
+        <td>{{ company_info['phone'] }}</td>
+    </tr>
+    <tr>
+        <td>Регистратор </td>
+        <td>{{ company_info['registrar'] }}</td>
+    </tr>
+	 <tr>
+        <td>Вид ценных бумаг </td>
+        <td>{{ company_info['t_securities'] }}</td>
+    </tr>
+	 <tr>
+        <td>Количество ценных бумаг </td>
+        <td>{{ company_info['n_securities'] }}</td>
+    </tr>
+	 <tr>
+        <td>Цена размещения </td>
+        <td>{{ company_info['f_price'] }}</td>
+    </tr>
+</table>
+
+{% if Logged %}
+    {% include 'modules/BusinessReports/UploadNewReport.html' %}
+{% endif %}
+
+<script type="text/javascript">
+
+    $(function() {
+
+        $("#hidden_bulletin").dialog({
+            autoOpen: false,
+            height: 500,
+            width: 500,
+            modal: true,
+            buttons: {
+                "Закрыть": function() {
+                    $(this).dialog('close');
+                }
+            },
+            close: function() {
+                allFields.val('').removeClass('ui-state-error');
+            }
+        });
+        $("#hidden_quarterly").dialog({
+            autoOpen: false,
+            height: 500,
+            width: 500,
+            modal: true,
+            buttons: {
+                "Закрыть": function() {
+                    $(this).dialog('close');
+                }
+            },
+            close: function() {
+                allFields.val('').removeClass('ui-state-error');
+            }
+        });
+        $("#hidden_annual").dialog({
+            autoOpen: false,
+            height: 500,
+            width: 500,
+            modal: true,
+            buttons: {
+                "Закрыть": function() {
+                    $(this).dialog('close');
+                }
+            },
+            close: function() {
+                allFields.val('').removeClass('ui-state-error');
+            }
+        });
+        $("#hidden_news").dialog({
+            autoOpen: false,
+            height: 500,
+            width: 500,
+            modal: true,
+            buttons: {
+                "Закрыть": function() {
+                    $(this).dialog('close');
+                }
+            },
+            close: function() {
+                allFields.val('').removeClass('ui-state-error');
+            }
+        });
+        $("#hidden_analytics").dialog({
+            autoOpen: false,
+            height: 500,
+            width: 500,
+            modal: true,
+            buttons: {
+                "Закрыть": function() {
+                    $(this).dialog('close');
+                }
+            },
+            close: function() {
+                allFields.val('').removeClass('ui-state-error');
+            }
+        });
+
+        $('#showArchive_bulletin')
+            .click(function() {
+                $('#hidden_bulletin').dialog('open');
+            });
+        $('#showArchive_quarterly')
+            .click(function() {
+                $('#hidden_quarterly').dialog('open');
+            });
+        $('#showArchive_annual')
+            .click(function() {
+                $('#hidden_annual').dialog('open');
+            });
+        $('#showArchive_news')
+            .click(function() {
+                $('#hidden_news').dialog('open');
+            });
+        $('#showArchive_analytics')
+            .click(function() {
+                $('#hidden_analytics').dialog('open');
+            });
+    });
+
+    
+</script>
+
+<div style="float: right; width: 48%; margin-top: 20px;">
+    <h3>Раскрытие информации</h3>
+    <table class="class1" width="100%">
+    {% for Report in Reports %}
+    <tr>
+        <td width="20px"><a href="{{ root }}/files/BusinessReports/{{ Report['Filepath'] }}">
+                <img src="{{ root }}/views/kse/images/icon_pdf.jpg" width="20px"/>
+            </a></td>
+        <td><a href="{{ root }}/files/BusinessReports/{{ Report['Filepath'] }}">{{ Report['Name'] }}</a></td>
+        <td><a id="showArchive_{{ Report['Type'] }}">Архив</a></td>
+    </tr>
+    {% endfor %}
+    </table>
+</div>
+
+<div style="float: right; width: 48%; margin-top: 20px;">
+    <h3>Новости компании</h3>
+    <table class="class1" width="100%">
+	{% for news in NewsList %}
+    <tr>
+        <td ><strong>{{ news.news_date }}</strong> <a href="{{ root }}/{{ lang_code }}/{{ blogName }}/{{ news['news_id'] }}/{{ news['news_title'] }}">{{ news['news_title'] }}</a></td>
+    </tr>	
+    {% endfor %}
+    </table>
+</div>
+
+<div id="hidden_bulletin">
+    <h3>Бюллетень эмитента: Архив</h3><br /><br />
+    <ul class="leftmenu">
+    {% for Report in ReportsArchive['bulletin'] %}
+        <li style="height: 30px; border-bottom: 1px dashed #CCCCCC;"><a href="{{ root }}/files/BusinessReports/{{ Report['Filepath'] }}">{{ Report.Date }}</a></li>
+    {% else %}
+        <li class="warning ui-corner-all"><h3>Нет доступных файлов</h3></li>
+    {% endfor %}
+    </ul>
+</div>
+
+<div id="hidden_quarterly">
+    <h3>Ежевартальный отчёт: Архив</h3><br />
+	<li class="warning ui-corner-all"><h3>Для доступа к файлам, напишите на почту irina@kse.kg</h3></li>
+    <ul class="leftmenu">
+    {% for Report in ReportsArchive['quarterly'] %}
+	<h3>{{ Report.kvdate }}</h3>
+        <li style="height: 30px; border-bottom: 1px dashed #CCCCCC;"><a href="{{ root }}/files/BusinessReports/{{ Report['Filepath'] }}"> Дата размещения: {{ Report.Date }}</a></li>
+    {% else %}
+        <li class="warning ui-corner-all"><h3>Нет доступных файлов</h3></li>
+    {% endfor %}
+    </ul>
+</div>
+
+<div id="hidden_annual">
+    <h3>Годовой отчёт: Архив</h3><br /><br />
+	<li class="warning ui-corner-all"><h3>Для доступа к файлам, напишите на почту irina@kse.kg</h3></li>
+    <ul class="leftmenu">
+    {% for Report in ReportsArchive['annual'] %}
+        <li style="height: 30px; border-bottom: 1px dashed #CCCCCC;"><a href="{{ root }}/files/BusinessReports/{{ Report['Filepath'] }}">{{ Report.Date }}</a></li>
+    {% else %}
+        <li class="warning ui-corner-all"><h3>Нет доступных файлов</h3></li>
+    {% endfor %}
+    </ul>
+</div>
+
+<div id="hidden_news">
+    <h3>Новости: Архив</h3><br /><br />
+    <ul class="leftmenu">
+    {% for Report in ReportsArchive['news'] %}
+        <li style="height: 30px; border-bottom: 1px dashed #CCCCCC;"><a href="{{ root }}/files/BusinessReports/{{ Report['Filepath'] }}">{{ Report.Date }}</a></li>
+    {% else %}
+        <li class="warning ui-corner-all"><h3>Нет доступных файлов</h3></li>
+    {% endfor %}
+    </ul>
+</div>
+
+<div id="hidden_analytics">
+    <h3>Аналитика: Архив</h3><br /><br />
+    <ul class="leftmenu">
+    {% for Report in ReportsArchive['analytics'] %}
+        <li style="height: 30px; border-bottom: 1px dashed #CCCCCC;"><a href="{{ root }}/files/BusinessReports/{{ Report['Filepath'] }}">{{ Report.Date }}</a></li>
+    {% else %}
+        <li class="warning ui-corner-all"><h3>Нет доступных файлов</h3></li>
+    {% endfor %}
+    </ul>
+</div>
+
+{% endif %}
+{% if Logged %}
+<div style="clear: both; width: 100%; padding: 15px; border: 1px solid #CCCCCC" class="ui-corner-all">
+    <h2>Управление проспектом</h2>
+    <br />
+    <form action="" method="POST">
+        <table class="class1" >
+            <tr>
+                <th>Поле</th>
+                <th>Значение</th>
+            </tr>
+            <tr>
+                <td>Адрес странички (латиница)</td>
+                <td><input type="text" name="brep_company_name" value="{{ company_info['name'] }}" /></td>
+            </tr>
+            <tr>
+                <td>Наименование компании</td>
+                <td><input type="text" name="title" value="{{ company_info['title'] }}" /></td>
+            </tr>
+            <tr>
+                <td>Вид деятельности</td>
+                <td><input type="text" name="activity" value="{{ company_info['activity'] }}" /></td>
+            </tr>
+            <tr>
+                <td>ФИО руководителя</td>
+                <td><input type="text" name="owner" value="{{ company_info['owner'] }}" /></td>
+            </tr>
+            <tr>
+                <td>Должность руководителя </td>
+                <td><input type="text" name="owner_position" value="{{ company_info['owner_position'] }}" /></td>
+            </tr>
+            <tr>
+                <td>Адрес</td>
+                <td><input type="text" name="address" value="{{ company_info['address'] }}" /></td>
+            </tr>
+            <tr>
+                <td>Телефон / Факс </td>
+                <td><input type="text" name="phone" value="{{ company_info['phone'] }}" /></td>
+            </tr>
+            <tr>
+                <td>Регистратор </td>
+                <td><input type="text" name="registrar" value="{{ company_info['registrar'] }}" /></td>
+            </tr>
+			  <tr>
+                <td>Вид ценных бумаг </td>
+                <td><input type="text" name="t_securities" value="{{ company_info['t_securities'] }}" /></td>
+            </tr>
+			  <tr>
+                <td>Количество ценных бумаг </td>
+                <td><input type="text" name="n_securities" value="{{ company_info['n_securities'] }}" /></td>
+            </tr>
+			  <tr>
+                <td>Цена размещения </td>
+                <td><input type="text" name="f_price" value="{{ company_info['f_price'] }}" /></td>
+            </tr>
+        </table>
+        <input type="hidden" name="brep_company_id" value="{{ company_info['id'] }}" />
+        <input type="submit" name="doUpdateCompany" value="Сохранить" />
+    </form>
+</div>
+{% endif %}
+

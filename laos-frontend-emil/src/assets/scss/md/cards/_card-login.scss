@@ -1,0 +1,45 @@
+.md-card-login{
+  max-width: 340px;
+  margin: 0 auto;
+
+  .md-button{
+    margin: .3125rem 1px;
+  }
+
+  .md-card-header,
+  .description{
+    text-align: center;
+    font-weight: 400;
+  }
+  .lang-line{
+    text-align: right;
+  }
+
+  &.md-card-hidden{
+    opacity: 0;
+    transform: translate3d(0,-60px,0);
+  }
+
+  .md-card-header{
+    margin-bottom: 5px;
+    background-color: black;
+  }
+
+  .md-card-content{
+    padding-top: 0;
+  }
+
+  .description{
+    margin-top: 0;
+    padding: 20px 0;
+    font-size: 2rem;
+  }
+  .lang-line{
+    margin-top: 10px;
+  }
+
+  .md-card-actions{
+    border: 0;
+    justify-content: center;
+  }
+}

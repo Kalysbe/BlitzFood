@@ -1,0 +1,18 @@
+<?php
+
+/* modules/Blog/Entry.html */
+class __TwigTemplate_01d5c89f60d670971744e752f4bb68a9 extends Twig_Template
+{
+  public function display(array $context)
+  {
+    // line 1
+    echo "<h3>";
+    echo (isset($context['EntryTitle']) ? $context['EntryTitle'] : null);
+    echo "</h3>
+<p>";
+    // line 2
+    echo (isset($context['EntryText']) ? $context['EntryText'] : null);
+    echo "</p>";
+  }
+
+}

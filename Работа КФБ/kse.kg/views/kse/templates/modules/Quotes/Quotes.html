@@ -1,0 +1,38 @@
+<table class="class1" width="100%">
+    <h3 style="color: #909090;text-align: center;font-size: 11px;">Котировки по ценным бумагам на {{ date }}</h3>
+<tr>
+        <td rowspan='2'>{{ lang['tradesymbol'] }}</td>
+        <td rowspan='2'>ISIN</td>
+        <td class="" rowspan='2'>{{ lang['qname'] }}</td>
+		<td colspan='2'>{{ lang['salequantity'] }}</td>
+		<td colspan='2'>{{ lang['buyquantity'] }}</td>
+		
+		<tr>
+			<td>{{ lang['qquantity'] }}</td>
+			<td>{{ lang['qprice'] }}</td>
+			<td>{{ lang['qquantity'] }}</td>
+			<td>{{ lang['qprice'] }}</td>
+		</tr>
+</tr>
+    {% for Quote in Quotes %}
+    <tr class="parse">
+        <td class="short_name">{{ Quote["short_name"] }}</td>
+        <td class="isin">{{ Quote["isin"] }}</td>
+        <td class="full_name">{{ Quote["full_name"] }}</td>
+        <td class="center sell_amount">{{ Quote["sell_amount"] }}</td>
+        <td class="center sell_price">{{ Quote["sell_price"] }}</td>
+        <td class="center buy_amount">{{ Quote["buy_amount"] }}</td>
+        <td class="center buy_price">{{ Quote["buy_price"] }}</td>
+    </tr>
+    {% else %}
+    <tr>
+        <td class="center">-</td>
+        <td class="center">-</td>
+        <td class="center">-</td>
+        <td class="center">-</td>
+        <td class="center">-</td>
+        <td class="center">-</td>
+        <td class="center">-</td>
+    </tr>
+    {% endfor %}
+</table>

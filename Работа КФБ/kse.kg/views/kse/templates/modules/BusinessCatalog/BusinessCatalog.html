@@ -1,0 +1,67 @@
+
+<script type="text/javascript">
+
+$(function(){
+
+            $(".company_description").dialog({
+                autoOpen: false,
+                height: 250,
+                width: 400,
+                modal: true,
+                title: "Описание",
+                buttons: {
+                    "{{ Lang['{doCancel}'] }}": function() {
+                            $(this).dialog('close');
+                    }
+                },
+                close: function() {
+                        //allFields.val('').removeClass('ui-state-error');
+                }
+            });
+
+
+
+});
+
+function openInfo(id) {
+
+    $("#company_description"+id).dialog('open');
+
+}
+
+</script>
+
+<ul>
+{% for Company in BusinessCatalog %}
+    <li>
+        {% if Company['text'] != "" %}
+        <a href="#" onClick="openInfo({{ Company['id'] }})">
+        {% endif %}
+            {{ Company['title'] }}
+        {% if Company['text'] != "" %}
+        </a>
+        {% endif %}
+
+        <div id="company_description{{ Company['id'] }}" class="company_description">
+            {{ Company['text'] }}
+        </div>
+        
+    </li>
+{% endfor %}
+</ul>
+<br /><br /><br />
+{% if Logged %}
+<h2>Добавить компанию</h2>
+<form action="/modules/BusinessCatalog/BusinessCatalog.php" method="POST">
+    <input type="text" name="mName" value="" /><br />
+    <textarea name="mText" id="mText"></textarea><br />
+    <input type="submit" name="doAdd" value="Add" />
+    <input type="hidden" name="mGroup" value="{{ Group }}" />
+</form>
+{% endif %}
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#mText").ckeditor({language: 'ru'});
+    });
+</script>

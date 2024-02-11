@@ -1,0 +1,63 @@
+
+<h2 style="float: left;">Индекс и Капитализация</h2>
+
+<div id="DatePicker" style="width: 300px; float: right; margin: 0px; text-align: right;">
+    <h3>{{ lang['{ForPeriod}'] }}</h3>
+    <form action="" method="POST">
+    {{ lang['{PeriodFrom}'] }}: <input type="text" name="IndexDateFrom" id="IndexDateFrom" value="" /><br />
+    {{ lang['{PeriodTo}'] }}: <input type="text" name="IndexDateTo" id="IndexDateTo" value="" /><br />
+    <input type="submit" name="doByDate" value="Показать" />
+    </form>
+    <script type="text/javascript">
+        $("#IndexDateFrom").datepicker({dateFormat: 'yy-mm-dd'});
+        $("#IndexDateTo").datepicker({dateFormat: 'yy-mm-dd'});
+        $("input:submit").button();
+    </script>
+</div>
+
+<br /><br />
+<table width="400px" class="class1" style="margin-top: 50px; margin-bottom: 50px;">
+    <tr>
+        <th>Индекс на {{IndexDate}}</th>
+        <th>&nbsp;</th>
+    </tr>
+    <tr>
+        <td>Индекс</td>
+        <td>{{ IndexValue }}</td>
+    </tr>
+    <tr>
+        <td>Капитализация (млн.сом)</td>
+        <td>{{ CapitalizationValue }}</td>
+    </tr>
+</table>
+
+<div id="IndexChart">
+    {{ IndexChart }}
+</div>
+<div id="CapitalizationChart">
+    {{ CapitalizationChart }}
+</div>
+{#
+<br /><br />
+<table width="400px" class="class1" style="margin-top: 50px; margin-bottom: 50px;">
+    <tr>
+        <th>Индекс на {{IndexDate}}</th>
+        <th>&nbsp;</th>
+    </tr>
+    <tr>
+        <td>Индекс</td>
+        <td>{{ IndexValue }}</td>
+    </tr>
+    <tr>
+        <td>Капитализация (млн.сом)</td>
+        <td>{{ IndexCapitalization }}</td>
+    </tr>
+</table>
+
+<div id="IndexChart">
+    {{ IndexChart }}
+</div>
+<div id="CapitalizationChart">
+    {{ CapitalizationChart }}
+</div>#}
+

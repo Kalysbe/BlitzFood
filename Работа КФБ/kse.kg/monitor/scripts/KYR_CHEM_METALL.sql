@@ -1,0 +1,15 @@
+select d,
+(select www.sel_article('Собственный капитал%',t.name, tab.d) as SK
+from ls.companies t
+where t.id=205) as SK,
+(select www.sel_article('Валовая прибыль%',t.name, tab.d) as VP
+from ls.companies t
+where t.id=205) as VP,
+(select www.sel_article('Чистая прибыль%',t.name, tab.d) as CP
+from ls.companies t
+where t.id=205) as CP
+from 
+(select substr(ts.makedate(date0),(length(ts.makedate(date0))-3)) as d 
+from
+(select distinct date0 from ls.balance t
+where compid=205)) tab

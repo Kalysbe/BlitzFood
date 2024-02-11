@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+
+nav li {
+    margin-left: 10px;
+}
+
+nav  a {
+    white-space: nowrap;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.43;
+    letter-spacing: 0.01071em;
+    padding: 0px;
+    text-align: center;
+    cursor: pointer;
+    color: #8B8B8B;
+    background-color: #EDEDED;
+  
+}
+
+svg {
+    user-select: none;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    fill: currentcolor;
+    flex-shrink: 0;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    font-size: 1.5rem;
+    color: #8B8B8B;
+}
+
+button {
+    width: 58px;
+    border: 1px solid #F1F1F1;
+    cursor: pointer;
+    height: 25px;
+    font-family: Helvetica;
+    border-radius: 0%;
+    margin-left: 8px;
+    color: rgb(211, 211, 211);
+}
+
+input {
+    font: inherit;
+    letter-spacing: inherit;
+    color: currentcolor;
+    padding: 1px 0px 5px;
+    border: 0px;
+    box-sizing: content-box;
+    background: none;
+    height: 1.4375em;
+    margin: 0px;
+    -webkit-tap-highlight-color: transparent;
+    display: block;
+    min-width: 0px;
+    width: 100%;
+    animation-name: mui-auto-fill-cancel;
+    animation-duration: 10ms;
+}
+input::after {
+    border-bottom: 2px solid rgb(25, 118, 210);
+    left: 0px;
+    bottom: 0px;
+    content: "";
+    position: absolute;
+    right: 0px;
+    transform: scaleX(0);
+    transition: transform 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+    pointer-events: none;
+}
+table thead tr {
+
+
+}
+.main-table-header-th-style-new {
+    margin-left: 5px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background: #f5f5f5;
+    height: 30px;
+    resize: horizontal;
+    overflow: hidden;
+    font-size: 13px;
+    font-family: "Open Sans";
+    /* border-right: 1px solid #a7a5a5; */
+    text-align: left;
+    z-index: 99999;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    height: 30px;
+}
+table tr td{
+    cursor: pointer;
+    height: 30px;
+    overflow: hidden;
+    font-size: 13px;
+    max-width: 150px;
+    min-width: 1px;
+    font-family: OpenSans-Regular;
+    font-weight: light;
+    white-space: nowrap;
+    /* border-bottom: 1px solid #337E86; */
+    border: none !important;
+    background: white !important;
+    text-overflow: elipsis '[..]';
+}
+table tr th {
+    font-size: 14px;
+    text-align: left;
+    border: 1px solid #e8e5e5 !important;
+}
+table tr td {
+    background-color: #fff !important;
+    color: black !important
+}
+
+table tr:nth-child(even) {
+    border: 1px solid #e8e5e5 !important;
+}
+table tr:nth-child(even) td {
+    background-color: #f9f7f7 !important;
+}
+table tr td:first-child {
+    text-align: center;
+    background-color: #f5f5f5 !important;
+    border-right: 1px solid #e8e5e5 !important;
+}
+
+.MuiButtonBase-root {
+    color: inherit;
+    border: 0;
+    cursor: pointer;
+    margin: 0;
+    display: inline-flex;
+    outline: 0;
+    padding: 0;
+    position: relative;
+    align-items: center;
+    user-select: none;
+    border-radius: 0;
+    vertical-align: middle;
+    -moz-appearance: none;
+    justify-content: center;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+}
+.MuiIconButton-label {
+    width: 100%;
+    display: flex;
+    align-items: inherit;
+    justify-content: inherit;
+}
+
+.jss42 {
+    top: 0;
+    left: 0;
+    width: 100%;
+    cursor: inherit;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    padding: 0;
+    z-index: 1;
+    position: absolute;
+}
+.MuiSvgIcon-fontSizeSmall {
+    font-size: 1.25rem;
+}
+.MuiSvgIcon-root {
+    fill: currentColor;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    font-size: 1.5rem;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    flex-shrink: 0;
+    user-select: none;
+}

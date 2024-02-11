@@ -1,0 +1,104 @@
+{% if Logged %}
+<h3>Панель управления</h3>
+
+{% if edit_form %}
+<div class="section" id="fast_publication" >
+    <form action="" method="POST">
+        <h3>Редактирование</h3><br />
+        Заголовок: <input type="text" name="title" value="{{ edit_post['name'] }}" style="width: 100%" /><br /><br />
+        Текст:<br /><textarea name="text" id="mEntryText">{{ edit_post['text'] }}</textarea>
+        <script type="text/javascript">
+            CKEDITOR.replace( "text" );
+        </script>
+        <br />
+        <p><label>Дата:</label>
+        <input type="text" name="cr_date" value="{{ edit_post['cr_date'] }}" id="mEntryDate" />
+        <script type="text/javascript">
+            $("#mEntryDate").datepicker({dateFormat: 'yy-mm-dd'});
+        </script>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<label>Компания:</label>
+			
+		<select name="mEntryCompany" id="mEntryCompany">
+		<option value="0" selected>нет
+			{% for Company in sprCompanys %}
+			<option value={{ Company.company_id }} {% if  edit_post['l_company_id'] == Company.company_id  %} SELECTED {% endif %}>{{ Company.title }}
+			{% endfor %}
+		</select> </p>		
+        <br />
+        <input type="submit" name="do_edit_entry" value="{{ land['doSave'] }}" />
+        <input type="hidden" name="blog_id" value="{{ BlogId }}" />
+        <input type="hidden" name="cur_lang" value="{{ lang_code }}" />
+        <input type="hidden" name="blogentry_id" value="{{ edit_post['blogentry_id'] }}" />
+    </form>
+</div>
+{% else %}
+<div class="section" id="fast_publication" >
+    <form action="{{ root }}/modules/Blog/ControlPanel.php" method="POST">
+        <h3>Быстрая публикация</h3><br />
+        Заголовок: <input type="text" name="mEntryName" value="" style="width: 100%" /><br /><br />
+        Текст:<br /><textarea name="mEntryText" id="mEntryText"></textarea>
+        <script type="text/javascript">
+            CKEDITOR.replace( "mEntryText" );
+        </script>
+        <br />
+        <p><label>Дата:</label>
+        <input type="text" name="mEntryDate" value="" id="mEntryDate" />
+        <script type="text/javascript">
+            $("#mEntryDate").datepicker({dateFormat: 'yy-mm-dd'});
+        </script>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<label>Компания:</label>
+			
+		<select name="mEntryCompany" id="mEntryCompany">
+		<option value="0" selected>нет
+			{% for Company in sprCompanys %}
+				<option value={{ Company.company_id }}>{{ Company.title }}
+			{% endfor %}
+		</select> </p>
+			
+        <br />
+        <input type="submit" name="doAddEntry" value="Добавить" />
+        <input type="hidden" name="BlogId" value="{{ BlogId }}" />
+        <input type="hidden" name="cur_lang" value="{{ lang_code }}" />
+    </form>
+</div>
+
+<h2 style="margin-top: 20px;">&darr; Записи</h2>
+<div style="margin-top: 0px; border-top: 3px solid #90AABB">
+    <br />
+    {% for Post in Posts %}
+        <li>
+            <b>
+                <p class="entry_title"><b>{{ Post.Date }}</b>
+                   <!-- <a href="{{ root }}/{{ lang_code }}/{{ BlogName }}/ControlPanel/Edit/{{ Post.Id }}"> -->
+                         {{ Post.Title }}
+                    <!-- </a>&nbsp -->
+                    <a href="{{ root }}/{{ lang_code }}/{{ BlogName }}/ControlPanel/Edit/{{ Post.Id }}">
+			          <img src="{{ root }}/files/images/edit-icon.png" />
+                    </a>&nbsp
+
+		      <a href="{{ root }}/{{ lang_code }}/{{ BlogName }}/ControlPanel/Delete/{{ Post.Id }}">
+                      <img src="{{ root }}/files/images/delete-icon.png" />
+                    </a>
+
+                </p>
+                <p class="entry_meta">
+
+                </p>
+            </b>
+        </li>
+    {% endfor %}
+    </ul>
+</div>
+
+{% for page in pages_list %}
+<a href="{{ root }}/{{ lang_code }}/{{ BlogName }}/ControlPanel/{{ page }}"> {{ page }} </a>
+{% endfor %}
+
+{% endif %}
+
+{% else %}
+<div class="error ui-corner-all">
+    <h3>У Вас нет доступа в эту область</h3>
+    <p></p>
+</div>
+{% endif %}

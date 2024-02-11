@@ -1,0 +1,86 @@
+body {
+	background-color: #000000;
+	scroll: no;
+}
+table.t_nbkr{
+	border:0;
+	align:center;
+	valign:absmiddle; 
+	width:100%; 
+	height:50%; 
+	text-align:center; 
+	font-size:30px; 
+	color:#ffff00;
+}
+table.t_gold{
+	border:0; 
+	width:100%; 
+	height:50%; 
+	text-align:center; 
+	font-size:30px; 
+	color:#ffff00;
+}
+th.th_nbkr{
+	width: 10%;
+	text-align: center;
+	font: normal 20px Verdana;
+	color: #00FF00;
+}
+th.th_nbkr_2{
+		width: 10%;
+	text-align: center;
+	font: normal 17px Verdana;
+	color: #00FF00;
+}
+td.td_nbkr{
+	width: 10%;
+	text-align: center;
+	font: bold 25px Verdana;
+	color: #8B8B00;
+	border-bottom: 1px solid #555;
+}
+td.td_nbkr_2{
+	width: 10%;
+	text-align: center;
+	font: bold 22px Verdana;
+	color: #8B8B00;
+	border-bottom: 1px solid #555;
+}
+h3{
+	text-align: center;
+	font: bold 25px Verdana;
+	color:#00FF00; 
+}
+h5{
+	text-align: left;
+	font: normal 20px Verdana;
+	color:#00FF00; 
+}
+td.bid_ask{
+	color: #00FF00;
+	font: bold 40px Verdana;
+}
+td.t_left{
+	text-align: left;
+	color: #ffff00;
+	font: bold 45px Verdana;
+}
+td.t_right{
+	text-align: right;
+	color: #ffff00;
+	font: bold 45px Verdana;
+}
+.divTime { 
+    width: 400px; 
+    background: #ccc;
+    padding: 5px;
+    padding-right: 20px; 
+    border: solid 1px black; 
+    float: left;
+   }
+.divContent { 
+    width: 100%; 
+    padding: 5px; 
+    border: solid 1px black; 
+    position: relative; 
+   }

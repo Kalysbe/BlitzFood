@@ -1,0 +1,1 @@
+htm=baners\Banner[FBISAPI:^RND].htm

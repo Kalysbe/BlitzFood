@@ -1,0 +1,75 @@
+<?php session_start();?>
+
+
+<SCRIPT type="text/javascript">
+function validate_form ( )
+{
+	valid = true;
+
+        if ( document.buysell.mEmitent.value == "" )
+        {
+                alert ( "Пожалуйста заполните поле 'Ценная бумага'." );
+                valid = false;
+        }
+		else
+		if ( document.buysell.mPrice.value == "" )
+        {
+                alert ( "Пожалуйста заполните поле 'Цена'." );
+                valid = false;
+        }
+		else
+		if ( document.buysell.mAmount.value == "" )
+        {
+                alert ( "Пожалуйста заполните поле 'Количество'." );
+                valid = false;
+        }
+		else
+		if ( document.buysell.mText.value == "" )
+        {
+                alert ( "Пожалуйста заполните поле 'Комментарии'." );
+                valid = false;
+        }
+		else
+		if ( (document.buysell.turing.value == "") || (document.buysell.turing === "undefined"))
+        {
+                alert ( "Пожалуйста введите 'Код на картинке'." );
+                valid = false;
+        }
+		return valid;
+}
+
+</SCRIPT>
+
+
+<h2>{{ lang['kuplyaprodazha'] }}</h2>
+<br /><br/>
+
+{% if SendResult %}
+<div class="error ui-corner-all">
+    {{ SendResult }}
+</div><br /><br />
+{% endif %}
+
+{{ lang['byesell'] }}
+<br />
+
+<br>
+
+<form name="buysell" action="" method="POST" onsubmit="return validate_form();">
+    {{ lang['operaciya'] }}
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select name="mOperation">
+        <option value="Продажа">{{ lang['prodazha'] }}</option>
+        <option value="Покупка">{{ lang['pokupka'] }}</option>
+    </select><br /><br />
+    {{ lang['bumaga'] }} <input type="text" name="mEmitent" value="" /><br /><br />
+    {{ lang['cena'] }}  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="mPrice" value="" /><br /><br />
+    {{ lang['kolvo'] }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="mAmount" value="" /><br /><br />
+    {{ lang['comment'] }} <textarea name="mText" style="width: 100%; height: 150px; border: 1px solid #CCCCCC;"></textarea><br /><br />
+    {{ lang['cod'] }}  <img src="{{ root }}/views/kse/templates/modules/BuySellOrders/turing"/>
+	
+	<input type="text" name="turing" size="4"><br><br>
+	<input type="submit" name="doSendMessage" value="Отправить" class="button" />
+    <br />
+    <br />
+</form>
+
